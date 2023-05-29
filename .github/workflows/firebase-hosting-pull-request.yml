@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: | 
-            cd ng-festival/ng-festival
+            cd ng-festival/ng-web
             npm install && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
