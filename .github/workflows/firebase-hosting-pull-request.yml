@@ -12,6 +12,8 @@ jobs:
       - run: | 
             cd ng-festival/ng-web
             npm install && npm run build
+      - name: CI Install
+        working-directory: ./ng-web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           repoToken: '${{ secrets.GITHUB_TOKEN }}'
