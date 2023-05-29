@@ -10,7 +10,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: | 
-            cd ng-festival/ng-web
             npm install && npm run build
       - name: CI Install
         working-directory: ./ng-web
