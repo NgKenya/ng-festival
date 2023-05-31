@@ -4,10 +4,14 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
-    extend: {},
+    extend: {
+     
+    },
     colors: {
       'ng-red': '#DD0031',
-      'coming-soon':'#FAFBFD'
+      'faded-red':'#FEF2F2',
+      'coming-soon': '#FAFBFD',
+      'ng-white' : '#FFFFFF'
     }
   },
   plugins: [],
