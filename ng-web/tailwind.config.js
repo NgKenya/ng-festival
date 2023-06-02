@@ -11,7 +11,8 @@ module.exports = {
       'ng-red': '#DD0031',
       'faded-red':'#FEF2F2',
       'coming-soon': '#FAFBFD',
-      'ng-white' : '#FFFFFF'
+      'ng-white': '#FFFFFF',
+      'ng-grey':"#F8FAFC",
     }
   },
   plugins: [],
