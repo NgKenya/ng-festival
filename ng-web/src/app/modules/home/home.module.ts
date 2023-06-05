@@ -5,13 +5,15 @@ import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
 import { SpeakersComponent } from './components/speakers/speakers.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
 
 
 @NgModule({
   declarations: [
     HomeComponent,
     SpeakersComponent,
-    ScheduleComponent
+    ScheduleComponent,
+    ContactUsComponent
   ],
   imports: [
     CommonModule,
