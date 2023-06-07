@@ -1,21 +1,16 @@
 <div class="flex flex-col">
 
     <!-- Community Logos -->
-    <div class="grid md:justify-start justify-center   py-7 px-7">
-        <h2 class="py-4 text-2xl my-4 md:text-left text-center ">Our Community Sponsors</h2>
-        <div class="flex flex-wrap  justify-around   md:justify-between items-center pb-14">
-            <a href="https://ihub.co.ke/" class="hover:cursor-pointer logo m-3 ">
-                <img src="../../../../../assets/Images/logos/ihub-logo.png" alt="" class="md:w-1/2  w-3/4 mx-auto  ">
+    <div class="grid py-7 px-7">
+        <h2 class="py-4 text-3xl my-4 md:text-left text-center font-bold">Our community partners</h2>
+        <div class="flex flex-col md:flex-row items-center pb-14 space-x-0 md:space-x-24 xl:space-x-44">
+          <ng-container  *ngFor="let partner of partners">
+            <a [href]="partner.official_website" class="hover:cursor-pointer logo mb-8 md:mb-0">
+              <img
+                [alt]="partner.alt"
+                [src]="partner.logo" class="mx-auto">
             </a>
-            <a href="https://cloudinary.com/" class="hover:cursor-pointer  m-3">
-                <img src="../../../../../assets/Images/logos/cloudinary-logo.png" alt="" class="w-3/4 md:w-3/4  mx-auto">
-            </a>
-            <a href=""  class="hover:cursor-pointer  m-3">
-                <img src="../../../../../assets/Images/logos/google2.0 1.png" alt="" class="md:w-1/2 w-3/4  mx-auto" >
-            </a>
-            <a href=""  class="hover:cursor-pointer  m-3">
-                <img src="../../../../../assets/Images/logos/Propel Logo Black.png" alt="" class="md:w-3/4 w-3/4 mx-auto">
-            </a>
+          </ng-container>
 
         </div>
 
@@ -26,7 +21,7 @@
             <img src="../../../../../assets/Images/logos/angular-ke-logo 1.png" alt="Angular Kenya Logo"  class="w-3/4 md:w-full mx-auto">
 
         </a>
-        <p class="mx-auto text-center md:order-2 order-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor </p>
+        <p class="mx-auto text-center md:order-2 order-3">Ng New Ideas, Ng Generate Innovation, Fostering Mentorship </p>
         <div class="socials flex justify-center order-1 md:order-3">
             <a class="px-3 py-2 flex items-center  uppercase font-bold text-2xl leading-snug text-white hover:opacity-75" href="twitter.com/angular_kenya">
                 <i class="fa fa-twitter  leading-lg text-white opacity-75"></i>
