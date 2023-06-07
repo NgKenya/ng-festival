@@ -1,120 +1,140 @@
- <main>
-    <section id="welcome">
-        <div class="grid  flex-col   justify-center text-center mt-10">
-            <p> July 1<sup>st</sup>  2023 </p>
+<main>
+  <section id="welcome">
+    <div class="grid  flex-col   justify-center text-center mt-10">
+      <p class="font-bold text-4xl mb-6"> July 1<sup>st</sup> 2023 </p>
+      Embrace the Angular community spirit as we craft compelling stories
+      <h1 class="font-semibold text-3xl md:text-5xl p-5 md:p-4">Embrace the <span class="text-ng-red">Angular </span>
+        community spirit as we craft compelling stories through coding <span class="text-ng-red">signals.</span></h1>
+      <p>Join us at NG Festival Kenya, where we celebrate the vibrant Angular community.</p>
+      <p>Engage, inspire, and amplify your skills in this immersive event designed for Angular developers and product
+        owners.</p>
 
-            Embrace the Angular community spirit as we craft compelling stories
-            <h1 class="font-semibold text-3xl md:text-5xl p-5 md:p-4">Embrace the <span  class="text-ng-red">Angular </span>  community spirit as we craft compelling stories through coding <span  class="text-ng-red">signals.</span></h1>
-            <p>Join us at the Ng Festival, where we celebrate the vibrant Angular community.</p>
-            <p>Engage, inspire, and amplify your skills in this immersive event designed for Angular developers and product owners.</p>
+      <a [routerLink]="['/contact-us']"
+         class="text-ng-white font-semibold  mx-auto mt-5 bg-ng-red px-12 py-3   w-fit  rounded-full whitespace-nowrap b  hover:bg-ng-white hover:border-2 hover:border-ng-red hover:text-ng-red">
+        RSVP Now</a>
 
-            <a [routerLink]="['/contact-us']" class="text-ng-white font-semibold  mx-auto mt-5 bg-ng-red px-12 py-3   w-fit  rounded-full whitespace-nowrap b  hover:bg-ng-white hover:border-2 hover:border-ng-red hover:text-ng-red"> RSVP Now</a>
+    </div>
 
-            </div>
+    <!-- Community Images -->
+    <div
+      class="grid  h-auto lg:grid-cols-3  grid-cols-1 grid-rows-3 lg:grid-rows-1  flex-wrap md:items-end  items-center md:py-10  py-5 md:justify-between  justify-stretch  ">
 
-            <!-- Community Images -->
-            <div class="grid  h-auto lg:grid-cols-3  grid-cols-1 grid-rows-3 lg:grid-rows-1  flex-wrap md:items-end  items-center md:py-10  py-5 md:justify-between  justify-stretch  ">
+      <div class="event-photo h-auto w-full  mx-auto">
+        <div class="image-holder w-5/6 lg:w-4/6 mt-3  flex   justify-end items-end mx-auto">
+          <div class="image-text  mt-96 text-right bg-ng-red w-full text-ng-white p-3">
+            <p class=" text-2xl">Meet and Greet</p>
+            <p class="text-sm font-normal">June 23<sup>rd</sup> , 2022</p>
+          </div>
+        </div>
+      </div>
 
-                <div class="event-photo h-auto w-full  mx-auto">
+<!--      <div class="event-photo">-->
+<!--        <div class="image-holder-2 w-5/6  md:w-4/6 mt-3  flex  mx-auto  justify-end items-end">-->
+<!--          <div class="image-text  mt-96 text-right bg-ng-red w-full text-ng-white p-3">-->
+<!--            <p class=" text-2xl">Angular Workshop </p>-->
+<!--            <p class="text-sm font-normal">Nov 26<sup>nd</sup> , 2022</p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
 
-                   <div class="image-holder w-5/6 lg:w-4/6 mt-3  flex   justify-end items-end mx-auto">
-                       <div class="image-text  mt-96 text-right bg-ng-red w-full md:w-4/5 text-ng-white p-3">
-                       <p  class=" text-2xl">Meet and Greet</p>
-                       <p class="text-sm font-normal">June  23rd , 2022</p>
-                       </div>
+      <div class="event-photo h-auto w-full  mx-auto">
+        <div class="image-holder-3 w-5/6  md:w-4/6 mt-3  flex  mx-auto  justify-end items-end">
+          <div class="image-text  mt-96 text-right bg-ng-red w-full text-ng-white p-3">
+            <p class=" text-2xl">Angular Workshop </p>
+            <p class="text-sm font-normal">April 1<sup>st</sup> , 2023</p>
+          </div>
+        </div>
+      </div>
 
-                   </div>
-                </div>
-                <div class="event-photo ">
+      <div class="event-photo h-auto w-full  mx-auto">
+        <div class="image-holder-4 w-5/6  md:w-4/6 mt-3  flex  mx-auto  justify-end items-end">
+          <div class="image-text  mt-96 text-right bg-ng-red w-full text-ng-white p-3">
+            <p class=" text-2xl">Meet & Greet</p>
+            <p class="text-sm font-normal">April 22<sup>nd</sup> , 2023</p>
+          </div>
+        </div>
+      </div>
 
-                   <div class="image-holder-2  w-5/6  md:w-4/6 mt-3  flex  mx-auto  justify-end items-end">
-                       <div class="image-text  mt-48 text-right bg-ng-red w-full md:w-4/5 text-ng-white p-3">
-                       <p  class=" text-2xl">Angular Workshop</p>
-                       <p class="text-sm font-normal">July 1<sup>st </sup>, 2023</p>
-                       </div>
-
-                   </div>
-                </div>
-
-                <div class="event-photo">
-
-                   <div class="image-holder-3 w-5/6  md:w-4/6 mt-3  flex  mx-auto  justify-end items-end">
-                       <div class="image-text  mt-96 text-right bg-ng-red w-full md:w-4/5 text-ng-white p-3">
-                       <p  class=" text-2xl">Angular Workshop </p>
-                       <p class="text-sm font-normal">April 22<sup>nd</sup> , 2023</p>
-                       </div>
-
-                   </div>
-                </div>
-
-               </div>
-    </section>
-
-
-    <section id="about" class="py-28  bg-ng-grey">
-
-
-           <!-- FEstival -->
-           <div class="grid grid-cols-1  md:grid-cols-2  grid-rows-1">
-               <div class="grid justify-center">
-
-                   <img src="../../../../../assets/Images/logos/Horizontal-logo.png" alt=""  class=" my-auto md:mx-0 mx-auto">
-               </div>
-
-               <div class="grid grid-rows-3">
-                   <div class="todo flex justify-between md:p-5 p-2 ">
-                       <div class="todo-icon my-auto">
-                           <img src="../../../../../assets/Images/illustrations/group-team-network-connect.svg"  >
-                       </div>
-                       <div class="todo-description md:p-4  p-2">
-                           <p  class="font-semibold  text-xl text-ng-red">Networking</p>
-                           <p>Connect and forge valuable relationships with fellow Angular enthusiasts and industry experts during the Ng Festival. Expand your professional network, share insights, and establish meaningful connections that can open doors to new opportunities and collaborations.</p>
-                       </div>
-                   </div>
-                   <div class="todo flex  justify-between  md:p-5 p-2">
-                       <div class="todo-icon my-auto">
-                           <img src="../../../../../assets/Images/illustrations/microphone-sing-voice-studio-record-svgrepo-com 1.svg" alt="">
-                       </div>
-                       <div class="todo-description p-4 ">
-                           <p  class="font-semibold  text-xl text-ng-red">Guest Speakers</p>
-                           <p>Be inspired by renowned industry leaders and expert speakers at the Ng Festival. Gain valuable insights, learn from their experiences, and stay up-to-date with the latest trends and innovations in the Angular ecosystem. Get ready to be motivated and empowered by their knowledge and expertise. </p>
-                       </div>
-                   </div>
-                   <div class="todo flex  justify-between  md:p-5 p-2">
-                       <div class="todo-icon my-auto">
-                           <img src="../../../../../assets/Images/illustrations/confetti-svgrepo-com 1.svg" alt="">
-                       </div>
-                       <div class="todo-description p-4 ">
-                           <p  class="font-semibold  text-xl text-ng-red">Have Fun</p>
-                           <p>Beyond the enriching learning experiences, the Ng Festival also offers a delightful atmosphere of fun and camaraderie. Enjoy engaging activities, interactive sessions, and exciting surprises throughout the event. Take a break from the technical sessions, unwind, and create memorable moments with fellow attendees. Get ready for a joyful celebration of Angular and a truly enjoyable festival experience.</p>
-                       </div>
-                   </div>
-
-               </div>
-           </div>
-
-           <!-- our aim -->
-           <div class="grid grid-cols-1 grid-rows-1 my-10">
-            <h2  class="font-semibold  md:text-3xl text-2xl  text-center md:text-left mb-3">Bringing together vibrant developer's to exchange the latest insights and trends.</h2>
-                <p  class="text-center md:text-left">
-                    Through interactive sessions, engaging workshops, and thought-provoking discussions, we empower attendees to expand their knowledge and skills. Join us at the Ng Festival and be part of a dynamic community that embraces innovation, fosters meaningful connections, and drives the future of technology in Kenya.
-                </p>
-           </div>
-    </section>
+    </div>
+  </section>
 
 
-    <section id="apply "  class="bg-ng-red ">
-         <div class="flex  flex-col md:flex-row justify-between px-8  py-8 gap-3">
-            <h1  class="text-ng-white  font-semibold text-3xl my-auto text-center mb-3">
-                Call for Speakers is now open
-            </h1>
+  <section id="about" class="py-28  bg-ng-grey">
 
 
-                <a [routerLink]="['/contact-us']" class="text-ng-red bg-ng-white px-4 py-4 w-auto  rounded-full whitespace-nowrap  hover:text-ng-white hover:bg-ng-red hover:border-ng-white hover:border-2  text-center my-auto ">Apply Now</a>
+    <!-- FEstival -->
+    <div class="grid grid-cols-1  md:grid-cols-2  grid-rows-1">
+      <div class="grid justify-center">
 
-         </div>
-    </section>
- </main>
+        <img src="assets/Images/logos/Horizontal-logo.png" alt="" class=" my-auto md:mx-0 mx-auto">
+      </div>
+
+      <div class="grid grid-rows-3">
+        <div class="todo flex justify-between md:p-5 p-2 ">
+          <div class="todo-icon my-auto">
+            <img src="assets/Images/illustrations/group-team-network-connect.svg">
+          </div>
+          <div class="todo-description md:p-4  p-2">
+            <p class="font-semibold  text-xl text-ng-red">Networking</p>
+            <p>Connect and forge valuable relationships with fellow Angular enthusiasts and industry experts during the
+              Ng Festival. Expand your professional network, share insights, and establish meaningful connections that
+              can open doors to new opportunities and collaborations.</p>
+          </div>
+        </div>
+        <div class="todo flex  justify-between  md:p-5 p-2">
+          <div class="todo-icon my-auto">
+            <img src="assets/Images/illustrations/microphone-sing-voice-studio-record-svgrepo-com 1.svg" alt="">
+          </div>
+          <div class="todo-description p-4 ">
+            <p class="font-semibold  text-xl text-ng-red">Guest Speakers</p>
+            <p>Be inspired by renowned industry leaders and expert speakers at the Ng Festival. Gain valuable insights,
+              learn from their experiences, and stay up-to-date with the latest trends and innovations in the Angular
+              ecosystem. Get ready to be motivated and empowered by their knowledge and expertise. </p>
+          </div>
+        </div>
+        <div class="todo flex  justify-between  md:p-5 p-2">
+          <div class="todo-icon my-auto">
+            <img src="../../../../../assets/Images/illustrations/confetti-svgrepo-com 1.svg" alt="">
+          </div>
+          <div class="todo-description p-4 ">
+            <p class="font-semibold  text-xl text-ng-red">Have Fun</p>
+            <p>Beyond the enriching learning experiences, the Ng Festival also offers a delightful atmosphere of fun and
+              camaraderie. Enjoy engaging activities, interactive sessions, and exciting surprises throughout the event.
+              Take a break from the technical sessions, unwind, and create memorable moments with fellow attendees. Get
+              ready for a joyful celebration of Angular and a truly enjoyable festival experience.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- our aim -->
+    <div class="grid grid-cols-1 grid-rows-1 my-10">
+      <h2 class="font-semibold  md:text-3xl text-2xl  text-center md:text-left mb-3">Bringing together vibrant
+        developer's to exchange the latest insights and trends.</h2>
+      <p class="text-center md:text-left">
+        Through interactive sessions, engaging workshops, and thought-provoking discussions, we empower attendees to
+        expand their knowledge and skills. Join us at the Ng Festival and be part of a dynamic community that embraces
+        innovation, fosters meaningful connections, and drives the future of technology in Kenya.
+      </p>
+    </div>
+  </section>
+
+
+  <section id="apply " class="bg-ng-red ">
+    <div class="flex  flex-col md:flex-row justify-between px-8  py-8 gap-3">
+      <h1 class="text-ng-white  font-semibold text-3xl my-auto text-center mb-3">
+        Call for Speakers is now open
+      </h1>
+
+
+      <a [routerLink]="['/contact-us']"
+         class="text-ng-red bg-ng-white px-4 py-4 w-auto  rounded-full whitespace-nowrap  hover:text-ng-white hover:bg-ng-red hover:border-ng-white hover:border-2  text-center my-auto ">Apply
+        Now</a>
+
+    </div>
+  </section>
+</main>
 <!-- Images -->
 
 

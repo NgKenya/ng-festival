@@ -19,12 +19,12 @@ export class FooterComponent {
       alt: "Cloudinary logo"
     },
     {
-      official_website: "www.google.com",
+      official_website: "https://google.com/",
       logo: "assets/Images/logos/google2.0 1.png",
       alt: "Google logo"
     },
     {
-      official_website: "www.propel.com",
+      official_website: "https://propel.community/",
       logo: "assets/Images/logos/Propel Logo Black.png",
       alt: "Propel logo"
     },
