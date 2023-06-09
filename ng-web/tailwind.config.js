@@ -5,7 +5,7 @@ module.exports = {
   ],
   theme: {
     extend: {
-     
+
     },
     colors: {
       'ng-red': '#DD0031',
@@ -13,9 +13,10 @@ module.exports = {
       'coming-soon': '#FAFBFD',
       'ng-white': '#FFFFFF',
       'ng-grey':"#F8FAFC",
+      'ng-dark-blue':"#03071E"
     }
   },
   plugins: [],
-  
+
 }
 
