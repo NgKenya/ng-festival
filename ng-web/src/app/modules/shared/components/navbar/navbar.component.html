@@ -1,6 +1,6 @@
 <nav class="relative flex flex-wrap items-center justify-between py-3 mb-3">
 
-    <div class="container px-1 md:px-4 mx-auto flex flex-wrap justify-between ">
+    <div class="container px-1 md:px-4 mx-auto flex flex-wrap lg:flex-nowrap justify-between ">
       <!-- Links -->
       <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full md:w-auto lg:flex lg:flex-grow items-center order-2 lg:order-1">
         <ul class="w-full lg:w-auto flex flex-col lg:flex-row list-none ">
@@ -22,9 +22,9 @@
         </ul>
       </div>
      <!-- Logo -->
-      <div class="w-full relative flex justify-between lg:w-auto  px-4 lg:static lg:block lg:justify-center order-1 lg:order-2 mx-auto">
-        <a class="text-sm font-bold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap uppercase text-white" [routerLink]="['/home']"  >
-          <img src="assets/Images/logos/ng_fest_logo_small.svg" alt="Angular Kenya Logo">
+      <div class="flex justify-between w-full relative lg:w-auto  px-4 lg:static lg:block lg:justify-center order-1 lg:order-2 mx-auto">
+        <a class="flex items-center justify-start lg:justify-center text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white" [routerLink]="['/home']"  >
+          <img class="w-1/4" src="assets/Images/logos/ng_fest_red_logo.svg" alt="Angular Kenya Logo">
         </a>
         <button class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
           <i class="fa fa-bars text-ng-red"></i>
