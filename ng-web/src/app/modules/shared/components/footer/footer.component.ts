@@ -9,16 +9,6 @@ export class FooterComponent {
 
   partners =  [
     {
-      official_website: "https://ihub.co.ke/",
-      logo: "assets/Images/logos/ihub-logo.png",
-      alt: "iHub Logo"
-    },
-    {
-      official_website: "https://cloudinary.com/",
-      logo: "assets/Images/logos/cloudinary-logo.png",
-      alt: "Cloudinary logo"
-    },
-    {
       official_website: "https://google.com/",
       logo: "assets/Images/logos/google2.0 1.png",
       alt: "Google logo"
@@ -32,6 +22,11 @@ export class FooterComponent {
       official_website: "https://www.jetbrains.com/",
       logo: "assets/Images/logos/jb_beam.svg",
       alt: "Jetbrains logo"
+    },
+    {
+      official_website: "https://www.linkedin.com/company/technierschool/",
+      logo: "assets/Images/logos/technier_logo.png",
+      alt: "Technier School"
     }
   ]
 
