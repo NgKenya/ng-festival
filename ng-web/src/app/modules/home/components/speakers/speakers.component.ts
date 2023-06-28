@@ -73,6 +73,12 @@ export class SpeakersComponent {
       imageUrl: 'assets/Images/speakers/brian.JPG',
       talkTitle: 'Http Interceptors And How to Use Them In Angular',
       company: 'ICEA Lion Group'
+    },
+    {
+      name: 'Edwin Maye',
+      imageUrl: 'assets/Images/speakers/maye.jpg',
+      talkTitle: 'Panelist',
+      company: 'Taxually/Kyosk'
     }
   ]
 }
