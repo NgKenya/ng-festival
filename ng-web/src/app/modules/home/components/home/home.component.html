@@ -1,6 +1,6 @@
 <main class="bg-[#03071E]">
   <section id="welcome" style="padding-bottom: 0">
-    <div class="grid  flex-col   justify-center text-center mt-10 bg-[#03071E]">
+    <div class="grid  flex-col   justify-center text-center bg-[#03071E]">
       <p class="font-bold text-4xl mb-6 text-ng-white"> July 1<sup>st</sup> 2023 </p>
       <p class="font-bold text-4xl mb-6 text-ng-white"> Strathmore University, Nairobi, Kenya </p>
       <p class="font-bold text-4xl mb-6 text-ng-white"> 8:00AM EAT </p>
@@ -11,7 +11,7 @@
         developers and product
         owners.</p>
 
-      <a
+      <a *ngIf="isVisible"
         href="https://bit.ly/ngfest23"
         target="_blank"
         rel="noopener"
@@ -20,7 +20,7 @@
 
     </div>
 
-    <div class="flex items-center justify-center">
+    <div class="flex items-center justify-center mt-12">
       <img src="assets/Images/illustrations/ke_landscape.svg">
     </div>
 
@@ -96,16 +96,15 @@
   <section id="apply " class="bg-ng-red ">
     <div class="flex  flex-col md:flex-row justify-between px-8  py-8 gap-3">
       <h1 class="text-ng-white  font-semibold text-3xl my-auto text-center mb-3">
-        Call for Speakers is now open
+        Check out our speaker lineup
       </h1>
 
 
       <a
-        href="https://bit.ly/ngfest23speaker"
-        target="_blank"
-        rel="noopener"
-        class="text-ng-red bg-ng-white px-4 py-4 w-auto  rounded-full whitespace-nowrap  hover:text-ng-white hover:bg-ng-red hover:border-ng-white hover:border-2  text-center my-auto ">Apply
-        Now</a>
+        href="/speakers"
+        class="text-ng-red bg-ng-white px-4 py-4 w-auto  rounded-full whitespace-nowrap  hover:text-ng-white hover:bg-ng-red hover:border-ng-white hover:border-2  text-center my-auto ">
+        Speaker Lineup
+      </a>
 
     </div>
   </section>
