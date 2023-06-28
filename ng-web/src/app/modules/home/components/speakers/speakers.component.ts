@@ -65,7 +65,7 @@ export class SpeakersComponent {
     {
       name: 'John Kamau',
       imageUrl: 'assets/Images/speakers/john_kamau.jpg',
-      talkTitle: 'Panelist',
+      talkTitle: 'Angular in the enterprise: Exploring how Angular is used in enterprise applications - scalability, security, and maintainability.',
       company: 'Full stack Developer'
     },
     {
@@ -77,7 +77,7 @@ export class SpeakersComponent {
     {
       name: 'Edwin Maye',
       imageUrl: 'assets/Images/speakers/maye.jpg',
-      talkTitle: 'Panelist',
+      talkTitle: 'Angular in the enterprise: Exploring how Angular is used in enterprise applications - scalability, security, and maintainability.',
       company: 'Taxually/Kyosk'
     }
   ]
