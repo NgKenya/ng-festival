@@ -11,7 +11,7 @@ export class SpeakersComponent {
     {
       name: 'Allela Eunice',
       imageUrl: 'assets/Images/speakers/allela.jpg',
-      talkTitle: 'Google Keynote',
+      talkTitle: 'Keynote',
       company: 'Google'
     },
     {
