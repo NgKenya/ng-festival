@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpeakerCardComponent } from './components/speaker-card/speaker-card.component';
+import { CounterComponent } from './components/counter/counter.component';
+import { LucideAngularComponent, LucideAngularModule, LucideComponent, MoveRight } from 'lucide-angular';
+
 
 
 
@@ -11,16 +14,21 @@ import { SpeakerCardComponent } from './components/speaker-card/speaker-card.com
   declarations: [
     NavbarComponent,
     FooterComponent,
-    SpeakerCardComponent
+    SpeakerCardComponent,
+    CounterComponent,
+
+  
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    LucideAngularModule.pick({MoveRight})
   ],
     exports: [
         NavbarComponent,
         FooterComponent,
-        SpeakerCardComponent
+        SpeakerCardComponent,
+        CounterComponent
     ]
 })
 export class SharedModule { }

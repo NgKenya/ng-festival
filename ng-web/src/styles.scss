@@ -2,19 +2,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 $fa-font-path: "~font-awesome/fonts";
 @import "./node_modules/font-awesome/scss/font-awesome.scss";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @layer base {
-    html {
-        font-family: 'Poppins', sans-serif;
-    }
+  html {
+    font-family: "Poppins", sans-serif;
   }
+}
 
+body {
+  background: #03071e;
+  color: white;
+}
+section {
+  padding: 2rem 2rem;
+}
 
-  section{
-    padding: 2rem  2rem;
+.counter-bg{
+  background-color: #03071E;
+//  background-image: url("./assets/Images/illustrations/circles-svg");
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%2303071E' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23040b2d' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23060d38' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23060f42' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%2307114a' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23081351' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
   }
+  
+
+ 

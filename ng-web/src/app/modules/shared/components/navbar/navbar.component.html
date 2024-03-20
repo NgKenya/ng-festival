@@ -1,35 +1,37 @@
 <nav class="relative flex flex-wrap items-center justify-between py-3 mb-3">
 
-    <div class="container px-1 md:px-4 mx-auto flex flex-wrap lg:flex-nowrap justify-between ">
+    <div class="container px-1 md:px-4 mx-auto flex flex-wrap lg:flex-nowrap justify-center">
+      
+       <!-- Logo -->
+       <div class="flex justify-start w-fit relative  ">
+        <a class="flex items-center justify-start text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white" [routerLink]="['/home']"  >
+          <img class="w-1/6" src="/assets/Images/logos/ngKenya/Red_White.svg" alt="Ng Festival Logo">
+        </a>
+        <button class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent  lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
+          <i class="fa fa-bars text-ng-red"></i>
+        </button>
+      </div>
       <!-- Links -->
-      <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full md:w-auto lg:flex lg:flex-grow items-center order-2 lg:order-1">
-        <ul class="w-full lg:w-auto flex flex-col lg:flex-row list-none ">
+      <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full md:w-auto lg:flex lg:flex-grow items-start ">
+        <ul class="w-full lg:w-auto flex flex-col lg:flex-row list-none justify-center ">
           <li class="nav-item   transform transition duration-500 ease-in-out focus:p-5">
-            <a class="text-ng-white px-3 py-2 flex items-center text-lg  font-medium leading-snug text-white w-full lg:w-auto hover:opacity-75 hover:text-ng-grey    md:my-0 " [routerLink]="['/home']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            <a class="text-ng-white px-3 py-2 flex items-center  text-base  font-medium leading-snug text-white w-full lg:w-auto hover:opacity-75 hover:text-ng-grey    md:my-0 " [routerLink]="['/home']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
               Home
             </a>
           </li>
           <li class="nav-item">
-            <a class="text-ng-white px-3 py-2 flex items-center text-lg  font-medium leading-snug text-white hover:opacity-75 hover:text-ng-white"  [routerLink]="['/speakers']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            <a class="text-ng-white px-3 py-2 flex items-center  text-base font-medium leading-snug text-white hover:opacity-75 hover:text-ng-white"  [routerLink]="['/speakers']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
              Speakers
             </a>
           </li>
           <li *ngIf="isVisible" class="nav-item">
-            <a class="text-ng-white px-3 py-2 flex items-center text-lg  font-medium leading-snug text-white w-full lg:w-auto hover:opacity-75 hover:text-ng-white    md:my-0 " [routerLink]="['/schedule']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            <a class="text-ng-white px-3 py-2 flex items-center  font-medium leading-snug text-white w-full lg:w-auto hover:opacity-75 hover:text-ng-white    md:my-0 " [routerLink]="['/schedule']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
               Schedule
             </a>
           </li>
         </ul>
       </div>
-     <!-- Logo -->
-      <div class="flex justify-between w-full relative lg:w-auto  px-4 lg:static lg:block lg:justify-center order-1 lg:order-2 mx-auto">
-        <a class="flex items-center justify-start lg:justify-center text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white" [routerLink]="['/home']"  >
-          <img class="w-1/2 md:w-1/4" src="assets/Images/logos/ng_fest_red_logo.svg" alt="Angular Kenya Logo">
-        </a>
-        <button class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent block lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
-          <i class="fa fa-bars text-ng-red"></i>
-        </button>
-      </div>
+    
        <!-- Button -->
 
       <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class=" w-full lg:w-auto lg:flex lg:flex-grow items-center order-3  md:mt-0 mt-10 justify-start md:justify-end  border-slate">
