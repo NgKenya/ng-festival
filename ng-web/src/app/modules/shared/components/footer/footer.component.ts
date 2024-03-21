@@ -23,11 +23,11 @@ export class FooterComponent {
       logo: "assets/Images/logos/jb_beam.svg",
       alt: "Jetbrains logo"
     },
-    {
-      official_website: "https://www.linkedin.com/company/technierschool/",
-      logo: "assets/Images/logos/technier_logo.png",
-      alt: "Technier School"
-    }
+    // {
+    //   official_website: "https://www.linkedin.com/company/technierschool/",
+    //   logo: "assets/Images/logos/technier_logo.png",
+    //   alt: "Technier School"
+    // }
   ]
 
   get provideFullYear(): number {

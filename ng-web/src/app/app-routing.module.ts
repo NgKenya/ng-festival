@@ -1,12 +1,18 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CounterComponent } from './modules/shared/components/counter/counter.component';
 
 const routes: Routes = [
+  {
+    path: "",
+  component:CounterComponent
+  },
   
 {
-  path: "",
+  path: "home",
   loadChildren: ()=>import( './modules/home/home.module').then(m=>m.HomeModule)
 },
+  
 
 ];
 
