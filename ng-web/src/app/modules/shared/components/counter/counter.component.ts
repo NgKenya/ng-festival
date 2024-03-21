@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, Subscription, interval, map, takeUntil } from 'rxjs';
+import { Observable, interval, takeUntil } from 'rxjs';
 
 interface IDate {
   month: number;
@@ -14,7 +14,7 @@ interface IDate {
   styleUrl: './counter.component.scss',
 })
 export class CounterComponent implements OnInit {
-  officialDate: Date = new Date('July 6 2024');
+  officialDate: Date = new Date('May 6 2024');
   daysLeft: number = 0;
   daysLeftDisplay: IDate = {
     month: 0,
@@ -37,7 +37,6 @@ export class CounterComponent implements OnInit {
     const diffinDays = this.officialDate.getTime() - now.getTime();
     this.daysLeft = Math.ceil(diffinDays);
   }
-
   startTimer() {
     interval(1000)
       .pipe(
@@ -54,7 +53,7 @@ export class CounterComponent implements OnInit {
       )
       .subscribe(() => {
         this.getDateDifference();
-        const totalSeconds = this.daysLeft;
+        // const totalSeconds = this.daysLeft;
         this.daysLeftDisplay = this.calculateRemainingTime(this.daysLeft);
       });
   }
@@ -66,23 +65,28 @@ export class CounterComponent implements OnInit {
     minute: number;
     second: number;
   } {
-    // Conversion rates
+    
     const millisecondsPerMonth = 1000 * 60 * 60 * 24 * 30;
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     const millisecondsPerHour = 1000 * 60 * 60;
     const millisecondsPerMinute = 1000 * 60;
 
+    // picked month
     const months = Math.floor(totalMilliseconds / millisecondsPerMonth);
-
     let remainingMilliseconds = totalMilliseconds % millisecondsPerMonth;
+  
 
-    const days = Math.floor(totalMilliseconds / millisecondsPerDay);
-remainingMilliseconds = totalMilliseconds % millisecondsPerDay;
+
+    const days = Math.floor(remainingMilliseconds / millisecondsPerDay);
+    remainingMilliseconds %= millisecondsPerDay;
+
 
     const hours = Math.floor(remainingMilliseconds / millisecondsPerHour);
     remainingMilliseconds %= millisecondsPerHour;
 
     const minutes = Math.floor(remainingMilliseconds / millisecondsPerMinute);
+    remainingMilliseconds %= millisecondsPerMinute;
+
     const seconds = Math.floor(remainingMilliseconds / 1000);
 
     return {
