@@ -14,7 +14,7 @@ interface IDate {
   styleUrl: './counter.component.scss',
 })
 export class CounterComponent implements OnInit {
-  officialDate: Date = new Date('May 6 2024');
+  officialDate: Date = new Date('July 6 2024');
   daysLeft: number = 0;
   daysLeftDisplay: IDate = {
     month: 0,
