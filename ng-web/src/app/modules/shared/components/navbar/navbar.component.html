@@ -1,49 +1,58 @@
 <nav class="relative flex flex-wrap items-center justify-between py-3 mb-3">
 
-    <div class="container px-1 md:px-4 mx-auto flex flex-wrap lg:flex-nowrap justify-start mt-4">
-      
-       <!-- Logo -->
-       <div class="flex justify-start w-fit relative  ">
-        <a class="flex items-center justify-start text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white" [routerLink]="['/']"  >
-          <img class="w-1/6" src="/assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Ng Festival Logo">
-        </a>
-        <button class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent  lg:hidden outline-none focus:outline-none" type="button" (click)="toggleNavbar()">
-          <i class="fa fa-bars text-ng-red"></i>
-        </button>
-      </div>
-      <!-- Links -->
-      <!-- <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full md:w-auto lg:flex lg:flex-grow items-start ">
-        <ul class="w-full lg:w-auto flex flex-col lg:flex-row list-none justify-center ">
-          <li class="nav-item   transform transition duration-500 ease-in-out focus:p-5">
-            <a class="text-ng-white px-3 py-2 flex items-center  text-base  font-medium leading-snug text-white w-full lg:w-auto hover:opacity-75 hover:text-ng-grey    md:my-0 " [routerLink]="['/home']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="text-ng-white px-3 py-2 flex items-center  text-base font-medium leading-snug text-white hover:opacity-75 hover:text-ng-white"  [routerLink]="['/speakers']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-             Speakers
-            </a>
-          </li>
-          <li *ngIf="isVisible" class="nav-item">
-            <a class="text-ng-white px-3 py-2 flex items-center  font-medium leading-snug text-white w-full lg:w-auto hover:opacity-75 hover:text-ng-white    md:my-0 " [routerLink]="['/schedule']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-              Schedule
-            </a>
-          </li>
-        </ul>
-      </div> -->
-    
-       <!-- Button -->
+  <div class="container px-1 md:px-4 mx-auto flex flex-wrap lg:flex-nowrap justify-start mt-4">
 
-      <!-- <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class=" w-full lg:w-auto lg:flex lg:flex-grow items-center order-3  md:mt-0 mt-10 justify-start md:justify-end  border-slate">
-        <a [routerLink]="['/contact-us']" class="text-ng-white  text-center bg-ng-red px-4 py-3  w-full md:w-auto rounded-full whitespace-nowrap b  hover:bg-ng-white hover:border-2 hover:border-ng-red hover:text-ng-red" (click)="showMenu=!showMenu"> Contact us</a>
-      </div> -->
+    <!-- Logo -->
+    <div class="flex justify-start w-fit relative  ">
+      <a class="flex items-center justify-start text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white"
+        [routerLink]="['/']">
+        <img class="w-1/6" src="/assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Ng Festival Logo">
+      </a>
+      <button
+        class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent  lg:hidden outline-none focus:outline-none"
+        type="button" (click)="toggleNavbar()">
+        <i class="fa fa-bars text-ng-red"></i>
+      </button>
     </div>
-  </nav>
+    <!-- Links -->
+    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full  lg:flex lg:flex-grow items-start ">
+      <ul class="w-full flex flex-col lg:flex-row list-none justify-start ">
+        <li class="nav-item   transform transition duration-500 ease-in-out">
+          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
+            [routerLink]="['/home']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            Home
+          </a>
+        </li>
+        <li class="nav-item   transform transition duration-500 ease-in-out">
+          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
+            [routerLink]="['/speakers']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            Speakers
+          </a>
+        </li>
+        <li class="nav-item   transform transition duration-500 ease-in-out">
+          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
+            [routerLink]="['/schedule']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            Agenda
+          </a>
+        </li>
+        <li class="nav-item   transform transition duration-500 ease-in-out">
+          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
+            [routerLink]="['/contact-us']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
+            Contact
+          </a>
+        </li>
 
 
+      </ul>
+    </div>
 
+    <!-- Button -->
 
-
-
-
-
+    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}"
+      class=" w-full lg:w-auto lg:flex lg:flex-grow items-center order-3  md:mt-0 mt-10 justify-start md:justify-end  border-slate">
+      <a [routerLink]="['/contact-us']"
+        class="text-ng-white  text-center bg-ng-red px-4 py-3  w-full md:w-auto rounded-full whitespace-nowrap b  hover:bg-ng-white hover:border-2 hover:border-ng-red hover:text-ng-red"
+        (click)="showMenu=!showMenu">Buy Tickets</a>
+    </div>
+  </div>
+</nav>
