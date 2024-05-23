@@ -6,7 +6,7 @@
   <section id="sponsors py-4">
     <div class="bg-ng-dark-blue">
       <div class="grid grid-cols-6 ">
-        <div class="logo border-l-[0.5px] border-faded-red py-4">
+        <div class="logo border-r-[0.5px] border-faded-red py-4">
           <img class=" w-7/12 grayscale-[50%] saturate-50 mx-auto" src="assets/Images/logos/sponsors/google.png"
             alt="Google Logo">
         </div>
@@ -66,6 +66,8 @@
         }
       </div>
       <div class="grid grid-col-1 gap-8 py-4">
+        <h2 class="text-3xl">What To Expect</h2>
+
         @for (item of whatToExpect; track $index) {
         <app-about-bullet [description]="item"></app-about-bullet>
         }
@@ -76,28 +78,103 @@
   </section>
 
 
-  <section id="how-to-join">
-
+  <section id="how-to-join" class=" bg-ng-white py-10 px-16 text-ng-dark-blue">
     <div id="section-header">
-      <div class=" grid grid-cols-1 md:grid-cols-3">
-        <h2>Join Us</h2>
-        <p></p>
+      <div class="flex justify-between">
+        <h2 class="text-3xl">Join Us</h2>
+        <p class="w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat qui
+          laboriosam soluta modi</p>
+        <button
+          class="text-white text-left flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          Apply
+          <span class=" ml-4 flex justify-center rounded-full bg-green-300 p-1">
+            <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+          </span>
+
+        </button>
+      </div>
+    </div>
+    <div class="grid grid-cols-6 md:grid-cols-12   gap-6 items-center  w-5/6  mx-auto ">
+      <div class="md:col-span-3 col-span-1  relative hover:h-3/5 transition duration-500 ease-in-out">
+        <!-- Image -->
+        <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
+          src="../../../../../assets/Images/speakers/allela.jpg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
+        </div>
+
+        <!-- Content -->
+        <div class="absolute top-0 w-full h-full p-6 flex flex-col justify-between">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Content Creation </span>
+          <button
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <lucide-icon class="text-white w-6 h-6 " name="move-right"></lucide-icon>
+          </button>
+        </div>
+
+
+
+
+      </div>
+      <div class=" md:col-span-6 col-span-4  h-3/5  relative hover:h-4/6">
+        <!-- Image -->
+        <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
+          src="../../../../../assets/Images/speakers/allela.jpg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10"></div>
+
+        <!-- Content -->
+        <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Content Creation </span>
+          <button
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+
+
+          </button>
+        </div>
+
+
+
+
+      </div>
+      <div class="md:col-span-3 col-span-1   relative hover:h-3/5">
+        <!-- Image -->
+        <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
+          src="../../../../../assets/Images/speakers/allela.jpg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10"></div>
+
+        <!-- Content -->
+        <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Content Creation </span>
+          <button
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+
+
+          </button>
+        </div>
+
+
+
+
       </div>
     </div>
   </section>
 
+
+
   <section id="apply " class="bg-ng-red ">
-    <div class="flex  flex-col md:flex-row justify-between px-8  py-8 gap-3">
-      <h1 class="text-ng-white  font-semibold text-3xl my-auto text-center mb-3">
-        Check out our speaker lineup
-      </h1>
+    <div class="flex justify-between px-10 py-16">
+      <h2 class="text-3xl">Submit A Talk</h2>
+      <p class="w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat qui
+        laboriosam soluta modi</p>
+      <button
+        class="text-white text-left flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+        Apply
+        <span class=" ml-4 flex justify-center rounded-full bg-ng-dark-blue p-1">
+          <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+        </span>
 
-
-      <a href="/speakers"
-        class="text-ng-red bg-ng-white px-4 py-4 w-auto  rounded-full whitespace-nowrap  hover:text-ng-white hover:bg-ng-red hover:border-ng-white hover:border-2  text-center my-auto ">
-        Speaker Lineup
-      </a>
-
+      </button>
     </div>
   </section>
 </main>

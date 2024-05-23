@@ -7,7 +7,7 @@ import { SpeakersComponent } from './components/speakers/speakers.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { SharedModule } from '../shared/shared.module';
-import { LucideAngularModule, Play } from 'lucide-angular';
+import { LucideAngularModule, Play, MoveRight } from 'lucide-angular';
 
 @NgModule({
   declarations: [
@@ -20,7 +20,7 @@ import { LucideAngularModule, Play } from 'lucide-angular';
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    LucideAngularModule.pick({ Play }),
+    LucideAngularModule.pick({ Play, MoveRight }),
   ],
 })
 export class HomeModule {}

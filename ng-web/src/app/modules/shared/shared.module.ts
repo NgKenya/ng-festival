@@ -9,7 +9,8 @@ import {
   Dot,
   LucideAngularComponent,
   LucideAngularModule,
-  LucideComponent,
+  X,
+  Linkedin,
   MoveRight,
 } from 'lucide-angular';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
@@ -27,7 +28,7 @@ import { AboutBulletComponent } from './components/about-bullet/about-bullet.com
   imports: [
     CommonModule,
     RouterModule,
-    LucideAngularModule.pick({ MoveRight, Dot }),
+    LucideAngularModule.pick({ MoveRight, Dot, Linkedin, X }),
   ],
   exports: [
     NavbarComponent,
