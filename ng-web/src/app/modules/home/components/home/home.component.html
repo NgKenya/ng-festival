@@ -4,8 +4,8 @@
 
 
   <section id="sponsors py-4">
-    <div class="bg-ng-dark-blue">
-      <div class="grid grid-cols-6 ">
+    <div class="bg-ng-dark-blue hidden md:inline-block">
+      <div class="grid   md:grid-cols-6 ">
         <div class="logo border-r-[0.5px] border-faded-red py-4">
           <img class=" w-7/12 grayscale-[50%] saturate-50 mx-auto" src="assets/Images/logos/sponsors/google.png"
             alt="Google Logo">
@@ -36,12 +36,12 @@
     </div>
   </section>
 
-  <section id="about" class="py-10 px-16 bg-coming-soon text-ng-dark-blue">
-    <div class="grid grid-cols-2" id="detailed">
+  <section id="about" class="px-8 md:px-16 py-5 md:py-10  bg-coming-soon text-ng-dark-blue">
+    <div class="grid grid-cols-1  md:grid-cols-2" id="detailed">
       <div class="video">
-        <div class="w-full">
-          <iframe src="https://youtu.be/yFGI6cAHz10?si=8dR2zgpVoMeaOz84" class="rounded-md" width="560" height="315"
-            frameborder="0" allowfullscreen></iframe>
+        <div class="w-1/2">
+          <iframe src="https://youtu.be/yFGI6cAHz10?si=8dR2zgpVoMeaOz84" class="rounded-md aspect-video" width="560"
+            height="315" frameborder="0" allowfullscreen></iframe>
         </div>
       </div>
       <div class="description my-auto mt-8">
@@ -56,18 +56,17 @@
     </div>
   </section>
 
-  <section id="ng-kenya-points" class="py-10 px-16 bg-ng-pink text-ng-dark-blue">
+  <section id="ng-kenya-points" class="py-5 md:py-10 px-8 md:px-16 bg-ng-pink text-ng-dark-blue">
 
-    <div class="grid grid-cols-2" id="about">
-      <div class="grid grid-col-1 gap-8 py-4">
-        <h2 class="text-3xl">What To Expect</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2" id="about">
+      <div class="grid grid-cols-1 gap-8 py-4">
+        <h2 class="text-2xl md:text-3xl">What To Expect</h2>
         @for (item of whatToExpect; track $index) {
         <app-about-bullet [description]="item"></app-about-bullet>
         }
       </div>
-      <div class="grid grid-col-1 gap-8 py-4">
-        <h2 class="text-3xl">What To Expect</h2>
-
+      <div class="grid grid-cols-1 gap-8 py-4">
+        <h2 class="text-2xl md:text-3xl">What To Expect</h2>
         @for (item of whatToExpect; track $index) {
         <app-about-bullet [description]="item"></app-about-bullet>
         }
@@ -78,14 +77,15 @@
   </section>
 
 
-  <section id="how-to-join" class=" bg-ng-white py-10 px-16 text-ng-dark-blue">
+  <section id="how-to-join" class=" bg-ng-white py-5 md:py-10 px-8  md:px-16 text-ng-dark-blue">
     <div id="section-header">
-      <div class="flex justify-between">
+      <div class="flex flex-col md:flex-row  justify-between my-8">
         <h2 class="text-3xl">Join Us</h2>
-        <p class="w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat qui
+        <p class="w-full md:w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat
+          qui
           laboriosam soluta modi</p>
         <button
-          class="text-white text-left flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          class="text-white text-left hidden justify-center items-center px-2 md:px-4  py-2 rounded-full bg-ng-red  w-fit md:flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
           Apply
           <span class=" ml-4 flex justify-center rounded-full bg-green-300 p-1">
             <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
@@ -94,8 +94,8 @@
         </button>
       </div>
     </div>
-    <div class="grid grid-cols-6 md:grid-cols-12   gap-6 items-center  w-5/6  mx-auto ">
-      <div class="md:col-span-3 col-span-1  relative hover:h-3/5 transition duration-500 ease-in-out">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6   md:w-5/6 w-full  mx-auto items-center ">
+      <div class="md:col-span-3 col-span-6 h-auto md:h-2/5  relative hover:h-3/5 ">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
           src="../../../../../assets/Images/speakers/allela.jpg" alt="">
@@ -115,11 +115,12 @@
 
 
       </div>
-      <div class=" md:col-span-6 col-span-4  h-3/5  relative hover:h-4/6">
+      <div class=" md:col-span-6 col-span-6 h-auto md:h-3/5  relative hover:h-4/5 ">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
           src="../../../../../assets/Images/speakers/allela.jpg" alt="">
-        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
+        </div>
 
         <!-- Content -->
         <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
@@ -136,11 +137,12 @@
 
 
       </div>
-      <div class="md:col-span-3 col-span-1   relative hover:h-3/5">
+      <div class="md:col-span-3 col-span-6   h-auto md:h-2/5 relative hover:h-3/5">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
           src="../../../../../assets/Images/speakers/allela.jpg" alt="">
-        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
+        </div>
 
         <!-- Content -->
         <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
@@ -163,12 +165,13 @@
 
 
   <section id="apply " class="bg-ng-red ">
-    <div class="flex justify-between px-10 py-16">
-      <h2 class="text-3xl">Submit A Talk</h2>
-      <p class="w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat qui
+    <div
+      class="flex flex-col md:flex-row justify-center md:justify-between  items-center px-10 py-16 text-center md:text-left">
+      <h2 class="text-2xl md:text-3xl ">Submit A Talk</h2>
+      <p class=" w-full md:w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat qui
         laboriosam soluta modi</p>
       <button
-        class="text-white text-left flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
         Apply
         <span class=" ml-4 flex justify-center rounded-full bg-ng-dark-blue p-1">
           <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
@@ -177,5 +180,48 @@
       </button>
     </div>
   </section>
+
+  <section id="sponsors" class="py-5 md:py-10 px-8  md:px-16 bg-ng-grey text-ng-dark-blue">
+    <div id="section-header">
+      <div class="flex flex-col md:flex-row  justify-between my-8">
+        <h2 class="text-3xl">Join Us</h2>
+        <p class="w-full md:w-2/4 text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas
+          quis fugiat
+          qui
+          laboriosam soluta modi</p>
+
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <img class=" w-9/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/cloudinary.png" alt="Google Logo">
+      </div>
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <img class=" w-7/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/google.png" alt="Google Logo">
+      </div>
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <img class=" w-9/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/cloudinary.png" alt="Google Logo">
+      </div>
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <img class=" w-7/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/google.png" alt="Google Logo">
+      </div>
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <img class=" w-9/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/cloudinary.png" alt="Google Logo">
+      </div>
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <img class=" w-7/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/google.png" alt="Google Logo">
+      </div>
+
+    </div>
+  </section>
+
+
+
 </main>
 <!-- Images -->
