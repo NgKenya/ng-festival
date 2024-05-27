@@ -20,31 +20,48 @@
 
   </div> -->
   <!-- Angular Kenya -->
-  <div class="flex flex-col justify-items-center w-11/12  my-4  mx-auto py-10 px-3  shadow-sm rounded-lg">
 
-    <a [routerLink]="['/']" class="hover:cursor-pointer  m-3 mx-auto order-2 md:order-1">
-      <img src="assets/Images/logos/ngKenya/ng_kenya_white.png" alt="Angular Kenya Logo" class="w-1/2 md:w-1/4 mx-auto">
+  <footer class="px-16 py-10 text-white   bg-ng-dark-blue">
 
-    </a>
 
-    <p class="mx-auto text-center md:order-2 order-3 text-ng-white">NG New Ideas, NG Generate Innovation, Fostering
-      Mentorship </p>
-    <div class="socials flex justify-center order-1 md:order-3">
-      <a class="px-3 py-2 flex items-center  uppercase font-bold text-2xl leading-snug text-white hover:opacity-75"
-         href="twitter.com/angular_kenya">
-        <i class="fa fa-twitter  leading-lg text-faded-red"></i>
-      </a>
-      <a class="px-3 py-2 flex items-center  uppercase font-bold text-2xl leading-snug text-white hover:opacity-75"
-         href="https://www.linkedin.com/company/angular-kenya">
-        <i class="fa fa-linkedin  leading-lg text-faded-red"></i>
-      </a>
-      <a class="px-3 py-2 flex items-center  uppercase font-bold text-2xl leading-snug text-white hover:opacity-75"
-         href="https://github.com/NgKenya">
-        <i class="fa fa-github  leading-lg text-faded-red"></i>
-      </a>
+    <div class="flex justify-between items-center my-4">
+      <div class="contact">
+        <p>Organized By Angular Kenya</p>
+
+        <p class="flex flex-col justify-between space-y-2 mt-4">
+          <a href="mailto:angualrnairobi@gmail.com">angularnairobi&#64;gmail.com</a>
+          <a href="mailto:angualrnairobi@gmail.com">Angular Kenya</a>
+        </p>
+      </div>
+      <div class="logo">
+
+        <a [routerLink]="['/']" class="hover:cursor-pointer  m-3 mx-auto order-2 md:order-1">
+          <img src="assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Angular Kenya Logo" class="w-2/6 mx-auto">
+
+        </a>
+      </div>
+      <div class="link flex flex-col justify-between">
+        <a [routerLink]="['/']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
+          Home
+        </a>
+        <a [routerLink]="['/contact-us']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
+          Contact Us
+        </a>
+      </div>
     </div>
-    <p class="text-center text-ng-white text-xs order-4 mt-4">
-      &copy;2023 -{{provideFullYear}} Angular Kenya. All rights reserved.
-    </p>
-  </div>
-</div>
+    <div class="flex justify-between">
+      <p class="text-center text-ng-white text-sm mt-2">
+        &copy;2023 -{{provideFullYear}} Angular Kenya. All rights reserved.
+      </p>
+      <div class="flex justify-start space-x-4 ">
+        <a href="https://www.linkedin.com/company/angular-kenya" target="_blank"
+          class="hover:cursor-pointer  m-3 mx-auto ">
+          <lucide-icon class="text-white w-8 h-8 " name="linkedin"></lucide-icon>
+        </a>
+        <a href="https://x.com/angular_kenya" target="_blank" class="hover:cursor-pointer  m-3 mx-auto ">
+          <lucide-icon class="text-white w-8 h-8 " name="x"></lucide-icon>
+        </a>
+      </div>
+    </div>
+
+  </footer>

@@ -6,20 +6,21 @@ import { HomeComponent } from './components/home/home.component';
 import { SpeakersComponent } from './components/speakers/speakers.component';
 import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
-import {SharedModule} from "../shared/shared.module";
-
+import { SharedModule } from '../shared/shared.module';
+import { LucideAngularModule, Play, MoveRight } from 'lucide-angular';
 
 @NgModule({
   declarations: [
     HomeComponent,
     SpeakersComponent,
     ScheduleComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
-    imports: [
-        CommonModule,
-        HomeRoutingModule,
-        SharedModule
-    ]
+  imports: [
+    CommonModule,
+    HomeRoutingModule,
+    SharedModule,
+    LucideAngularModule.pick({ Play, MoveRight }),
+  ],
 })
-export class HomeModule { }
+export class HomeModule {}

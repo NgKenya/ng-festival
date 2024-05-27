@@ -1,121 +1,222 @@
-<main class="bg-[#03071E]">
-  <section id="welcome" style="padding-bottom: 0">
+<app-counter></app-counter>
 
-    <div class="grid  flex-col   justify-center text-center bg-[#03071E]">
-      <p class="font-bold text-4xl mb-6 text-ng-white"> July 1<sup>st</sup> 2023 </p>
-      <p class="font-bold text-4xl mb-6 text-ng-white"> Strathmore University, Nairobi, Kenya </p>
-      <p class="font-bold text-4xl mb-6 text-ng-white"> 8:00AM EAT </p>
-      <h1 class="font-semibold text-3xl md:text-5xl p-5 md:p-4 text-ng-white">Embrace the <span class="text-ng-red">Angular </span>
+<main>
 
-        community spirit as we craft compelling stories through coding <span class="text-ng-red">signals.</span></h1>
-        <div class="description">
-          <p class="text-ng-white">Join us at NG Festival Kenya, where we celebrate the vibrant Angular community.</p>
-          <p class="text-ng-white">Engage, inspire, and amplify your skills in this immersive event designed for Angular
-            developers and product
-            owners.</p>
+
+  <!-- To be included if we have sponsors -->
+  <!-- <section id="sponsors py-4">
+    <div class="bg-ng-dark-blue hidden md:inline-block">
+      <div class="grid   md:grid-cols-6 ">
+        <div class="logo border-r-[0.5px] border-faded-red py-4">
+          <img class=" w-7/12 grayscale-[50%] saturate-50 mx-auto" src="assets/Images/logos/sponsors/google.png"
+            alt="Google Logo">
         </div>
-     
+        <div class="logo border-l-[0.5px] border-faded-red py-4 flex flex-col justify-center">
+          <img class=" w-9/12 grayscale-[50%] saturate-50 mx-auto " src="assets/Images/logos/sponsors/cloudinary.png"
+            alt="Cloudinary Logo">
+        </div>
+        <div class="logo border-l-[0.5px] border-faded-red py-4">
+          <img class=" w-7/12 grayscale-[50%] saturate-50 mx-auto" src="assets/Images/logos/sponsors/google.png"
+            alt="Google Logo">
+        </div>
+        <div class="logo border-l-[0.5px] border-faded-red py-4 flex flex-col justify-center">
+          <img class=" w-9/12 grayscale-[50%] saturate-50 mx-auto " src="assets/Images/logos/sponsors/cloudinary.png"
+            alt="Cloudinary Logo">
+        </div>
+        <div class="logo border-l-[0.5px] border-faded-red py-4">
+          <img class=" w-7/12 grayscale-[50%] saturate-50 mx-auto" src="assets/Images/logos/sponsors/google.png"
+            alt="Google Logo">
+        </div>
+        <div class="logo border-l-[0.5px] border-faded-red py-4 flex flex-col justify-center">
+          <img class=" w-9/12 grayscale-[50%] saturate-50 mx-auto " src="assets/Images/logos/sponsors/cloudinary.png"
+            alt="Cloudinary Logo">
+        </div>
 
 
-      <a *ngIf="isVisible"
-
-        href="https://bit.ly/ngfest23"
-        target="_blank"
-        rel="noopener"
-        class="text-ng-white font-semibold  mx-auto mt-5 bg-ng-red px-12 py-3   w-fit  rounded-full whitespace-nowrap b  hover:bg-ng-white hover:border-2 hover:border-ng-red hover:text-ng-red">
-        RSVP Now</a>
-
+      </div>
     </div>
+  </section> -->
 
-    <div class="flex items-center justify-center mt-12">
-      <img src="assets/Images/illustrations/ke_landscape.svg">
+  <section id="about" class="px-8 md:px-16 py-5 md:py-10  bg-coming-soon text-ng-dark-blue">
+    <div class="grid grid-cols-1  md:grid-cols-2" id="detailed">
+      <div class="video">
+        <img src="../../../../../assets/Images/community/group_photo.jpg" alt=""
+          class="object-cover rounded-md w-4/5 mx-auto">
+      </div>
+      <div class="description my-auto px-6">
+        <app-section-title title="About NG Kenya"></app-section-title>
+        <p class="text-base mb-4">
+          Whether you're a seasoned web developer or a mobile app aficionado, NG Kenya caters to all levels of Angular
+          expertise. We'll delve into core Angular concepts, from web fundamentals like the browser DOM API to advanced
+          TypeScript techniques.
+
+        </p>
+        <button (click)="getTickets()"
+          class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          Get Tickets
+          <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
+            <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
+          </span>
+
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <section id="ng-kenya-points" class="py-5 md:py-10 px-8 md:px-16 bg-red-100 text-ng-dark-blue">
+
+    <app-section-title title="Be Part Of  Ng Kenya"></app-section-title>
+    <div class="grid grid-cols-1 md:grid-cols-2  items-center justify-items-center align-middle" id="about">
+      <div class="grid grid-cols-1 gap-8 py-4">
+        <h2 class="text-2xl md:text-3xl">What To Expect</h2>
+        @for (item of whatToExpect; track $index) {
+        <app-about-bullet [description]="item"></app-about-bullet>
+        }
+      </div>
+      <div class="grid grid-cols-1 gap-8 py-4">
+        <h2 class="text-2xl md:text-3xl">Where Will it happen</h2>
+        @for (item of eventDetails; track $index) {
+        <app-about-bullet [description]="item"></app-about-bullet>
+        }
+      </div>
+
     </div>
 
   </section>
 
 
-  <section id="about" class="pt-28 pb-8  bg-ng-grey flex items-center flex-col">
+  <section id="how-to-join" class=" bg-ng-white py-5 md:py-10 px-8  md:px-16 text-ng-dark-blue">
+    <div id="section-header">
+      <div class="flex flex-col md:flex-row  justify-between my-8">
+        <h2 class="text-3xl">Join Us</h2>
+        <p class="w-full md:w-2/4">
+          Be part of Ng Kenya as a speaker eager to share your knowledge, or a hub looking to connect with a developer
+          community ,or come and elevate your skills
+        </p>
+        <button (click)="getTickets()"
+          class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit h-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          Get Tickets
+          <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
+            <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
+          </span>
 
-    <img src="assets/Images/logos/ng_fest_scape.png">
-
-    <!-- FEstival -->
-    <div class="flex flex-col">
-
-      <!--Row 1-->
-      <div class="flex flex-col md:flex-row">
-        <div class="todo flex justify-between md:p-5 p-2 ">
-          <div class="todo-icon my-auto">
-            <img class="hidden md:flex" src="assets/Images/illustrations/group-team-network-connect.svg">
-          </div>
-          <div class="todo-description md:p-4  p-2">
-            <p class="font-semibold  text-xl text-ng-red">Networking</p>
-            <p>Connect and forge valuable relationships with fellow Angular enthusiasts and industry experts during the
-              Ng Festival. Expand your professional network, share insights, and establish meaningful connections that
-              can open doors to new opportunities and collaborations.</p>
-          </div>
-        </div>
-        <div class="todo flex  justify-between md:p-5 p-2 ">
-          <div class="todo-icon my-auto">
-            <img class="hidden md:flex"
-                 src="assets/Images/illustrations/microphone-sing-voice-studio-record-svgrepo-com 1.svg" alt="">
-          </div>
-          <div class="todo-description p-4 ">
-            <p class="font-semibold  text-xl text-ng-red">Guest Speakers</p>
-            <p>Be inspired by renowned industry leaders and expert speakers at the Ng Festival. Gain valuable insights,
-              learn from their experiences, and stay up-to-date with the latest trends and innovations in the Angular
-              ecosystem. Get ready to be motivated and empowered by their knowledge and expertise. </p>
-          </div>
-        </div>
+        </button>
       </div>
-
-      <!--Row 2-->
-      <div class="flex items-center justify-center">
-        <div class="todo flex  justify-between md:p-5 p-2 w-full md:w-3/4">
-          <div class="todo-icon my-auto">
-            <img class="hidden md:flex" src="assets/Images/illustrations/confetti-svgrepo-com 1.svg" alt="">
-          </div>
-          <div class="todo-description p-4 ">
-            <p class="font-semibold  text-xl text-ng-red">Have Fun</p>
-            <p>Beyond the enriching learning experiences, the Ng Festival also offers a delightful atmosphere of fun and
-              camaraderie. Enjoy engaging activities, interactive sessions, and exciting surprises throughout the event.
-              Take a break from the technical sessions, unwind, and create memorable moments with fellow attendees. Get
-              ready for a joyful celebration of Angular and a truly enjoyable festival experience.</p>
-          </div>
-        </div>
-      </div>
-
-
     </div>
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6   md:w-5/6 w-full  mx-auto items-center ">
+      <div class="md:col-span-3 col-span-6 h-auto md:h-4/5  relative hover:h-3/5 hover:cursor-pointer"
+        (click)="openNewPage('https://paydexp.com/ng-kenya-2024')">
 
-    <!-- our aim -->
-    <div class="grid grid-cols-1 grid-rows-1 my-10">
-      <h2 class="font-semibold  md:text-3xl text-2xl  text-center md:text-left mb-3">Bringing together vibrant
-        developer's to exchange the latest insights and trends.</h2>
-      <p class="text-center md:text-left">
-        Through interactive sessions, engaging workshops, and thought-provoking discussions, we empower attendees to
-        expand their knowledge and skills. Join us at the Ng Festival and be part of a dynamic community that embraces
-        innovation, fosters meaningful connections, and drives the future of technology in Kenya.
-      </p>
+        <!-- Image -->
+        <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
+          src="../../../../../assets/Images/community/group.jpg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
+        </div>
+
+        <!-- Content -->
+        <div class="absolute top-0 w-full h-full p-6 flex flex-col justify-between">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Get Tickets </span>
+          <span
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset cursor-auto hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <lucide-icon class="text-white w-6 h-6 " name="move-right"></lucide-icon>
+          </span>
+        </div>
+      </div>
+      <div class=" md:col-span-6 col-span-6 h-auto md:h-full cursor-auto   relative  hover:cursor-pointer hover:h-4/5 "
+        (click)="openNewPage('/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf')">
+        <!-- Image -->
+        <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
+          src="../../../../../assets/Images/community/group_photo.jpg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
+        </div>
+
+        <!-- Content -->
+        <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Become a sponsor </span>
+          <button
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+
+
+          </button>
+        </div>
+
+
+
+
+      </div>
+      <div class="md:col-span-3 col-span-6   h-auto md:h-4/5 relative hover:h-3/5  hover:cursor-pointer"
+        (click)="openNewPage('https://sessionize.com/ng-kenya-conf-2024')">
+        <!-- Image -->
+        <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
+          src="../../../../../assets/Images/community/speaker_session.jpg" alt="">
+        <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
+        </div>
+
+        <!-- Content -->
+        <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Submit A Talk </span>
+          <button
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+            <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+
+
+          </button>
+        </div>
+
+
+
+
+      </div>
+
+
+
     </div>
   </section>
+
 
 
   <section id="apply " class="bg-ng-red ">
-    <div class="flex  flex-col md:flex-row justify-between px-8  py-8 gap-3">
-      <h1 class="text-ng-white  font-semibold text-3xl my-auto text-center mb-3">
-        Check out our speaker lineup
-      </h1>
+    <div
+      class="flex flex-col md:flex-row justify-center md:justify-between  items-center px-5 py-8 md:px-10 md:py-16 text-center md:text-left">
+      <h2 class="text-2xl md:text-2xl ">Group Tickets Available</h2>
+      <p class=" w-full md:w-2/4">Share with your fellow developers ,the skills needed to build on their next big idea
+        by using Angular </p>
+      <button (click)="getTickets()"
+        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit focus:outline-none  focus:ring-offset-2 focus:ring-white">
+        Get Tickets
+        <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
+          <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
+        </span>
 
+      </button>
+    </div>
+  </section>
 
-      <a
-        href="/speakers"
-        class="text-ng-red bg-ng-white px-4 py-4 w-auto  rounded-full whitespace-nowrap  hover:text-ng-white hover:bg-ng-red hover:border-ng-white hover:border-2  text-center my-auto ">
-        Speaker Lineup
-      </a>
+  <section id="sponsors" class="hidden py-5 md:py-10 px-8  md:px-16 bg-ng-grey text-ng-dark-blue">
+    <div id="section-header">
+      <div class="flex flex-col md:flex-row  justify-between my-8">
+        <h2 class="text-3xl">Our Sponsors</h2>
+        <p class="w-full md:w-2/4 text-gray-800">NG Kenya has been made successf</p>
+
+      </div>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+      @for (partner of partners; track $index) {
+      <div
+        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
+        <a [href]="partner.official_website"></a>
+        <img class=" w-9/12 hover:w-8/12  mx-auto" [src]="partner.logo" [attr.alt]="partner.alt">
+      </div>
+
+      }
+
 
     </div>
   </section>
+
+
+
 </main>
 <!-- Images -->
-
-

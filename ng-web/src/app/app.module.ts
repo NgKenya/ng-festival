@@ -7,17 +7,9 @@ import { SharedModule } from './modules/shared/shared.module';
 import { LucideAngularModule, MoveRightIcon } from 'lucide-angular';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    SharedModule,
-    LucideAngularModule
-  ],
+  declarations: [AppComponent],
+  imports: [BrowserModule, AppRoutingModule, SharedModule, LucideAngularModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

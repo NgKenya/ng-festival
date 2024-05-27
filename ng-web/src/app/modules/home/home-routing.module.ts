@@ -7,30 +7,30 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 
 const routes: Routes = [
   {
-    path: "",
-    redirectTo: "home",
-    pathMatch: 'full'
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full',
   },
   {
-    path: "home",
-    component: HomeComponent
+    path: 'home',
+    component: HomeComponent,
   },
+  // {
+  //   path: 'speakers',
+  //   component: SpeakersComponent,
+  // },
+  // {
+  //   path: 'schedule',
+  //   component: ScheduleComponent,
+  // },
   {
-    path: "speakers",
-    component: SpeakersComponent
+    path: 'contact-us',
+    component: ContactUsComponent,
   },
-  {
-    path: "schedule",
-    component:ScheduleComponent
-  },
-  {
-    path: "contact-us",
-    component:ContactUsComponent
-  }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class HomeRoutingModule { }
+export class HomeRoutingModule {}

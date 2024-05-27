@@ -3,21 +3,20 @@ import { RouterModule, Routes } from '@angular/router';
 import { CounterComponent } from './modules/shared/components/counter/counter.component';
 
 const routes: Routes = [
-  {
-    path: "",
-  component:CounterComponent
-  },
-  
-{
-  path: "home",
-  loadChildren: ()=>import( './modules/home/home.module').then(m=>m.HomeModule)
-},
-  
+  // {
+  //   path: "",
+  // component:CounterComponent
+  // },
 
+  {
+    path: '',
+    loadChildren: () =>
+      import('./modules/home/home.module').then((m) => m.HomeModule),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

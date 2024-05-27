@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { Observable, interval, takeUntil } from 'rxjs';
+import { UtilService } from 'src/app/services/util/util.service';
 
 interface IDate {
   month: number;
@@ -23,7 +24,7 @@ export class CounterComponent implements OnInit {
     minute: 0,
     second: 0,
   };
-  progressBarWidth: number = 0;
+  utilService = inject(UtilService);
 
   // private subscription: Subscription;
 
@@ -65,7 +66,6 @@ export class CounterComponent implements OnInit {
     minute: number;
     second: number;
   } {
-    
     const millisecondsPerMonth = 1000 * 60 * 60 * 24 * 30;
     const millisecondsPerDay = 1000 * 60 * 60 * 24;
     const millisecondsPerHour = 1000 * 60 * 60;
@@ -74,12 +74,9 @@ export class CounterComponent implements OnInit {
     // picked month
     const months = Math.floor(totalMilliseconds / millisecondsPerMonth);
     let remainingMilliseconds = totalMilliseconds % millisecondsPerMonth;
-  
-
 
     const days = Math.floor(remainingMilliseconds / millisecondsPerDay);
     remainingMilliseconds %= millisecondsPerDay;
-
 
     const hours = Math.floor(remainingMilliseconds / millisecondsPerHour);
     remainingMilliseconds %= millisecondsPerHour;
