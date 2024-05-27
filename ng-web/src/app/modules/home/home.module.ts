@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -21,6 +21,7 @@ import { LucideAngularModule, Play, MoveRight } from 'lucide-angular';
     HomeRoutingModule,
     SharedModule,
     LucideAngularModule.pick({ Play, MoveRight }),
+    NgOptimizedImage,
   ],
 })
 export class HomeModule {}
