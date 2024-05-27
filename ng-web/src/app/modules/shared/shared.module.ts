@@ -15,6 +15,7 @@ import {
 } from 'lucide-angular';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { AboutBulletComponent } from './components/about-bullet/about-bullet.component';
+import { EventAlertComponent } from './components/event-alert/event-alert.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AboutBulletComponent } from './components/about-bullet/about-bullet.com
     CounterComponent,
     SectionTitleComponent,
     AboutBulletComponent,
+    EventAlertComponent,
   ],
   imports: [
     CommonModule,
@@ -37,6 +39,7 @@ import { AboutBulletComponent } from './components/about-bullet/about-bullet.com
     CounterComponent,
     SectionTitleComponent,
     AboutBulletComponent,
+    EventAlertComponent,
   ],
 })
 export class SharedModule {}

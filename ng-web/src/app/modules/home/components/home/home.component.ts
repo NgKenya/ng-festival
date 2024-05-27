@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { IDescription } from 'src/app/models/description.model';
+import { NgKenyaPartners } from 'src/app/const/data.const';
+import { IDescription, IPartner } from 'src/app/models/data.model';
 
 @Component({
   selector: 'app-home',
@@ -28,4 +29,6 @@ export class HomeComponent {
         'From web fundamentals like the browser DOM API to advanced TypeScript techniques.',
     },
   ];
+
+  partners: IPartner[] = NgKenyaPartners;
 }

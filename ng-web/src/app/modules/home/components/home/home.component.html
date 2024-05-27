@@ -193,30 +193,16 @@
       </div>
     </div>
     <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+
+      @for (partner of partners; track $index) {
       <div
         class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
-        <img class=" w-9/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/cloudinary.png" alt="Google Logo">
+        <a [href]="partner.official_website"></a>
+        <img class=" w-9/12 hover:w-8/12  mx-auto" [src]="partner.logo" [attr.alt]="partner.alt">
       </div>
-      <div
-        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
-        <img class=" w-7/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/google.png" alt="Google Logo">
-      </div>
-      <div
-        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
-        <img class=" w-9/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/cloudinary.png" alt="Google Logo">
-      </div>
-      <div
-        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
-        <img class=" w-7/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/google.png" alt="Google Logo">
-      </div>
-      <div
-        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
-        <img class=" w-9/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/cloudinary.png" alt="Google Logo">
-      </div>
-      <div
-        class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
-        <img class=" w-7/12 hover:w-8/12  mx-auto" src="assets/Images/logos/sponsors/google.png" alt="Google Logo">
-      </div>
+
+      }
+
 
     </div>
   </section>
