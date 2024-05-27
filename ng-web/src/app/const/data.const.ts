@@ -17,3 +17,5 @@ export const NgKenyaPartners: IPartner[] = [
     alt: 'Cloudinary logo',
   },
 ];
+
+export const ticketUrl = 'https://paydexp.com/ng-kenya-2024';

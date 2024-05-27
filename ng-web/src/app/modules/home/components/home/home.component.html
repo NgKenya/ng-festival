@@ -3,7 +3,8 @@
 <main>
 
 
-  <section id="sponsors py-4">
+  <!-- To be included if we have sponsors -->
+  <!-- <section id="sponsors py-4">
     <div class="bg-ng-dark-blue hidden md:inline-block">
       <div class="grid   md:grid-cols-6 ">
         <div class="logo border-r-[0.5px] border-faded-red py-4">
@@ -34,31 +35,42 @@
 
       </div>
     </div>
-  </section>
+  </section> -->
 
   <section id="about" class="px-8 md:px-16 py-5 md:py-10  bg-coming-soon text-ng-dark-blue">
     <div class="grid grid-cols-1  md:grid-cols-2" id="detailed">
       <div class="video">
-        <div class="w-1/2">
-          <iframe src="https://youtu.be/yFGI6cAHz10?si=8dR2zgpVoMeaOz84" class="rounded-md aspect-video" width="560"
-            height="315" frameborder="0" allowfullscreen></iframe>
-        </div>
+
+        <iframe src="https://youtu.be/yFGI6cAHz10?si=8dR2zgpVoMeaOz84"
+          class="w-4/5  rounded-md aspect-video md:aspect-square" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+
       </div>
-      <div class="description my-auto mt-8">
-        <app-section-title></app-section-title>
-        <p class="text-base">
+      <div class="description my-auto px-6">
+        <app-section-title title="About NG Kenya"></app-section-title>
+        <p class="text-base mb-4">
           Whether you're a seasoned web developer or a mobile app aficionado, NG Kenya caters to all levels of Angular
           expertise. We'll delve into core Angular concepts, from web fundamentals like the browser DOM API to advanced
           TypeScript techniques.
 
         </p>
+        <button (click)="getTickets()"
+          class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          Get Tickets
+          <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
+            <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
+          </span>
+
+        </button>
       </div>
     </div>
   </section>
 
-  <section id="ng-kenya-points" class="py-5 md:py-10 px-8 md:px-16 bg-ng-pink text-ng-dark-blue">
+  <section id="ng-kenya-points" class="py-5 md:py-10 px-8 md:px-16 bg-red-100 text-ng-dark-blue">
 
-    <div class="grid grid-cols-1 md:grid-cols-2" id="about">
+    <app-section-title title="Be Part Of  Ng Kenya"></app-section-title>
+    <div class="grid grid-cols-1 md:grid-cols-2  items-center justify-items-center align-middle" id="about">
       <div class="grid grid-cols-1 gap-8 py-4">
         <h2 class="text-2xl md:text-3xl">What To Expect</h2>
         @for (item of whatToExpect; track $index) {
@@ -66,8 +78,8 @@
         }
       </div>
       <div class="grid grid-cols-1 gap-8 py-4">
-        <h2 class="text-2xl md:text-3xl">What To Expect</h2>
-        @for (item of whatToExpect; track $index) {
+        <h2 class="text-2xl md:text-3xl">Where Will it happen</h2>
+        @for (item of eventDetails; track $index) {
         <app-about-bullet [description]="item"></app-about-bullet>
         }
       </div>
@@ -81,50 +93,50 @@
     <div id="section-header">
       <div class="flex flex-col md:flex-row  justify-between my-8">
         <h2 class="text-3xl">Join Us</h2>
-        <p class="w-full md:w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat
-          qui
-          laboriosam soluta modi</p>
-        <button
-          class="text-white text-left hidden justify-center items-center px-2 md:px-4  py-2 rounded-full bg-ng-red  w-fit md:flex focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-          Apply
-          <span class=" ml-4 flex justify-center rounded-full bg-green-300 p-1">
-            <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+        <p class="w-full md:w-2/4">
+          Be part of Ng Kenya as a speaker eager to share your knowledge, or a hub looking to connect with a developer
+          community ,or come and elevate your skills
+        </p>
+        <button (click)="getTickets()"
+          class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit h-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          Get Tickets
+          <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
+            <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
           </span>
 
         </button>
       </div>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-12 gap-3 md:gap-6   md:w-5/6 w-full  mx-auto items-center ">
-      <div class="md:col-span-3 col-span-6 h-auto md:h-2/5  relative hover:h-3/5 ">
+      <div class="md:col-span-3 col-span-6 h-auto md:h-4/5  relative hover:h-3/5 hover:cursor-pointer"
+        (click)="openNewPage('https://paydexp.com/ng-kenya-2024')">
+
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
-          src="../../../../../assets/Images/speakers/allela.jpg" alt="">
+          src="../../../../../assets/Images/community/group.jpg" alt="">
         <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
         </div>
 
         <!-- Content -->
         <div class="absolute top-0 w-full h-full p-6 flex flex-col justify-between">
-          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Content Creation </span>
-          <button
-            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Get Tickets </span>
+          <span
+            class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset cursor-auto hover:cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
             <lucide-icon class="text-white w-6 h-6 " name="move-right"></lucide-icon>
-          </button>
+          </span>
         </div>
-
-
-
-
       </div>
-      <div class=" md:col-span-6 col-span-6 h-auto md:h-3/5  relative hover:h-4/5 ">
+      <div class=" md:col-span-6 col-span-6 h-auto md:h-full cursor-auto   relative  hover:cursor-pointer hover:h-4/5 "
+        (click)="openNewPage('/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf')">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
-          src="../../../../../assets/Images/speakers/allela.jpg" alt="">
+          src="../../../../../assets/Images/community/group_photo.jpg" alt="">
         <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
         </div>
 
         <!-- Content -->
         <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
-          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Content Creation </span>
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Become a sponsor </span>
           <button
             class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
             <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
@@ -137,16 +149,17 @@
 
 
       </div>
-      <div class="md:col-span-3 col-span-6   h-auto md:h-2/5 relative hover:h-3/5">
+      <div class="md:col-span-3 col-span-6   h-auto md:h-4/5 relative hover:h-3/5  hover:cursor-pointer"
+        (click)="openNewPage('https://sessionize.com/ng-kenya-conf-2024')">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
-          src="../../../../../assets/Images/speakers/allela.jpg" alt="">
+          src="../../../../../assets/Images/community/speaker_session.jpg" alt="">
         <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
         </div>
 
         <!-- Content -->
         <div class="absolute top-0 w-full h-full p-2 flex flex-col justify-between">
-          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Content Creation </span>
+          <span class="bg-ng-dark-blue text-ng-white p-2 w-fit rounded-full text-sm">Submit A Talk </span>
           <button
             class=" absolute bottom-4 right-4 text-white text-left flex justify-center items-center px-2 py-2 rounded-full bg-ng-red  w-fit inset focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
             <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
@@ -159,6 +172,9 @@
 
 
       </div>
+
+
+
     </div>
   </section>
 
@@ -166,15 +182,15 @@
 
   <section id="apply " class="bg-ng-red ">
     <div
-      class="flex flex-col md:flex-row justify-center md:justify-between  items-center px-10 py-16 text-center md:text-left">
+      class="flex flex-col md:flex-row justify-center md:justify-between  items-center px-5 py-8 md:px-10 md:py-16 text-center md:text-left">
       <h2 class="text-2xl md:text-3xl ">Submit A Talk</h2>
-      <p class=" w-full md:w-2/4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas quis fugiat qui
-        laboriosam soluta modi</p>
+      <p class=" w-full md:w-2/4">Share with your fellow developers ,the skills needed to build on their next big idea
+        by using Angular </p>
       <button
-        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-        Apply
-        <span class=" ml-4 flex justify-center rounded-full bg-ng-dark-blue p-1">
-          <lucide-icon class="text-white w-4 h-4 " name="move-right"></lucide-icon>
+        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
+        Submit a call
+        <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
+          <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
         </span>
 
       </button>
@@ -184,11 +200,8 @@
   <section id="sponsors" class="py-5 md:py-10 px-8  md:px-16 bg-ng-grey text-ng-dark-blue">
     <div id="section-header">
       <div class="flex flex-col md:flex-row  justify-between my-8">
-        <h2 class="text-3xl">Join Us</h2>
-        <p class="w-full md:w-2/4 text-gray-800">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet voluptas
-          quis fugiat
-          qui
-          laboriosam soluta modi</p>
+        <h2 class="text-3xl">Our Sponsors</h2>
+        <p class="w-full md:w-2/4 text-gray-800">NG Kenya has been made successf</p>
 
       </div>
     </div>

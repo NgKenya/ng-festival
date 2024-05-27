@@ -9,3 +9,9 @@ export type IPartner = {
   alt: string;
   official_website: string;
 };
+
+export type IContent = {
+  link: string;
+  text: string;
+  image_url: string;
+};
