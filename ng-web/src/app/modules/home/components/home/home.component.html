@@ -40,12 +40,8 @@
   <section id="about" class="px-8 md:px-16 py-5 md:py-10  bg-coming-soon text-ng-dark-blue">
     <div class="grid grid-cols-1  md:grid-cols-2" id="detailed">
       <div class="video">
-
-        <iframe src="https://youtu.be/yFGI6cAHz10?si=8dR2zgpVoMeaOz84"
-          class="w-4/5  rounded-md aspect-video md:aspect-square" frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowfullscreen></iframe>
-
+        <img src="../../../../../assets/Images/community/group_photo.jpg" alt=""
+          class="object-cover rounded-md w-4/5 mx-auto">
       </div>
       <div class="description my-auto px-6">
         <app-section-title title="About NG Kenya"></app-section-title>
@@ -183,12 +179,12 @@
   <section id="apply " class="bg-ng-red ">
     <div
       class="flex flex-col md:flex-row justify-center md:justify-between  items-center px-5 py-8 md:px-10 md:py-16 text-center md:text-left">
-      <h2 class="text-2xl md:text-3xl ">Submit A Talk</h2>
+      <h2 class="text-2xl md:text-2xl ">Group Tickets Available</h2>
       <p class=" w-full md:w-2/4">Share with your fellow developers ,the skills needed to build on their next big idea
         by using Angular </p>
-      <button
-        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-        Submit a call
+      <button (click)="getTickets()"
+        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-dark-blue  w-fit focus:outline-none  focus:ring-offset-2 focus:ring-white">
+        Get Tickets
         <span class=" ml-4 flex justify-center rounded-full bg-ng-white p-1">
           <lucide-icon class="text-ng-pink w-4 h-4 " name="move-right"></lucide-icon>
         </span>
@@ -197,7 +193,7 @@
     </div>
   </section>
 
-  <section id="sponsors" class="py-5 md:py-10 px-8  md:px-16 bg-ng-grey text-ng-dark-blue">
+  <section id="sponsors" class="hidden py-5 md:py-10 px-8  md:px-16 bg-ng-grey text-ng-dark-blue">
     <div id="section-header">
       <div class="flex flex-col md:flex-row  justify-between my-8">
         <h2 class="text-3xl">Our Sponsors</h2>

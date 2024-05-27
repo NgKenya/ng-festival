@@ -10,8 +10,10 @@
       <p class="text-sm  md:text-lg">Dive deeper into the framework, de-construct complex concepts, and connect
         with a vibrant community of fellow Angular enthusiasts.</p>
 
-      <a href="/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf" target="_blank"
-        class="cursor-pointer px-2 py-2 bg-ng-red text-white rounded-md flex text-center mx-auto my-6 w-fit"> Sponsor Us
+      <a (click)="utilService.getTickets()" target="_blank"
+        class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex text-center mx-auto my-6 w-fit hover:bg-ng-dark-blue">
+        Get
+        Ticket
         <lucide-icon class="w-6 h-6 mx-1" name="move-right"></lucide-icon> </a>
 
       <!-- <h2 class="text-center my-10 text-medium">The Conference begins in </h2> -->

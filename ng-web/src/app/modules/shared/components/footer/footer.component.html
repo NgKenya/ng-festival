@@ -21,26 +21,8 @@
   </div> -->
   <!-- Angular Kenya -->
 
-  <footer class="px-16 py-10 text-white">
-    <!-- Section A -->
-    <div class="flex  flex-col md:flex-row justify-between border-b-2 border-gray-600 py-4">
-      <h2 class="text-2xl w-full md:w-2/6">Lorem Ipsum Dolor Sit Lorem ipsum.</h2>
-      <div class="flex flex-col justify-end items-center  md:items-end space-y-4">
-        <p class="w-full md:w-3/5 text-center md:text-right">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          Veritatis ullam
-          hic iste!
-          In
-          corporise
-        </p>
-        <button
-          class="text-white flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-          Contact Us
-          <span class=" ml-2 flex justify-center rounded-full bg-white  text-ng-dark-blue p-1">
-            <lucide-icon class="text-ng-dark-blue w-4 h-4 " name="move-right"></lucide-icon>
-          </span>
-        </button>
-      </div>
-    </div>
+  <footer class="px-16 py-10 text-white   bg-ng-dark-blue">
+
 
     <div class="flex justify-between items-center my-4">
       <div class="contact">
@@ -62,10 +44,7 @@
         <a [routerLink]="['/']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
           Home
         </a>
-        <a [routerLink]="['/']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
-          Agenda
-        </a>
-        <a [routerLink]="['/']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
+        <a [routerLink]="['/contact-us']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
           Contact Us
         </a>
       </div>
@@ -75,10 +54,11 @@
         &copy;2023 -{{provideFullYear}} Angular Kenya. All rights reserved.
       </p>
       <div class="flex justify-start space-x-4 ">
-        <a [routerLink]="['/']" class="hover:cursor-pointer  m-3 mx-auto ">
+        <a href="https://www.linkedin.com/company/angular-kenya" target="_blank"
+          class="hover:cursor-pointer  m-3 mx-auto ">
           <lucide-icon class="text-white w-8 h-8 " name="linkedin"></lucide-icon>
         </a>
-        <a [routerLink]=" ['/']" class="hover:cursor-pointer  m-3 mx-auto ">
+        <a href="https://x.com/angular_kenya" target="_blank" class="hover:cursor-pointer  m-3 mx-auto ">
           <lucide-icon class="text-white w-8 h-8 " name="x"></lucide-icon>
         </a>
       </div>
