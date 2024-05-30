@@ -37,7 +37,7 @@ export class HomeComponent {
     {
       icon: 'calendar-days',
       desc1: 'Date',
-      desc2: 'July 5 & 6,2023',
+      desc2: 'July 5 & 6,2024',
     },
     {
       icon: 'locate-fixed',
