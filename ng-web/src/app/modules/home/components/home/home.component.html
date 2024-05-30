@@ -40,7 +40,7 @@
   <section id="about" class="px-8 md:px-16 py-5 md:py-10  bg-coming-soon text-ng-dark-blue">
     <div class="grid grid-cols-1  md:grid-cols-2" id="detailed">
       <div class="video">
-        <img src="../../../../../assets/Images/community/group_photo.jpg" alt=""
+        <img ngSrc="/assets/Images/community/group_photo.jpg" alt="Ng Festival" placeholder
           class="object-cover rounded-md w-4/5 mx-auto">
       </div>
       <div class="description my-auto px-6">
@@ -66,7 +66,8 @@
   <section id="ng-kenya-points" class="py-5 md:py-10 px-8 md:px-16 bg-red-100 text-ng-dark-blue">
 
     <app-section-title title="Be Part Of  Ng Kenya"></app-section-title>
-    <div class="grid grid-cols-1 md:grid-cols-2  items-center justify-items-center align-middle" id="about">
+    <div class="grid grid-cols-1 md:grid-cols-2  items-center justify-items-center align-start md:align-middle"
+      id="about">
       <div class="grid grid-cols-1 gap-8 py-4">
         <h2 class="text-2xl md:text-3xl">What To Expect</h2>
         @for (item of whatToExpect; track $index) {

@@ -1,7 +1,5 @@
-<div class="flex flex-col">
-
-  <!-- Community Logos -->
-  <!-- <div class="grid py-7 px-7">
+<!-- Community Logos -->
+<!-- <div class="grid py-7 px-7">
     <h2 class="py-4 text-3xl my-4 md:text-left text-center font-bold text-ng-dark-blue">Our community partners</h2>
     <div class="flex flex-col md:flex-row items-center pb-8 space-x-0 md:space-x-24 xl:space-x-44">
       <ng-container *ngFor="let partner of partners">
@@ -19,49 +17,48 @@
     </div>
 
   </div> -->
-  <!-- Angular Kenya -->
+<!-- Angular Kenya -->
 
-  <footer class="px-16 py-10 text-white   bg-ng-dark-blue">
+<footer class="px-16 py-10 text-white   bg-ng-dark-blue">
 
 
-    <div class="flex justify-between items-center my-4">
-      <div class="contact">
-        <p>Organized By Angular Kenya</p>
+  <div class="flex flex-col md:flex-row justify-between space-y-4 items-center my-4">
+    <div class="contact order-2 md:order-1 my-2">
+      <p class="text-sm md:text-base">Organized By Angular Kenya</p>
 
-        <p class="flex flex-col justify-between space-y-2 mt-4">
-          <a href="mailto:angualrnairobi@gmail.com">angularnairobi&#64;gmail.com</a>
-          <a href="mailto:angualrnairobi@gmail.com">Angular Kenya</a>
-        </p>
-      </div>
-      <div class="logo">
-
-        <a [routerLink]="['/']" class="hover:cursor-pointer  m-3 mx-auto order-2 md:order-1">
-          <img src="assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Angular Kenya Logo" class="w-2/6 mx-auto">
-
-        </a>
-      </div>
-      <div class="link flex flex-col justify-between">
-        <a [routerLink]="['/']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
-          Home
-        </a>
-        <a [routerLink]="['/contact-us']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
-          Contact Us
-        </a>
-      </div>
-    </div>
-    <div class="flex justify-between">
-      <p class="text-center text-ng-white text-sm mt-2">
-        &copy;2023 -{{provideFullYear}} Angular Kenya. All rights reserved.
+      <p class="flex flex-col justify-between space-y-2 mt-4 text-center md:text-left">
+        <a href="mailto:angualrnairobi@gmail.com">angularnairobi&#64;gmail.com</a>
+        <a href="mailto:angualrnairobi@gmail.com">Angular Kenya</a>
       </p>
-      <div class="flex justify-start space-x-4 ">
-        <a href="https://www.linkedin.com/company/angular-kenya" target="_blank"
-          class="hover:cursor-pointer  m-3 mx-auto ">
-          <lucide-icon class="text-white w-8 h-8 " name="linkedin"></lucide-icon>
-        </a>
-        <a href="https://x.com/angular_kenya" target="_blank" class="hover:cursor-pointer  m-3 mx-auto ">
-          <lucide-icon class="text-white w-8 h-8 " name="x"></lucide-icon>
-        </a>
-      </div>
     </div>
+    <div class="logo order-1 md:order-2">
 
-  </footer>
+      <a [routerLink]="['/']" class="hover:cursor-pointer  m-3 mx-auto order-2 md:order-1">
+        <img src="assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Angular Kenya Logo" class="w-3/6 md:w-2/6 mx-auto">
+
+      </a>
+    </div>
+    <div class="link flex flex-col justify-between order-3">
+      <a [routerLink]="['/']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
+        Home
+      </a>
+      <a [routerLink]="['/contact-us']" class="hover:cursor-pointer  m-2 mx-auto order-2 md:order-1">
+        Contact Us
+      </a>
+    </div>
+  </div>
+  <div class="flex  flex-col md:flex-row justify-center  md:justify-between ">
+    <p class="text-center text-ng-white text-xs md:text-sm mt-2 order-2 md:order-1">
+      &copy;2023 -{{provideFullYear}} Angular Kenya. All rights reserved.
+    </p>
+    <div class="flex flex-row justify-center md:justify-start space-x-1 md:space-x-4 order-1 md:order-2 ">
+      <a href="https://www.linkedin.com/company/angular-kenya" target="_blank" class="hover:cursor-pointer  ">
+        <lucide-icon class="text-white w-4 md:w-8 h-4  md:h-8 " name="linkedin"></lucide-icon>
+      </a>
+      <a href="https://x.com/angular_kenya" target="_blank" class="hover:cursor-pointer ">
+        <lucide-icon class="text-white w-4 md:w-8  h-4 md:h-8 " name="x"></lucide-icon>
+      </a>
+    </div>
+  </div>
+
+</footer>
