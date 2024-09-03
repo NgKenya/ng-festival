@@ -1,10 +1,10 @@
-<app-counter></app-counter>
-
 <main>
+
+  <app-counter></app-counter>
   <section id="about" class="px-8 md:px-16 py-5 md:py-10  bg-coming-soon text-ng-dark-blue">
     <div class="grid grid-cols-1  md:grid-cols-2" id="detailed">
       <div class="video">
-        <img src="assets/Images/community/group_photo.jpg" alt="Ng Festival"
+        <img ngSrc="assets/Images/community/group_photo.jpg" alt="Ng Festival"
           class="object-cover rounded-md w-4/5 mx-auto">
       </div>
       <div class="description my-auto px-6">
@@ -74,7 +74,7 @@
 
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
-          src="../../../../../assets/Images/community/group.jpg" alt="">
+          ngSrc="../../../../../assets/Images/community/group.jpg" alt="">
         <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
         </div>
 
@@ -91,7 +91,7 @@
         (click)="openNewPage('/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf')">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
-          src="../../../../../assets/Images/community/group_photo.jpg" alt="">
+          ngSrc="../../../../../assets/Images/community/group_photo.jpg" alt="">
         <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
         </div>
 
@@ -114,7 +114,7 @@
         (click)="openNewPage('https://sessionize.com/ng-kenya-conf-2024')">
         <!-- Image -->
         <img class=" w-full h-full  rounded-3xl object-cover  bg-gradient-to-b"
-          src="../../../../../assets/Images/community/speaker_session.jpg" alt="">
+          ngSrc="../../../../../assets/Images/community/speaker_session.jpg" alt="">
         <div class="absolute inset-0 bg-gradient-to-b from-black to-black opacity-30 hover:opacity-10 z-10 rounded-3xl">
         </div>
 
@@ -167,7 +167,7 @@
       <div
         class="logo flex flex-col justify-center border-t-[3px] border-ng-dark-blue py-4 shadow-xl hover:border-b-2 hover:border-ng-red">
         <a [href]="partner.official_website"></a>
-        <img class=" w-9/12 hover:w-8/12  mx-auto" [src]="partner.logo" [attr.alt]="partner.alt">
+        <img class=" w-9/12 hover:w-8/12  mx-auto" [ngSrc]="partner.logo" [attr.alt]="partner.alt">
       </div>
 
       }

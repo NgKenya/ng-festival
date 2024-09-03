@@ -42,7 +42,7 @@ export class HomeComponent {
     {
       icon: 'locate-fixed',
       desc1: 'Venue',
-      desc2: 'To Be Announced, Nairobi',
+      desc2: 'Ihub , Jahazi Ground Floor , James Gichuru Road ',
     },
     {
       icon: 'calendar-days',

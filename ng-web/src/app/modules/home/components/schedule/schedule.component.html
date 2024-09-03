@@ -1,4 +1,10 @@
-<section class="bg-coming-soon">
+<section class=" px-10 md:px-30 lg:px-40">
+    <app-section-title title="Our Schedule"></app-section-title>
+    <h2>Our Schedule</h2>
+    <p>Join other Angular Devlopers in Nairobi , for a full day of keynotes and new workshops at Ng Kenya 2024</p>
+</section>
+
+<section class="px-10 md:px-30 lg:px-40">
     <div class="grid grid-cols-1 gap-7 p-0 md:p-10  bg-ng-white">
         <ng-container *ngFor="let talk of talkList ">
             <app-schedule-item [talk]="talk"></app-schedule-item>

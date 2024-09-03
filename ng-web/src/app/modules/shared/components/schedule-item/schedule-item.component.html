@@ -11,7 +11,7 @@
         <div class="flex space-x-8">
             @for (speaker of talk.speakers; track $index) {
             <div class="speaker flex space-x-4 items-center">
-                <img [src]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full object-cover">
+                <img [ngSrc]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full object-cover">
                 <div class="description space-y-1">
                     <a href="" class="cursor-pointer text-xs">{{speaker.name}}</a>
                     <p class="text-xs">{{speaker.role}}</p>

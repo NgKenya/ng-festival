@@ -23,4 +23,15 @@ export class UtilService {
 
     return Math.floor(diff / (1000 * 60));
   };
+
+  getDimensions(imageSrc: string): Promise<{ width: number; height: number }> {
+    return new Promise((resolve) => {
+      const img = new Image();
+      img.src = imageSrc;
+
+      img.onload = () => {
+        resolve({ width: img.naturalWidth, height: img.naturalHeight });
+      };
+    });
+  }
 }

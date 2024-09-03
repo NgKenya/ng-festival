@@ -10,7 +10,7 @@
         >
           <img
             [alt]="partner.alt"
-            [src]="partner.logo" class="mx-auto">
+            [ngSrc]="partner.logo" class="mx-auto">
         </a>
       </ng-container>
 
@@ -34,7 +34,8 @@
     <div class="logo order-1 md:order-2">
 
       <a [routerLink]="['/']" class="hover:cursor-pointer  m-3 mx-auto order-2 md:order-1">
-        <img src="assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Angular Kenya Logo" class="w-3/6 md:w-2/6 mx-auto">
+        <img ngSrc="assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Angular Kenya Logo"
+          class="w-3/6 md:w-2/6 mx-auto" width="200" height="300" priority>
 
       </a>
     </div>
