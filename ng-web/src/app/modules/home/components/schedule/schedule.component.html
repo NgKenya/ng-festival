@@ -1,3 +1,7 @@
 <section class="bg-coming-soon">
-
+    <div class="grid grid-cols-1 gap-7 p-0 md:p-10  bg-ng-white">
+        <ng-container *ngFor="let talk of talkList ">
+            <app-schedule-item [talk]="talk"></app-schedule-item>
+        </ng-container>
+    </div>
 </section>

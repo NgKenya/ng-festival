@@ -6,9 +6,11 @@ export interface ISpeaker {
 }
 
 export interface ITalk {
-  startTime: string;
-  endTime: string;
+  startTime: Date;
+  icon?: string;
+  endTime: Date;
+  totalTime?: number;
   title: string;
-  description: string;
-  speaker: ISpeaker[];
+  description?: string;
+  speakers?: ISpeaker[];
 }

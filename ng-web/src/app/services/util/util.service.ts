@@ -14,4 +14,13 @@ export class UtilService {
   getTickets() {
     window.open(ticketUrl, '_blank');
   }
+
+  getMinutesDifference = (startTime: Date, endTime: Date) => {
+    const start = startTime;
+    const end = endTime;
+
+    let diff = end.getTime() - start.getTime();
+
+    return Math.floor(diff / (1000 * 60));
+  };
 }
