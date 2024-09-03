@@ -1,0 +1,30 @@
+<div class="flex justify-between border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl">
+    <div class="time text-sm font-semibold">
+        <lucide-icon class="blocks"></lucide-icon>
+        <p>{{talk.startTime | date:'shortTime'}}</p>
+    </div>
+    <div class="talk-details w-1/2 space-y-4 ">
+        <p class="font-semibold text-ng-dark-blue">{{talk.title}}</p>
+        <p class="text-xs">{{talk.description}}</p>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus necessitatibus nulla at minima explicabo
+            voluptates?</p>
+
+        <div>
+            @for (speaker of talk.speakers; track $index) {
+            <div class="speaker flex space-x-4 items-center">
+                <img [src]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full">
+                <div class="description space-y-1">
+                    <a href="" class="cursor-pointer text-xs">{{speaker.name}}</a>
+                    <p class="text-xs">{{speaker.role}}</p>
+                </div>
+            </div>
+            }
+
+
+        </div>
+
+    </div>
+    <div class="time uppercase  text-sm font-semibold text-gray-500 ">
+        <p>{{utilService.getMinutesDifference(talk.startTime,talk.endTime)}} minutes</p>
+    </div>
+</div>

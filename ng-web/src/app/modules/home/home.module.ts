@@ -8,6 +8,7 @@ import { ScheduleComponent } from './components/schedule/schedule.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { SharedModule } from '../shared/shared.module';
 import { LucideAngularModule, Play, MoveRight } from 'lucide-angular';
+import { SchedhuleItemComponent } from '../shared/components/schedule-item/schedule-item.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { LucideAngularModule, Play, MoveRight } from 'lucide-angular';
     SharedModule,
     LucideAngularModule.pick({ Play, MoveRight }),
     NgOptimizedImage,
+    SchedhuleItemComponent,
   ],
 })
 export class HomeModule {}
