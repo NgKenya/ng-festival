@@ -1,16 +1,22 @@
-<a class="block relative w-full mb-10">
+<div class="block relative w-full mb-10">
   <div
     class="absolute inset-0 bg-ng-dark-blue opacity-10 transition-opacity duration-300 ease-in-out hover:opacity-50 backdrop-blur-sm">
   </div>
+
+  {{speaker.width}}
+  @if (speaker.width&&speaker.height) {
   @if(speaker.lcp){
-  <img [ngSrc]="speaker.imageUrl" priority=""
+  <img [ngSrc]="speaker.imageUrl" priority
     class="h-72 w-full object-cover rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
-    [alt]="speaker.name" width="200" height="400" />
+    [alt]="speaker.name" [width]="speaker.width " [height]="speaker.height" />
   }@else {
   <img [ngSrc]="speaker.imageUrl"
     class="h-72 w-full object-cover rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
-    [alt]="speaker.name" height="100" width="200" />
+    [alt]="speaker.name" [width]="speaker.width" [height]="speaker.height" />
   }
+  }
+
+
 
   <!-- <img
     alt="Art"
@@ -27,4 +33,4 @@
     </p>
   </div>
 
-</a>
+</div>

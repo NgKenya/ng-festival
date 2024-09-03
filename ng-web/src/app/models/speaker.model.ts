@@ -1,6 +1,8 @@
 export interface ISpeaker {
   name: string;
   lcp?: boolean;
+  width?: number;
+  height?: number;
   imageUrl: string;
   role: string;
   company: string;
