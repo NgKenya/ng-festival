@@ -18,7 +18,7 @@ export const NgKenyaPartners: IPartner[] = [
     alt: 'Infobip',
   },
   {
-    official_website: 'https://www.infobip.com',
+    official_website: 'https://paydhq.com/',
     logo: 'assets/Images/logos/sponsors/payd.svg',
     alt: 'Payd',
   },
