@@ -1,12 +1,12 @@
 <!-- Card -->
 <div
-    class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition">
+    class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-none focus:outline-none focus:shadow-none cursor-pointer transition">
     <div class="p-4 md:p-5">
         <div class="flex items-center gap-x-5">
-            <lucide-icon class="w-15 h-15" [name]="description.icon"></lucide-icon>
+            <lucide-icon class="w-15 h-15 group-hover:text-ng-red" [name]="description.icon"></lucide-icon>
 
             <div class="grow">
-                <h3 class="group-hover:text-ng-red font-semibold text-gray-800">
+                <h3 class="group-hover:text-ng-red font-semibold text-neutral-700">
                     {{description.desc1}}
                 </h3>
                 <p class="text-sm text-gray-500">
