@@ -1,9 +1,19 @@
-<div class="item-description flex gap-2 justify-start">
-    <button class="icon bg-ng-white p-4 col-span-1 rounded-lg">
-        <lucide-icon class="w-4 h-4" [name]="description.icon"></lucide-icon>
-    </button>
-    <div class="description">
-        <p class="font-medium">{{description.desc1}}</p>
-        <p class="text-sm text-gray-600">{{description.desc2}}</p>
+<!-- Card -->
+<div
+    class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition">
+    <div class="p-4 md:p-5">
+        <div class="flex items-center gap-x-5">
+            <lucide-icon class="w-15 h-15" [name]="description.icon"></lucide-icon>
+
+            <div class="grow">
+                <h3 class="group-hover:text-ng-red font-semibold text-gray-800">
+                    {{description.desc1}}
+                </h3>
+                <p class="text-sm text-gray-500">
+                    {{description.desc2}}
+                </p>
+            </div>
+        </div>
     </div>
 </div>
+<!-- End Card -->
