@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="ef2c3ff1-c04c-47b5-acc1-278fb2abe73a" name="Changes" comment="hotfix(project): logo adjustments for widths on mobile" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
+  <component name="ProjectId" id="2QyON0PndClhe0L8bhG4mPIRMQy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;chore/site-cleanup&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Wayne/Desktop/Work/Community/Angular Kenya/ng-festival/ng-web/src/assets/Images/logos/sponsors&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\WebStorm 2023.1\\plugins\\javascript-impl\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Wayne\Desktop\Work\Community\Angular Kenya\ng-festival\ng-web\src\assets\Images\logos\sponsors" />
+      <recent name="C:\Users\Wayne\Desktop\Work\Community\Angular Kenya\ng-festival\ng-web\src\assets\Images\community" />
+      <recent name="C:\Users\Wayne\Desktop\Work\Community\Angular Kenya\ng-festival\ng-web\src\assets\Images\logos" />
+      <recent name="C:\Users\Wayne\Desktop\Work\Community\Angular Kenya\ng-festival\ng-web\src\assets\Images\illustrations" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.Angular CLI Server">
+    <configuration name="Angular Application" type="JavascriptDebugType" uri="http://localhost:4200">
+      <method v="2" />
+    </configuration>
+    <configuration name="Angular CLI Server" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-WS-241.14494.235" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="ef2c3ff1-c04c-47b5-acc1-278fb2abe73a" name="Changes" comment="" />
+      <created>1686322310848</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1686322310848</updated>
+      <workItem from="1686322319315" duration="8496000" />
+      <workItem from="1686389607564" duration="4360000" />
+      <workItem from="1686397061991" duration="4622000" />
+      <workItem from="1686759953155" duration="49000" />
+      <workItem from="1688537745522" duration="739000" />
+      <workItem from="1688973728694" duration="551000" />
+      <workItem from="1688997549110" duration="7000" />
+      <workItem from="1725435423169" duration="1821000" />
+    </task>
+    <task id="LOCAL-00001" summary="feature(project): landing page redesign">
+      <created>1686328718568</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686328718568</updated>
+    </task>
+    <task id="LOCAL-00002" summary="feature(project): contact us page redesign, disable speakers and schedule page navigation">
+      <created>1686330296077</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686330296077</updated>
+    </task>
+    <task id="LOCAL-00003" summary="hotfix(project): logo replacements, UI tweaks">
+      <created>1686395398008</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686395398009</updated>
+    </task>
+    <task id="LOCAL-00004" summary="hotfix(project): logo adjustments for widths on mobile">
+      <created>1686403626158</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686403626158</updated>
+    </task>
+    <task id="LOCAL-00005" summary="hotfix(project): logo adjustments for widths on mobile">
+      <created>1686404445539</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686404445539</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feature(project): landing page redesign" />
+    <MESSAGE value="feature(project): contact us page redesign, disable speakers and schedule page navigation" />
+    <MESSAGE value="hotfix(project): logo replacements, UI tweaks" />
+    <MESSAGE value="hotfix(project): logo adjustments for widths on mobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="hotfix(project): logo adjustments for widths on mobile" />
+  </component>
+</project>
