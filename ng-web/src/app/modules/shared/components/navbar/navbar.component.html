@@ -6,7 +6,8 @@
     <div class="flex justify-start w-fit relative  ">
       <a class="flex items-center justify-start text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white"
         [routerLink]="['/']">
-        <img class="w-2/6" src="/assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Ng Festival Logo">
+        <img class="w-2/6" ngSrc="/assets/Images/logos/ngKenya/ng_kenya_red.png" width="782" height="155"
+          alt="Ng Festival Logo">
       </a>
       <button
         class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent  lg:hidden outline-none focus:outline-none"
@@ -17,33 +18,16 @@
     <!-- Links -->
     <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full  lg:flex lg:flex-grow items-start ">
       <ul class="w-full flex flex-col lg:flex-row list-none justify-start ">
+
+        @for (nav of navLinks; track $index) {
         <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/home']" routerLinkActive="active" (click)="showMenu=!showMenu">
-            Home
+          <a class="inline-flex items-center gap-x-2 py-2 w-full text-nowrap px-4 text-sm font-medium rounded-full  text-ng-white border border-transparent hover:bg-ng-white hover:text-ng-pink focus:outline-none focus:bg-ng-white disabled:opacity-50 disabled:pointer-events-none"
+            [routerLink]="nav.link" [routerLinkActive]="nav.activeClass" [routerLinkActiveOptions]="{exact:true}"
+            (click)="showMenu=!showMenu">
+            {{nav.label}}
           </a>
         </li>
-        <!-- <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/speakers']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-            Speakers
-          </a>
-        </li> -->
-        <!-- <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/schedule']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-            Agenda
-          </a>
-        </li> -->
-        <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/contact-us']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-            Contact
-          </a>
-        </li>
-
-
-
+        }
       </ul>
     </div>
 
@@ -52,10 +36,16 @@
     <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}"
       class=" w-full lg:w-auto lg:flex lg:flex-grow items-center order-3  md:mt-0 mt-10 justify-start md:justify-end  border-slate">
 
-      <a href="/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf" target="_blank"
-        class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-ng-red text-ng-white hover:bg-ng-white hover:text-ng-pink focus:outline-none focus:bg-ng-white disabled:opacity-50 disabled:pointer-events-none">
+      <!-- <a href="/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf" target="_blank"
+        class="py-2 px-4 inline-flex items-center gap-x-2 text-sm font-medium h-fit rounded-full border border-transparent bg-ng-red text-ng-white hover:bg-ng-white hover:text-ng-pink focus:outline-none focus:bg-ng-white disabled:opacity-50 disabled:pointer-events-none">
         Sponsor Us
-      </a>
+      </a> -->
+
+      <button (click)="utilServicce.openNewPage(deck)" target="_blank"
+        class="inline-flex items-center gap-x-2 py-2 w-full text-nowrap px-4 text-sm font-medium rounded-full bg-ng-red text-ng-white border border-transparent hover:bg-ng-white hover:text-ng-pink focus:outline-none focus:bg-ng-white disabled:opacity-50 disabled:pointer-events-none">
+        Sponsor Us
+      </button>
+
 
     </div>
   </div>

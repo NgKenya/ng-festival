@@ -1,18 +1,18 @@
-<div class="flex justify-between border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl">
+<div
+    class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl">
     <div class="time text-sm font-semibold">
         <lucide-icon class="blocks"></lucide-icon>
         <p>{{talk.startTime | date:'shortTime'}}</p>
+        <span class="text-xs">{{talk.room}}</span>
     </div>
-    <div class="talk-details w-1/2 space-y-4 ">
+    <div class="talk-details w-full  md:w-1/2  space-y-4 ">
         <p class="font-semibold text-ng-dark-blue">{{talk.title}}</p>
         <p class="text-xs">{{talk.description}}</p>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus necessitatibus nulla at minima explicabo
-            voluptates?</p>
 
-        <div>
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-8">
             @for (speaker of talk.speakers; track $index) {
             <div class="speaker flex space-x-4 items-center">
-                <img [src]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full">
+                <img [src]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full object-cover">
                 <div class="description space-y-1">
                     <a href="" class="cursor-pointer text-xs">{{speaker.name}}</a>
                     <p class="text-xs">{{speaker.role}}</p>
@@ -25,6 +25,9 @@
 
     </div>
     <div class="time uppercase  text-sm font-semibold text-gray-500 ">
-        <p>{{utilService.getMinutesDifference(talk.startTime,talk.endTime)}} minutes</p>
+        @if (talk.endTime) {
+        <p class="text-right">{{utilService.getMinutesDifference(talk.startTime,talk.endTime)}} minutes</p>
+        }
+
     </div>
 </div>
