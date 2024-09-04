@@ -376,8 +376,7 @@ export const TalkList: ITalk[] = [
     startTime: new Date('2024-09-07T14:10:00'),
     endTime: new Date('2024-09-07T14:50:00'),
     title: 'Fundamentals of State Management: The Signal Store',
-    description:
-      'An introduction to state management using the Signal Store in Angular.',
+    description: 'Fundamentals of State Management: The Signal Store',
     room: ROOM_NAME.ROOM_1,
     speakers: [
       {
@@ -392,8 +391,7 @@ export const TalkList: ITalk[] = [
     startTime: new Date('2024-09-07T14:10:00'),
     endTime: new Date('2024-09-07T14:50:00'),
     title: 'Transclusion in Angular',
-    description:
-      'An in-depth session on transclusion in Angular and its use cases.',
+    description: 'Transclusion in Angular',
     room: ROOM_NAME.ROOM_2,
     speakers: [
       {
