@@ -8,14 +8,24 @@ export const NgKenyaPartners: IPartner[] = [
     alt: 'Google logo',
   },
   {
-    official_website: 'https://propel.community/',
-    logo: 'assets/Images/logos/sponsors/propel_logo.png',
-    alt: 'Propel logo',
+    official_website: 'https://angular.dev/',
+    logo: 'assets/Images/logos/sponsors/angular_wordmark.png',
+    alt: 'Angular',
+  },
+  {
+    official_website: 'https://www.infobip.com',
+    logo: 'assets/Images/logos/sponsors/infobip-logo.png',
+    alt: 'Infobip',
+  },
+  {
+    official_website: 'https://www.infobip.com',
+    logo: 'assets/Images/logos/sponsors/payd.svg',
+    alt: 'Payd',
   },
   {
     official_website: 'https://www.jetbrains.com/',
-    logo: 'assets/Images/logos/sponsors/cloudinary.png',
-    alt: 'Cloudinary logo',
+    logo: 'assets/Images/logos/sponsors/jetbrains-logo.png',
+    alt: 'Jetbrains logo',
   },
 ];
 
@@ -26,27 +36,27 @@ export const SpeakerList: ISpeaker[] = [
   {
     name: 'Wycliffe Maina',
     imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
-    role: 'Angular Developer',
+    role: 'The Typescript Aficionado',
     lcp: true,
     company: 'All Things TypeScript',
   },
   {
     name: 'Christine Mukiri',
     imageUrl: 'assets/Images/speakers/christine-mukiri.jpg',
-    role: 'Software Engineer',
-    company: 'Software Developer',
+    role: 'Full Stack Software Engineer',
+    company: '',
   },
   {
     name: 'John Kamau',
     imageUrl: 'assets/Images/speakers/john-kamau.jpg',
-    role: 'Software Developer',
-    company: 'Full stack Developer',
+    role: 'Full stack Developer',
+    company: '',
   },
   {
     name: 'Karanja Chiuri',
     imageUrl: 'assets/Images/speakers/karanja-chiuri.jpg',
-    role: 'Software Developer',
-    company: 'Full stack Developer',
+    role: 'Software Engineer',
+    company: 'Eclectics International',
   },
 
   {
@@ -60,7 +70,7 @@ export const SpeakerList: ISpeaker[] = [
     name: 'Ivy Walobwa',
     imageUrl: 'assets/Images/speakers/ivy-walobwa.jpg',
     role: 'Software Engineer',
-    company: 'Software Company',
+    company: 'Andela',
   },
   {
     name: 'Chris Achinga',
@@ -77,8 +87,8 @@ export const SpeakerList: ISpeaker[] = [
   {
     name: 'Donattah Akinyi',
     imageUrl: 'assets/Images/speakers/donattah-akinyi.jpg',
-    role: 'Software Engineer',
-    company: 'elewa',
+    role: 'Frontend Developer',
+    company: 'Carepay limited(MTIBA),',
   },
 
   {
@@ -92,7 +102,7 @@ export const SpeakerList: ISpeaker[] = [
     name: 'Joy Linda',
     imageUrl: 'assets/Images/speakers/joy_linda.png',
     role: 'Software Engineer',
-    company: 'Software Developer',
+    company: 'Angular Kenya',
   },
   {
     name: 'Wayne Gakuo',
@@ -178,30 +188,30 @@ export const TalkList: ITalk[] = [
   {
     startTime: new Date('2024-09-07T10:00:00'),
     endTime: new Date('2024-09-07T10:30:00'),
-    title: 'Technical Keynote 1',
+    title: 'The Angular Renaissance - Adopting the New Angular Way',
     description: 'Technical keynote by Wycliffe Maina.',
     room: ROOM_NAME.ROOM_1,
     speakers: [
       {
         name: 'Wycliffe Maina',
         imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
-        role: 'Speaker',
-        company: '',
+        role: 'The Typescript Aficionado',
+        company: 'All Things Typescript',
       },
     ],
   },
   {
     startTime: new Date('2024-09-07T10:35:00'),
     endTime: new Date('2024-09-07T11:05:00'),
-    title: 'Technical Keynote 2',
+    title: 'Angular Developer Experience  Over The years',
     description: 'Technical keynote by Rodgers Wanyonyi.',
     room: ROOM_NAME.ROOM_1,
     speakers: [
       {
         name: 'Rodgers Wanyonyi',
         imageUrl: 'assets/Images/speakers/Rodgers.jpg',
-        role: 'Speaker',
-        company: '',
+        role: 'Software Engineer',
+        company: 'Software Company',
       },
     ],
   },
@@ -215,8 +225,8 @@ export const TalkList: ITalk[] = [
       {
         name: 'Wycliffe Maina',
         imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
-        role: 'Speaker',
-        company: '',
+        role: 'The Typescript Aficionado',
+        company: 'All Things Typescript',
       },
       {
         name: 'Rodgers Wanyonyi',
@@ -243,8 +253,8 @@ export const TalkList: ITalk[] = [
       {
         name: 'Donattah Akinyi',
         imageUrl: 'assets/Images/speakers/donattah-akinyi.jpg',
-        role: 'Workshop Leader',
-        company: '',
+        role: 'Frontend Developer',
+        company: 'Carepay limited(MTIBA),',
       },
     ],
   },
@@ -260,7 +270,7 @@ export const TalkList: ITalk[] = [
       {
         name: 'John Kamau',
         imageUrl: 'assets/Images/speakers/john-kamau.jpg',
-        role: 'Workshop Leader',
+        role: 'Full Stack Developer',
         company: '',
       },
     ],
@@ -314,14 +324,14 @@ export const TalkList: ITalk[] = [
       {
         name: 'Paul Chesa',
         imageUrl: 'assets/Images/speakers/paul_chesa.png',
-        role: 'Speaker',
+        role: 'Senior Software Engineer',
         company: '',
       },
       {
         name: 'Joy Linda',
         imageUrl: 'assets/Images/speakers/joy_linda.png',
-        role: 'Speaker',
-        company: '',
+        role: 'Software Engineer',
+        company: 'Angular-Kenya',
       },
     ],
   },
@@ -336,8 +346,8 @@ export const TalkList: ITalk[] = [
       {
         name: 'Ivy Walobwa',
         imageUrl: 'assets/Images/speakers/ivy-walobwa.jpg',
-        role: 'Speaker',
-        company: '',
+        role: 'Software Engineer',
+        company: 'Andela',
       },
     ],
   },
@@ -372,8 +382,8 @@ export const TalkList: ITalk[] = [
       {
         name: 'Christine Mukiri',
         imageUrl: 'assets/Images/speakers/christine-mukiri.jpg',
-        role: 'Speaker',
-        company: '',
+        role: 'Full Stack  Software Engineer',
+        company: 'Freelance',
       },
     ],
   },
@@ -388,8 +398,8 @@ export const TalkList: ITalk[] = [
       {
         name: 'Karanja Chiuri',
         imageUrl: 'assets/Images/speakers/karanja-chiuri.jpg',
-        role: 'Speaker',
-        company: '',
+        role: 'Software Engineer',
+        company: 'Eclectics International',
       },
     ],
   },

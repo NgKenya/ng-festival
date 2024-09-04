@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgKenyaPartners, ticketUrl } from 'src/app/const/data.const';
 import { IContent, IDescription, IPartner } from 'src/app/models/data.model';
@@ -7,6 +7,7 @@ import { IContent, IDescription, IPartner } from 'src/app/models/data.model';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent {
   isVisible: boolean = false;

@@ -1,22 +1,21 @@
 <!-- Community Logos -->
-<!-- <div class="grid py-7 px-7">
-    <h2 class="py-4 text-3xl my-4 md:text-left text-center font-bold text-ng-dark-blue">Our community partners</h2>
-    <div class="flex flex-col md:flex-row items-center pb-8 space-x-0 md:space-x-24 xl:space-x-44">
-      <ng-container *ngFor="let partner of partners">
-        <a [href]="partner.official_website"
-           class="hover:cursor-pointer logo mb-8 md:mb-0"
-           target="_blank"
-           rel="noopener"
-        >
-          <img
-            [alt]="partner.alt"
-            [ngSrc]="partner.logo" class="mx-auto">
-        </a>
-      </ng-container>
+<div class="grid py-7 px-7 bg-white">
+  <h2 class="py-4 text-3xl my-4 md:text-left text-center font-bold text-ng-dark-blue capitalize">Our community partners
+  </h2>
+  <div class="flex flex-col md:flex-row flex-wrap items-center pb-8 space-x-0 md:space-x-24 xl:space-x-44">
+    @for (partner of partners; track $index) {
+    <ng-container>
+      <a [href]="partner.official_website" class="hover:cursor-pointer logo mb-8 md:mb-0" target="_blank"
+        rel="noopener">
+        <img [alt]="partner.alt" [src]="partner.logo" class="w-40 md:w-36 mx-auto">
+      </a>
+    </ng-container>
+    }
 
-    </div>
 
-  </div> -->
+  </div>
+
+</div>
 <!-- Angular Kenya -->
 
 <footer class="px-16 py-10 text-white   bg-ng-dark-blue">
