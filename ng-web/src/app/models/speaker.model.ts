@@ -6,6 +6,7 @@ export interface ISpeaker {
   imageUrl: string;
   role: string;
   company: string;
+  link?: string;
 }
 
 export interface ITalk {

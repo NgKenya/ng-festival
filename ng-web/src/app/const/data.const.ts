@@ -37,6 +37,7 @@ export const SpeakerList: ISpeaker[] = [
     name: 'Wycliffe Maina',
     imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
     role: 'The Typescript Aficionado',
+    link: 'https://twitter.com/mwycliffe_dev',
     lcp: true,
     company: 'All Things TypeScript',
   },
