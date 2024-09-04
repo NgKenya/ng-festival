@@ -8,7 +8,7 @@ import { UtilService } from 'src/app/services/util/util.service';
   styleUrls: ['./navbar.component.scss'],
 })
 export class NavbarComponent {
-  utilServicce = inject(UtilService);
+  utilService = inject(UtilService);
   deck = sponsorhsip_Deck;
   showMenu = false;
   isVisible: boolean = false;
@@ -40,7 +40,7 @@ export class NavbarComponent {
     {
       label: 'Contact Us',
       activeClass: 'active',
-      link: '/contact',
+      link: '/contact-us',
     },
   ];
 }
