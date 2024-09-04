@@ -31,5 +31,7 @@ section {
 }
 
 .active {
-  background: #dd0031;
+  color: #dd0031;
+  font-weight: bold;
+  border-bottom: 2px solid #dd0031;
 }

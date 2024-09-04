@@ -16,6 +16,7 @@ import {
   MoveRight,
   PencilRuler,
   Blocks,
+  AlignLeft,
 } from 'lucide-angular';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { AboutBulletComponent } from './components/about-bullet/about-bullet.component';
@@ -47,6 +48,7 @@ import { SchedhuleItemComponent } from './components/schedule-item/schedule-item
       LocateFixed,
       PencilRuler,
       Blocks,
+      AlignLeft,
     }),
   ],
   exports: [
