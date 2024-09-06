@@ -1,6 +1,6 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgKenyaPartners, ticketUrl } from 'src/app/const/data.const';
+import { ATeam, NgKenyaPartners, ticketUrl } from 'src/app/const/data.const';
 import { IContent, IDescription, IPartner } from 'src/app/models/data.model';
 
 @Component({
@@ -71,6 +71,7 @@ export class HomeComponent {
   ];
   partners: IPartner[] = NgKenyaPartners;
 
+  aTeam = ATeam;
   openNewPage(link: string) {
     window.open(link, '_blank');
   }

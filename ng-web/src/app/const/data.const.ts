@@ -100,7 +100,7 @@ export const SpeakerList: ISpeaker[] = [
   },
 
   {
-    name: 'Joy Linda',
+    name: 'Joy Linda Wawira',
     imageUrl: 'assets/Images/speakers/joy_linda.png',
     role: 'Frontend Engineer',
     company: 'Angular Kenya',
@@ -413,5 +413,27 @@ export const TalkList: ITalk[] = [
     description:
       'Closing remarks, networking session, and tea/coffee with snacks.',
     speakers: [],
+  },
+];
+
+export const ATeam: {
+  name: string;
+  imageLink: string;
+  role: string;
+}[] = [
+  {
+    name: 'Wayne Gakuo',
+    imageLink: 'assets/Images/speakers/wayne.jpg',
+    role: 'Lead',
+  },
+  {
+    name: 'Joy Linda Wawira',
+    imageLink: 'assets/Images/speakers/joy_linda.png',
+    role: 'Co-Lead',
+  },
+  {
+    name: 'Winnie Mandela',
+    imageLink: 'assets/Images/speakers/madi.jpg',
+    role: 'Community Manager',
   },
 ];
