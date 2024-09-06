@@ -2,104 +2,106 @@
 
   <app-counter></app-counter>
 
-  <section class="px-10 md:px-30 lg:px-40 py-16  md:py-32 bg-coming-soon text-ng-dark-blue">
+  <section class="px-10 md:px-30 lg:px-40  bg-coming-soon text-ng-dark-blue">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+      <div class="border-b border-gray-200">
+        <nav class="flex gap-x-4" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
+          <button type="button"
+            class="hs-tab-active:font-semibold hs-tab-active:border-ng-red hs-tab-active:text-ng-red py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-ng-red focus:outline-none focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none active"
+            id="checklist" aria-selected="false" data-hs-tab="#checklist-details" aria-controls="checklist-details"
+            role="tab">
+            Get Ready
+          </button>
+          <button type="button"
+            class="hs-tab-active:font-semibold hs-tab-active:border-ng-red hs-tab-active:text-ng-red py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-ng-red focus:outline-none focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none "
+            id="logistics" aria-selected="true" data-hs-tab="#logistics-details" aria-controls="logistics-details"
+            role="tab">
+            Overview
+          </button>
+          <button type="button"
+            class="hs-tab-active:font-semibold hs-tab-active:border-ng-red hs-tab-active:text-ng-red py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-ng-red focus:outline-none focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
+            id="expectations" aria-selected="false" data-hs-tab="#expectations-details"
+            aria-controls="expectations-details" role="tab">
+            What To Expect
+          </button>
 
-    <div class="border-b border-gray-200">
-      <nav class="flex gap-x-4" aria-label="Tabs" role="tablist" aria-orientation="horizontal">
-        <button type="button"
-          class="hs-tab-active:font-semibold hs-tab-active:border-ng-red hs-tab-active:text-ng-red py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-ng-red focus:outline-none focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none active"
-          id="checklist" aria-selected="false" data-hs-tab="#checklist-details" aria-controls="checklist-details"
-          role="tab">
-          Get Ready
-        </button>
-        <button type="button"
-          class="hs-tab-active:font-semibold hs-tab-active:border-ng-red hs-tab-active:text-ng-red py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-ng-red focus:outline-none focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none "
-          id="logistics" aria-selected="true" data-hs-tab="#logistics-details" aria-controls="logistics-details"
-          role="tab">
-          Overview
-        </button>
-        <button type="button"
-          class="hs-tab-active:font-semibold hs-tab-active:border-ng-red hs-tab-active:text-ng-red py-4 px-1 inline-flex items-center gap-x-2 border-b-2 border-transparent text-sm whitespace-nowrap text-gray-500 hover:text-ng-red focus:outline-none focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
-          id="expectations" aria-selected="false" data-hs-tab="#expectations-details"
-          aria-controls="expectations-details" role="tab">
-          What To Expect
-        </button>
-
-      </nav>
-    </div>
-    <div class="mt-3">
-      <div id="checklist-details" role="tabpanel" aria-labelledby="checklist">
-
-        <div class="grid grid-cols-1 md:grid-cols-2  items-center justify-items-between align-start md:align-middle"
-          id="about">
-          <div class="grid grid-cols-1  gap-8 py-4 w-full md:w-10/12">
-            <h2 class="text-2xl md:text-3xl">Where Will it happen</h2>
-            @for (item of eventDetails; track $index) {
-            <app-about-bullet [description]="item"></app-about-bullet>
-            }
-          </div>
-          <div>
-
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63821.916403421914!2d36.78673571745497!3d-1.249391864920048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f109996536c39%3A0x4eb6d6e1e16b4153!2siHub!5e0!3m2!1sen!2ske!4v1725431831073!5m2!1sen!2ske"
-              width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade" class="object-cover rounded-md mx-auto"></iframe>
-            <!-- <iframe src="https://maps.app.goo.gl/G9D9UdDRFRtfcEqM9" width="4032" height="2268" alt="Ng Festival"
-                class="object-cover rounded-md  w-full h-64 mx-auto">
-              </iframe> -->
-          </div>
-        </div>
-
+        </nav>
       </div>
-      <div id="logistics-details" role="tabpanel" class="hidden" aria-labelledby="logistics">
-        <div class="grid grid-cols-1  md:grid-cols-2 py-4 gap-4">
-          <div class="video">
-            <img src="assets/Images/community/group_photo.avif" alt="Ng Festival"
-              class="object-cover rounded-md  h-full mx-auto">
-          </div>
-          <div class="description my-auto px-0 md:px-6 space-y-8 space-x-0">
-            <p class="text-xl md:text-2xl font-bold  text-ng-dark-blue capitalize"> NG Kenya 2024 caters to all levels
-              of
-              Angular, </p>
-            <p class="text-base mb-4">
-              Whether you're a seasoned web developer or a mobile app aficionado, NG Kenya caters to all levels of
-              Angular
-              expertise. We'll delve into core Angular concepts, from web fundamentals like the browser DOM API to
-              advanced
-              TypeScript techniques.
+      <div class="mt-3">
+        <div id="checklist-details" role="tabpanel" aria-labelledby="checklist">
 
-            </p>
-            <button type="button" (click)="getTickets()"
-              class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-ng-dark-blue text-white hover:bg-ng-red focus:outline-none focus:bg-ng-red disabled:opacity-50 disabled:pointer-events-none">
-              Get Tickets
-              <lucide-icon class="w-4 h-4 " name="move-right"></lucide-icon>
-            </button>
-          </div>
-        </div>
-      </div>
-      <div id="expectations-details" class="hidden" role="tabpanel" aria-labelledby="expectations">
-        <div class="grid grid-cols-1   items-center justify-items-center align-start md:align-middle" id="about">
-          <div class="grid grid-cols-1 gap-8 py-4">
-            <h2 class="text-xl md:text-2xl font-bold  text-ng-dark-blue capitalize">What To Expect</h2>
-            <div class="grid grids-cols-1 md:grid-cols-2 gap-8">
-              @for (item of whatToExpect; track $index) {
+          <div class="grid grid-cols-1 md:grid-cols-2  items-center justify-items-between align-start md:align-middle"
+            id="about">
+            <div class="grid grid-cols-1  gap-8 py-4 w-full md:w-10/12">
+              <h2 class="text-2xl md:text-3xl">Where Will it happen</h2>
+              @for (item of eventDetails; track $index) {
               <app-about-bullet [description]="item"></app-about-bullet>
               }
             </div>
+            <div>
 
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63821.916403421914!2d36.78673571745497!3d-1.249391864920048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f109996536c39%3A0x4eb6d6e1e16b4153!2siHub!5e0!3m2!1sen!2ske!4v1725431831073!5m2!1sen!2ske"
+                width="600" height="400" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade" class="object-cover rounded-md mx-auto"></iframe>
+              <!-- <iframe src="https://maps.app.goo.gl/G9D9UdDRFRtfcEqM9" width="4032" height="2268" alt="Ng Festival"
+                  class="object-cover rounded-md  w-full h-64 mx-auto">
+                </iframe> -->
+            </div>
+          </div>
+
+        </div>
+        <div id="logistics-details" role="tabpanel" class="hidden" aria-labelledby="logistics">
+          <div class="grid grid-cols-1  md:grid-cols-2 py-4 gap-4">
+            <div class="video">
+              <img src="assets/Images/community/group_photo.avif" alt="Ng Festival"
+                class="object-cover rounded-md  h-full mx-auto">
+            </div>
+            <div class="description my-auto px-0 md:px-6 space-y-8 space-x-0">
+              <p class="text-xl md:text-2xl font-bold  text-ng-dark-blue capitalize"> NG Kenya 2024 caters to all levels
+                of
+                Angular, </p>
+              <p class="text-base mb-4">
+                Whether you're a seasoned web developer or a mobile app aficionado, NG Kenya caters to all levels of
+                Angular
+                expertise. We'll delve into core Angular concepts, from web fundamentals like the browser DOM API to
+                advanced
+                TypeScript techniques.
+
+              </p>
+              <button type="button" (click)="getTickets()"
+                class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-transparent bg-ng-dark-blue text-white hover:bg-ng-red focus:outline-none focus:bg-ng-red disabled:opacity-50 disabled:pointer-events-none">
+                Get Tickets
+                <lucide-icon class="w-4 h-4 " name="move-right"></lucide-icon>
+              </button>
+            </div>
           </div>
         </div>
-      </div>
+        <div id="expectations-details" class="hidden" role="tabpanel" aria-labelledby="expectations">
+          <div class="grid grid-cols-1   items-center justify-items-center align-start md:align-middle" id="about">
+            <div class="grid grid-cols-1 gap-8 py-4">
+              <h2 class="text-xl md:text-2xl font-bold  text-ng-dark-blue capitalize">What To Expect</h2>
+              <div class="grid grids-cols-1 md:grid-cols-2 gap-8">
+                @for (item of whatToExpect; track $index) {
+                <app-about-bullet [description]="item"></app-about-bullet>
+                }
+              </div>
 
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
+
   </section>
 
   <section class="px-10 md:px-30 lg:px-40 py-16  md:py-32 bg-ng-dark-blue text-ng-white">
 
     <div class="flex flex-col-reverse md:flex-row justify-end md:justify-between">
-      <h2 class="text-xl md:text-2xl font-bold  text-ng-white capitalize my-4">Main Stage Highlights</h2>
+      <h2 class="text-xl md:text-2xl font-bold  capitalize my-4 text-ng-red">Main Stage Highlights</h2>
       <a class="group h-fit w-fit inline-flex items-center gap-x-2 py-2 px-3 bg-none border-ng-white border-[1px] font-medium text-sm text-ng-white rounded-full focus:outline-none hover"
-        routerLink="/schedhule">
+        routerLink="/schedule">
         More Sessions
         <lucide-icon name="chevron-right"></lucide-icon>
       </a>
