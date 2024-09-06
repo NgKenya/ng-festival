@@ -13,6 +13,7 @@ import {
   MoveRight,
   Menu,
   AlignLeft,
+  ChevronRight,
 } from 'lucide-angular';
 import { SchedhuleItemComponent } from '../shared/components/schedule-item/schedule-item.component';
 
@@ -27,7 +28,13 @@ import { SchedhuleItemComponent } from '../shared/components/schedule-item/sched
     CommonModule,
     HomeRoutingModule,
     SharedModule,
-    LucideAngularModule.pick({ Play, MoveRight, Menu, AlignLeft }),
+    LucideAngularModule.pick({
+      Play,
+      MoveRight,
+      Menu,
+      AlignLeft,
+      ChevronRight,
+    }),
     NgOptimizedImage,
     SchedhuleItemComponent,
   ],
