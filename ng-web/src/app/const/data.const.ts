@@ -27,6 +27,11 @@ export const NgKenyaPartners: IPartner[] = [
     logo: 'assets/Images/logos/sponsors/jetbrains-logo.png',
     alt: 'Jetbrains logo',
   },
+  {
+    official_website: 'https://ihub.co.ke/',
+    logo: 'assets/Images/logos/sponsors/ihub.png',
+    alt: 'Ihub Logo',
+  },
 ];
 
 export const ticketUrl = 'https://paydexp.com/ng-kenya-2024';
