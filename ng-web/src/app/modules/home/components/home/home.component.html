@@ -220,28 +220,32 @@
     <!-- End Masonry Cards -->
   </section>
 
+  <div class="bg-ng-dark-blue">
+    <hr class="px-10 md:px-30 lg:px-40   w-10/12 border-neutral-700 mx-auto " />
+  </div>
 
 
   <section class="px-10 md:px-30 lg:px-40 py-16 grid  bg-ng-dark-blue">
 
-    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 text-center">
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 text-left">
       <!-- Title -->
-      <div class="max-w-2xl col-span-3 mx-auto mb-10 lg:mb-14 text-ng-dark-blue ">
+      <div class="col-span-3 mx-auto mb-10 lg:mb-14 text-ng-red ">
         <h2 class="text-2xl font-bold md:text-4xl md:leading-tight">The Team</h2>
-        <p class="mt-1 ">A passionate group of Angular enthusiasts dedicated to fostering a thriving Angular community
+        <p class="mt-1 text-ng-white">A passionate group of Angular enthusiasts dedicated to fostering a thriving
+          Angular community
           in Kenya.
         </p>
       </div>
       <!-- End Title -->
       <div class="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-12">
         @for (team of aTeam; track $index) {
-        <div class="text-center">
-          <img class="rounded-xl sm:size-48 lg:size-60 mx-auto object-cover" [src]='team.imageLink' [alt]="team.name">
+        <div class="text-left">
+          <img class="rounded-xl sm:size-48 lg:size-60 ms-0 object-cover" [src]='team.imageLink' [alt]="team.name">
           <div class="mt-2 sm:mt-4">
-            <h3 class="text-sm font-medium text-ng-dark-blue sm:text-base lg:text-lg ">
+            <h3 class="text-sm font-medium text-white sm:text-base lg:text-lg ">
               {{team.name}}
             </h3>
-            <p class="text-xs text-gray-600 sm:text-sm lg:text-base ">
+            <p class="text-xs text-white sm:text-sm lg:text-base ">
               {{team.role}}
             </p>
           </div>
