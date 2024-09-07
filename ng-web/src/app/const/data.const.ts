@@ -302,6 +302,8 @@ export const TalkList: ITalk[] = [
     title: 'Speed At Scale: Instantly is Better than Fast?',
     description: 'A session exploring speed optimization techniques at scale.',
     room: ROOM_NAME.ROOM_1,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1B9D0Tyku6jjz799Ax-CclfEj1cka0kPLTsC6wL2TW4U/edit?usp=sharing',
     speakers: [
       {
         name: 'Chris Achinga',
@@ -374,8 +376,9 @@ export const TalkList: ITalk[] = [
     title: 'Fundamentals of State Management: The Signal Store',
     description: 'Fundamentals of State Management: The Signal Store',
     room: ROOM_NAME.ROOM_2,
+    projectLink: 'https://github.com/thefrocode/ng-kenya-ecommerce',
     slidesLink:
-      'https://docs.google.com/presentation/d/1B9D0Tyku6jjz799Ax-CclfEj1cka0kPLTsC6wL2TW4U/edit?usp=sharing',
+      'https://docs.google.com/presentation/d/11RHh2hnjq0RMKtXsd6vEMLW9Kc6OMbOk/edit#slide=id.p8',
     speakers: [
       {
         name: 'Christine Mukiri',
