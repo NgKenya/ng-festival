@@ -182,6 +182,8 @@ export const TalkList: ITalk[] = [
     endTime: new Date('2024-09-07T10:15:00'),
     title: 'Angular Developer Experience Over The years',
     description: 'Technical keynote by Rodgers Wanyonyi.',
+    slidesLink:
+      'https://docs.google.com/presentation/d/1muxoLLBfOu1GzZPwQCn8z83gB6aw0zt0yxx5l3YwEho/edit?usp=sharing',
     room: ROOM_NAME.ROOM_1,
     speakers: [
       {
@@ -199,6 +201,8 @@ export const TalkList: ITalk[] = [
     title: 'The Angular Renaissance - Adopting the New Angular Way',
     description: 'Technical keynote by Wycliffe Maina.',
     room: ROOM_NAME.ROOM_1,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1Rrqskg89hJs_OiskCrQSWf3h-KEXhCImpVSNcgQVLfw/edit?usp=sharing',
     speakers: [
       {
         name: 'Wycliffe Maina',
@@ -276,6 +280,8 @@ export const TalkList: ITalk[] = [
     description:
       'Learn about implementing custom observer patterns and feature flags in Angular applications.',
     room: ROOM_NAME.ROOM_3,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1muxoLLBfOu1GzZPwQCn8z83gB6aw0zt0yxx5l3YwEho/edit?usp=sharing',
     speakers: [
       {
         name: 'Alex Muturi',
@@ -296,6 +302,8 @@ export const TalkList: ITalk[] = [
     title: 'Speed At Scale: Instantly is Better than Fast?',
     description: 'A session exploring speed optimization techniques at scale.',
     room: ROOM_NAME.ROOM_1,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1B9D0Tyku6jjz799Ax-CclfEj1cka0kPLTsC6wL2TW4U/edit?usp=sharing',
     speakers: [
       {
         name: 'Chris Achinga',
@@ -313,6 +321,9 @@ export const TalkList: ITalk[] = [
     description:
       'A session on optimizing component rendering using deferrable views in Angular.',
     room: ROOM_NAME.ROOM_2,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1MvuEF0CR3AJKYhkEsTBQ3rupWXGCnHu2oFKYYMpgx6A/edit?usp=sharing',
+
     speakers: [
       {
         name: 'Paul Chesa',
@@ -365,6 +376,9 @@ export const TalkList: ITalk[] = [
     title: 'Fundamentals of State Management: The Signal Store',
     description: 'Fundamentals of State Management: The Signal Store',
     room: ROOM_NAME.ROOM_2,
+    projectLink: 'https://github.com/thefrocode/ng-kenya-ecommerce',
+    slidesLink:
+      'https://docs.google.com/presentation/d/11RHh2hnjq0RMKtXsd6vEMLW9Kc6OMbOk/edit#slide=id.p8',
     speakers: [
       {
         name: 'Christine Mukiri',
@@ -380,6 +394,9 @@ export const TalkList: ITalk[] = [
     title: 'Transclusion in Angular',
     description: 'Transclusion in Angular',
     room: ROOM_NAME.ROOM_3,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1hmfqNrJA4r2IF-dQE2YSAkOfw62i3nqfSzSc_m9uxBs/edit?usp=drivesdk',
+    projectLink: 'https://github.com/bishop254/transclusion',
     speakers: [
       {
         name: 'Karanja Chiuri',

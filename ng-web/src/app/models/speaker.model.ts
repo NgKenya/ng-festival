@@ -19,6 +19,8 @@ export interface ITalk {
   description?: string;
   speakers?: ISpeaker[];
   isDone?: boolean;
+  slidesLink?: string;
+  projectLink?: string;
 }
 
 export enum ROOM_NAME {
