@@ -12,7 +12,7 @@ export interface ISpeaker {
 export interface ITalk {
   startTime: Date;
   icon?: string;
-  endTime?: Date;
+  endTime: Date;
   room?: ROOM_NAME.ROOM_1 | ROOM_NAME.ROOM_2 | ROOM_NAME.ROOM_3 | string;
   totalTime?: number;
   title: string;
