@@ -24,12 +24,12 @@ export class ScheduleComponent implements OnInit {
     console.log(now);
 
     const newTalks = this.talkList.filter((x) => {
-      let xstartTime = new Date(x.startTime);
+      let xstartTime = new Date(x.endTime);
       return xstartTime > this.activeTime;
     });
 
     const doneTalks = this.talkList.filter((x) => {
-      let xstartTime = new Date(x.startTime);
+      let xstartTime = new Date(x.endTime);
       return xstartTime < this.activeTime;
     });
 
