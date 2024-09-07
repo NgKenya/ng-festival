@@ -21,7 +21,7 @@ export interface ITalk {
 }
 
 export enum ROOM_NAME {
-  ROOM_1 = 'Room 1',
-  ROOM_2 = 'Room 2',
-  ROOM_3 = 'Room 3',
+  ROOM_1 = 'Auditorium',
+  ROOM_2 = 'Kigali',
+  ROOM_3 = 'Co working Space',
 }
