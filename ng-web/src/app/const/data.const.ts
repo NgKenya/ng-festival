@@ -374,6 +374,8 @@ export const TalkList: ITalk[] = [
     title: 'Fundamentals of State Management: The Signal Store',
     description: 'Fundamentals of State Management: The Signal Store',
     room: ROOM_NAME.ROOM_2,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1B9D0Tyku6jjz799Ax-CclfEj1cka0kPLTsC6wL2TW4U/edit?usp=sharing',
     speakers: [
       {
         name: 'Christine Mukiri',
