@@ -18,6 +18,7 @@ export interface ITalk {
   title: string;
   description?: string;
   speakers?: ISpeaker[];
+  isDone?: boolean;
 }
 
 export enum ROOM_NAME {
