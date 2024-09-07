@@ -280,6 +280,8 @@ export const TalkList: ITalk[] = [
     description:
       'Learn about implementing custom observer patterns and feature flags in Angular applications.',
     room: ROOM_NAME.ROOM_3,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1muxoLLBfOu1GzZPwQCn8z83gB6aw0zt0yxx5l3YwEho/edit?usp=sharing',
     speakers: [
       {
         name: 'Alex Muturi',
@@ -317,6 +319,9 @@ export const TalkList: ITalk[] = [
     description:
       'A session on optimizing component rendering using deferrable views in Angular.',
     room: ROOM_NAME.ROOM_2,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1MvuEF0CR3AJKYhkEsTBQ3rupWXGCnHu2oFKYYMpgx6A/edit?usp=sharing',
+
     speakers: [
       {
         name: 'Paul Chesa',
@@ -384,6 +389,9 @@ export const TalkList: ITalk[] = [
     title: 'Transclusion in Angular',
     description: 'Transclusion in Angular',
     room: ROOM_NAME.ROOM_3,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1hmfqNrJA4r2IF-dQE2YSAkOfw62i3nqfSzSc_m9uxBs/edit?usp=drivesdk',
+    projectLink: 'https://github.com/bishop254/transclusion',
     speakers: [
       {
         name: 'Karanja Chiuri',
