@@ -18,6 +18,7 @@ import {
   Blocks,
   AlignLeft,
   CheckCheck,
+  ExternalLink,
 } from 'lucide-angular';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { AboutBulletComponent } from './components/about-bullet/about-bullet.component';
@@ -51,6 +52,7 @@ import { SchedhuleItemComponent } from './components/schedule-item/schedule-item
       Blocks,
       AlignLeft,
       CheckCheck,
+      ExternalLink,
     }),
   ],
   exports: [

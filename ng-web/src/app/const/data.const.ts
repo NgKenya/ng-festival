@@ -182,6 +182,8 @@ export const TalkList: ITalk[] = [
     endTime: new Date('2024-09-07T10:15:00'),
     title: 'Angular Developer Experience Over The years',
     description: 'Technical keynote by Rodgers Wanyonyi.',
+    slidesLink:
+      'https://docs.google.com/presentation/d/1muxoLLBfOu1GzZPwQCn8z83gB6aw0zt0yxx5l3YwEho/edit?usp=sharing',
     room: ROOM_NAME.ROOM_1,
     speakers: [
       {
@@ -199,6 +201,8 @@ export const TalkList: ITalk[] = [
     title: 'The Angular Renaissance - Adopting the New Angular Way',
     description: 'Technical keynote by Wycliffe Maina.',
     room: ROOM_NAME.ROOM_1,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1Rrqskg89hJs_OiskCrQSWf3h-KEXhCImpVSNcgQVLfw/edit?usp=sharing',
     speakers: [
       {
         name: 'Wycliffe Maina',

@@ -14,14 +14,34 @@
             <div class="speaker flex space-x-4 items-center">
                 <img [src]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full object-cover">
                 <div class="description space-y-1">
-                    <a href="" class="cursor-pointer text-xs">{{speaker.name}}</a>
+                    <a class="cursor-pointer text-xs">{{speaker.name}}</a>
                     <p class="text-xs">{{speaker.role}}</p>
                 </div>
             </div>
             }
+        </div>
+        @if (talk.isDone===true) {
+        <div class="flex justify-start gap-4">
+            @if (talk.slidesLink) {
+            <button (click)="utilService.openNewPage(talk.slidesLink)"
+                class="group inline-flex items-center gap-x-2 py-2 px-3 cursor-pointer  border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-red hover:text-ng-dark-blue">
+                Slides
+                <lucide-icon name="external-link" class="w-4 h-4"></lucide-icon>
+            </button>
+            }
+            @if(talk.projectLink){
+            <button (click)="utilService.openNewPage(talk.projectLink)"
+                class="group inline-flex items-center gap-x-2 py-2 px-3 border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none  hover:bg-ng-red hover:text-ng-dark-blue cursor-pointer">
+                Github Project
+                <lucide-icon name="external-link" class="w-4 h-4"></lucide-icon>
+            </button>
+            }
 
 
         </div>
+
+        }
+
 
     </div>
     <div class="time uppercase  text-sm font-semibold text-gray-500 ">
@@ -32,4 +52,5 @@
         }
 
     </div>
+
 </div>
