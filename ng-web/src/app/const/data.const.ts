@@ -323,6 +323,7 @@ export const TalkList: ITalk[] = [
     description:
       'A session on optimizing component rendering using deferrable views in Angular.',
     room: ROOM_NAME.ROOM_2,
+    projectLink: 'https://github.com/pchessah/colors',
     slidesLink:
       'https://docs.google.com/presentation/d/1MvuEF0CR3AJKYhkEsTBQ3rupWXGCnHu2oFKYYMpgx6A/edit?usp=sharing',
 
@@ -346,6 +347,8 @@ export const TalkList: ITalk[] = [
     endTime: new Date('2024-09-07T13:00:00'),
     title: 'Testing and Maintaining Design Systems with Storybook',
     room: ROOM_NAME.ROOM_3,
+    slidesLink:
+      'https://docs.google.com/presentation/u/0/d/1zHkaWq2SNhhv8csWlvP8VLGdtb34R56DL1hRkUcnoW0/mobilepresent',
     description:
       'A session on testing and maintaining design systems effectively using Storybook.',
     speakers: [
@@ -364,17 +367,17 @@ export const TalkList: ITalk[] = [
   },
   {
     startTime: new Date('2024-09-07T13:15:00'), // Time remains unchanged for Lunch
-    endTime: new Date('2024-09-07T14:00:00'),
+    endTime: new Date('2024-09-07T15:00:00'),
     title: 'Lunch',
   },
   {
-    startTime: new Date('2024-09-07T14:10:00'), // Updated time for Breakout Sessions 3
-    endTime: new Date('2024-09-07T14:50:00'),
+    startTime: new Date('2024-09-07T15:00:00'), // Updated time for Breakout Sessions 3
+    endTime: new Date('2024-09-07T15:40:00'),
     title: 'Breakout Sessions 3',
   },
   {
-    startTime: new Date('2024-09-07T14:10:00'), // Updated time for Breakout Sessions 3
-    endTime: new Date('2024-09-07T14:50:00'),
+    startTime: new Date('2024-09-07T15:00:00'), // Updated time for Breakout Sessions 3
+    endTime: new Date('2024-09-07T15:40:00'),
     title: 'Fundamentals of State Management: The Signal Store',
     description: 'Fundamentals of State Management: The Signal Store',
     room: ROOM_NAME.ROOM_2,
@@ -391,8 +394,8 @@ export const TalkList: ITalk[] = [
     ],
   },
   {
-    startTime: new Date('2024-09-07T14:10:00'), // Updated time for Breakout Sessions 3
-    endTime: new Date('2024-09-07T14:50:00'),
+    startTime: new Date('2024-09-07T15:00:00'), // Updated time for Breakout Sessions 3
+    endTime: new Date('2024-09-07T15:40:00'),
     title: 'Transclusion in Angular',
     description: 'Transclusion in Angular',
     room: ROOM_NAME.ROOM_3,
@@ -409,25 +412,37 @@ export const TalkList: ITalk[] = [
     ],
   },
   {
-    startTime: new Date('2024-09-07T15:00:00'), // Time remains unchanged for Panel Build-Up
-    endTime: new Date('2024-09-07T15:10:00'),
+    startTime: new Date('2024-09-07T15:50:00'), // Time remains unchanged for Panel Build-Up
+    endTime: new Date('2024-09-07T16:20:00'),
     title: 'Panel Build-up',
     description: "Let's break the ice",
     room: ROOM_NAME.ROOM_1,
     speakers: [],
   },
   {
-    startTime: new Date('2024-09-07T15:10:00'), // Time remains unchanged for Panel Discussion
-    endTime: new Date('2024-09-07T15:50:00'),
+    startTime: new Date('2024-09-07T16:30:00'), // Time remains unchanged for Panel Discussion
+    endTime: new Date('2024-09-07T17:00:00'),
     title: "Angular Upgrade: A Hero's Adventure to a Brighter Future.",
     description: 'A panel discussion',
     room: ROOM_NAME.ROOM_1,
     speakers: [
       {
+        name: 'Paul Chesa',
+        imageUrl: 'assets/Images/speakers/paul_chesa.png',
+        role: 'Senior Software Engineer',
+        company: '',
+      },
+      {
         name: 'Joy Linda',
         imageUrl: 'assets/Images/speakers/joy_linda.png',
         role: 'Frontend Engineer',
         company: 'Delite',
+      },
+      {
+        name: 'Wycliffe Maina',
+        imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
+        role: 'Angular GDE',
+        company: 'All Things Typescript',
       },
     ],
   },
