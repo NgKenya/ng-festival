@@ -263,6 +263,8 @@ export const TalkList: ITalk[] = [
     description:
       'Learn how to implement real-time updates in Angular using Firebase Cloud Messaging.',
     room: ROOM_NAME.ROOM_2,
+    slidesLink:
+      'https://docs.google.com/presentation/d/1rnJNLeCAGaRCRKw2bonEvmYl5fa_C4Y1/edit?usp=sharing&ouid=104844680073323721667&rtpof=true&sd=true',
     speakers: [
       {
         name: 'John Kamau',
