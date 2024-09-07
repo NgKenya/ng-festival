@@ -180,21 +180,6 @@ export const TalkList: ITalk[] = [
   {
     startTime: new Date('2024-09-07T09:45:00'), // Updated start time after Payd session
     endTime: new Date('2024-09-07T10:15:00'),
-    title: 'The Angular Renaissance - Adopting the New Angular Way',
-    description: 'Technical keynote by Wycliffe Maina.',
-    room: ROOM_NAME.ROOM_1,
-    speakers: [
-      {
-        name: 'Wycliffe Maina',
-        imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
-        role: 'Angular GDE',
-        company: 'All Things Typescript',
-      },
-    ],
-  },
-  {
-    startTime: new Date('2024-09-07T10:20:00'), // Adjusted start time after Wycliffe Maina's keynote
-    endTime: new Date('2024-09-07T10:50:00'),
     title: 'Angular Developer Experience Over The years',
     description: 'Technical keynote by Rodgers Wanyonyi.',
     room: ROOM_NAME.ROOM_1,
@@ -204,6 +189,22 @@ export const TalkList: ITalk[] = [
         imageUrl: 'assets/Images/speakers/Rodgers.jpg',
         role: 'Software Engineer',
         company: 'Software Company',
+      },
+    ],
+  },
+  {
+    startTime: new Date('2024-09-07T10:20:00'), // Adjusted start time after Wycliffe Maina's keynote
+    endTime: new Date('2024-09-07T10:50:00'),
+
+    title: 'The Angular Renaissance - Adopting the New Angular Way',
+    description: 'Technical keynote by Wycliffe Maina.',
+    room: ROOM_NAME.ROOM_1,
+    speakers: [
+      {
+        name: 'Wycliffe Maina',
+        imageUrl: 'assets/Images/speakers/maina-wycliffe.jpg',
+        role: 'Angular GDE',
+        company: 'All Things Typescript',
       },
     ],
   },
@@ -378,7 +379,7 @@ export const TalkList: ITalk[] = [
     endTime: new Date('2024-09-07T14:50:00'),
     title: 'Transclusion in Angular',
     description: 'Transclusion in Angular',
-    room: ROOM_NAME.ROOM_2,
+    room: ROOM_NAME.ROOM_3,
     speakers: [
       {
         name: 'Karanja Chiuri',

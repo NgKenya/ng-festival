@@ -1,4 +1,4 @@
-<div
+<div [ngClass]="talk?.isDone?'bg-neutral-900 text-neutral-700':'bg-none'"
     class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl">
     <div class="time text-sm font-semibold">
         <lucide-icon class="blocks"></lucide-icon>
@@ -6,7 +6,7 @@
         <span class="text-xs">{{talk.room}}</span>
     </div>
     <div class="talk-details w-full  md:w-1/2  space-y-4 ">
-        <p class="font-semibold text-ng-dark-blue">{{talk.title}}</p>
+        <p class="font-semibold  text-ng-dark-blue" [ngClass]="talk?.isDone ? 'text-white':'bg-none'">{{talk.title}}</p>
         <p class="text-xs">{{talk.description}}</p>
 
         <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-8">
@@ -25,8 +25,10 @@
 
     </div>
     <div class="time uppercase  text-sm font-semibold text-gray-500 ">
-        @if (talk.endTime) {
+        @if (talk.endTime && talk.isDone!==true) {
         <p class="text-right">{{utilService.getMinutesDifference(talk.startTime,talk.endTime)}} minutes</p>
+        }@else {
+        <p class="text-right"><lucide-icon name="check-check" class="text-green-600"></lucide-icon></p>
         }
 
     </div>
