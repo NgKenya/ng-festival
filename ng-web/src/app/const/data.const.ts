@@ -449,6 +449,12 @@ export const TalkList: ITalk[] = [
         role: 'Angular GDE',
         company: 'All Things Typescript',
       },
+      {
+        name: 'Christine Mukiri',
+        imageUrl: 'assets/Images/speakers/christine-mukiri.jpg',
+        role: 'Full Stack Software Engineer',
+        company: '',
+      },
     ],
   },
   {
