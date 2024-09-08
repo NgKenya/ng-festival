@@ -1,5 +1,8 @@
 import { Component, inject } from '@angular/core';
-import { sponsorhsip_Deck } from 'src/app/const/data.const';
+import {
+  ngKenya2024Feedback,
+  sponsorhsip_Deck,
+} from 'src/app/const/data.const';
 import { UtilService } from 'src/app/services/util/util.service';
 
 @Component({
@@ -10,6 +13,7 @@ import { UtilService } from 'src/app/services/util/util.service';
 export class NavbarComponent {
   utilService = inject(UtilService);
   deck = sponsorhsip_Deck;
+  feedback = ngKenya2024Feedback;
   showMenu = false;
   isVisible: boolean = false;
   toggleNavbar() {

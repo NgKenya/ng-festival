@@ -35,6 +35,8 @@ export const NgKenyaPartners: IPartner[] = [
 ];
 
 export const ticketUrl = 'https://paydexp.com/ng-kenya-2024';
+export const ngKenya2024Photos = 'https://photos.app.goo.gl/UHZCwSEV2JkMzbYw7';
+export const ngKenya2024Feedback = 'https://forms.gle/xZ9UbyZpfpm1ESwa9';
 export const sponsorhsip_Deck =
   'https://docs.google.com/presentation/d/1UPa73RxOo3aJppY-QjkWCtMV6b14TvHn/edit?usp=sharing&ouid=104844680073323721667&rtpof=true&sd=true';
 export const SpeakerList: ISpeaker[] = [
@@ -229,7 +231,7 @@ export const TalkList: ITalk[] = [
         name: 'Rodgers Wanyonyi',
         imageUrl: 'assets/Images/speakers/Rodgers.jpg',
         role: 'Software Engineer',
-        company: '',
+        company: 'Griffin School',
       },
     ],
   },
@@ -246,6 +248,9 @@ export const TalkList: ITalk[] = [
     description:
       'A hands-on workshop on mastering strongly typed reactive forms in Angular.',
     room: ROOM_NAME.ROOM_1,
+    projectLink: 'https://github.com/Dlelo/strongly-typed-reactive-form',
+    slidesLink:
+      'https://docs.google.com/presentation/d/1aBW5hOmtt2Yv9SOK5YNLXanYGxEMqG-IH0vG3ymrdWU/edit?usp=sharing',
     speakers: [
       {
         name: 'Donattah Akinyi',
