@@ -1,6 +1,21 @@
 <!-- ========== HEADER ========== -->
+<div id="feedback-alert"
+  class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-ng-red  text-xs  p-2 hover:bg-red-700"
+  role="alert" tabindex="-1" aria-labelledby="hs-dismiss-button-label">
+
+  <div class="flex justify-center items-center gap-8">
+    <a (click)="utilService.openNewPage(feedback)" id="hs-dismiss-button-label"
+      class="text-sm font-medium flex justify-center items-center text-ng-dark-blue hover:text-ng-white hover:cursor-pointer">
+      Share your feedback on NG Kenya 2024 <lucide-icon name="arrow-right" class="mx-3 text-ng-white"></lucide-icon>
+    </a>
+
+  </div>
+
+
+
+</div>
 <header
-  class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
+  class=" sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
   <nav
     class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-1.5 mx-2 lg:mx-auto">
     <div class="flex items-center justify-between">

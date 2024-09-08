@@ -1,5 +1,6 @@
 import { Component, OnInit, inject } from '@angular/core';
 import { Observable, interval, takeUntil } from 'rxjs';
+import { ngKenya2024Photos } from 'src/app/const/data.const';
 import { UtilService } from 'src/app/services/util/util.service';
 
 interface IDate {
@@ -16,6 +17,7 @@ interface IDate {
 })
 export class CounterComponent implements OnInit {
   officialDate: Date = new Date('September 7 2024');
+  photoLink: string = ngKenya2024Photos;
   daysLeft: number = 0;
   daysLeftDisplay: IDate = {
     month: 0,
