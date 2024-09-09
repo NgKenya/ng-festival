@@ -287,6 +287,8 @@ export const TalkList: ITalk[] = [
     description:
       'Learn about implementing custom observer patterns and feature flags in Angular applications.',
     room: ROOM_NAME.ROOM_3,
+    projectLink:
+      'https://gist.github.com/alex-migwi/fe1b7e133ff3a922ca72969afacfb83c',
     slidesLink:
       'https://docs.google.com/presentation/d/1muxoLLBfOu1GzZPwQCn8z83gB6aw0zt0yxx5l3YwEho/edit?usp=sharing',
     speakers: [
