@@ -1,12 +1,13 @@
-import { Component, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { NgKenyaPartners, ticketUrl } from 'src/app/const/data.const';
+import { ATeam, NgKenyaPartners, ticketUrl } from 'src/app/const/data.const';
 import { IContent, IDescription, IPartner } from 'src/app/models/data.model';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
+  // schemas:[CUSTOM_ELEMENTS_SCHEMA]
 })
 export class HomeComponent {
   isVisible: boolean = false;
@@ -37,12 +38,12 @@ export class HomeComponent {
     {
       icon: 'calendar-days',
       desc1: 'Date',
-      desc2: 'September 6 & 7, 2024',
+      desc2: 'September 7, 2024',
     },
     {
       icon: 'locate-fixed',
       desc1: 'Venue',
-      desc2: 'To Be Announced, Nairobi',
+      desc2: 'Ihub , Jahazi Ground Floor , James Gichuru Road ',
     },
     {
       icon: 'calendar-days',
@@ -70,6 +71,7 @@ export class HomeComponent {
   ];
   partners: IPartner[] = NgKenyaPartners;
 
+  aTeam = ATeam;
   openNewPage(link: string) {
     window.open(link, '_blank');
   }

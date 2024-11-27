@@ -1,61 +1,63 @@
-<nav class="relative flex flex-wrap items-center justify-between py-3 mb-3">
+<!-- ========== HEADER ========== -->
+<div id="feedback-alert"
+  class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-ng-red  text-xs  p-2 hover:bg-red-700"
+  role="alert" tabindex="-1" aria-labelledby="hs-dismiss-button-label">
 
-  <div class="container px-4 mx-auto flex flex-wrap lg:flex-nowrap justify-start mt-4">
+  <div class="flex justify-center items-center gap-8">
+    <a (click)="utilService.openNewPage(feedback)" id="hs-dismiss-button-label"
+      class="text-sm font-medium flex justify-center items-center text-ng-dark-blue hover:text-ng-white hover:cursor-pointer">
+      Share your feedback on NG Kenya 2024 <lucide-icon name="arrow-right" class="mx-3 text-ng-white"></lucide-icon>
+    </a>
 
-    <!-- Logo -->
-    <div class="flex justify-start w-fit relative  ">
-      <a class="flex items-center justify-start text-sm font-bold leading-relaxed py-2 whitespace-nowrap uppercase text-white"
-        [routerLink]="['/']">
-        <img class="w-2/6" src="/assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Ng Festival Logo">
-      </a>
-      <button
-        class="text-white cursor-pointer text-xl leading-none px-4 py-1  rounded bg-transparent  lg:hidden outline-none focus:outline-none"
-        type="button" (click)="toggleNavbar()">
-        <i class="fa fa-bars text-ng-red"></i>
-      </button>
-    </div>
-    <!-- Links -->
-    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}" class="w-full  lg:flex lg:flex-grow items-start ">
-      <ul class="w-full flex flex-col lg:flex-row list-none justify-start ">
-        <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/home']" routerLinkActive="active" (click)="showMenu=!showMenu">
-            Home
-          </a>
-        </li>
-        <!-- <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/speakers']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-            Speakers
-          </a>
-        </li> -->
-        <!-- <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/schedule']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-            Agenda
-          </a>
-        </li> -->
-        <li class="nav-item   transform transition duration-500 ease-in-out">
-          <a class="text-ng-white px-8 py-2 flex items-center  text-base   leading-snug border-2  border-r-0 border-transparent  w-full lg:w-auto  hover:opacity-75   hover:rounded-full hover:border-white    md:my-0 "
-            [routerLink]="['/contact-us']" routerLinkActive="active border-b-2" (click)="showMenu=!showMenu">
-            Contact
-          </a>
-        </li>
-
-
-
-      </ul>
-    </div>
-
-    <!-- Button -->
-
-    <div [ngClass]="{'hidden': !showMenu, 'flex': showMenu}"
-      class=" w-full lg:w-auto lg:flex lg:flex-grow items-center order-3  md:mt-0 mt-10 justify-start md:justify-end  border-slate">
-
-      <a href="/assets/document/NG KENYA 2024 SPONSORSHIP DECK.pptx.pdf" target="_blank"
-        class="text-white   flex justify-center items-center px-4 py-2 rounded-full bg-ng-red  w-fit h-fit focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white">
-        Sponsor
-      </a>
-    </div>
   </div>
-</nav>
+
+
+
+</div>
+<header
+  class=" sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
+  <nav
+    class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-1.5 mx-2 lg:mx-auto">
+    <div class="flex items-center justify-between">
+      <!-- Logo -->
+      <a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+        routerLink="/home" aria-label="Ng Kenya">
+        <img class="w-24" src="/assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Ng Festival Logo">
+      </a>
+      <!-- End Logo -->
+
+      <div class="md:hidden">
+        <button type="button"
+          class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-none text-ng-white disabled:opacity-50 disabled:pointer-events-none"
+          id="hs-navbar-floating-dark-collapse" aria-expanded="false" aria-controls="hs-navbar-floating-dark"
+          aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-floating-dark">
+          <lucide-icon name="align-left"></lucide-icon>
+        </button>
+      </div>
+    </div>
+
+    <!-- Collapse -->
+    <div id="hs-navbar-floating-dark"
+      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+      aria-labelledby="hs-navbar-floating-dark-collapse">
+      <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
+
+        @for (nav of navLinks; track $index) {
+        <a class=" w-fit p-3  sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+          [routerLink]="nav.link" [routerLinkActive]="nav.activeClass" aria-current="page">{{nav.label}}</a>
+        }
+
+
+        <div>
+          <button
+            class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
+            (click)="utilService.openNewPage(deck)">
+            Sponsor Us
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- End Collapse -->
+  </nav>
+</header>
+<!-- ========== END HEADER ========== -->

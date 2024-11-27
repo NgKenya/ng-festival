@@ -1,0 +1,56 @@
+<div [ngClass]="talk.isDone?'bg-neutral-900 text-neutral-400':'bg-none'"
+    class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl">
+    <div class="time text-sm font-semibold">
+        <lucide-icon class="blocks"></lucide-icon>
+        <p>{{talk.startTime | date:'shortTime'}}</p>
+        <span class="text-xs">{{talk.room}}</span>
+    </div>
+    <div class="talk-details w-full  md:w-1/2  space-y-4 ">
+        <p class="font-semibold  text-ng-dark-blue" [ngClass]="talk.isDone ? 'text-white':'bg-none'">{{talk.title}}</p>
+        <p class="text-xs">{{talk.description}}</p>
+
+        <div class="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-8">
+            @for (speaker of talk.speakers; track $index) {
+            <div class="speaker flex space-x-4 items-center">
+                <img [src]="speaker.imageUrl" [alt]="speaker.name" class="w-10 h-10 rounded-full object-cover">
+                <div class=" flex flex-col description space-y-1">
+                    <a class="cursor-pointer text-xs">{{speaker.name}}</a>
+                    <p class="text-xs text-nowrap">{{speaker.role}}</p>
+                </div>
+            </div>
+            }
+        </div>
+        @if (talk.isDone===true) {
+        <div class="flex justify-start gap-4">
+            @if (talk.slidesLink) {
+            <button (click)="utilService.openNewPage(talk.slidesLink)"
+                class="group inline-flex items-center gap-x-2 py-2 px-3 cursor-pointer  border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-red hover:text-ng-dark-blue">
+                Slides
+                <lucide-icon name="external-link" class="w-4 h-4"></lucide-icon>
+            </button>
+            }
+            @if(talk.projectLink){
+            <button (click)="utilService.openNewPage(talk.projectLink)"
+                class="group inline-flex items-center gap-x-2 py-2 px-3 border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none  hover:bg-ng-red hover:text-ng-dark-blue cursor-pointer">
+                Github Project
+                <lucide-icon name="external-link" class="w-4 h-4"></lucide-icon>
+            </button>
+            }
+
+
+        </div>
+
+        }
+
+
+    </div>
+    <div class="time uppercase  text-sm font-semibold text-gray-500 ">
+        @if (talk.endTime && talk.isDone!==true) {
+        <p class="text-right">{{utilService.getMinutesDifference(talk.startTime,talk.endTime)}} minutes</p>
+        }@else {
+        <p class="text-right"><lucide-icon name="check-check" class="text-green-600"></lucide-icon></p>
+        }
+
+    </div>
+
+</div>

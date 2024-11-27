@@ -1,6 +1,6 @@
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SpeakerCardComponent } from './components/speaker-card/speaker-card.component';
@@ -16,10 +16,16 @@ import {
   MoveRight,
   PencilRuler,
   Blocks,
+  AlignLeft,
+  CheckCheck,
+  ExternalLink,
+  XIcon,
+  ArrowRight,
 } from 'lucide-angular';
 import { SectionTitleComponent } from './components/section-title/section-title.component';
 import { AboutBulletComponent } from './components/about-bullet/about-bullet.component';
 import { EventAlertComponent } from './components/event-alert/event-alert.component';
+import { SchedhuleItemComponent } from './components/schedule-item/schedule-item.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +40,8 @@ import { EventAlertComponent } from './components/event-alert/event-alert.compon
   imports: [
     CommonModule,
     RouterModule,
+    SchedhuleItemComponent,
+    NgOptimizedImage,
     LucideAngularModule.pick({
       MoveRight,
       Dot,
@@ -44,6 +52,11 @@ import { EventAlertComponent } from './components/event-alert/event-alert.compon
       LocateFixed,
       PencilRuler,
       Blocks,
+      AlignLeft,
+      CheckCheck,
+      ExternalLink,
+      XIcon,
+      ArrowRight,
     }),
   ],
   exports: [
@@ -54,6 +67,7 @@ import { EventAlertComponent } from './components/event-alert/event-alert.compon
     SectionTitleComponent,
     AboutBulletComponent,
     EventAlertComponent,
+    SchedhuleItemComponent,
   ],
 })
 export class SharedModule {}
