@@ -23,10 +23,10 @@ const routes: Routes = [
 	//   path: 'schedule',
 	//   component: ScheduleComponent,
 	// },
-	// {
-	//   path: 'contact-us',
-	//   component: ContactUsComponent,
-	// },
+	{
+		path: "contact-us",
+		component: ContactUsComponent,
+	},
 ];
 
 @NgModule({

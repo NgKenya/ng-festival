@@ -1,4 +1,5 @@
 import { Component, inject } from "@angular/core";
+import { Router } from "@angular/router";
 import {
 	ngKenya2024Feedback,
 	sponsorhsip_Deck,
@@ -20,6 +21,7 @@ export class NavbarComponent {
 		this.showMenu = !this.showMenu;
 	}
 
+	router = inject(Router);
 	navLinks: {
 		label: string;
 		link?: string;
@@ -31,11 +33,11 @@ export class NavbarComponent {
 			link: "/home",
 			activeClass: "active",
 		},
-		{
-			label: "Speakers",
-			link: "/speakers",
-			activeClass: "active",
-		},
+		// {
+		// 	label: "Speakers",
+		// 	link: "/speakers",
+		// 	activeClass: "active",
+		// },
 		// {
 		// 	label: "Agenda",
 		// 	link: "/schedule",
@@ -47,4 +49,8 @@ export class NavbarComponent {
 		// 	link: "/contact-us",
 		// },
 	];
+
+	openContact() {
+		this.router.navigate(["/contact-us"]);
+	}
 }
