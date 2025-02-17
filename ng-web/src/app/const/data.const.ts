@@ -37,7 +37,8 @@ export const NgKenyaPartners: IPartner[] = [
 export const ticketUrl = "https://paydexp.com/ng-kenya-2024";
 export const ngKenya2024Photos = "https://photos.app.goo.gl/UHZCwSEV2JkMzbYw7";
 export const ngKenya2024Feedback = "https://forms.gle/xZ9UbyZpfpm1ESwa9";
-export const ngKenya2025CallForSpeakers = "bit.ly/ngke2025c4p";
+export const ngKenya2025CallForSpeakers =
+	"https://sessionize.com/ng-kenya-2025";
 export const sponsorhsip_Deck =
 	"https://docs.google.com/presentation/d/1UPa73RxOo3aJppY-QjkWCtMV6b14TvHn/edit?usp=sharing&ouid=104844680073323721667&rtpof=true&sd=true";
 export const SpeakerList: ISpeaker[] = [
