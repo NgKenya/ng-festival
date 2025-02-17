@@ -1,63 +1,91 @@
 <!-- ========== HEADER ========== -->
-<div id="feedback-alert"
-  class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-ng-red  text-xs  p-2 hover:bg-red-700"
-  role="alert" tabindex="-1" aria-labelledby="hs-dismiss-button-label">
-
-  <div class="flex justify-center items-center gap-8">
-    <a (click)="utilService.openNewPage(feedback)" id="hs-dismiss-button-label"
-      class="text-sm font-medium flex justify-center items-center text-ng-dark-blue hover:text-ng-white hover:cursor-pointer">
-      Share your feedback on NG Kenya 2024 <lucide-icon name="arrow-right" class="mx-3 text-ng-white"></lucide-icon>
-    </a>
-
-  </div>
-
-
-
-</div>
+<!-- <div
+	id="feedback-alert"
+	class="hs-removing:translate-x-5 hs-removing:opacity-0 transition duration-300 bg-ng-red text-xs p-2 hover:bg-red-700"
+	role="alert"
+	tabindex="-1"
+	aria-labelledby="hs-dismiss-button-label"
+>
+	<div class="flex justify-end items-center gap-8">
+		<a
+			(click)="utilService.openNewPage(feedback)"
+			id="hs-dismiss-button-label"
+			class="text-sm font-medium flex justify-center items-center text-ng-dark-blue hover:text-ng-white hover:cursor-pointer"
+		>
+			Call for speakers is now open
+			<lucide-icon
+				name="arrow-right"
+				class="mx-3 text-ng-white"
+			></lucide-icon>
+		</a>
+	</div>
+</div> -->
 <header
-  class=" sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[66rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] before:bg-neutral-800/30 before:backdrop-blur-md">
-  <nav
-    class="relative max-w-[66rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-1.5 mx-2 lg:mx-auto">
-    <div class="flex items-center justify-between">
-      <!-- Logo -->
-      <a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
-        routerLink="/home" aria-label="Ng Kenya">
-        <img class="w-24" src="/assets/Images/logos/ngKenya/ng_kenya_red.png" alt="Ng Festival Logo">
-      </a>
-      <!-- End Logo -->
+	class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[85rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] bg-none before:bg-neutral-800/30 before:backdrop-blur-none"
+>
+	<nav
+		class="relative max-w-[85rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-1.5 mx-2 lg:mx-auto"
+	>
+		<div class="flex items-center justify-between">
+			<!-- Logo -->
+			<a
+				class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+				routerLink="/home"
+				aria-label="Ng Kenya"
+			>
+				<img
+					class="w-24"
+					src="/assets/Images/logos/ngKenya/ng_kenya_red.png"
+					alt="Ng Festival Logo"
+				/>
+			</a>
+			<!-- End Logo -->
 
-      <div class="md:hidden">
-        <button type="button"
-          class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-none text-ng-white disabled:opacity-50 disabled:pointer-events-none"
-          id="hs-navbar-floating-dark-collapse" aria-expanded="false" aria-controls="hs-navbar-floating-dark"
-          aria-label="Toggle navigation" data-hs-collapse="#hs-navbar-floating-dark">
-          <lucide-icon name="align-left"></lucide-icon>
-        </button>
-      </div>
-    </div>
+			<div class="md:hidden">
+				<button
+					type="button"
+					class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-none text-ng-white disabled:opacity-50 disabled:pointer-events-none"
+					id="hs-navbar-floating-dark-collapse"
+					aria-expanded="false"
+					aria-controls="hs-navbar-floating-dark"
+					aria-label="Toggle navigation"
+					data-hs-collapse="#hs-navbar-floating-dark"
+				>
+					<lucide-icon name="align-left"></lucide-icon>
+				</button>
+			</div>
+		</div>
 
-    <!-- Collapse -->
-    <div id="hs-navbar-floating-dark"
-      class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
-      aria-labelledby="hs-navbar-floating-dark-collapse">
-      <div class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7">
+		<!-- Collapse -->
+		<div
+			id="hs-navbar-floating-dark"
+			class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
+			aria-labelledby="hs-navbar-floating-dark-collapse"
+		>
+			<div
+				class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7"
+			>
+				@for (nav of navLinks; track $index) {
+				<a
+					class="w-fit p-3 sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
+					[routerLink]="nav.link"
+					[routerLinkActive]="nav.activeClass"
+					aria-current="page"
+					>{{ nav.label }}</a
+				>
+				}
 
-        @for (nav of navLinks; track $index) {
-        <a class=" w-fit p-3  sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
-          [routerLink]="nav.link" [routerLinkActive]="nav.activeClass" aria-current="page">{{nav.label}}</a>
-        }
-
-
-        <div>
-          <button
-            class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
-            (click)="utilService.openNewPage(deck)">
-            Sponsor Us
-          </button>
-        </div>
-      </div>
-    </div>
-    <!-- End Collapse -->
-  </nav>
+				<div>
+					<button
+						class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
+						(click)="openContact()"
+					>
+						Contact Us
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- End Collapse -->
+	</nav>
 </header>
 <!-- ========== END HEADER ========== -->

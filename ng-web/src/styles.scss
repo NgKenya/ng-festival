@@ -5,11 +5,12 @@
 
 $fa-font-path: "~font-awesome/fonts";
 @import "./node_modules/font-awesome/scss/font-awesome.scss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&display=swap');
 
 @layer base {
   html {
-    font-family: "Poppins", sans-serif;
+    font-family: "Figtree", serif;
+    font-weight: 400;
   }
 }
 
@@ -22,13 +23,37 @@ section {
 }
 
 .counter-bg {
-  background-color: #03071e;
-  //  background-image: url("./assets/Images/illustrations/circles-svg");
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%2303071E' cx='400' cy='400' r='600'/%3E%3Ccircle fill='%23040b2d' cx='400' cy='400' r='500'/%3E%3Ccircle fill='%23060d38' cx='400' cy='400' r='400'/%3E%3Ccircle fill='%23060f42' cx='400' cy='400' r='300'/%3E%3Ccircle fill='%2307114a' cx='400' cy='400' r='200'/%3E%3Ccircle fill='%23081351' cx='400' cy='400' r='100'/%3E%3C/g%3E%3C/svg%3E");
-  background-attachment: fixed;
-  background-size: cover;
-  background-position: center;
+  background-color: rgb(3, 7, 30);
+    // background-image: url("./assets/Images/illustrations/circles-svg");
+
+
+  // background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
+  //   linear-gradient(127deg, #F11653 8.19%, #E90464 21.55%, #03071e 55.37%, #03071e 93.55%), 
+  //             url("assets/Images/illustrations/dots.svg");
+
+
+    // background:  
+    // linear-gradient(to top right, #dd0031 10.55%, #03071e 93.55%), 
+    //           url("assets/Images/illustrations/dots.svg");
+
+
+    background: linear-gradient(170deg, rgba(221,0,49,0.5) 3.9%, rgba(3,7,30,0.5) 9%),  url("assets/Images/illustrations/dots2.svg"); 
+   ;
+
+   background-size: cover;
+  // background-size: cover;
+  // background-blend-mode:screen;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-image: url("assets/Images/illustrations/dots.svg");
+ 
+  // background-attachment: fixed;
+  // background-size: cover;
+  // background-blend-mode:exclusion;
+  // background-position: center center;
+
 }
+
 
 .active {
   color: #dd0031;
