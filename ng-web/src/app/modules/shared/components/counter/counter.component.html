@@ -1,3 +1,139 @@
+<section class="w-full">
+	<div class="container h-2/6 md:h-3/6 mx-auto">
+		<div
+			class="heading space-y-3 md:space-y-6 my-32 md:my-56 w-5/6 mx-auto items-center tracking-wider"
+		>
+			<div
+				(click)="utilService.openNewPage(photoLink)"
+				class="mt-2 w-fit border bg-white/10 border-gray-200/10 text-sm text-white rounded-full p-4"
+				role="alert"
+				tabindex="-1"
+				aria-labelledby="hs-soft-color-dark-label"
+			>
+				<!-- <span
+					id="hs-soft-color-dark-label"
+					class="font-bold"
+					>Past Event Photos</span
+				> -->
+				Past Event Photos
+			</div>
+
+			<div
+				class="flex flex-col md:flex-row justify-between gap-4 items-end space-y-4 md:space-y-0"
+			>
+				<h1
+					class="text-3xl md:text-5xl font-bold capitalize w-full md:w-3/4 md:order-1 order-2"
+				>
+					Cracking the new
+
+					<span class="text-ng-red mx-2">Angular architecture</span> 2024
+				</h1>
+				<!-- Counter -->
+				<div
+					class="flex justify-end w-full gap-1.5 count-down-main md:order-2 order-1"
+				>
+					<div class="timer">
+						<div
+							class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+						>
+							<h3
+								class="countdown-element days font-manrope font-semibold text-2xl text-ng-red text-center"
+							>
+								{{ daysLeftDisplay.month }}
+							</h3>
+							<p
+								class="text-sm font-inter capitalize font-normal text-ng-red text-center w-full"
+							>
+								months
+							</p>
+						</div>
+					</div>
+					<h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+					<div class="timer">
+						<div
+							class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+						>
+							<h3
+								class="countdown-element hours font-manrope font-semibold text-2xl text-ng-red text-center"
+							>
+								{{ daysLeftDisplay.day }}
+							</h3>
+							<p
+								class="text-sm font-inter capitalize font-normal text-ng-red text-center w-full"
+							>
+								days
+							</p>
+						</div>
+					</div>
+					<h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+					<div class="timer">
+						<div
+							class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+						>
+							<h3
+								class="countdown-element minutes font-manrope font-semibold text-2xl text-ng-red text-center"
+							>
+								{{ daysLeftDisplay.hour }}
+							</h3>
+							<p
+								class="text-sm font-inter capitalize font-normal text-ng-red text-center w-full"
+							>
+								hours
+							</p>
+						</div>
+					</div>
+					<h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
+					<div class="timer">
+						<div
+							class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+						>
+							<h3
+								class="countdown-element seconds sec font-manrope font-semibold text-2xl text-ng-red text-center"
+							>
+								{{ daysLeftDisplay.minute }}
+							</h3>
+							<p
+								class="text-sm font-inter capitalize font-normal text-ng-red text-center w-full"
+							>
+								minutes
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div
+				class="flex flex-col md:flex-row justify-between gap-4 items-end space-y-4 md:space-y-0"
+			>
+				<div class="w-full md:w-1/2 space-y-4">
+					<p class="capitalize text-ng font-medium">September 7th , 2024</p>
+					<p class="text-sm md:text-lg">
+						Dive deeper into the framework, de-construct complex concepts, and
+						connect with a vibrant community of fellow Angular enthusiasts.
+					</p>
+				</div>
+
+				<a
+					(click)="utilService.openNewPage(callForSpeakersLink)"
+					target="_blank"
+					class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-left my-6 h-fit w-fit hover:bg-ng-dark-blue"
+				>
+					Call for Speakers
+					<lucide-icon
+						class="w-6 h-6 mx-1"
+						name="move-right"
+					></lucide-icon>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="container mx-auto border-b-2 border-gray-50/30 py-4">
+		<div class="flex justify-between">
+			<p>&#64;2023</p>
+			<p>Scroll</p>
+		</div>
+	</div>
+</section>
 <section>
 	<div class="container h-2/6 md:h-3/6 text-center mx-auto">
 		<div
