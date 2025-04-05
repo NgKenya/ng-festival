@@ -53,4 +53,8 @@ export class NavbarComponent {
 	openContact() {
 		this.router.navigate(["/contact-us"]);
 	}
+
+	openTickets() {
+		this.utilService.openNewPage("https://vabu.app/ngkenya-2025");
+	}
 }
