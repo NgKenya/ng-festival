@@ -103,7 +103,7 @@
 			</div>
 
 			<div
-				class="flex flex-col md:flex-row justify-between gap-4 items-end space-y-4 md:space-y-0"
+				class="flex flex-col md:flex-row items-start justify-between gap-4 md:items-end space-y-4 md:space-y-0"
 			>
 				<div class="w-full md:w-1/2 space-y-4">
 					<p class="capitalize text-ng font-medium">
@@ -115,17 +115,26 @@
 					</p>
 				</div>
 
-				<a
-					(click)="utilService.openNewPage(callForSpeakersLink)"
-					target="_blank"
-					class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-left my-6 h-fit w-fit hover:bg-ng-dark-blue"
-				>
-					Call for Speakers
-					<lucide-icon
-						class="w-6 h-6 mx-1"
-						name="move-right"
-					></lucide-icon>
-				</a>
+				<div class="flex flex-col md:flex-row justify-between gap-2 md:gap-4">
+					<a
+						(click)="utilService.openNewPage(callForSpeakersLink)"
+						target="_blank"
+						class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-left my-6 h-fit w-fit hover:bg-ng-dark-blue"
+					>
+						Get Tickets
+						<lucide-icon
+							class="size-4 mx-1"
+							name="move-right"
+						></lucide-icon>
+					</a>
+					<!-- <a
+						(click)="utilService.openNewPage(callForSpeakersLink)"
+						target="_blank"
+						class="cursor-pointer px-8 py-2 bg-none border-2 border-ng-white hover:border-ng-red text-white rounded-full flex items-center text-left my-6 h-fit w-fit hover:bg-ng-red"
+					>
+						Call for Speakers
+					</a> -->
+				</div>
 			</div>
 		</div>
 	</div>
