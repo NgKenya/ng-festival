@@ -10,6 +10,10 @@ import {
 	IDate,
 } from "src/app/services/countdown/countdown.service";
 
+interface BarcodeBar {
+	width: string;
+	height: string;
+}
 @Component({
 	selector: "app-counter",
 	templateUrl: "./counter.component.html",
@@ -30,15 +34,26 @@ export class CounterComponent implements OnInit {
 	countdownService = inject(CountdownService);
 	private countdownSubscription?: Subscription;
 
+	barcodeData: BarcodeBar[] = [];
+	stubBarcodeLines: number[] = [];
 	ngOnInit(): void {
 		this.countdownSubscription = this.countdownService
 			.startCountdown(this.officialDate)
 			.subscribe((remaining: IDate) => {
 				this.daysLeftDisplay = remaining;
 			});
+
+		this.stubBarcodeLines = Array.from({ length: 20 }, (_, i) => i);
 	}
 
 	ngOnDestroy(): void {
 		this.countdownSubscription?.unsubscribe();
+	}
+
+	private generateBarcode(): void {
+		this.barcodeData = Array.from({ length: 45 }, () => ({
+			width: Math.random() > 0.6 ? "3px" : Math.random() > 0.3 ? "2px" : "1px",
+			height: Math.random() * 25 + 35 + "px",
+		}));
 	}
 }

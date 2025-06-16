@@ -1,3 +1,59 @@
+<div
+	class="relative w-32 h-32 flex items-center justify-center rounded-full border border-dashed border-white"
+>
+	<svg
+		viewBox="0 0 100 100"
+		class="absolute w-full h-full"
+	>
+		<defs>
+			<path
+				id="circlePath"
+				d="M 50, 50 m -35, 0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"
+			/>
+		</defs>
+		<text
+			fill="white"
+			font-size="15"
+			font-family="sans-serif"
+		>
+			<textPath
+				href="#circlePath"
+				startOffset="0"
+				textLength="220"
+			>
+				ARTJOG * ARTJOG * ARTJOG *
+			</textPath>
+		</text>
+	</svg>
+
+	<div class="w-4 h-4 bg-white rounded-full z-10"></div>
+</div>
+
+<div class="card bg-ng-red w-fit p-4 rounded-lg">
+	<div class="card-body px-4 py-2">
+		<div class="inline-flex space-x-4">
+			<span
+				><lucide-icon
+					class="size-6"
+					name="piano-icon"
+				></lucide-icon
+			></span>
+			<span class="text-2xl font-bold">300+</span>
+		</div>
+		<div>
+			<span class="text-sm">artworks</span>
+		</div>
+	</div>
+</div>
+
+<section class="w-full">
+	<div class="container h-2/6 md:h-3/6 mx-auto">
+		<div
+			class="heading space-y-3 md:space-y-6 my-32 md:my-56 w-5/6 mx-auto items-center tracking-wider"
+		></div>
+	</div>
+</section>
+
 <main>
 	<app-counter></app-counter>
 
