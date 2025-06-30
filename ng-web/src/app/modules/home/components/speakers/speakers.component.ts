@@ -3,9 +3,10 @@ import { SpeakerList } from 'src/app/const/data.const';
 import { UtilService } from 'src/app/services/util/util.service';
 
 @Component({
-  selector: 'app-speakers',
-  templateUrl: './speakers.component.html',
-  styleUrls: ['./speakers.component.scss'],
+    selector: 'app-speakers',
+    templateUrl: './speakers.component.html',
+    styleUrls: ['./speakers.component.scss'],
+    standalone: false
 })
 export class SpeakersComponent implements OnInit {
   speakers = SpeakerList;

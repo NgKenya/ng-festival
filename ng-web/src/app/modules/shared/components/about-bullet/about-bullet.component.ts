@@ -1,9 +1,10 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-about-bullet',
-  templateUrl: './about-bullet.component.html',
-  styleUrl: './about-bullet.component.scss',
+    selector: 'app-about-bullet',
+    templateUrl: './about-bullet.component.html',
+    styleUrl: './about-bullet.component.scss',
+    standalone: false
 })
 export class AboutBulletComponent {
   @Input() description: {

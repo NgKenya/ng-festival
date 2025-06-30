@@ -5,11 +5,10 @@ import { ITalk } from 'src/app/models/speaker.model';
 import { UtilService } from 'src/app/services/util/util.service';
 
 @Component({
-  selector: 'app-schedule-item',
-  standalone: true,
-  imports: [LucideAngularModule, CommonModule, NgOptimizedImage],
-  templateUrl: './schedule-item.component.html',
-  styleUrl: './schedule-item.component.scss',
+    selector: 'app-schedule-item',
+    imports: [LucideAngularModule, CommonModule, NgOptimizedImage],
+    templateUrl: './schedule-item.component.html',
+    styleUrl: './schedule-item.component.scss'
 })
 export class SchedhuleItemComponent {
   @Input() talk!: ITalk;

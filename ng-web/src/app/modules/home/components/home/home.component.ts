@@ -4,10 +4,10 @@ import { ATeam, NgKenyaPartners, ticketUrl } from 'src/app/const/data.const';
 import { IContent, IDescription, IPartner } from 'src/app/models/data.model';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  // schemas:[CUSTOM_ELEMENTS_SCHEMA]
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrls: ['./home.component.scss'],
+    standalone: false
 })
 export class HomeComponent {
   isVisible: boolean = false;

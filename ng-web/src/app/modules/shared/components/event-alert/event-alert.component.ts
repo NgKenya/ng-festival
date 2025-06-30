@@ -5,9 +5,10 @@ import {
 } from "src/app/services/countdown/countdown.service";
 
 @Component({
-	selector: "app-event-alert",
-	templateUrl: "./event-alert.component.html",
-	styleUrl: "./event-alert.component.scss",
+    selector: "app-event-alert",
+    templateUrl: "./event-alert.component.html",
+    styleUrl: "./event-alert.component.scss",
+    standalone: false
 })
 export class EventAlertComponent implements OnInit {
 	countdownService = inject(CountdownService);

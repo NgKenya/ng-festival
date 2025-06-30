@@ -7,9 +7,10 @@ import {
 import { UtilService } from "src/app/services/util/util.service";
 
 @Component({
-	selector: "app-navbar",
-	templateUrl: "./navbar.component.html",
-	styleUrls: ["./navbar.component.scss"],
+    selector: "app-navbar",
+    templateUrl: "./navbar.component.html",
+    styleUrls: ["./navbar.component.scss"],
+    standalone: false
 })
 export class NavbarComponent {
 	utilService = inject(UtilService);

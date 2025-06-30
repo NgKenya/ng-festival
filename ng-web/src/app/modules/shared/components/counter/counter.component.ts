@@ -15,9 +15,10 @@ interface BarcodeBar {
 	height: string;
 }
 @Component({
-	selector: "app-counter",
-	templateUrl: "./counter.component.html",
-	styleUrl: "./counter.component.scss",
+    selector: "app-counter",
+    templateUrl: "./counter.component.html",
+    styleUrl: "./counter.component.scss",
+    standalone: false
 })
 export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("July 5 2025");
