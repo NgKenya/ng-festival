@@ -12,7 +12,7 @@ jobs:
       - name: Install pnpm
         uses: actions/setup-node@v4
         with:
-          node-version: lts/**
+          node-version: lts/*
       - run: npm i -g pnpm
 
       - uses: actions/checkout@v4
