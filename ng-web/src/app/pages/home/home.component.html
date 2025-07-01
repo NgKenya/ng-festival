@@ -9,7 +9,12 @@
 	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-20">
 		<div class="mt-10 relative max-w-5xl mx-auto">
 			<div
-				class="w-full object-cover h-96 sm:h-120 bg-[url('https://youtu.be/trpNISDTyXs?si=d9dbtUp0dSf4_qMd')] bg-no-repeat bg-center bg-cover rounded-xl border border-ng-pink"
+				class="w-full object-cover h-96 sm:h-120 bg-[url('/Images/community/speaker-jump.JPG')] bg-no-repeat bg-center bg-cover rounded-xl border border-ng-pink"
+			></div>
+
+			<div
+				class="absolute inset-0 bg-ng-dark-blue opacity-50 rounded-xl pointer-events-none"
+				aria-hidden="true"
 			></div>
 
 			<div class="absolute inset-0 size-full">
@@ -75,7 +80,7 @@
 		class="container space-y-8 max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-20"
 	>
 		<h2 class="text-xl md:text-3xl w-full md:w-3/4 leading-relaxed">
-			Moving beyond junior and intermediate stages by exploring Angular’s core
+			Moving beyond junior and intermediate stages by exploring Angular's core
 			architecture, mastering best practices, and building real-world,
 			production-ready applications
 		</h2>
@@ -90,7 +95,7 @@
 						<span
 							><lucide-icon
 								class="size-8"
-								[name]=""
+								[name]="stat.icon"
 							></lucide-icon
 						></span>
 						<span class="text-3xl font-bold"
