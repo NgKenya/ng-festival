@@ -3,8 +3,7 @@
 @tailwind components;
 @tailwind utilities;
 
-$fa-font-path: "~font-awesome/fonts";
-@import "./node_modules/font-awesome/scss/font-awesome.scss";
+
 @import url('https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Manrope:wght@200..800&display=swap');
 
 @layer base {
@@ -37,7 +36,7 @@ section {
     //           url("assets/Images/illustrations/dots.svg");
 
 
-    background: linear-gradient(170deg, rgba(221,0,49,0.5) 3.9%, rgba(3,7,30,0.5) 9%),  url("assets/Images/illustrations/dots2.svg"); 
+    background: linear-gradient(170deg, rgba(221,0,49,0.5) 3.9%, rgba(3,7,30,0.5) 9%),  url("/Images/illustrations/dots2.svg"); 
    ;
 
    background-size: cover;

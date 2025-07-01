@@ -1,0 +1,108 @@
+<!-- Community Logos -->
+<div class="px-10 md:px-30 lg:px-40 py-16 grid bg-white">
+	<h2
+		class="py-4 text-3xl my-4 md:text-left text-center font-bold text-ng-dark-blue capitalize"
+	>
+		Our 2025 Community Sponsors
+	</h2>
+	<div
+		class="flex flex-col md:flex-row flex-wrap items-center pb-8 space-x-0 md:space-x-8 xl:space-x-16"
+	>
+		@for (partner of partners; track $index) {
+		<ng-container>
+			<a
+				[href]="partner.official_website"
+				class="hover:cursor-pointer hover:saturate-0 hover:rounded-xl hover:shadow-faded-red group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out logo mb-8 md:mb-0"
+				target="_blank"
+				rel="noopener"
+			>
+				<img
+					[alt]="partner.alt"
+					[src]="partner.logo"
+					class="w-40 md:w-44 mx-auto"
+				/>
+			</a>
+		</ng-container>
+		}
+	</div>
+</div>
+<!-- Angular Kenya -->
+
+<footer class="px-10 md:px-30 lg:px-40 text-white bg-ng-dark-blue">
+	<div
+		class="flex flex-col md:flex-row justify-between space-y-4 items-center my-4"
+	>
+		<div class="contact order-2 md:order-1 my-2">
+			<p class="text-sm md:text-base">Organized By Angular Kenya</p>
+
+			<p
+				class="flex flex-col justify-between space-y-2 mt-4 text-center md:text-left"
+			>
+				<a href="mailto:angualrnairobi@gmail.com"
+					>angularnairobi&#64;gmail.com</a
+				>
+				<a href="mailto:angualrnairobi@gmail.com">Angular Kenya</a>
+			</p>
+		</div>
+		<div class="logo order-1 md:order-2">
+			<a
+				[routerLink]="['/']"
+				class="hover:cursor-pointer m-3 mx-auto order-2 md:order-1"
+			>
+				<img
+					src="./Images/logos/ngKenya/ng_kenya_red.png"
+					alt="NG Kenya Logo"
+					class="w-3/6 md:w-2/6 mx-auto"
+					width="782"
+					height="155"
+					priority
+				/>
+			</a>
+		</div>
+		<div class="link flex flex-col justify-between order-3">
+			<a
+				[routerLink]="['/']"
+				class="hover:cursor-pointer m-2 mx-auto order-2 md:order-1"
+			>
+				Home
+			</a>
+			<a
+				[routerLink]="['/contact-us']"
+				class="hover:cursor-pointer m-2 mx-auto order-2 md:order-1"
+			>
+				Contact Us
+			</a>
+		</div>
+	</div>
+	<div class="flex flex-col md:flex-row justify-center md:justify-between">
+		<p
+			class="text-center text-ng-white text-xs md:text-sm mt-2 order-2 md:order-1"
+		>
+			&copy;2023 -{{ provideFullYear }} Angular Kenya. All rights reserved.
+		</p>
+		<div
+			class="flex flex-row justify-center md:justify-start space-x-1 md:space-x-4 order-1 md:order-2"
+		>
+			<a
+				href="https://www.linkedin.com/company/angular-kenya"
+				target="_blank"
+				class="hover:cursor-pointer"
+			>
+				<lucide-icon
+					class="text-white w-4 md:w-8 h-4 md:h-8"
+					name="linkedin"
+				></lucide-icon>
+			</a>
+			<a
+				href="https://x.com/angular_kenya"
+				target="_blank"
+				class="hover:cursor-pointer"
+			>
+				<lucide-icon
+					class="text-white w-4 md:w-8 h-4 md:h-8"
+					name="x-icon"
+				></lucide-icon>
+			</a>
+		</div>
+	</div>
+</footer>

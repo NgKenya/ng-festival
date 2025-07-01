@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { TalkList } from 'src/app/const/data.const';
 
 @Component({
-  selector: 'app-schedule',
-  templateUrl: './schedule.component.html',
-  styleUrls: ['./schedule.component.scss'],
+    selector: 'app-schedule',
+    templateUrl: './schedule.component.html',
+    styleUrls: ['./schedule.component.scss'],
+    standalone: false
 })
 export class ScheduleComponent implements OnInit {
   talkList = TalkList;

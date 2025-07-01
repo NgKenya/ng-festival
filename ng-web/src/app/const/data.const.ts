@@ -4,32 +4,27 @@ import { ISpeaker, ITalk, ROOM_NAME } from "../models/speaker.model";
 export const NgKenyaPartners: IPartner[] = [
 	{
 		official_website: "https://google.com/",
-		logo: "assets/Images/logos/sponsors/google.png",
+		logo: "./Images/logos/sponsors/google.png",
 		alt: "Google logo",
 	},
 	{
 		official_website: "https://angular.dev/",
-		logo: "assets/Images/logos/sponsors/angular_wordmark.png",
+		logo: "./Images/logos/sponsors/angular_wordmark.png",
 		alt: "Angular",
 	},
 	{
-		official_website: "https://www.infobip.com",
-		logo: "assets/Images/logos/sponsors/infobip-logo.png",
-		alt: "Infobip",
-	},
-	{
 		official_website: "https://paydhq.com/",
-		logo: "assets/Images/logos/sponsors/payd.svg",
+		logo: "./Images/logos/sponsors/payd.svg",
 		alt: "Payd",
 	},
 	{
 		official_website: "https://www.jetbrains.com/",
-		logo: "assets/Images/logos/sponsors/jetbrains-logo.png",
+		logo: "./Images/logos/sponsors/jetbrains-logo.png",
 		alt: "Jetbrains logo",
 	},
 	{
 		official_website: "https://ihub.co.ke/",
-		logo: "assets/Images/logos/sponsors/ihub.png",
+		logo: "./Images/logos/sponsors/ihub.png",
 		alt: "Ihub Logo",
 	},
 ];
@@ -41,6 +36,33 @@ export const ngKenya2025CallForSpeakers =
 	"https://sessionize.com/ng-kenya-2025";
 export const sponsorhsip_Deck =
 	"https://docs.google.com/presentation/d/1UPa73RxOo3aJppY-QjkWCtMV6b14TvHn/edit?usp=sharing&ouid=104844680073323721667&rtpof=true&sd=true";
+
+export const eventStats: {
+	icon: string;
+	count: number | string;
+	type: "%" | "+" | "";
+	label: string;
+}[] = [
+	{
+		icon: "calendar-days",
+		count: "2 Days",
+		type: "",
+		label: "JUly 4th & July 5th ",
+	},
+
+	{
+		icon: "network",
+		count: 10,
+		type: "+",
+		label: "Speakers",
+	},
+	{
+		icon: "spool",
+		count: 4,
+		type: "+",
+		label: "Workshop ",
+	},
+];
 export const SpeakerList: ISpeaker[] = [
 	{
 		name: "Wycliffe Maina",

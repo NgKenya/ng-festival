@@ -6,7 +6,7 @@
     </h1>
     <p class="text-left mt-5 mb-10 md:mb-0">
       We are glad to be featuring Angular experts and industry leaders who
-      will ignite your passion for web development.</p>
+    will ignite your passion for web development.</p>
   </div>
 
 
@@ -14,8 +14,8 @@
 
 
   <div class="grid grid-cols-1 gap-7 p-0 md:p-10 md:grid-cols-2 lg:grid-cols-3">
-    <ng-container *ngFor="let speaker of speakers">
+    @for (speaker of speakers; track speaker) {
       <app-speaker-card [speaker]="speaker"></app-speaker-card>
-    </ng-container>
+    }
   </div>
 </section>

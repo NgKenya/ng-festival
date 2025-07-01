@@ -8,16 +8,16 @@ jobs:
     if: "${{ github.event.pull_request.head.repo.full_name == github.repository }}"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-
-      - name: Install Dependecies
-        run: npm  ci
-        working-directory: ng-web
-
-      - name: Build Application
-        run: npm run build
-        working-directory: ng-web
-
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: npm i -g pnpm
+        working-directory: ./ng-web
+      - uses: actions/checkout@v4
+      - run: pnpm install && pnpm run build
+        working-directory: ./ng-web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: ./ng-web
