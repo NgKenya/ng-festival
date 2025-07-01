@@ -2,28 +2,29 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-'on':
+"on":
   push:
-    branches: ['main']
+    branches: ["main"]
 
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Install Dependecies
-        run: npm  ci 
-        working-directory: ng-web
-      
-      - name: Build Application
-        run: npm run build 
-        working-directory: ng-web
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: actions/setup-node@v4
+        with:
+          node-version: lts/*
+      - run: npm i -g pnpm
+        working-directory: ./ng-web
+      - uses: actions/checkout@v4
+      - run: pnpm install && pnpm run build
+        working-directory: ./ng-web
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: ./ng-web
-          repoToken: '${{ secrets.GITHUB_TOKEN }}'
-          firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_NG_FESTIVAL }}'
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT_NG_FESTIVAL }}"
           channelId: live
           projectId: ng-festival
