@@ -3,6 +3,7 @@ import { Subscription } from "rxjs";
 import {
 	ngKenya2024Photos,
 	ngKenya2025CallForSpeakers,
+	ticketUrl,
 } from "src/app/const/data.const";
 import {
 	IDate,
@@ -25,7 +26,7 @@ interface BarcodeBar {
 export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("July 5 2025");
 	photoLink: string = ngKenya2024Photos;
-	callForSpeakersLink: string = ngKenya2025CallForSpeakers;
+	ticketLink: string = ticketUrl;
 	daysLeftDisplay: IDate = {
 		month: 0,
 		day: 0,

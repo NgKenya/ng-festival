@@ -3,6 +3,7 @@ import { provideRouter } from "@angular/router";
 import { routes } from "./app.routes";
 import {
 	AlignLeft,
+	ExternalLink,
 	Linkedin,
 	LucideAngularModule,
 	MoveRight,
@@ -19,6 +20,7 @@ export const AppConfig: ApplicationConfig = {
 				Linkedin,
 				XIcon,
 				MoveRight,
+				ExternalLink,
 			}),
 		),
 	],
