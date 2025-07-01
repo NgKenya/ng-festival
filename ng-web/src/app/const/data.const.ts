@@ -4,32 +4,27 @@ import { ISpeaker, ITalk, ROOM_NAME } from "../models/speaker.model";
 export const NgKenyaPartners: IPartner[] = [
 	{
 		official_website: "https://google.com/",
-		logo: "assets/Images/logos/sponsors/google.png",
+		logo: "./Images/logos/sponsors/google.png",
 		alt: "Google logo",
 	},
 	{
 		official_website: "https://angular.dev/",
-		logo: "assets/Images/logos/sponsors/angular_wordmark.png",
+		logo: "./Images/logos/sponsors/angular_wordmark.png",
 		alt: "Angular",
 	},
 	{
-		official_website: "https://www.infobip.com",
-		logo: "assets/Images/logos/sponsors/infobip-logo.png",
-		alt: "Infobip",
-	},
-	{
 		official_website: "https://paydhq.com/",
-		logo: "assets/Images/logos/sponsors/payd.svg",
+		logo: "./Images/logos/sponsors/payd.svg",
 		alt: "Payd",
 	},
 	{
 		official_website: "https://www.jetbrains.com/",
-		logo: "assets/Images/logos/sponsors/jetbrains-logo.png",
+		logo: "./Images/logos/sponsors/jetbrains-logo.png",
 		alt: "Jetbrains logo",
 	},
 	{
 		official_website: "https://ihub.co.ke/",
-		logo: "assets/Images/logos/sponsors/ihub.png",
+		logo: "./Images/logos/sponsors/ihub.png",
 		alt: "Ihub Logo",
 	},
 ];

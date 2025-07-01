@@ -1,16 +1,17 @@
 import { Component, inject } from "@angular/core";
-import { Router } from "@angular/router";
+import { Router, RouterModule } from "@angular/router";
 import {
-	ngKenya2024Feedback,
 	sponsorhsip_Deck,
+	ngKenya2024Feedback,
 } from "src/app/const/data.const";
-import { UtilService } from "src/app/services/util/util.service";
+import { UtilService } from "../../services/util/util.service";
+import { LucideAngularModule } from "lucide-angular";
 
 @Component({
-    selector: "app-navbar",
-    templateUrl: "./navbar.component.html",
-    styleUrls: ["./navbar.component.scss"],
-    standalone: false
+	selector: "ng-ke-navbar",
+	imports: [LucideAngularModule, RouterModule],
+	templateUrl: "./navbar.component.html",
+	styleUrl: "./navbar.component.scss",
 })
 export class NavbarComponent {
 	utilService = inject(UtilService);
@@ -31,7 +32,7 @@ export class NavbarComponent {
 	}[] = [
 		{
 			label: "Home",
-			link: "/home",
+			link: "",
 			activeClass: "active",
 		},
 		{

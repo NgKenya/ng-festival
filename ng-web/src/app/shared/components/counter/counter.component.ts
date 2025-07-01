@@ -4,21 +4,23 @@ import {
 	ngKenya2024Photos,
 	ngKenya2025CallForSpeakers,
 } from "src/app/const/data.const";
-import { UtilService } from "src/app/services/util/util.service";
 import {
-	CountdownService,
 	IDate,
-} from "src/app/services/countdown/countdown.service";
+	CountdownService,
+} from "../../services/countdown/countdown.service";
+import { UtilService } from "../../services/util/util.service";
+import { LucideAngularModule } from "lucide-angular";
 
 interface BarcodeBar {
 	width: string;
 	height: string;
 }
 @Component({
-    selector: "app-counter",
-    templateUrl: "./counter.component.html",
-    styleUrl: "./counter.component.scss",
-    standalone: false
+	selector: "app-counter",
+	templateUrl: "./counter.component.html",
+	styleUrl: "./counter.component.scss",
+	standalone: true,
+	imports: [LucideAngularModule],
 })
 export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("July 5 2025");
@@ -52,7 +54,7 @@ export class CounterComponent implements OnInit {
 	}
 
 	private generateBarcode(): void {
-		this.barcodeData = Array.from({ length: 45 }, () => ({
+		this.barcodeData = Array.from({ length: 25 }, () => ({
 			width: Math.random() > 0.6 ? "3px" : Math.random() > 0.3 ? "2px" : "1px",
 			height: Math.random() * 25 + 35 + "px",
 		}));

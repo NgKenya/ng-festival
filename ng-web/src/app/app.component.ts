@@ -3,6 +3,8 @@ import { Component, inject, OnInit } from "@angular/core";
 import { NavigationEnd, Router, Event, RouterModule } from "@angular/router";
 
 import { IStaticMethods } from "preline/preline";
+import { NavbarComponent } from "./shared/components/navbar/navbar.component";
+import { FooterComponent } from "./shared/components/footer/footer.component";
 declare global {
 	interface Window {
 		HSStaticMethods: IStaticMethods;
@@ -13,7 +15,7 @@ declare global {
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrls: ["./app.component.scss"],
-	imports: [CommonModule, RouterModule],
+	imports: [CommonModule, RouterModule, NavbarComponent, FooterComponent],
 	standalone: true,
 })
 export class AppComponent implements OnInit {
