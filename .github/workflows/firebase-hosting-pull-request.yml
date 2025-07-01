@@ -14,10 +14,10 @@ jobs:
         with:
           node-version: lts/*
       - run: npm i -g pnpm
-
+        working-directory: ./ng-web
       - uses: actions/checkout@v4
       - run: pnpm install && pnpm run build
-        working-directory: ng-web
+        working-directory: ./ng-web
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
           entryPoint: ./ng-web
