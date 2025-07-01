@@ -1,6 +1,116 @@
-<section class="w-full mx-auto">
+<section class="w-full mx-auto py-10">
+	<!-- Start  -->
 	<app-counter></app-counter>
-	<div class="pt-32">
-		<hr class="px-10 md:px-30 lg:px-40 w-10/12 border-neutral-700 mx-auto" />
+
+	<!-- Video -->
+</section>
+
+<section class="py-10">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-20">
+		<div class="mt-10 relative max-w-5xl mx-auto">
+			<div
+				class="w-full object-cover h-96 sm:h-120 bg-[url('https://youtu.be/trpNISDTyXs?si=d9dbtUp0dSf4_qMd')] bg-no-repeat bg-center bg-cover rounded-xl border border-ng-pink"
+			></div>
+
+			<div class="absolute inset-0 size-full">
+				<div class="flex flex-col justify-center items-center size-full">
+					<button
+						type="button"
+						(click)="openVideo()"
+						class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+					>
+						<svg
+							class="shrink-0 size-4"
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+						>
+							<polygon points="5 3 19 12 5 21 5 3" />
+						</svg>
+						Ng Kenya 2025
+					</button>
+				</div>
+			</div>
+		</div>
+
+		@if (showVideo) {
+		<div
+			class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-70"
+		>
+			<div class="relative w-full max-w-2xl aspect-video">
+				<button
+					(click)="closeVideo()"
+					class="absolute top-2 right-2 z-10 bg-white rounded-full p-1"
+					aria-label="Close"
+				>
+					✕
+				</button>
+				<iframe
+					width="100%"
+					height="100%"
+					src="https://www.youtube.com/embed/trpNISDTyXs?autoplay=1"
+					title="YouTube video player"
+					frameborder="0"
+					allow="autoplay; encrypted-media"
+					allowfullscreen
+				></iframe>
+			</div>
+		</div>
+		}
+	</div>
+</section>
+
+<div class="pt-10">
+	<hr class="px-10 md:px-30 lg:px-40 w-10/12 border-neutral-700 mx-auto" />
+</div>
+
+<section class="w-full mx-auto py-20">
+	<div
+		class="container space-y-8 max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-20"
+	>
+		<h2 class="text-xl md:text-3xl w-full md:w-3/4 leading-relaxed">
+			Moving beyond junior and intermediate stages by exploring Angular’s core
+			architecture, mastering best practices, and building real-world,
+			production-ready applications
+		</h2>
+
+		<div class="grid grid-cols-12 gap-4">
+			@for (stat of stats; track $index) {
+			<div
+				class="col-span-12 md:col-span-4 card bg-ng-pink mx-auto w-3/4 p-4 rounded-lg"
+			>
+				<div class="card-body px-4 py-2">
+					<div class="inline-flex space-x-4">
+						<span
+							><lucide-icon
+								class="size-8"
+								[name]=""
+							></lucide-icon
+						></span>
+						<span class="text-3xl font-bold"
+							>{{ stat.count }} <span></span> {{ stat.type }}</span
+						>
+					</div>
+					<div>
+						<span class="text-md">{{ stat.label }}</span>
+					</div>
+				</div>
+			</div>
+			}
+		</div>
+	</div>
+</section>
+
+<section class="w-full mx-auto py-20">
+	<div
+		class="container space-y-8 max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-20"
+	>
+		<!-- Section Header -->
 	</div>
 </section>

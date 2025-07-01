@@ -52,7 +52,12 @@
 			</h1>
 		</div>
 
-		<div class="col-span-12 md:col-span-5 space-y-4 mx-auto w-3/4 my-auto">
+		<div class="col-span-12 md:col-span-5 space-y-6 mx-auto w-3/4 my-auto">
+			<p class="text-lg text-center md:text-left">
+				Dive deeper into the framework, de-construct complex concepts, and
+				connect with a vibrant community of fellow Angular enthusiasts.
+			</p>
+
 			<!-- Ticket -->
 			<div class="rounded-lg h-fit p-2 bg-ng-pink">
 				<div
@@ -73,19 +78,15 @@
 				</div>
 			</div>
 			<!-- Ticket End -->
-			<p class="text-lg text-center md:text-left">
-				Dive deeper into the framework, de-construct complex concepts, and
-				connect with a vibrant community of fellow Angular enthusiasts.
-			</p>
 
 			<button
 				(click)="utilService.openNewPage(ticketLink)"
-				class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-left my-6 h-fit w-1/2 hover:bg-ng-dark-blue"
+				class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left mx-auto md:mx-0 my-6 h-fit w-fit md:w-1/2 hover:bg-ng-dark-blue"
 			>
-				Get Tickets
+				Get Ticket
 				<lucide-icon
 					name="external-link"
-					class="w-4 h-4"
+					class="w-4 h-4 mx-2"
 				></lucide-icon>
 			</button>
 		</div>

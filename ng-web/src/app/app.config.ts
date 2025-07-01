@@ -3,10 +3,14 @@ import { provideRouter } from "@angular/router";
 import { routes } from "./app.routes";
 import {
 	AlignLeft,
+	CalendarDays,
 	ExternalLink,
 	Linkedin,
 	LucideAngularModule,
 	MoveRight,
+	Network,
+	PianoIcon,
+	Spool,
 	XIcon,
 } from "lucide-angular";
 
@@ -21,6 +25,10 @@ export const AppConfig: ApplicationConfig = {
 				XIcon,
 				MoveRight,
 				ExternalLink,
+				PianoIcon,
+				Spool,
+				Network,
+				CalendarDays,
 			}),
 		),
 	],

@@ -36,6 +36,33 @@ export const ngKenya2025CallForSpeakers =
 	"https://sessionize.com/ng-kenya-2025";
 export const sponsorhsip_Deck =
 	"https://docs.google.com/presentation/d/1UPa73RxOo3aJppY-QjkWCtMV6b14TvHn/edit?usp=sharing&ouid=104844680073323721667&rtpof=true&sd=true";
+
+export const eventStats: {
+	icon: string;
+	count: number | string;
+	type: "%" | "+" | "";
+	label: string;
+}[] = [
+	{
+		icon: "calendar-days",
+		count: "2 Days",
+		type: "",
+		label: "JUly 4th & July 5th ",
+	},
+
+	{
+		icon: "network",
+		count: 10,
+		type: "+",
+		label: "Speakers",
+	},
+	{
+		icon: "spool",
+		count: 4,
+		type: "+",
+		label: "Workshop ",
+	},
+];
 export const SpeakerList: ISpeaker[] = [
 	{
 		name: "Wycliffe Maina",
