@@ -12,9 +12,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-
+      - name: Install pnpm
+        run: npm i pnpm
       - name: Install Dependecies
-        run: npm  ci
+        run: pnpm i
         working-directory: ng-web
 
       - name: Build Application
