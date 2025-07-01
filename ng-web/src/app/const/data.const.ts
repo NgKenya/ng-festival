@@ -29,7 +29,7 @@ export const NgKenyaPartners: IPartner[] = [
 	},
 ];
 
-export const ticketUrl = "https://paydexp.com/ng-kenya-2025";
+export const ticketUrl = "https://vabu.app/ngkenya-2025";
 export const ngKenya2024Photos = "https://photos.app.goo.gl/UHZCwSEV2JkMzbYw7";
 export const ngKenya2024Feedback = "https://forms.gle/xZ9UbyZpfpm1ESwa9";
 export const ngKenya2025CallForSpeakers =
