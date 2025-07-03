@@ -5,7 +5,7 @@
 	</h2>
 	<p>
 		Join other Angular Developers in Nairobi , for a full day of keynotes and
-		new workshops at NG Kenya 2024
+		new workshops at NG Kenya 2025
 	</p>
 </section>
 
@@ -20,16 +20,23 @@
 	</select>
 
 	<div class="flex">
-		<div class="hidden sm:block border-e border-ng-white">
+		<div
+			class="hidden sm:block border-e border-ng-white divide-x-4 divide-ng-pink"
+		>
 			<nav
-				class="flex flex-col space-y-6"
+				class="flex flex-col space-y-6 p-4"
 				aria-label="Tabs"
 				role="tablist"
 				data-hs-tab-select="#tab-select"
 			>
 				<button
 					type="button"
-					class="hs-tab-active:border-ng-pink hs-tab-active:text-ng-pink py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white hover:text-ng-pink focus:outline-hidden focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none active"
+					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
+					[ngClass]="
+						eventDate() === 'July 4,2025'
+							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
+							: ' text-ng-dark-blue/60 bg-transparent'
+					"
 					id="june-4-sessions"
 					aria-selected="true"
 					data-hs-tab="#june-4-2025"
@@ -41,7 +48,12 @@
 				</button>
 				<button
 					type="button"
-					class="hs-tab-active:border-ng-pink hs-tab-active:text-ng-pink py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white hover:text-ng-pink focus:outline-hidden focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
+					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
+					[ngClass]="
+						eventDate() === 'July 5,2025'
+							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
+							: 'text-ng-dark-blue/60 bg-transparent'
+					"
 					id="june-5-sessions"
 					aria-selected="false"
 					data-hs-tab="#june-5-2025"
@@ -93,3 +105,17 @@
 		</div>
 	</div>
 </section>
+
+<!-- 
+<button
+					type="button"
+					class="hs-tab-active:border-ng-pink hs-tab-active:text-ng-pink py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white hover:text-ng-pink focus:outline-hidden focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
+					id="june-5-sessions"
+					aria-selected="false"
+					data-hs-tab="#june-5-2025"
+					aria-controls="june-5-2025"
+					role="tab"
+					(click)="getSession('July 5,2025')"
+				>
+					Day Two - Ihub , Jahazi
+				</button> -->

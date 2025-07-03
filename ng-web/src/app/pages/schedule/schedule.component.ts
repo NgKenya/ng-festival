@@ -1,4 +1,5 @@
-import { Component, DestroyRef, inject, OnInit } from "@angular/core";
+import { CommonModule } from "@angular/common";
+import { Component, DestroyRef, inject, OnInit, signal } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { LucideAngularModule } from "lucide-angular";
 import { map } from "rxjs";
@@ -14,21 +15,26 @@ import { SessionizeService } from "src/app/shared/services/sessionize/sessionize
 @Component({
 	selector: "app-schedule",
 	templateUrl: "./schedule.component.html",
-	imports: [SchedhuleItemComponent, LucideAngularModule],
+	imports: [SchedhuleItemComponent, LucideAngularModule, CommonModule],
 	styleUrls: ["./schedule.component.scss"],
 	standalone: true,
 })
 export class ScheduleComponent implements OnInit {
 	talkList: ITimeslot[] = [];
 	activeTime = new Date();
+	eventDate = signal<string | undefined>(undefined);
 	schedhuleService = inject(SessionizeService);
 	scheduleSpeakers: ISpeakerProfile[] = [];
 	private readonly DESTROY_REF = inject(DestroyRef);
 	ngOnInit(): void {
-		this.getSession("July 4, 2025");
+		console.log(this.activeTime);
 
+		this.activeTime.getDay() === 5
+			? this.eventDate.set("July 4,2025")
+			: this.eventDate.set("July 5,2025");
+
+		this.getSession(this.eventDate()!);
 		// this.reshuffleTalks();
-
 		// setInterval(() => {
 		// 	this.activeTime = new Date();
 		// 	// this.reshuffleTalks();
@@ -36,7 +42,9 @@ export class ScheduleComponent implements OnInit {
 	}
 
 	getSession(date: string) {
+		this.eventDate.set(date);
 		let targetDate = new Date(date);
+
 		this.schedhuleService
 			.getSchedhule()
 			.pipe(takeUntilDestroyed(this.DESTROY_REF))
