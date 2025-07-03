@@ -16,15 +16,9 @@ import { SharedModule } from "../shared/shared.module";
 // 	ChevronRight,
 // 	PianoIcon,
 // } from "lucide-angular";
-import { SchedhuleItemComponent } from "../shared/components/schedule-item/schedule-item.component";
 
 @NgModule({
-	declarations: [
-		HomeComponent,
-		SpeakersComponent,
-		ScheduleComponent,
-		ContactUsComponent,
-	],
+	declarations: [HomeComponent, ContactUsComponent],
 	imports: [
 		CommonModule,
 		HomeRoutingModule,

@@ -3,7 +3,10 @@ import { provideRouter } from "@angular/router";
 import { routes } from "./app.routes";
 import {
 	AlignLeft,
+	Blocks,
 	CalendarDays,
+	CheckCheck,
+	CheckCheckIcon,
 	ExternalLink,
 	Linkedin,
 	LucideAngularModule,
@@ -30,6 +33,8 @@ export const AppConfig: ApplicationConfig = {
 				Spool,
 				Network,
 				CalendarDays,
+				CheckCheck,
+				Blocks,
 			}),
 		),
 	],

@@ -18,6 +18,11 @@ export interface ISpeaker {
 	categories: [];
 }
 
+export interface ISpeakerProfile {
+	id: string;
+	profilePicture: string;
+	role: string;
+}
 export interface ITalk {
 	startTime: Date;
 	icon?: string;
@@ -30,6 +35,47 @@ export interface ITalk {
 	isDone?: boolean;
 	slidesLink?: string;
 	projectLink?: string;
+}
+
+export interface ISession {
+	id: string;
+	title: string;
+	description: boolean;
+	startsAt: string;
+	endsAt: string;
+	isServiceSession: true;
+	isPlenumSession: false;
+	speakers: {
+		id: string;
+		name: string;
+		profilePicture: string;
+		role: string;
+	}[];
+	categories: [];
+	roomId: number;
+	room: string;
+	liveUrl: string | null;
+	recordingUrl: string | null;
+	status: boolean | null;
+	isInformed: boolean;
+	isConfirmed: boolean;
+}
+
+export interface ISessionRoom {
+	id: number;
+	name: string;
+	session: ISession;
+	index: number;
+}
+export interface ITimeslot {
+	slotStart: string;
+	rooms: ISessionRoom[];
+}
+export interface ISessionizeGrid {
+	date: string;
+	isDefault: boolean;
+	rooms: [];
+	timeSlots: ITimeslot[];
 }
 
 export enum ROOM_NAME {

@@ -40,11 +40,11 @@ export class NavbarComponent {
 			link: "/speakers",
 			activeClass: "active",
 		},
-		// {
-		// 	label: "Agenda",
-		// 	link: "/schedule",
-		// 	activeClass: "active",
-		// },
+		{
+			label: "Agenda",
+			link: "/schedule",
+			activeClass: "active",
+		},
 		// {
 		// 	label: "Contact Us",
 		// 	activeClass: "active",

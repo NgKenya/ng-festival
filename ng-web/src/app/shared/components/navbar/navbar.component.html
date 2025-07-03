@@ -48,6 +48,7 @@
 					class="w-fit p-3 sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
 					[routerLink]="nav.link"
 					[routerLinkActive]="nav.activeClass"
+					[routerLinkActiveOptions]="{ exact: true }"
 					aria-current="page"
 					>{{ nav.label }}</a
 				>

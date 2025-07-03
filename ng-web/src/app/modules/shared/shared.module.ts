@@ -25,7 +25,7 @@ import { CounterComponent } from "../../shared/components/counter/counter.compon
 import { SectionTitleComponent } from "./components/section-title/section-title.component";
 import { AboutBulletComponent } from "./components/about-bullet/about-bullet.component";
 import { EventAlertComponent } from "./components/event-alert/event-alert.component";
-import { SchedhuleItemComponent } from "./components/schedule-item/schedule-item.component";
+import { SchedhuleItemComponent } from "../../shared/components/schedule-item/schedule-item.component";
 
 @NgModule({
 	declarations: [],
