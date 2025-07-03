@@ -1,0 +1,22 @@
+<div class="block relative w-full mb-10">
+	<div
+		class="absolute inset-0 bg-ng-dark-blue opacity-10 transition-opacity duration-300 ease-in-out hover:opacity-50 backdrop-blur-sm"
+	></div>
+
+	<img
+		[src]="speaker.profilePicture"
+		class="h-72 w-full object-cover rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
+		[alt]="speaker.firstName"
+	/>
+
+	<div
+		class="details absolute bottom-0 py-2 px-4 bg-[#0d1127] bg-opacity-60 w-full rounded-t-md"
+	>
+		<h3 class="font-bold text-ng-grey">
+			{{ speaker.fullName }}
+		</h3>
+		<p class="text-sm max-w-sm text-ng-white">
+			{{ speaker.tagLine }}
+		</p>
+	</div>
+</div>

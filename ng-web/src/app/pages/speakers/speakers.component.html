@@ -1,21 +1,17 @@
-<section class=" px-10 md:px-30 lg:px-40 my-32">
+<section class="px-10 md:px-30 lg:px-40 my-32">
+	<div class="my-auto md:order-1 order-last text-ng-white p-0 md:p-10">
+		<h1 class="text-3xl md:text-4xl font-semibold text-left capitalize">
+			Experts in the room
+		</h1>
+		<p class="text-left mt-5 mb-10 md:mb-0">
+			We are glad to be featuring Angular experts and industry leaders who will
+			ignite your passion for web development.
+		</p>
+	</div>
 
-  <div class="my-auto md:order-1 order-last text-ng-white p-0 md:p-10">
-    <h1 class="text-3xl  md:text-4xl font-semibold  text-left capitalize">
-      Experts in the room
-    </h1>
-    <p class="text-left mt-5 mb-10 md:mb-0">
-      We are glad to be featuring Angular experts and industry leaders who
-    will ignite your passion for web development.</p>
-  </div>
-
-
-
-
-
-  <div class="grid grid-cols-1 gap-7 p-0 md:p-10 md:grid-cols-2 lg:grid-cols-3">
-    @for (speaker of speakers; track speaker) {
-      <app-speaker-card [speaker]="speaker"></app-speaker-card>
-    }
-  </div>
+	<div class="grid grid-cols-1 gap-7 p-0 md:p-10 md:grid-cols-2 lg:grid-cols-3">
+		@for (speaker of speakers; track speaker) {
+		<ng-ke-speaker-card [speaker]="speaker"></ng-ke-speaker-card>
+		}
+	</div>
 </section>

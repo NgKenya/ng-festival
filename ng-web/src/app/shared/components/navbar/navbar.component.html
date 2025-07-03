@@ -1,5 +1,5 @@
 <header
-	class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[85rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] bg-none before:bg-neutral-800/30 before:backdrop-blur-none"
+	class="sticky top-4 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full before:absolute before:inset-0 before:max-w-[85rem] before:mx-2 before:lg:mx-auto before:rounded-[26px] bg-none before:bg-neutral-800/80 before:backdrop-blur-none"
 >
 	<nav
 		class="relative max-w-[85rem] w-full py-2.5 ps-5 pe-2 md:flex md:items-center md:justify-between md:py-1.5 mx-2 lg:mx-auto"
@@ -41,13 +41,14 @@
 			aria-labelledby="hs-navbar-floating-dark-collapse"
 		>
 			<div
-				class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7"
+				class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7 space-y-4 sm:space-y-0"
 			>
 				@for (nav of navLinks; track $index) {
 				<a
 					class="w-fit p-3 sm:px-3 md:py-4 text-sm text-white hover:text-neutral-300 focus:outline-none focus:text-neutral-300"
 					[routerLink]="nav.link"
 					[routerLinkActive]="nav.activeClass"
+					[routerLinkActiveOptions]="{ exact: true }"
 					aria-current="page"
 					>{{ nav.label }}</a
 				>

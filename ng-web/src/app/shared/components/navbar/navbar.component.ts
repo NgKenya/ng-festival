@@ -35,16 +35,16 @@ export class NavbarComponent {
 			link: "",
 			activeClass: "active",
 		},
-		// {
-		// 	label: "Speakers",
-		// 	link: "/speakers",
-		// 	activeClass: "active",
-		// },
-		// {
-		// 	label: "Agenda",
-		// 	link: "/schedule",
-		// 	activeClass: "active",
-		// },
+		{
+			label: "Speakers",
+			link: "/speakers",
+			activeClass: "active",
+		},
+		{
+			label: "Agenda",
+			link: "/schedule",
+			activeClass: "active",
+		},
 		// {
 		// 	label: "Contact Us",
 		// 	activeClass: "active",

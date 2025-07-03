@@ -3,7 +3,10 @@ import { provideRouter } from "@angular/router";
 import { routes } from "./app.routes";
 import {
 	AlignLeft,
+	Blocks,
 	CalendarDays,
+	CheckCheck,
+	CheckCheckIcon,
 	ExternalLink,
 	Linkedin,
 	LucideAngularModule,
@@ -13,10 +16,11 @@ import {
 	Spool,
 	XIcon,
 } from "lucide-angular";
+import { provideHttpClient, withFetch } from "@angular/common/http";
 
 export const AppConfig: ApplicationConfig = {
 	providers: [
-		// provideHttpClient(),
+		provideHttpClient(withFetch()),
 		provideRouter(routes),
 		importProvidersFrom(
 			LucideAngularModule.pick({
@@ -29,6 +33,8 @@ export const AppConfig: ApplicationConfig = {
 				Spool,
 				Network,
 				CalendarDays,
+				CheckCheck,
+				Blocks,
 			}),
 		),
 	],

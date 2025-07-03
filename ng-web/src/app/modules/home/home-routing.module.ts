@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
 import { HomeComponent } from "./components/home/home.component";
 import { SpeakersComponent } from "../../pages/speakers/speakers.component";
-import { ScheduleComponent } from "./components/schedule/schedule.component";
+import { ScheduleComponent } from "../../pages/schedule/schedule.component";
 import { ContactUsComponent } from "./components/contact-us/contact-us.component";
 
 const routes: Routes = [

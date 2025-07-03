@@ -1,0 +1,121 @@
+<section class="px-10 md:px-30 lg:px-40 my-16 md:my-32">
+	<!-- <app-section-title title="Our Schedule"></app-section-title> -->
+	<h2 class="text-xl md:text-2xl font-bold capitalize my-4 text-ng-red">
+		Our Schedule
+	</h2>
+	<p>
+		Join other Angular Developers in Nairobi , for a full day of keynotes and
+		new workshops at NG Kenya 2025
+	</p>
+</section>
+
+<section class="bg-white px-10 md:px-30 lg:px-40 py-10 md:py-20">
+	<select
+		id="tab-select"
+		class="sm:hidden py-3 px-4 pe-9 block w-full border-ng-pink bg-ng-pink text-ng-dark-blue text-base rounded-lg focus:bg-ng-red/30 focus:ring-ng-red hs-selected:text-white hs-selected:font-bold"
+		aria-label="Tabs"
+	>
+		<option value="#june-4-2025">June 4<sup>th</sup>, 2025</option>
+		<option value="#june-5-2025">June 5<sup>th</sup> 2025</option>
+	</select>
+
+	<div class="flex">
+		<div
+			class="hidden sm:block border-e border-ng-white divide-x-4 divide-ng-pink"
+		>
+			<nav
+				class="flex flex-col space-y-6 p-4"
+				aria-label="Tabs"
+				role="tablist"
+				data-hs-tab-select="#tab-select"
+			>
+				<button
+					type="button"
+					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
+					[ngClass]="
+						eventDate() === 'July 4,2025'
+							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
+							: ' text-ng-dark-blue/60 bg-transparent'
+					"
+					id="june-4-sessions"
+					aria-selected="true"
+					data-hs-tab="#june-4-2025"
+					aria-controls="june-4-2025"
+					role="tab"
+					(click)="getSession('July 4,2025')"
+				>
+					Day One - Google Offices
+				</button>
+				<button
+					type="button"
+					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
+					[ngClass]="
+						eventDate() === 'July 5,2025'
+							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
+							: 'text-ng-dark-blue/60 bg-transparent'
+					"
+					id="june-5-sessions"
+					aria-selected="false"
+					data-hs-tab="#june-5-2025"
+					aria-controls="june-5-2025"
+					role="tab"
+					(click)="getSession('July 5,2025')"
+				>
+					Day Two - Ihub , Jahazi
+				</button>
+			</nav>
+		</div>
+
+		<div class="mt-3 md:mt-0 ms-3">
+			<div
+				id="june-4-2025"
+				role="tabpanel"
+				aria-labelledby="june-4-sessions"
+			>
+				<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
+					@for (talk of talkList ; track talk) { @for (room of talk.rooms; track
+					$index) {
+					<ng-ke-schedule-item
+						[session]="room.session"
+						[room]="room.name"
+					></ng-ke-schedule-item>
+
+					} }
+				</div>
+			</div>
+			<div
+				id="june-5-2025"
+				class="hidden"
+				role="tabpanel"
+				aria-labelledby="june-5-sessions"
+				(click)="getSession('July 5,2025')"
+			>
+				<div>Ihub Nairobi</div>
+				<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
+					@for (talk of talkList ; track talk) { @for (room of talk.rooms; track
+					$index) {
+					<ng-ke-schedule-item
+						[session]="room.session"
+						[room]="room.name"
+					></ng-ke-schedule-item>
+
+					} }
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- 
+<button
+					type="button"
+					class="hs-tab-active:border-ng-pink hs-tab-active:text-ng-pink py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white hover:text-ng-pink focus:outline-hidden focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
+					id="june-5-sessions"
+					aria-selected="false"
+					data-hs-tab="#june-5-2025"
+					aria-controls="june-5-2025"
+					role="tab"
+					(click)="getSession('July 5,2025')"
+				>
+					Day Two - Ihub , Jahazi
+				</button> -->
