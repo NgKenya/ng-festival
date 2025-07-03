@@ -19,7 +19,7 @@
 		<option value="#june-5-2025">June 5<sup>th</sup> 2025</option>
 	</select>
 
-	<div class="flex flex-wrap">
+	<div class="flex">
 		<div class="hidden sm:block border-e border-ng-white">
 			<nav
 				class="flex flex-col space-y-6"
@@ -35,6 +35,7 @@
 					data-hs-tab="#june-4-2025"
 					aria-controls="june-4-2025"
 					role="tab"
+					(click)="getSession('July 4,2025')"
 				>
 					Day One - Google Offices
 				</button>
@@ -46,6 +47,7 @@
 					data-hs-tab="#june-5-2025"
 					aria-controls="june-5-2025"
 					role="tab"
+					(click)="getSession('July 5,2025')"
 				>
 					Day Two - Ihub , Jahazi
 				</button>
@@ -59,16 +61,14 @@
 				aria-labelledby="june-4-sessions"
 			>
 				<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
-					<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
-						@for (talk of talkList ; track talk) { @for (room of talk.rooms;
-						track $index) {
-						<ng-ke-schedule-item
-							[session]="room.session"
-							[room]="room.name"
-						></ng-ke-schedule-item>
+					@for (talk of talkList ; track talk) { @for (room of talk.rooms; track
+					$index) {
+					<ng-ke-schedule-item
+						[session]="room.session"
+						[room]="room.name"
+					></ng-ke-schedule-item>
 
-						} }
-					</div>
+					} }
 				</div>
 			</div>
 			<div
@@ -76,11 +76,19 @@
 				class="hidden"
 				role="tabpanel"
 				aria-labelledby="june-5-sessions"
+				(click)="getSession('July 5,2025')"
 			>
-				<p class="text-gray-500">
-					This is the <em class="font-semibold text-gray-800">second</em> item's
-					tab body.
-				</p>
+				<div>Ihub Nairobi</div>
+				<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
+					@for (talk of talkList ; track talk) { @for (room of talk.rooms; track
+					$index) {
+					<ng-ke-schedule-item
+						[session]="room.session"
+						[room]="room.name"
+					></ng-ke-schedule-item>
+
+					} }
+				</div>
 			</div>
 		</div>
 	</div>

@@ -139,6 +139,7 @@ export class ScheduleComponent implements OnInit {
 										?.profilePicture!,
 									role: this.getSpeakerById(speaker.id)?.role!,
 							  })),
+					done: new Date(room.session.endsAt) < this.activeTime,
 				},
 			})),
 		}));

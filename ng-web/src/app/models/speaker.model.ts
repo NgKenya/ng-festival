@@ -59,6 +59,7 @@ export interface ISession {
 	status: boolean | null;
 	isInformed: boolean;
 	isConfirmed: boolean;
+	done: boolean;
 }
 
 export interface ISessionRoom {
