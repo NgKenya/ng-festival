@@ -13,10 +13,11 @@ import {
 	Spool,
 	XIcon,
 } from "lucide-angular";
+import { provideHttpClient, withFetch } from "@angular/common/http";
 
 export const AppConfig: ApplicationConfig = {
 	providers: [
-		// provideHttpClient(),
+		provideHttpClient(withFetch()),
 		provideRouter(routes),
 		importProvidersFrom(
 			LucideAngularModule.pick({

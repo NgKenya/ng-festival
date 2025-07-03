@@ -3,7 +3,7 @@ import { NgModule } from "@angular/core";
 import { CommonModule, NgOptimizedImage } from "@angular/common";
 // import { NavbarComponent } from "./components/navbar/navbar.component";
 import { FooterComponent } from "../../shared/components/footer/footer.component";
-import { SpeakerCardComponent } from "./components/speaker-card/speaker-card.component";
+import { SpeakerCardComponent } from "../../shared/components/speaker-card/speaker-card.component";
 import { CounterComponent } from "../../shared/components/counter/counter.component";
 // import {
 //   Dot,
@@ -28,15 +28,7 @@ import { EventAlertComponent } from "./components/event-alert/event-alert.compon
 import { SchedhuleItemComponent } from "./components/schedule-item/schedule-item.component";
 
 @NgModule({
-	declarations: [
-		NavbarComponent,
-		FooterComponent,
-		SpeakerCardComponent,
-		CounterComponent,
-		SectionTitleComponent,
-		AboutBulletComponent,
-		EventAlertComponent,
-	],
+	declarations: [],
 	imports: [
 		CommonModule,
 		RouterModule,
@@ -60,13 +52,6 @@ import { SchedhuleItemComponent } from "./components/schedule-item/schedule-item
 		// }),
 	],
 	exports: [
-		NavbarComponent,
-		FooterComponent,
-		SpeakerCardComponent,
-		CounterComponent,
-		SectionTitleComponent,
-		AboutBulletComponent,
-		EventAlertComponent,
 		// SchedhuleItemComponent,
 	],
 })
