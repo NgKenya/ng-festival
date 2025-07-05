@@ -2,7 +2,7 @@ import { Component, inject } from "@angular/core";
 import { Router, RouterModule } from "@angular/router";
 import {
 	sponsorhsip_Deck,
-	ngKenya2024Feedback,
+	ngKenya2025Feedback,
 } from "src/app/const/data.const";
 import { UtilService } from "../../services/util/util.service";
 import { LucideAngularModule } from "lucide-angular";
@@ -16,7 +16,8 @@ import { LucideAngularModule } from "lucide-angular";
 export class NavbarComponent {
 	utilService = inject(UtilService);
 	deck = sponsorhsip_Deck;
-	feedback = ngKenya2024Feedback;
+	feedback = ngKenya2025Feedback;
+
 	showMenu = false;
 	isVisible: boolean = false;
 	toggleNavbar() {

@@ -3,7 +3,6 @@ import { Component, DestroyRef, inject, OnInit, signal } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { LucideAngularModule } from "lucide-angular";
 import { map } from "rxjs";
-import { TalkList } from "src/app/const/data.const";
 import {
 	ISession,
 	ISpeakerProfile,

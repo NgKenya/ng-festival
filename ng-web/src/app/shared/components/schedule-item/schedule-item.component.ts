@@ -12,7 +12,7 @@ import { UtilService } from "../../services/util/util.service";
 
 @Component({
 	selector: "ng-ke-schedule-item",
-	imports: [LucideAngularModule, DatePipe, NgClass, JsonPipe],
+	imports: [LucideAngularModule, DatePipe, NgClass],
 	templateUrl: "./schedule-item.component.html",
 	styleUrl: "./schedule-item.component.scss",
 	standalone: true,
