@@ -1,6 +1,6 @@
 <div
 	[ngClass]="session.done ? 'bg-ng-dark-blue text-neutral-400' : 'bg-none'"
-	class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl cursor-pointer hover:bg-ng-red/15 hover:shadow-md hover:shadow-ng-pink/20"
+	class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl cursor-pointer hover:shadow-md"
 >
 	<div class="time text-sm font-semibold">
 		<lucide-icon icon="blocks"></lucide-icon>
@@ -33,12 +33,13 @@
 			</div>
 			}
 		</div>
+
 		@if (session.done) {
 		<div class="flex justify-start gap-4">
 			@if (session.recordingUrl) {
 			<button
 				(click)="utilService.openNewPage(session.recordingUrl)"
-				class="group inline-flex items-center gap-x-2 py-2 px-3 cursor-pointer border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-red hover:text-ng-dark-blue"
+				class="group inline-flex items-center gap-x-2 py-2 px-3 cursor-pointer border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-pink hover:text-ng-dark-blue"
 			>
 				Slides
 				<lucide-icon
@@ -49,7 +50,7 @@
 			} @if(session.liveUrl){
 			<button
 				(click)="utilService.openNewPage(session.liveUrl)"
-				class="group inline-flex items-center gap-x-2 py-2 px-3 border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-red hover:text-ng-dark-blue cursor-pointer"
+				class="group inline-flex items-center gap-x-2 py-2 px-3 border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-pink hover:text-ng-dark-blue cursor-pointer"
 			>
 				Github Project
 				<lucide-icon

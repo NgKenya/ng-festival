@@ -33,6 +33,7 @@ export class ScheduleComponent implements OnInit {
 			: this.eventDate.set("July 5,2025");
 
 		this.getSession(this.eventDate()!);
+
 		// this.reshuffleTalks();
 		// setInterval(() => {
 		// 	this.activeTime = new Date();
@@ -52,12 +53,11 @@ export class ScheduleComponent implements OnInit {
 					const filteredTalks = res.find((day) => {
 						const dayDate = new Date(day.date).toDateString();
 						const target = targetDate.toDateString();
-						console.log("Comparing:", dayDate, "with", target);
+
 						return dayDate === target;
 					});
 
 					if (!filteredTalks) {
-						console.warn("No schedule found for date:", date);
 						this.talkList = [];
 						return;
 					}
@@ -97,6 +97,8 @@ export class ScheduleComponent implements OnInit {
 				},
 				complete: () => {
 					this.talkList = this.updateSpeakersWithProfile(this.talkList);
+
+					console.log(this.talkList);
 				},
 				error: (err) => {},
 			});
