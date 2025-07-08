@@ -21,17 +21,11 @@ import { SessionizeService } from "src/app/shared/services/sessionize/sessionize
 export class ScheduleComponent implements OnInit {
 	talkList: ITimeslot[] = [];
 	activeTime = new Date();
-	eventDate = signal<string | undefined>(undefined);
+	eventDate = signal<string | undefined>("July 4, 2025");
 	schedhuleService = inject(SessionizeService);
 	scheduleSpeakers: ISpeakerProfile[] = [];
 	private readonly DESTROY_REF = inject(DestroyRef);
 	ngOnInit(): void {
-		console.log(this.activeTime);
-
-		this.activeTime.getDay() === 5
-			? this.eventDate.set("July 4,2025")
-			: this.eventDate.set("July 5,2025");
-
 		this.getSession(this.eventDate()!);
 
 		// this.reshuffleTalks();
@@ -67,9 +61,7 @@ export class ScheduleComponent implements OnInit {
 				complete: () => {
 					this.fetchSpeakers();
 				},
-				error: (err) => {
-					console.error("Error fetching schedule:", err);
-				},
+				error: (err) => {},
 			});
 	}
 
@@ -97,8 +89,6 @@ export class ScheduleComponent implements OnInit {
 				},
 				complete: () => {
 					this.talkList = this.updateSpeakersWithProfile(this.talkList);
-
-					console.log(this.talkList);
 				},
 				error: (err) => {},
 			});

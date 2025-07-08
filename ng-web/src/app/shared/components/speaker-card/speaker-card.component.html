@@ -1,4 +1,5 @@
 <div class="block relative w-full mb-10">
+	@defer () {
 	<div
 		class="absolute inset-0 bg-ng-dark-blue opacity-10 transition-opacity duration-300 ease-in-out hover:opacity-50 backdrop-blur-sm"
 	></div>
@@ -19,4 +20,32 @@
 			{{ speaker.tagLine }}
 		</p>
 	</div>
+	} @placeholder {
+	<div class="h-72 w-full bg-gray-200 animate-pulse rounded-lg"></div>
+	} @loading(minimum 500ms) {
+
+	<div class="w-full h-72 relative flex items-center justify-center">
+		>
+
+		<div class="w-full h-full relative flex items-center justify-center">
+			<div
+				class="absolute inset-1 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden"
+			></div>
+		</div>
+
+		<div
+			class="absolute -top-1 -left-1 w-2 h-2 bg-ng-red/50 rounded-full animate-ping"
+		></div>
+		<div
+			class="absolute -top-1 -right-1 w-2 h-2 bg-ng-pink/50 rounded-full animate-ping delay-100"
+		></div>
+		<div
+			class="absolute -bottom-1 -left-1 w-2 h-2 bg-orange-500 rounded-full animate-ping delay-200"
+		></div>
+		<div
+			class="absolute -bottom-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full animate-ping delay-300"
+		></div>
+	</div>
+
+	}
 </div>
