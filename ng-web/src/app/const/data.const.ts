@@ -51,7 +51,7 @@ export const eventStats: {
 		icon: "calendar-days",
 		count: "2 Days",
 		type: "",
-		label: "JUly 4th & July 5th ",
+		label: "August 21st & August 22nd ",
 	},
 
 	{

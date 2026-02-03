@@ -37,16 +37,16 @@ export class NavbarComponent {
 			link: "",
 			activeClass: "active",
 		},
-		{
-			label: "Speakers",
-			link: "/speakers",
-			activeClass: "active",
-		},
-		{
-			label: "Agenda",
-			link: "/schedule",
-			activeClass: "active",
-		},
+		// {
+		// 	label: "Speakers",
+		// 	link: "/speakers",
+		// 	activeClass: "active",
+		// },
+		// {
+		// 	label: "Agenda",
+		// 	link: "/schedule",
+		// 	activeClass: "active",
+		// },
 		// {
 		// 	label: "Contact Us",
 		// 	activeClass: "active",
@@ -63,7 +63,7 @@ export class NavbarComponent {
 		this.router.navigate(["/contact-us"]);
 	}
 
-	openTickets() {
+	onGetTicketsClicked() {
 		this.utilService.openNewPage("https://vabu.app/ngkenya-2025");
 	}
 }
