@@ -8,10 +8,11 @@ import { UtilService } from "../../services/util/util.service";
 import { LucideAngularModule } from "lucide-angular";
 
 @Component({
-	selector: "ng-ke-navbar",
-	imports: [LucideAngularModule, RouterModule],
-	templateUrl: "./navbar.component.html",
-	styleUrl: "./navbar.component.scss",
+  selector: "ng-ke-navbar",
+  imports: [LucideAngularModule, RouterModule],
+  templateUrl: "./navbar.component.html",
+  styleUrl: "./navbar.component.scss",
+  standalone: true
 })
 export class NavbarComponent {
 	utilService = inject(UtilService);
@@ -36,16 +37,16 @@ export class NavbarComponent {
 			link: "",
 			activeClass: "active",
 		},
-		{
-			label: "Speakers",
-			link: "/speakers",
-			activeClass: "active",
-		},
-		{
-			label: "Agenda",
-			link: "/schedule",
-			activeClass: "active",
-		},
+		// {
+		// 	label: "Speakers",
+		// 	link: "/speakers",
+		// 	activeClass: "active",
+		// },
+		// {
+		// 	label: "Agenda",
+		// 	link: "/schedule",
+		// 	activeClass: "active",
+		// },
 		// {
 		// 	label: "Contact Us",
 		// 	activeClass: "active",
@@ -62,7 +63,7 @@ export class NavbarComponent {
 		this.router.navigate(["/contact-us"]);
 	}
 
-	openTickets() {
-		this.utilService.openNewPage("https://vabu.app/ngkenya-2025");
+	onGetTicketsClicked() {
+		this.utilService.getTickets();
 	}
 }

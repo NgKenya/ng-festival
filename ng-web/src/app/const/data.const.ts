@@ -29,7 +29,7 @@ export const NgKenyaPartners: IPartner[] = [
 	},
 ];
 
-export const ticketUrl = "https://vabu.app/ngkenya-2025";
+export const ticketUrl = "https://vabu.app/ng-kenya-conf-2026";
 export const ngKenya2024Photos = "https://photos.app.goo.gl/UHZCwSEV2JkMzbYw7";
 export const ngKenya2024Feedback = "https://forms.gle/xZ9UbyZpfpm1ESwa9";
 
@@ -51,7 +51,7 @@ export const eventStats: {
 		icon: "calendar-days",
 		count: "2 Days",
 		type: "",
-		label: "JUly 4th & July 5th ",
+		label: "August 21st & August 22nd ",
 	},
 
 	{

@@ -22,14 +22,11 @@
 			<div class="md:hidden">
 				<button
 					type="button"
-					class="hs-collapse-toggle size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-none text-ng-white disabled:opacity-50 disabled:pointer-events-none"
-					id="hs-navbar-floating-dark-collapse"
-					aria-expanded="false"
-					aria-controls="hs-navbar-floating-dark"
+					class="size-8 flex justify-center items-center text-sm font-semibold rounded-full bg-none text-ng-white disabled:opacity-50 disabled:pointer-events-none"
+					(click)="toggleNavbar()"
 					aria-label="Toggle navigation"
-					data-hs-collapse="#hs-navbar-floating-dark"
 				>
-					<lucide-icon name="align-left"></lucide-icon>
+					<lucide-icon [name]="showMenu ? 'x-icon' : 'align-left'"></lucide-icon>
 				</button>
 			</div>
 		</div>
@@ -37,8 +34,9 @@
 		<!-- Collapse -->
 		<div
 			id="hs-navbar-floating-dark"
-			class="hs-collapse hidden overflow-hidden transition-all duration-300 basis-full grow md:block"
-			aria-labelledby="hs-navbar-floating-dark-collapse"
+			class="basis-full grow md:block transition-all duration-300 overflow-hidden max-h-0 opacity-0 md:max-h-none md:opacity-100"
+			[class.max-h-[500px]]="showMenu"
+			[class.opacity-100]="showMenu"
 		>
 			<div
 				class="flex flex-col md:flex-row md:items-center md:justify-end py-2 md:py-0 md:ps-7 space-y-4 sm:space-y-0"
@@ -50,16 +48,30 @@
 					[routerLinkActive]="nav.activeClass"
 					[routerLinkActiveOptions]="{ exact: true }"
 					aria-current="page"
+					(click)="showMenu = false"
 					>{{ nav.label }}</a
 				>
 				}
 
-				<button
-					class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
-					(click)="utilService.openNewPage(feedback)"
-				>
-					Feedback
-				</button>
+				@if (false) {
+          <button
+            class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
+            (click)="utilService.openNewPage(feedback)"
+          >
+            Feedback
+          </button>
+        }
+
+        <button
+          class="group inline-flex items-center gap-x-2 py-2 px-3 border-2 border-ng-red font-medium text-sm text-ng-red rounded-full focus:outline-none md:mr-2"
+          (click)="utilService.openNewPage(deck); showMenu = false">
+          Sponsor Us
+        </button>
+        <button
+          class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
+          (click)="onGetTicketsClicked(); showMenu = false">
+          Grab Tickets
+        </button>
 			</div>
 		</div>
 		<!-- End Collapse -->
