@@ -64,6 +64,6 @@ export class NavbarComponent {
 	}
 
 	onGetTicketsClicked() {
-		this.utilService.openNewPage("https://vabu.app/ngkenya-2025");
+		this.utilService.getTickets();
 	}
 }
