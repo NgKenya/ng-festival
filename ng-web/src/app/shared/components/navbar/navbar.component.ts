@@ -8,10 +8,11 @@ import { UtilService } from "../../services/util/util.service";
 import { LucideAngularModule } from "lucide-angular";
 
 @Component({
-	selector: "ng-ke-navbar",
-	imports: [LucideAngularModule, RouterModule],
-	templateUrl: "./navbar.component.html",
-	styleUrl: "./navbar.component.scss",
+  selector: "ng-ke-navbar",
+  imports: [LucideAngularModule, RouterModule],
+  templateUrl: "./navbar.component.html",
+  styleUrl: "./navbar.component.scss",
+  standalone: true
 })
 export class NavbarComponent {
 	utilService = inject(UtilService);
