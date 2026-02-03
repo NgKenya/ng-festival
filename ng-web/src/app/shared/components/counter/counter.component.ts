@@ -51,6 +51,14 @@ export class CounterComponent implements OnInit {
 		this.stubBarcodeLines = Array.from({ length: 20 }, (_, i) => i);
 	}
 
+  onGetTicketsClicked() {
+    this.utilService.getTickets();
+  }
+
+  onPastPhotosClicked() {
+    this.utilService.openNewPage(ngKenya2025Photos)
+  }
+
 	ngOnDestroy(): void {
 		this.countdownSubscription?.unsubscribe();
 	}

@@ -52,7 +52,7 @@
 			</h1>
 		</div>
 
-		<div class="col-span-12 md:col-span-5 space-y-6 mx-auto w-3/4 my-auto">
+		<div class="col-span-12 md:col-span-5 space-y-6 mx-auto w-full my-auto">
 			<!-- <p class="text-lg text-center md:text-left">
 				Dive deeper into the framework, de-construct complex concepts, and
 				connect with a vibrant community of fellow Angular enthusiasts.
@@ -60,11 +60,11 @@
 
       <!-- Countdown START -->
       <div
-        class="flex justify-end w-full gap-1.5 count-down-main md:order-2 order-1"
+        class="flex justify-center md:justify-start w-full gap-1.5 count-down-main md:order-2 order-1"
       >
         <div class="timer">
           <div
-            class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+            class="rounded-xl border border-ng-red py-1.5 min-w-[70px] md:min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
           >
             <h3
               class="countdown-element days font-manrope font-semibold text-2xl text-ng-red text-center"
@@ -81,7 +81,7 @@
         <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
         <div class="timer">
           <div
-            class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+            class="rounded-xl border border-ng-red py-1.5 min-w-[70px] md:min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
           >
             <h3
               class="countdown-element hours font-manrope font-semibold text-2xl text-ng-red text-center"
@@ -98,7 +98,7 @@
         <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
         <div class="timer">
           <div
-            class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+            class="rounded-xl border border-ng-red py-1.5 min-w-[70px] md:min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
           >
             <h3
               class="countdown-element minutes font-manrope font-semibold text-2xl text-ng-red text-center"
@@ -115,7 +115,7 @@
         <h3 class="font-manrope font-semibold text-2xl text-gray-900">:</h3>
         <div class="timer">
           <div
-            class="rounded-xl border border-ng-red py-1.5 min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
+            class="rounded-xl border border-ng-red py-1.5 min-w-[70px] md:min-w-[80px] flex items-center justify-center flex-col gap-0 aspect-square px-1.5"
           >
             <h3
               class="countdown-element seconds sec font-manrope font-semibold text-2xl text-ng-red text-center"
@@ -130,6 +130,7 @@
           </div>
         </div>
       </div>
+
 
       <!-- Countdown END -->
 
@@ -154,16 +155,32 @@
 			</div> -->
 			<!-- Ticket End -->
 
-			<button
-				(click)="utilService.openNewPage(photoLink)"
-				class="cursor-pointer text-nowrap px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left mx-auto md:mx-0 my-6 h-fit w-fit md:w-auto hover:bg-ng-dark-blue"
-			>
-				Past Event Photos
-				<lucide-icon
-					name="external-link"
-					class="w-4 h-4 mx-2"
-				></lucide-icon>
-			</button>
+      <!-- CTA Buttons START -->
+      <div class="cta-buttons flex flex-wrap justify-center md:justify-start gap-4">
+
+        <button
+          (click)="onGetTicketsClicked()"
+          class="cursor-pointer text-nowrap px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
+        >
+          Get Tickets
+          <lucide-icon
+            name="external-link"
+            class="w-4 h-4 mx-2"
+          ></lucide-icon>
+        </button>
+        <button
+          (click)="onPastPhotosClicked()"
+          class="cursor-pointer text-nowrap px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
+        >
+          Past Event Photos
+          <lucide-icon
+            name="external-link"
+            class="w-4 h-4 mx-2"
+          ></lucide-icon>
+        </button>
+      </div>
+      <!-- CTA Buttons END -->
+
 		</div>
 	</div>
 </div>
