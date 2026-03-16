@@ -1,8 +1,7 @@
 import { Component, OnInit, inject } from "@angular/core";
 import { Subscription } from "rxjs";
 import {
-	ngKenya2024Photos,
-	ngKenya2025CallForSpeakers,
+  ngKenya2026CallForSpeakers,
 	ngKenya2025Photos,
 	ticketUrl,
 } from "src/app/const/data.const";
@@ -57,6 +56,10 @@ export class CounterComponent implements OnInit {
 
   onPastPhotosClicked() {
     this.utilService.openNewPage(ngKenya2025Photos)
+  }
+
+  onSubmitTalkClicked() {
+    this.utilService.openNewPage(ngKenya2026CallForSpeakers);
   }
 
 	ngOnDestroy(): void {
