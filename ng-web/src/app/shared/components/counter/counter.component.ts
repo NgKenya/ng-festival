@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from "@angular/core";
+import {Component, OnInit, inject, signal} from "@angular/core";
 import { Subscription } from "rxjs";
 import {
   ngKenya2026CallForSpeakers,
@@ -37,6 +37,24 @@ export class CounterComponent implements OnInit {
 	utilService = inject(UtilService);
 	countdownService = inject(CountdownService);
 	private countdownSubscription?: Subscription;
+
+  ctaButtons = signal([
+    {
+      label: 'Submit Talk',
+      icon: 'external-link',
+      action: () => this.utilService.openNewPage(ngKenya2026CallForSpeakers),
+    },
+    {
+      label: 'Get Tickets',
+      icon: 'external-link',
+      action: () => this.utilService.getTickets(),
+    },
+    {
+      label: 'NG Kenya 2025 Photos',
+      icon: 'external-link',
+      action: () => this.utilService.openNewPage(ngKenya2025Photos),
+    },
+  ])
 
 	barcodeData: BarcodeBar[] = [];
 	stubBarcodeLines: number[] = [];

@@ -155,36 +155,18 @@
 
       <!-- CTA Buttons START -->
       <div class="cta-buttons flex flex-wrap justify-center md:justify-start gap-4">
-        <button
-          (click)="onGetTicketsClicked()"
-          class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
-        >
-          Get Tickets
-          <lucide-icon
-            name="external-link"
-            class="w-4 h-4 mx-2"
-          ></lucide-icon>
-        </button>
-        <button
-          (click)="onSubmitTalkClicked()"
-          class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
-        >
-          Submit a Talk
-          <lucide-icon
-            name="external-link"
-            class="w-4 h-4 mx-2"
-          ></lucide-icon>
-        </button>
-        <button
-          (click)="onPastPhotosClicked()"
-          class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
-        >
-          NG Kenya 2025 Photos
-          <lucide-icon
-            name="external-link"
-            class="w-4 h-4 mx-2"
-          ></lucide-icon>
-        </button>
+        @for (ctaButton of ctaButtons(); track ctaButton){
+          <button
+            (click)="ctaButton.action()"
+            class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
+          >
+            {{ctaButton.label}}
+            <lucide-icon
+              [name]=ctaButton.icon
+              class="w-4 h-4 mx-2"
+            ></lucide-icon>
+          </button>
+        }
       </div>
       <!-- CTA Buttons END -->
 
