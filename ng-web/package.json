@@ -29,6 +29,9 @@
     "tslib": "^2.3.0",
     "zone.js": "~0.15.1"
   },
+  "pnpm": {
+    "onlyBuiltDependencies": ["@parcel/watcher", "esbuild", "lmdb", "msgpackr-extract"]
+  },
   "devDependencies": {
     "@angular/build": "^20.0.4",
     "@angular/cli": "^20.3.20",
