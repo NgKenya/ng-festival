@@ -11,14 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - run: npm i -g pnpm
-        working-directory: ./ng-web
-      - uses: actions/checkout@v4
-      - run: pnpm install && pnpm run build
+      - uses: pnpm/action-setup@v4
+        with:
+          version: latest
+      - run: pnpm install --no-frozen-lockfile && pnpm run build
         working-directory: ./ng-web
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
