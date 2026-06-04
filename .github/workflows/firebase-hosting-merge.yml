@@ -14,10 +14,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
-      - uses: pnpm/action-setup@v4
-        with:
-          version: latest
-      - run: pnpm install --no-frozen-lockfile --force && pnpm run build
+      - run: npm ci && npm run build
         working-directory: ./ng-web
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
