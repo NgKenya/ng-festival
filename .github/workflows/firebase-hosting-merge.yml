@@ -14,9 +14,11 @@ jobs:
           node-version: lts/*
       - run: npm i -g pnpm
         working-directory: ./ng-web
+      - run: pnpm install --no-optional
+        working-directory: ./ng-web
       - run: pnpm approve-builds
         working-directory: ./ng-web
-      - run: pnpm install --no-optional && pnpm run build
+      - run: pnpm run build
         working-directory: ./ng-web
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
