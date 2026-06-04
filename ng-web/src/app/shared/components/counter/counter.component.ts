@@ -40,11 +40,6 @@ export class CounterComponent implements OnInit {
 
   ctaButtons = signal([
     {
-      label: 'Submit Talk',
-      icon: 'external-link',
-      action: () => this.utilService.openNewPage(ngKenya2026CallForSpeakers),
-    },
-    {
       label: 'Get Tickets',
       icon: 'external-link',
       action: () => this.utilService.getTickets(),
