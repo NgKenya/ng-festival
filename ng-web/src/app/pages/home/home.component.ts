@@ -56,7 +56,7 @@ export class HomeComponent {
 			icon: "users",
 			title: "Grow your network",
 			description:
-				"Connect with a vibrant community of developers, GDEs and industry partners across Africa.",
+				"Connect with a vibrant community of developers, GDEs and industry partners across the world.",
 		},
 		{
 			icon: "trending-up",
