@@ -33,20 +33,53 @@
 <!-- The three pillars -->
 <section class="w-full mx-auto pb-16">
 	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-			@for (pillar of pillars; track pillar.title) {
+		<div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+			<h2 class="text-2xl md:text-4xl font-extrabold leading-tight">
+				The three pillars of the
+				<span class="text-ng-red">NG-ine Room</span>
+			</h2>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+			@for (pillar of pillars; track pillar.title; let i = $index) {
 			<div
-				class="group h-full p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink transition-colors duration-300"
+				class="group relative h-full p-8 rounded-3xl border border-neutral-800 bg-neutral-900/40 overflow-hidden hover:border-ng-pink hover:bg-neutral-900/70 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-ng-pink/10 transition-all duration-300"
 			>
+				<!-- Decorative gradient glow -->
 				<div
-					class="inline-flex items-center justify-center size-12 rounded-xl bg-ng-pink/10 text-ng-pink group-hover:bg-ng-pink group-hover:text-white transition-colors duration-300"
+					class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-ng-pink/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+					aria-hidden="true"
+				></div>
+
+				<!-- Step number watermark -->
+				<span
+					class="absolute top-5 right-6 text-6xl font-extrabold leading-none text-white/5 group-hover:text-ng-pink/10 transition-colors duration-300 select-none"
+					aria-hidden="true"
 				>
-					<lucide-icon [name]="pillar.icon" class="size-6"></lucide-icon>
+					0{{ i + 1 }}
+				</span>
+
+				<div class="relative z-10">
+					<div class="flex items-center gap-x-4">
+						<div
+							class="inline-flex shrink-0 items-center justify-center size-14 rounded-2xl bg-gradient-to-br from-ng-pink/20 to-ng-red/10 text-ng-pink ring-1 ring-ng-pink/20 group-hover:from-ng-pink group-hover:to-ng-red group-hover:text-white group-hover:ring-ng-pink transition-all duration-300"
+						>
+							<lucide-icon [name]="pillar.icon" class="size-7"></lucide-icon>
+						</div>
+						<h3 class="text-xl font-bold group-hover:text-ng-pink transition-colors duration-300">
+							{{ pillar.title }}
+						</h3>
+					</div>
+					<p class="mt-4 text-sm text-ng-grey leading-relaxed">
+						{{ pillar.description }}
+					</p>
 				</div>
-				<h3 class="mt-5 text-xl font-bold">{{ pillar.title }}</h3>
-				<p class="mt-2 text-sm text-ng-grey leading-relaxed">
-					{{ pillar.description }}
-				</p>
+
+				<!-- Bottom accent bar -->
+				<div
+					class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-ng-pink to-ng-red group-hover:w-full transition-all duration-500 rounded-b-3xl"
+					aria-hidden="true"
+				></div>
 			</div>
 			}
 		</div>
@@ -170,25 +203,50 @@
 <!-- Why attend -->
 <section class="w-full mx-auto pb-20">
 	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
-		<div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
-			<h2 class="text-2xl md:text-3xl font-bold">Why attend NG Kenya 2026?</h2>
+		<div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+			<h2 class="text-2xl md:text-4xl font-extrabold leading-tight">
+				Why attend
+				<span class="text-ng-red">NG Kenya 2026?</span>
+			</h2>
 			<p class="text-ng-grey">
 				Everything you need to power up your Angular journey, all in one room.
 			</p>
 		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-			@for (item of whyAttend; track item.title) {
-			<div class="text-center space-y-3">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+			@for (item of whyAttend; track item.title; let i = $index) {
+			<div
+				class="group relative h-full p-8 rounded-3xl border border-neutral-800 bg-gradient-to-b from-neutral-900/60 to-neutral-900/20 overflow-hidden hover:border-ng-red hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-ng-red/10 transition-all duration-300"
+			>
+				<!-- Decorative corner glow -->
 				<div
-					class="mx-auto inline-flex items-center justify-center size-14 rounded-full bg-ng-red/10 text-ng-red"
-				>
-					<lucide-icon [name]="item.icon" class="size-7"></lucide-icon>
+					class="pointer-events-none absolute -bottom-16 -left-16 size-40 rounded-full bg-ng-red/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+					aria-hidden="true"
+				></div>
+
+				<div class="relative z-10 flex flex-col items-start">
+					<div class="flex items-center gap-x-4">
+						<div
+							class="inline-flex shrink-0 items-center justify-center size-14 rounded-2xl bg-gradient-to-br from-ng-red/20 to-ng-pink/10 text-ng-red ring-1 ring-ng-red/20 group-hover:from-ng-red group-hover:to-ng-pink group-hover:text-white group-hover:ring-ng-red transition-all duration-300"
+						>
+							<lucide-icon [name]="item.icon" class="size-7"></lucide-icon>
+						</div>
+						<h3
+							class="text-xl font-bold group-hover:text-ng-red transition-colors duration-300"
+						>
+							{{ item.title }}
+						</h3>
+					</div>
+					<p class="mt-4 text-sm text-ng-grey leading-relaxed">
+						{{ item.description }}
+					</p>
 				</div>
-				<h3 class="text-lg font-bold">{{ item.title }}</h3>
-				<p class="text-sm text-ng-grey leading-relaxed">
-					{{ item.description }}
-				</p>
+
+				<!-- Top accent bar -->
+				<div
+					class="absolute top-0 left-0 h-1 w-0 bg-gradient-to-r from-ng-red to-ng-pink group-hover:w-full transition-all duration-500 rounded-t-3xl"
+					aria-hidden="true"
+				></div>
 			</div>
 			}
 		</div>

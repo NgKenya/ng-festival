@@ -23,19 +23,19 @@ export class HomeComponent {
 	 */
 	pillars: { icon: string; title: string; description: string }[] = [
 		{
-			icon: "cpu",
+			icon: "wrench",
 			title: "Cutting-edge Tools",
 			description:
 				"Signals, standalone APIs, zoneless change detection and the modern Angular toolchain that make apps faster to build and blazing fast to run.",
 		},
 		{
-			icon: "bot",
+			icon: "layers",
 			title: "Intelligent Platforms",
 			description:
 				"AI-assisted development, smart integrations and intelligent services that supercharge how we design, code and ship Angular experiences.",
 		},
 		{
-			icon: "workflow",
+			icon: "git-branch",
 			title: "Agile Workflows",
 			description:
 				"CI/CD, testing and collaborative practices that keep teams in sync and turn great ideas into production reality with confidence.",
@@ -47,7 +47,7 @@ export class HomeComponent {
 	 */
 	whyAttend: { icon: string; title: string; description: string }[] = [
 		{
-			icon: "network",
+			icon: "graduation-cap",
 			title: "Learn from the best",
 			description:
 				"Deep-dive talks and hands-on workshops led by Angular experts and community leaders.",
@@ -59,7 +59,7 @@ export class HomeComponent {
 				"Connect with a vibrant community of developers, GDEs and industry partners across Africa.",
 		},
 		{
-			icon: "rocket",
+			icon: "trending-up",
 			title: "Level up your craft",
 			description:
 				"Walk away with practical patterns, tools and workflows you can apply to your projects immediately.",
