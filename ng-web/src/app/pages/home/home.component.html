@@ -1,11 +1,60 @@
-<section class="w-full mx-auto py-10">
-	<!-- Start  -->
+<!-- Hero (headline + countdown + ticket) -->
+<section class="w-full mx-auto pt-10 pb-16 md:pb-24">
 	<app-counter></app-counter>
-
-	<!-- Video -->
 </section>
 
-<section class="pb-10 md:pt-10 md:pb-20">
+<!-- About the NG-ine Room -->
+<section class="w-full mx-auto pt-6 pb-16 md:pt-10 md:pb-24">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="max-w-4xl mx-auto text-center space-y-6">
+			<h2
+				class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
+			>
+				<span class="block text-ng-pink">
+					Welcome to the NG-ine Room
+				</span>
+				<span class="block mt-2 md:mt-3">
+					Where Angular meets its
+					<span class="text-ng-red">superpowers</span>
+				</span>
+			</h2>
+
+			<p class="text-base md:text-lg text-ng-grey leading-relaxed">
+				The <span class="font-semibold text-ng-white">NG-ine Room</span> is a
+				collaborative powerhouse where we celebrate Angular’s strength when
+				synergized with cutting-edge tools, intelligent platforms, and agile
+				workflows. Join us in Nairobi to explore what powers modern, world-class
+				Angular applications.
+			</p>
+		</div>
+	</div>
+</section>
+
+<!-- The three pillars -->
+<section class="w-full mx-auto pb-16">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+			@for (pillar of pillars; track pillar.title) {
+			<div
+				class="group h-full p-6 rounded-2xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink transition-colors duration-300"
+			>
+				<div
+					class="inline-flex items-center justify-center size-12 rounded-xl bg-ng-pink/10 text-ng-pink group-hover:bg-ng-pink group-hover:text-white transition-colors duration-300"
+				>
+					<lucide-icon [name]="pillar.icon" class="size-6"></lucide-icon>
+				</div>
+				<h3 class="mt-5 text-xl font-bold">{{ pillar.title }}</h3>
+				<p class="mt-2 text-sm text-ng-grey leading-relaxed">
+					{{ pillar.description }}
+				</p>
+			</div>
+			}
+		</div>
+	</div>
+</section>
+
+<!-- Video teaser -->
+<section class="pb-10 md:pb-20">
 	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
 		<div class="relative max-w-5xl mx-auto">
 			<div
@@ -13,16 +62,25 @@
 			></div>
 
 			<div
-				class="absolute inset-0 bg-ng-dark-blue opacity-50 rounded-xl pointer-events-none"
+				class="absolute inset-0 bg-gradient-to-t from-ng-dark-blue via-ng-dark-blue/60 to-transparent rounded-xl pointer-events-none"
 				aria-hidden="true"
 			></div>
 
 			<div class="absolute inset-0 size-full">
-				<div class="flex flex-col justify-center items-center size-full">
+				<div
+					class="flex flex-col justify-center items-center size-full text-center px-6 gap-4"
+				>
+					<h3 class="text-2xl md:text-4xl font-bold text-white drop-shadow-lg">
+						Relive the magic of NG Kenya
+					</h3>
+					<p class="max-w-xl text-sm md:text-base text-ng-white/90 drop-shadow">
+						A glimpse into the community, the talks and the energy that make
+						NG Kenya unforgettable.
+					</p>
 					<button
 						type="button"
 						(click)="openVideo()"
-						class="py-3 px-4 inline-flex items-center gap-x-2 text-sm font-medium rounded-full border border-gray-200 bg-white text-gray-800 shadow-2xs hover:bg-gray-50 focus:outline-hidden focus:bg-gray-50 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-900 dark:border-neutral-700 dark:text-white dark:hover:bg-neutral-800 dark:focus:bg-neutral-800"
+						class="mt-2 py-3 px-5 inline-flex items-center gap-x-2 text-sm font-semibold rounded-full bg-white text-ng-dark-blue shadow-lg hover:bg-ng-pink hover:text-white transition-colors duration-300 focus:outline-none"
 					>
 						<svg
 							class="shrink-0 size-4"
@@ -38,7 +96,7 @@
 						>
 							<polygon points="5 3 19 12 5 21 5 3" />
 						</svg>
-						NG Kenya 2025
+						Watch NG Kenya 2025
 					</button>
 				</div>
 			</div>
@@ -71,7 +129,7 @@
 	</div>
 </section>
 
-<!-- Divider & Stats BEGIN -->
+<!-- Divider & Stats -->
 <div class="pt-10">
 	<hr class="px-10 md:px-30 lg:px-40 w-10/12 border-neutral-700 mx-auto" />
 </div>
@@ -80,43 +138,100 @@
 	<div
 		class="container space-y-8 max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-10"
 	>
-		<h2 class="text-xl md:text-3xl w-full leading-relaxed">
-      The NG-ine Room is a collaborative powerhouse where we celebrate Angular’s strength when
-      synergized with cutting-edge tools, intelligent platforms, and agile workflows.
-    </h2>
+		<div class="text-center max-w-2xl mx-auto space-y-2">
+			<h2 class="text-2xl md:text-3xl font-bold">The NG Kenya experience</h2>
+			<p class="text-ng-grey">Two days packed with learning, building and connecting.</p>
+		</div>
 
-		<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+		<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
 			@for (stat of stats; track $index) {
 			<div
-				class="md:col-span-4 card bg-ng-pink mx-auto w-3/4 p-4 rounded-lg"
+				class="card bg-ng-pink text-white rounded-2xl p-6 shadow-lg hover:-translate-y-1 transition-transform duration-300"
 			>
-				<div class="card-body px-4 py-2">
-					<div class="inline-flex space-x-4">
-						<span
-							><lucide-icon
-								class="size-8"
-								[name]="stat.icon"
-							></lucide-icon
-						></span>
-						<span class="text-3xl font-bold"
-							>{{ stat.count }} <span></span> {{ stat.type }}</span
-						>
-					</div>
-					<div>
-						<span class="text-md">{{ stat.label }}</span>
-					</div>
+				<div class="flex items-center gap-x-3">
+					<span
+						class="inline-flex items-center justify-center size-11 rounded-xl bg-white/20"
+					>
+						<lucide-icon [name]="stat.icon" class="size-6"></lucide-icon>
+					</span>
+					<span class="text-3xl font-bold"
+						>{{ stat.count }}{{ stat.type }}</span
+					>
+				</div>
+				<div class="mt-3">
+					<span class="text-base font-medium">{{ stat.label }}</span>
 				</div>
 			</div>
 			}
 		</div>
 	</div>
 </section>
-<!-- Divider & Stats END -->
 
-<!--<section class="w-full mx-auto py-20">-->
-<!--	<div-->
-<!--		class="container space-y-8 max-w-screen-sm md:max-w-screen-xl mx-auto px-10 mt-20"-->
-<!--	>-->
-<!--		&lt;!&ndash; Section Header &ndash;&gt;-->
-<!--	</div>-->
-<!--</section>-->
+<!-- Why attend -->
+<section class="w-full mx-auto pb-20">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="text-center max-w-2xl mx-auto mb-10 space-y-2">
+			<h2 class="text-2xl md:text-3xl font-bold">Why attend NG Kenya 2026?</h2>
+			<p class="text-ng-grey">
+				Everything you need to power up your Angular journey, all in one room.
+			</p>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+			@for (item of whyAttend; track item.title) {
+			<div class="text-center space-y-3">
+				<div
+					class="mx-auto inline-flex items-center justify-center size-14 rounded-full bg-ng-red/10 text-ng-red"
+				>
+					<lucide-icon [name]="item.icon" class="size-7"></lucide-icon>
+				</div>
+				<h3 class="text-lg font-bold">{{ item.title }}</h3>
+				<p class="text-sm text-ng-grey leading-relaxed">
+					{{ item.description }}
+				</p>
+			</div>
+			}
+		</div>
+	</div>
+</section>
+
+<!-- Final CTA -->
+<section class="w-full mx-auto pb-24">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div
+			class="relative overflow-hidden rounded-3xl bg-ng-pink px-8 py-12 md:py-16 text-center text-white"
+		>
+			<div class="relative z-10 max-w-2xl mx-auto space-y-5">
+				<h2 class="text-2xl md:text-4xl font-bold">
+					Ready to step into the NG-ine Room?
+				</h2>
+				<p class="text-white/90 text-base md:text-lg">
+					Secure your seat for two days of Angular, innovation and community in
+					the heart of Nairobi.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4 pt-2">
+					<button
+						type="button"
+						(click)="getTickets()"
+						class="py-3 px-6 inline-flex items-center gap-x-2 rounded-full bg-white text-ng-pink font-semibold hover:bg-ng-dark-blue hover:text-white transition-colors duration-300"
+					>
+						<lucide-icon name="ticket" class="size-5"></lucide-icon>
+						Get your ticket
+					</button>
+					<button
+						type="button"
+						(click)="viewPastPhotos()"
+						class="py-3 px-6 inline-flex items-center gap-x-2 rounded-full border border-white/70 text-white font-semibold hover:bg-white/10 transition-colors duration-300"
+					>
+						<lucide-icon name="external-link" class="size-5"></lucide-icon>
+						View 2025 photos
+					</button>
+				</div>
+				<p class="inline-flex items-center gap-x-2 text-sm text-white/80 pt-2">
+					<lucide-icon name="map-pin" class="size-4"></lucide-icon>
+					iHub, Nairobi • August 21 &amp; 22, 2026
+				</p>
+			</div>
+		</div>
+	</div>
+</section>
