@@ -1,38 +1,99 @@
-<div class="block relative w-full mb-10">
-	@defer () {
+<div
+	class="group relative h-full flex flex-col overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-ng-pink/10 transition-all duration-300"
+>
+	<!-- Decorative gradient glow -->
 	<div
-		class="absolute inset-0 bg-ng-dark-blue opacity-10 transition-opacity duration-300 ease-in-out hover:opacity-50 backdrop-blur-sm"
+		class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-ng-pink/20 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+		aria-hidden="true"
 	></div>
 
-	<img
-		[src]="speaker.profilePicture"
-		class="h-72 w-full object-cover rounded-lg shadow-none transition-shadow duration-300 ease-in-out hover:shadow-lg hover:shadow-black/30"
-		[alt]="speaker.firstName"
-	/>
+	@defer () {
+	<!-- Photo -->
+	<div class="relative overflow-hidden">
+		<img
+			[src]="speaker.profilePicture"
+			class="h-72 w-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-105"
+			[alt]="speaker.fullName"
+			loading="lazy"
+		/>
 
-	<div
-		class="details absolute bottom-0 py-2 px-4 bg-[#0d1127] bg-opacity-60 w-full rounded-t-md"
-	>
-		<h3 class="font-bold text-ng-grey">
+		<!-- Gradient overlay for legibility -->
+		<div
+			class="pointer-events-none absolute inset-0 bg-gradient-to-t from-ng-dark-blue via-ng-dark-blue/20 to-transparent"
+			aria-hidden="true"
+		></div>
+
+		<!-- Top speaker badge -->
+		@if (speaker.isTopSpeaker) {
+		<span
+			class="absolute top-4 left-4 inline-flex items-center gap-x-1.5 rounded-full bg-ng-pink px-3 py-1 text-xs font-semibold text-white shadow-lg"
+		>
+			<lucide-icon name="star" class="size-3.5"></lucide-icon>
+			Top speaker
+		</span>
+		}
+	</div>
+
+	<!-- Details -->
+	<div class="relative z-10 flex flex-1 flex-col p-6">
+		<h3
+			class="text-lg font-bold text-ng-white group-hover:text-ng-pink transition-colors duration-300"
+		>
 			{{ speaker.fullName }}
 		</h3>
-		<p class="text-sm max-w-sm text-ng-white">
+
+		@if (speaker.tagLine) {
+		<p class="mt-1 text-sm text-ng-grey leading-relaxed line-clamp-2">
 			{{ speaker.tagLine }}
 		</p>
-	</div>
-	} @placeholder {
-	<div class="h-72 w-full bg-gray-200 animate-pulse rounded-lg"></div>
-	} @loading(minimum 500ms) {
+		}
 
-	<div class="w-full h-72 relative flex items-center justify-center">
+		<!-- Session -->
+		@if (speaker.sessions.length) {
+		<div
+			class="mt-4 flex items-start gap-x-2 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-3"
 		>
-
-		<div class="w-full h-full relative flex items-center justify-center">
-			<div
-				class="absolute inset-1 bg-gray-900 rounded-lg flex items-center justify-center overflow-hidden"
-			></div>
+			<lucide-icon
+				name="presentation"
+				class="size-4 shrink-0 mt-0.5 text-ng-pink"
+			></lucide-icon>
+			<span class="text-xs text-ng-grey line-clamp-2">
+				{{ speaker.sessions[0].name }}
+			</span>
 		</div>
+		}
 
+		<!-- Social links -->
+		@if (speaker.links.length) {
+		<div class="mt-auto flex items-center gap-x-3 pt-5">
+			@for (link of speaker.links; track link.url) {
+			<a
+				[href]="link.url"
+				target="_blank"
+				rel="noopener noreferrer"
+				[attr.aria-label]="link.title"
+				[title]="link.title"
+				class="inline-flex items-center justify-center size-9 rounded-xl border border-neutral-800 bg-neutral-900/60 text-ng-grey hover:border-ng-pink hover:text-ng-pink transition-colors duration-300"
+			>
+				<lucide-icon [name]="getLinkIcon(link)" class="size-4"></lucide-icon>
+			</a>
+			}
+		</div>
+		}
+	</div>
+
+	<!-- Bottom accent bar -->
+	<div
+		class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-ng-pink to-ng-red group-hover:w-full transition-all duration-500 rounded-b-3xl"
+		aria-hidden="true"
+	></div>
+	} @placeholder {
+	<div class="h-96 w-full bg-neutral-900/40 animate-pulse rounded-3xl"></div>
+	} @loading(minimum 500ms) {
+	<div
+		class="h-96 w-full relative flex items-center justify-center rounded-3xl overflow-hidden"
+	>
+		<div class="absolute inset-1 bg-gray-900 rounded-3xl"></div>
 		<div
 			class="absolute -top-1 -left-1 w-2 h-2 bg-ng-red/50 rounded-full animate-ping"
 		></div>
@@ -46,6 +107,5 @@
 			class="absolute -bottom-1 -right-1 w-2 h-2 bg-yellow-500 rounded-full animate-ping delay-300"
 		></div>
 	</div>
-
 	}
 </div>

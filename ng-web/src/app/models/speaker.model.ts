@@ -1,3 +1,9 @@
+export interface ISpeakerLink {
+	title: string;
+	url: string;
+	linkType: string;
+}
+
 export interface ISpeaker {
 	id: string;
 	firstName: string;
@@ -6,14 +12,12 @@ export interface ISpeaker {
 	bio: string;
 	tagLine: string;
 	profilePicture: string;
-	sessions: [
-		{
-			id: string;
-			name: string;
-		},
-	];
+	sessions: {
+		id: string;
+		name: string;
+	}[];
 	isTopSpeaker: boolean;
-	links: [];
+	links: ISpeakerLink[];
 	questionAnswers: [];
 	categories: [];
 }
