@@ -1,5 +1,5 @@
 import { ApplicationConfig, importProvidersFrom } from "@angular/core";
-import { provideRouter } from "@angular/router";
+import { provideRouter, withViewTransitions } from "@angular/router";
 import { routes } from "./app.routes";
 import {
 	AlignLeft,
@@ -9,18 +9,25 @@ import {
 	CheckCheckIcon,
 	ExternalLink,
 	GitBranch,
+	Globe,
 	GraduationCap,
 	Layers,
 	Linkedin,
 	LucideAngularModule,
 	MapPin,
+	Mic,
 	MoveRight,
 	Network,
 	PianoIcon,
+	Presentation,
+	RefreshCw,
 	Sparkles,
 	Spool,
+	Star,
 	Ticket,
 	TrendingUp,
+	TriangleAlert,
+	Twitter,
 	Users,
 	Wrench,
 	XIcon,
@@ -30,7 +37,7 @@ import { provideHttpClient, withFetch } from "@angular/common/http";
 export const AppConfig: ApplicationConfig = {
 	providers: [
 		provideHttpClient(withFetch()),
-		provideRouter(routes),
+		provideRouter(routes, withViewTransitions()),
 		importProvidersFrom(
 			LucideAngularModule.pick({
 				AlignLeft,
@@ -45,12 +52,19 @@ export const AppConfig: ApplicationConfig = {
 				CheckCheck,
 				Blocks,
 				GitBranch,
+				Globe,
 				GraduationCap,
 				Layers,
 				MapPin,
+				Mic,
+				Presentation,
+				RefreshCw,
 				Sparkles,
+				Star,
 				Ticket,
 				TrendingUp,
+				TriangleAlert,
+				Twitter,
 				Users,
 				Wrench,
 			}),

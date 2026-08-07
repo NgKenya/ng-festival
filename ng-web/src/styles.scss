@@ -26,17 +26,17 @@ section {
     // background-image: url("./assets/Images/illustrations/circles-svg");
 
 
-  // background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), 
-  //   linear-gradient(127deg, #F11653 8.19%, #E90464 21.55%, #03071e 55.37%, #03071e 93.55%), 
+  // background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%),
+  //   linear-gradient(127deg, #F11653 8.19%, #E90464 21.55%, #03071e 55.37%, #03071e 93.55%),
   //             url("assets/Images/illustrations/dots.svg");
 
 
-    // background:  
-    // linear-gradient(to top right, #dd0031 10.55%, #03071e 93.55%), 
+    // background:
+    // linear-gradient(to top right, #dd0031 10.55%, #03071e 93.55%),
     //           url("assets/Images/illustrations/dots.svg");
 
 
-    background: linear-gradient(170deg, rgba(221,0,49,0.5) 3.9%, rgba(3,7,30,0.5) 9%),  url("/Images/illustrations/dots2.svg"); 
+    background: linear-gradient(170deg, rgba(221,0,49,0.5) 3.9%, rgba(3,7,30,0.5) 9%),  url("/Images/illustrations/dots2.svg");
    ;
 
    background-size: cover;
@@ -45,7 +45,7 @@ section {
   // background-position: center;
   // background-repeat: no-repeat;
   // background-image: url("assets/Images/illustrations/dots.svg");
- 
+
   // background-attachment: fixed;
   // background-size: cover;
   // background-blend-mode:exclusion;
@@ -58,4 +58,43 @@ section {
   color: #dd0031;
   font-weight: bold;
   border-bottom: 2px solid #dd0031;
+}
+
+/* Smooth page transitions via the View Transitions API */
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes page-fade-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+  }
+}
+
+::view-transition-old(root) {
+  animation: page-fade-out 250ms ease both;
+}
+
+::view-transition-new(root) {
+  animation: page-fade-in 300ms ease both;
+}
+
+/* Respect users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+  }
 }

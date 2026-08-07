@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { Router, RouterModule } from "@angular/router";
+import {Router, RouterModule } from "@angular/router";
 import {
 	sponsorhsip_Deck,
 	ngKenya2025Feedback,
@@ -21,6 +21,7 @@ export class NavbarComponent {
 
 	showMenu = false;
 	isVisible: boolean = false;
+	currentUrl = "";
 	toggleNavbar() {
 		this.showMenu = !this.showMenu;
 	}
@@ -37,11 +38,11 @@ export class NavbarComponent {
 			link: "",
 			activeClass: "active",
 		},
-		// {
-		// 	label: "Speakers",
-		// 	link: "/speakers",
-		// 	activeClass: "active",
-		// },
+		{
+			label: "Speakers",
+			link: "/speakers",
+			activeClass: "active",
+		},
 		// {
 		// 	label: "Agenda",
 		// 	link: "/schedule",
