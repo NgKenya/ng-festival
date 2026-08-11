@@ -1,81 +1,117 @@
 <div
-	[ngClass]="session.done ? 'bg-ng-dark-blue text-neutral-400' : 'bg-none'"
-	class="flex flex-col md:flex-row justify-between space-y-4 md:space-y-0 border text-gray-700 border-ng-grey p-4 rounded-e-3xl rounded-s-3xl cursor-pointer hover:shadow-md"
+	[ngClass]="
+		session.done
+			? 'bg-neutral-900/70 border-neutral-800'
+			: 'bg-neutral-900/40 border-neutral-800 hover:border-ng-pink hover:shadow-2xl hover:shadow-ng-pink/10'
+	"
+	class="group relative flex flex-col md:flex-row gap-6 md:gap-8 border rounded-3xl p-6 md:p-7 transition-all duration-300"
 >
-	<div class="time text-sm font-semibold">
-		<lucide-icon icon="blocks"></lucide-icon>
-		<p>{{ session.startsAt | date : "shortTime" }}</p>
-		<span class="text-xs">{{ session.room }}</span>
-	</div>
-	<div class="session-details w-full md:w-1/2 space-y-4">
-		<p
-			class="font-semibold text-ng-dark-blue"
-			[ngClass]="session.done ? 'text-ng-pink' : 'bg-none'"
-		>
-			{{ session.title }}
-		</p>
-		<p class="text-xs">{{ session.description }}</p>
+	<!-- Decorative gradient glow -->
+	<div
+		class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-ng-pink/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+		aria-hidden="true"
+	></div>
 
-		<div
-			class="flex flex-col md:flex-row space-y-4 md:space-y-0 space-x-0 md:space-x-8"
+	<!-- Time / room -->
+	<div
+		class="relative z-10 flex flex-row md:flex-col items-center md:items-start justify-between md:justify-start gap-2 md:gap-1 md:w-36 shrink-0 text-ng-grey"
+	>
+		<span class="inline-flex items-center gap-x-2 text-sm font-semibold text-ng-white">
+			<lucide-icon name="clock" class="size-4 text-ng-pink"></lucide-icon>
+			{{ session.startsAt | date : "shortTime" }}
+		</span>
+		<span
+			class="inline-flex items-center gap-x-1.5 text-xs rounded-full border border-neutral-800 bg-neutral-900/60 px-2.5 py-1"
 		>
+			<lucide-icon name="map-pin" class="size-3"></lucide-icon>
+			{{ room }}
+		</span>
+	</div>
+
+	<!-- Details -->
+	<div class="relative z-10 flex-1 space-y-4">
+		<div class="flex flex-wrap items-start justify-between gap-3">
+			<h3
+				[ngClass]="session.done ? 'text-ng-pink' : 'text-ng-white'"
+				class="text-lg font-bold leading-snug group-hover:text-ng-pink transition-colors duration-300"
+			>
+				{{ session.title }}
+			</h3>
+
+			@if (session.endsAt && session.status !== true) {
+			<span
+				class="shrink-0 inline-flex items-center gap-x-1.5 text-xs font-semibold text-ng-grey rounded-full border border-neutral-800 bg-neutral-900/60 px-2.5 py-1"
+			>
+				<lucide-icon name="hourglass" class="size-3"></lucide-icon>
+				{{
+					utilService.getMinutesDifference(session.startsAt, session.endsAt)
+				}}
+				min
+			</span>
+			} @else {
+			<span
+				class="shrink-0 inline-flex items-center gap-x-1.5 text-xs font-semibold text-green-500 rounded-full border border-green-500/30 bg-green-500/10 px-2.5 py-1"
+			>
+				<lucide-icon name="check-check" class="size-3.5"></lucide-icon>
+				Done
+			</span>
+			}
+		</div>
+
+		@if (session.description) {
+		<p class="text-sm text-ng-grey leading-relaxed line-clamp-3">
+			{{ session.description }}
+		</p>
+		}
+
+		@if (session.speakers.length) {
+		<div class="flex flex-wrap gap-4 md:gap-6">
 			@for (speaker of session.speakers; track $index) {
-			<div class="speaker flex space-x-4 items-center">
+			<div class="flex items-center gap-x-3">
 				<img
 					[src]="speaker.profilePicture"
 					[alt]="speaker.name"
-					class="w-10 h-10 rounded-full object-cover"
+					class="w-9 h-9 rounded-full object-cover border border-neutral-800"
 				/>
-				<div class="flex flex-col description space-y-1">
-					<a class="cursor-pointer text-xs">{{ speaker.name }}</a>
-					<p class="text-xs text-wrap">{{ speaker.role }}</p>
+				<div class="flex flex-col">
+					<span class="text-xs font-semibold text-ng-white">{{
+						speaker.name
+					}}</span>
+					<span class="text-xs text-ng-grey">{{ speaker.role }}</span>
 				</div>
 			</div>
 			}
 		</div>
+		}
 
-		@if (session.done) {
-		<div class="flex justify-start gap-4">
+		@if (session.done && (session.recordingUrl || session.liveUrl)) {
+		<div class="flex flex-wrap gap-3 pt-1">
 			@if (session.recordingUrl) {
 			<button
+				type="button"
 				(click)="utilService.openNewPage(session.recordingUrl)"
-				class="group inline-flex items-center gap-x-2 py-2 px-3 cursor-pointer border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-pink hover:text-ng-dark-blue"
+				class="inline-flex items-center gap-x-2 py-2 px-3.5 rounded-full border border-neutral-800 text-sm font-medium text-ng-white hover:bg-ng-pink hover:border-ng-pink hover:text-white transition-colors duration-300"
 			>
 				Slides
-				<lucide-icon
-					name="external-link"
-					class="w-4 h-4"
-				></lucide-icon>
+				<lucide-icon name="external-link" class="size-4"></lucide-icon>
 			</button>
-			} @if(session.liveUrl){
+			} @if (session.liveUrl) {
 			<button
+				type="button"
 				(click)="utilService.openNewPage(session.liveUrl)"
-				class="group inline-flex items-center gap-x-2 py-2 px-3 border-neutral-700 border font-medium text-sm text-ng-white rounded-full focus:outline-none hover:bg-ng-pink hover:text-ng-dark-blue cursor-pointer"
+				class="inline-flex items-center gap-x-2 py-2 px-3.5 rounded-full border border-neutral-800 text-sm font-medium text-ng-white hover:bg-ng-pink hover:border-ng-pink hover:text-white transition-colors duration-300"
 			>
 				Github Project
-				<lucide-icon
-					name="external-link"
-					class="w-4 h-4"
-				></lucide-icon>
+				<lucide-icon name="external-link" class="size-4"></lucide-icon>
 			</button>
 			}
 		</div>
+		}
+	</div>
 
-		}
-	</div>
-	<div class="time uppercase text-sm font-semibold text-gray-500">
-		@if (session.endsAt && session.status!==true) {
-		<p class="text-right">
-			{{ utilService.getMinutesDifference(session.startsAt, session.endsAt) }}
-			minutes
-		</p>
-		}@else {
-		<p class="text-right">
-			<lucide-icon
-				name="check-check"
-				class="text-green-600"
-			></lucide-icon>
-		</p>
-		}
-	</div>
+	<!-- Bottom accent bar -->
+	<div
+		class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-ng-pink to-ng-red group-hover:w-full transition-all duration-500 rounded-b-3xl"
+		aria-hidden="true"
+	></div>
 </div>
