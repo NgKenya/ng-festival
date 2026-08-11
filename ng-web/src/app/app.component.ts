@@ -1,15 +1,8 @@
 import { CommonModule } from "@angular/common";
-import { Component, inject, OnInit } from "@angular/core";
-import { NavigationEnd, Router, Event, RouterModule } from "@angular/router";
-
-import { IStaticMethods } from "preline/preline";
+import {Component} from "@angular/core";
+import { RouterModule } from "@angular/router";
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { FooterComponent } from "./shared/components/footer/footer.component";
-declare global {
-	interface Window {
-		HSStaticMethods: IStaticMethods;
-	}
-}
 
 @Component({
 	selector: "app-root",
@@ -18,17 +11,7 @@ declare global {
 	imports: [CommonModule, RouterModule, NavbarComponent, FooterComponent],
 	standalone: true,
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 	title = "ng-web";
-	router = inject(Router);
 
-	ngOnInit() {
-		this.router.events.subscribe((event: Event) => {
-			if (event instanceof NavigationEnd) {
-				setTimeout(() => {
-					window.HSStaticMethods.autoInit();
-				}, 100);
-			}
-		});
-	}
 }

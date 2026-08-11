@@ -43,7 +43,6 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/preline/preline.js"
             ],
             "prerender": false,
             "ssr": false,
