@@ -21,7 +21,7 @@ import { SessionizeService } from "src/app/shared/services/sessionize/sessionize
 export class ScheduleComponent implements OnInit {
 	talkList: ITimeslot[] = [];
 	activeTime = new Date();
-	eventDate = signal<string | undefined>("July 4, 2025");
+	eventDate = signal<string | undefined>("Aug 21, 2026");
 	schedhuleService = inject(SessionizeService);
 	scheduleSpeakers: ISpeakerProfile[] = [];
 	private readonly DESTROY_REF = inject(DestroyRef);

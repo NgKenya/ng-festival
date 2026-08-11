@@ -15,8 +15,8 @@
 		class="sm:hidden py-3 px-4 pe-9 block w-full border-ng-pink bg-ng-pink text-ng-dark-blue text-base rounded-lg focus:bg-ng-red/30 focus:ring-ng-red hs-selected:text-white hs-selected:font-bold"
 		aria-label="Tabs"
 	>
-		<option value="#june-4-2025">July 4<sup>th</sup>, 2025</option>
-		<option value="#june-5-2025">July 5<sup>th</sup> 2025</option>
+		<option value="#aug-21-2026">August 21<sup>st</sup>, 2026</option>
+		<option value="#aug-22-2026">August 22<sup>nd</sup> 2026</option>
 	</select>
 
 	<div class="flex">
@@ -33,7 +33,7 @@
 					type="button"
 					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
 					[ngClass]="
-						eventDate() === 'July 4,2025'
+						eventDate() === 'August 21,2026'
 							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
 							: ' text-ng-dark-blue/60 bg-transparent'
 					"
@@ -42,15 +42,15 @@
 					data-hs-tab="#june-4-2025"
 					aria-controls="june-4-2025"
 					role="tab"
-					(click)="getSession('July 4,2025')"
+					(click)="getSession('August 21,2026')"
 				>
-					Day One - Google Offices
+          Day One
 				</button>
 				<button
 					type="button"
 					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
 					[ngClass]="
-						eventDate() === 'July 5,2025'
+						eventDate() === 'August 22,2026'
 							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
 							: 'text-ng-dark-blue/60 bg-transparent'
 					"
@@ -59,9 +59,9 @@
 					data-hs-tab="#june-5-2025"
 					aria-controls="june-5-2025"
 					role="tab"
-					(click)="getSession('July 5,2025')"
+					(click)="getSession('August 22,2026')"
 				>
-					Day Two - Ihub , Jahazi
+					Day Two
 				</button>
 			</nav>
 		</div>
@@ -106,7 +106,7 @@
 	</div>
 </section>
 
-<!-- 
+<!--
 <button
 					type="button"
 					class="hs-tab-active:border-ng-pink hs-tab-active:text-ng-pink py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white hover:text-ng-pink focus:outline-hidden focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
