@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{html,ts}", "./node_modules/preline/preline.js"],
+  content: ["./src/**/*.{html,ts}"],
   theme: {
     extend: {
       colors: {
@@ -16,7 +16,7 @@ module.exports = {
       },
     },
   },
-  plugins: [require("preline/plugin"), require("@tailwindcss/forms")],
+  plugins: [require("@tailwindcss/forms")],
 };
 
 // module.exports = {

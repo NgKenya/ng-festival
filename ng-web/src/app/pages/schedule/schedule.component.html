@@ -1,121 +1,153 @@
-<section class="px-10 md:px-30 lg:px-40 my-16 md:my-32">
-	<!-- <app-section-title title="Our Schedule"></app-section-title> -->
-	<h2 class="text-xl md:text-2xl font-bold capitalize my-4 text-ng-red">
-		Our Schedule
-	</h2>
-	<p>
-		Join other Angular Developers in Nairobi , for a full day of keynotes and
-		new workshops at NG Kenya 2025
-	</p>
+<!-- Schedule hero -->
+<section class="w-full mx-auto pt-28 md:pt-32 pb-10 md:pb-14">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="max-w-3xl mx-auto text-center space-y-5">
+			<h1
+				class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
+			>
+				Our <span class="text-ng-pink">Schedule</span>
+			</h1>
+
+			<p class="text-base md:text-lg text-ng-grey leading-relaxed">
+				Join fellow Angular developers for a full two days of
+				keynotes, deep-dive talks and hands-on workshops at NG Kenya 2026.
+			</p>
+
+			<p
+				class="inline-flex items-center gap-x-2 text-sm text-ng-white/80 pt-1"
+			>
+				<lucide-icon name="map-pin" class="size-4 text-ng-pink"></lucide-icon>
+				iHub, Nairobi &bull; August 21 &amp; 22, 2026
+			</p>
+		</div>
+	</div>
 </section>
 
-<section class="bg-white px-10 md:px-30 lg:px-40 py-10 md:py-20">
-	<select
-		id="tab-select"
-		class="sm:hidden py-3 px-4 pe-9 block w-full border-ng-pink bg-ng-pink text-ng-dark-blue text-base rounded-lg focus:bg-ng-red/30 focus:ring-ng-red hs-selected:text-white hs-selected:font-bold"
-		aria-label="Tabs"
-	>
-		<option value="#june-4-2025">July 4<sup>th</sup>, 2025</option>
-		<option value="#june-5-2025">July 5<sup>th</sup> 2025</option>
-	</select>
-
-	<div class="flex">
-		<div
-			class="hidden sm:block border-e border-ng-white divide-x-4 divide-ng-pink"
-		>
-			<nav
-				class="flex flex-col space-y-6 p-4"
-				aria-label="Tabs"
+<!-- Day tabs + sessions -->
+<section class="w-full mx-auto pb-24">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<!-- Day switcher -->
+		<div class="flex justify-center mb-10 md:mb-14">
+			<div
+				class="inline-flex flex-wrap items-center justify-center gap-2 rounded-full border border-neutral-800 bg-neutral-900/40 p-1.5"
 				role="tablist"
-				data-hs-tab-select="#tab-select"
+				aria-label="Schedule days"
 			>
+				@for (day of days; track day.date) {
 				<button
 					type="button"
-					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
-					[ngClass]="
-						eventDate() === 'July 4,2025'
-							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
-							: ' text-ng-dark-blue/60 bg-transparent'
-					"
-					id="june-4-sessions"
-					aria-selected="true"
-					data-hs-tab="#june-4-2025"
-					aria-controls="june-4-2025"
 					role="tab"
-					(click)="getSession('July 4,2025')"
-				>
-					Day One - Google Offices
-				</button>
-				<button
-					type="button"
-					class="py-4 px-8 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white"
+					[attr.aria-selected]="eventDate() === day.date"
+					(click)="getSession(day.date)"
+					class="py-2.5 px-6 inline-flex items-center gap-x-2 rounded-full text-sm font-semibold whitespace-nowrap transition-colors duration-300"
 					[ngClass]="
-						eventDate() === 'July 5,2025'
-							? 'hs-tab-active:rounded-full hs-tab-active:text-ng-dark-blue hs-tab-active:bg-ng-pink active'
-							: 'text-ng-dark-blue/60 bg-transparent'
+						eventDate() === day.date
+							? 'bg-ng-pink text-white shadow-lg'
+							: 'text-ng-grey hover:text-ng-white'
 					"
-					id="june-5-sessions"
-					aria-selected="false"
-					data-hs-tab="#june-5-2025"
-					aria-controls="june-5-2025"
-					role="tab"
-					(click)="getSession('July 5,2025')"
 				>
-					Day Two - Ihub , Jahazi
+					<lucide-icon name="calendar-days" class="size-4"></lucide-icon>
+					{{ day.label }}
 				</button>
-			</nav>
+				}
+			</div>
 		</div>
 
-		<div class="mt-3 md:mt-0 ms-3">
+		<!-- Loading skeletons -->
+		@if (isLoading) {
+		<div class="ng-ke-fade-in grid grid-cols-1 gap-7 max-w-4xl mx-auto">
+			@for (skeleton of skeletons; track $index) {
 			<div
-				id="june-4-2025"
-				role="tabpanel"
-				aria-labelledby="june-4-sessions"
-			>
-				<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
-					@for (talk of talkList ; track talk) { @for (room of talk.rooms; track
-					$index) {
-					<ng-ke-schedule-item
-						[session]="room.session"
-						[room]="room.name"
-					></ng-ke-schedule-item>
+				class="h-40 w-full rounded-3xl border border-neutral-800 bg-neutral-900/40 animate-pulse"
+			></div>
+			}
+		</div>
+		}
 
-					} }
-				</div>
+		<!-- Error state -->
+		@else if (hasError) {
+		<div
+			class="ng-ke-fade-in max-w-md mx-auto text-center rounded-3xl border border-neutral-800 bg-neutral-900/40 p-10 space-y-4"
+		>
+			<div
+				class="inline-flex items-center justify-center size-14 rounded-2xl bg-ng-red/10 text-ng-red ring-1 ring-ng-red/20 mx-auto"
+			>
+				<lucide-icon name="triangle-alert" class="size-7"></lucide-icon>
 			</div>
-			<div
-				id="june-5-2025"
-				class="hidden"
-				role="tabpanel"
-				aria-labelledby="june-5-sessions"
-				(click)="getSession('July 5,2025')"
+			<h3 class="text-xl font-bold">Something went wrong</h3>
+			<p class="text-sm text-ng-grey">
+				We couldn't load the schedule right now. Please try again in a
+				moment.
+			</p>
+			<button
+				type="button"
+				(click)="getSession(eventDate()!)"
+				class="mt-2 py-2.5 px-5 inline-flex items-center gap-x-2 rounded-full bg-ng-pink text-white text-sm font-semibold hover:bg-ng-red transition-colors duration-300"
 			>
-				<div>Ihub Nairobi</div>
-				<div class="grid grid-cols-1 gap-7 p-0 md:p-10">
-					@for (talk of talkList ; track talk) { @for (room of talk.rooms; track
-					$index) {
-					<ng-ke-schedule-item
-						[session]="room.session"
-						[room]="room.name"
-					></ng-ke-schedule-item>
+				<lucide-icon name="refresh-cw" class="size-4"></lucide-icon>
+				Try again
+			</button>
+		</div>
+		}
 
-					} }
+		<!-- Empty state -->
+		@else if (!talkList.length) {
+		<div
+			class="ng-ke-fade-in max-w-md mx-auto text-center rounded-3xl border border-neutral-800 bg-neutral-900/40 p-10 space-y-4"
+		>
+			<div
+				class="inline-flex items-center justify-center size-14 rounded-2xl bg-ng-pink/10 text-ng-pink ring-1 ring-ng-pink/20 mx-auto"
+			>
+				<lucide-icon name="calendar-clock" class="size-7"></lucide-icon>
+			</div>
+			<h3 class="text-xl font-bold">Sessions coming soon</h3>
+			<p class="text-sm text-ng-grey">
+				The lineup for this day is being finalised. Check back soon for the
+				full agenda.
+			</p>
+		</div>
+		}
+
+		<!-- Sessions -->
+		@else {
+		<div class="ng-ke-fade-in grid grid-cols-1 gap-7 max-w-4xl mx-auto">
+			@for (talk of talkList; track talk) { @for (room of talk.rooms; track
+			$index) {
+			<ng-ke-schedule-item
+				[session]="room.session"
+				[room]="room.name"
+			></ng-ke-schedule-item>
+			} }
+		</div>
+		}
+	</div>
+</section>
+
+<!-- CTA -->
+<section class="w-full mx-auto pb-24">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div
+			class="relative overflow-hidden rounded-3xl bg-ng-pink px-8 py-12 md:py-16 text-center text-white"
+		>
+			<div class="relative z-10 max-w-2xl mx-auto space-y-5">
+				<h2 class="text-2xl md:text-4xl font-bold">
+					Don't miss a single session
+				</h2>
+				<p class="text-white/90 text-base md:text-lg">
+					Grab your ticket now and be part of two days of Angular, innovation
+					and community in the heart of Nairobi.
+				</p>
+				<div class="flex flex-wrap justify-center gap-4 pt-2">
+					<button
+						type="button"
+						(click)="getTickets()"
+						class="py-3 px-6 inline-flex items-center gap-x-2 rounded-full bg-white text-ng-pink font-semibold hover:bg-ng-dark-blue hover:text-white transition-colors duration-300"
+					>
+						<lucide-icon name="ticket" class="size-5"></lucide-icon>
+						Get your ticket
+					</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
-<!-- 
-<button
-					type="button"
-					class="hs-tab-active:border-ng-pink hs-tab-active:text-ng-pink py-1 pe-4 inline-flex items-center gap-x-2 border-e-2 border-transparent text-sm whitespace-nowrap text-ng-white hover:text-ng-pink focus:outline-hidden focus:text-ng-red disabled:opacity-50 disabled:pointer-events-none"
-					id="june-5-sessions"
-					aria-selected="false"
-					data-hs-tab="#june-5-2025"
-					aria-controls="june-5-2025"
-					role="tab"
-					(click)="getSession('July 5,2025')"
-				>
-					Day Two - Ihub , Jahazi
-				</button> -->

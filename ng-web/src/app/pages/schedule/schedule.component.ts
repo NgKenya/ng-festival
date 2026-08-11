@@ -10,6 +10,7 @@ import {
 } from "src/app/models/speaker.model";
 import { SchedhuleItemComponent } from "src/app/shared/components/schedule-item/schedule-item.component";
 import { SessionizeService } from "src/app/shared/services/sessionize/sessionize.service";
+import { UtilService } from "src/app/shared/services/util/util.service";
 
 @Component({
 	selector: "app-schedule",
@@ -21,10 +22,23 @@ import { SessionizeService } from "src/app/shared/services/sessionize/sessionize
 export class ScheduleComponent implements OnInit {
 	talkList: ITimeslot[] = [];
 	activeTime = new Date();
-	eventDate = signal<string | undefined>("July 4, 2025");
 	schedhuleService = inject(SessionizeService);
+	utilService = inject(UtilService);
 	scheduleSpeakers: ISpeakerProfile[] = [];
+	isLoading = true;
+	hasError = false;
 	private readonly DESTROY_REF = inject(DestroyRef);
+
+	readonly days: { label: string; date: string }[] = [
+		{ label: "Day One", date: "August 21,2026" },
+		{ label: "Day Two", date: "August 22,2026" },
+	];
+
+	eventDate = signal<string | undefined>(this.days[0].date);
+
+	/** Skeleton placeholders shown while the schedule is loading. */
+	readonly skeletons = Array.from({ length: 4 });
+
 	ngOnInit(): void {
 		this.getSession(this.eventDate()!);
 
@@ -37,6 +51,8 @@ export class ScheduleComponent implements OnInit {
 
 	getSession(date: string) {
 		this.eventDate.set(date);
+		this.isLoading = true;
+		this.hasError = false;
 		let targetDate = new Date(date);
 
 		this.schedhuleService
@@ -61,7 +77,10 @@ export class ScheduleComponent implements OnInit {
 				complete: () => {
 					this.fetchSpeakers();
 				},
-				error: (err) => {},
+				error: (err) => {
+					this.hasError = true;
+					this.isLoading = false;
+				},
 			});
 	}
 
@@ -89,9 +108,17 @@ export class ScheduleComponent implements OnInit {
 				},
 				complete: () => {
 					this.talkList = this.updateSpeakersWithProfile(this.talkList);
+					this.isLoading = false;
 				},
-				error: (err) => {},
+				error: (err) => {
+					this.hasError = true;
+					this.isLoading = false;
+				},
 			});
+	}
+
+	getTickets() {
+		this.utilService.getTickets();
 	}
 
 	getSpeakerById(profileId: string) {
