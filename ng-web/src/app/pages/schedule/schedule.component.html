@@ -55,7 +55,7 @@
 
 		<!-- Loading skeletons -->
 		@if (isLoading) {
-		<div class="grid grid-cols-1 gap-7 max-w-4xl mx-auto">
+		<div class="ng-ke-fade-in grid grid-cols-1 gap-7 max-w-4xl mx-auto">
 			@for (skeleton of skeletons; track $index) {
 			<div
 				class="h-40 w-full rounded-3xl border border-neutral-800 bg-neutral-900/40 animate-pulse"
@@ -67,7 +67,7 @@
 		<!-- Error state -->
 		@else if (hasError) {
 		<div
-			class="max-w-md mx-auto text-center rounded-3xl border border-neutral-800 bg-neutral-900/40 p-10 space-y-4"
+			class="ng-ke-fade-in max-w-md mx-auto text-center rounded-3xl border border-neutral-800 bg-neutral-900/40 p-10 space-y-4"
 		>
 			<div
 				class="inline-flex items-center justify-center size-14 rounded-2xl bg-ng-red/10 text-ng-red ring-1 ring-ng-red/20 mx-auto"
@@ -93,7 +93,7 @@
 		<!-- Empty state -->
 		@else if (!talkList.length) {
 		<div
-			class="max-w-md mx-auto text-center rounded-3xl border border-neutral-800 bg-neutral-900/40 p-10 space-y-4"
+			class="ng-ke-fade-in max-w-md mx-auto text-center rounded-3xl border border-neutral-800 bg-neutral-900/40 p-10 space-y-4"
 		>
 			<div
 				class="inline-flex items-center justify-center size-14 rounded-2xl bg-ng-pink/10 text-ng-pink ring-1 ring-ng-pink/20 mx-auto"
@@ -110,7 +110,7 @@
 
 		<!-- Sessions -->
 		@else {
-		<div class="grid grid-cols-1 gap-7 max-w-4xl mx-auto">
+		<div class="ng-ke-fade-in grid grid-cols-1 gap-7 max-w-4xl mx-auto">
 			@for (talk of talkList; track talk) { @for (room of talk.rooms; track
 			$index) {
 			<ng-ke-schedule-item
