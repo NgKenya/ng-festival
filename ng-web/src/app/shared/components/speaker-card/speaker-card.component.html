@@ -50,17 +50,19 @@
 
 		<!-- Session -->
 		@if (speaker.sessions.length) {
-		<div
-			class="mt-4 flex items-start gap-x-2 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-3"
-		>
-			<lucide-icon
-				name="presentation"
-				class="size-4 shrink-0 mt-0.5 text-ng-pink"
-			></lucide-icon>
-			<span class="text-xs text-ng-grey line-clamp-2">
-				{{ speaker.sessions[0].name }}
-			</span>
-		</div>
+      @for(speakerSession of speaker.sessions; track speakerSession.id){
+        <div
+          class="mt-4 flex items-start gap-x-2 rounded-2xl border border-neutral-800 bg-neutral-900/60 p-3"
+        >
+          <lucide-icon
+            name="presentation"
+            class="size-4 shrink-0 mt-0.5 text-ng-pink"
+          ></lucide-icon>
+          <span class="text-xs text-ng-grey line-clamp-2">
+            {{ speakerSession.name }}
+          </span>
+        </div>
+      }
 		}
 
 		<!-- Social links -->
