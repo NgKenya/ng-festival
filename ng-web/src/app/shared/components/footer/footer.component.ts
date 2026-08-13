@@ -1,5 +1,4 @@
 import { Component } from "@angular/core";
-import { NgClass } from "@angular/common";
 import { RouterModule } from "@angular/router";
 import { LucideAngularModule } from "lucide-angular";
 import { NgKenyaPartners } from "src/app/const/data.const";
@@ -8,7 +7,7 @@ import { NgKenyaPartners } from "src/app/const/data.const";
 	selector: "ng-ke-footer",
 	templateUrl: "./footer.component.html",
 	styleUrls: ["./footer.component.scss"],
-	imports: [RouterModule, LucideAngularModule, NgClass],
+	imports: [RouterModule, LucideAngularModule],
 	standalone: true,
 })
 export class FooterComponent {
