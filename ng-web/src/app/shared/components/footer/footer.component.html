@@ -1,108 +1,117 @@
-<!-- Community Logos -->
-<div class="px-10 md:px-30 lg:px-40 py-16 grid bg-white">
-	<h2
-		class="py-4 text-3xl my-4 md:text-left text-center font-bold text-ng-dark-blue capitalize"
-	>
-		Our 2025 Community Sponsors
-	</h2>
-	<div
-		class="flex flex-col md:flex-row flex-wrap items-center pb-8 space-x-0 md:space-x-8 xl:space-x-16"
-	>
-		@for (partner of partners; track $index) {
-		<ng-container>
+<!-- Community Sponsors -->
+<section class="w-full bg-white py-16">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="text-center max-w-2xl mx-auto mb-12 space-y-3">
+			<h2 class="text-2xl md:text-4xl font-extrabold leading-tight text-ng-dark-blue">
+				Our 2026 Community
+				<span class="text-ng-red">Sponsors</span>
+			</h2>
+			<p class="text-ng-grey">
+				Proudly supported by the organizations powering the Angular community
+				in Kenya.
+			</p>
+		</div>
+
+		<div
+			class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 md:gap-6"
+		>
+			@for (partner of partners; track $index) {
 			<a
 				[href]="partner.official_website"
-				class="hover:cursor-pointer hover:saturate-0 hover:rounded-xl hover:shadow-faded-red group-hover:scale-105 group-focus:scale-105 transition-transform duration-500 ease-in-out logo mb-8 md:mb-0"
 				target="_blank"
 				rel="noopener"
+				class="group relative flex items-center justify-center h-24 md:h-28 p-4 rounded-2xl border border-gray-200 bg-white hover:border-ng-red hover:-translate-y-1.5 hover:shadow-xl hover:shadow-ng-red/10 transition-all duration-300"
 			>
 				<img
 					[alt]="partner.alt"
 					[src]="partner.logo"
-					class="w-40 md:w-44 mx-auto"
+					class="max-h-full max-w-full w-auto h-auto object-contain grayscale group-hover:grayscale-0 transition-all duration-300"
 				/>
 			</a>
-		</ng-container>
-		}
+			}
+		</div>
 	</div>
-</div>
+</section>
+
 <!-- Angular Kenya -->
+<footer class="w-full bg-ng-dark-blue text-white">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10 py-14">
+		<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+			<!-- Brand -->
+			<div class="md:col-span-2 space-y-4">
+				<a [routerLink]="['/']" class="inline-block hover:cursor-pointer">
+					<img
+						src="./Images/logos/ngKenya/ng_kenya_red.png"
+						alt="NG Kenya Logo"
+						class="w-1/2 md:w-2/5"
+						width="782"
+						height="155"
+						priority
+					/>
+				</a>
+				<p class="text-sm text-ng-grey max-w-sm">
+					Organized by Angular Kenya — bringing together developers,
+					builders and innovators to celebrate the Angular ecosystem.
+				</p>
+				<div class="flex items-center gap-x-3 pt-1">
+					<a
+						href="https://www.linkedin.com/company/angular-kenya"
+						target="_blank"
+						rel="noopener"
+						aria-label="LinkedIn"
+						class="inline-flex items-center justify-center size-10 rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-ng-red hover:ring-ng-red transition-all duration-300"
+					>
+						<lucide-icon class="text-white size-5" name="linkedin"></lucide-icon>
+					</a>
+					<a
+						href="https://x.com/angular_kenya"
+						target="_blank"
+						rel="noopener"
+						aria-label="X (Twitter)"
+						class="inline-flex items-center justify-center size-10 rounded-xl bg-white/5 ring-1 ring-white/10 hover:bg-ng-red hover:ring-ng-red transition-all duration-300"
+					>
+						<lucide-icon class="text-white size-5" name="x-icon"></lucide-icon>
+					</a>
+				</div>
+			</div>
 
-<footer class="px-10 md:px-30 lg:px-40 text-white bg-ng-dark-blue">
-	<div
-		class="flex flex-col md:flex-row justify-between space-y-4 items-center my-4"
-	>
-		<div class="contact order-2 md:order-1 my-2">
-			<p class="text-sm md:text-base">Organized By Angular Kenya</p>
+			<!-- Quick Links -->
+			<div class="space-y-4">
+				<h3 class="text-sm font-semibold uppercase tracking-wider text-ng-grey">
+					Quick Links
+				</h3>
+				<div class="flex flex-col gap-y-3 text-sm">
+					<a [routerLink]="['/']" class="hover:text-ng-red transition-colors duration-300 hover:cursor-pointer">
+						Home
+					</a>
+					<a [routerLink]="['/contact-us']" class="hover:text-ng-red transition-colors duration-300 hover:cursor-pointer">
+						Contact Us
+					</a>
+				</div>
+			</div>
 
-			<p
-				class="flex flex-col justify-between space-y-2 mt-4 text-center md:text-left"
-			>
-				<a href="mailto:angualrnairobi@gmail.com"
-					>angularnairobi&#64;gmail.com</a
-				>
-				<a href="mailto:angualrnairobi@gmail.com">Angular Kenya</a>
-			</p>
+			<!-- Contact -->
+			<div class="space-y-4">
+				<h3 class="text-sm font-semibold uppercase tracking-wider text-ng-grey">
+					Get In Touch
+				</h3>
+				<div class="flex flex-col gap-y-3 text-sm">
+					<a
+						href="mailto:angualrnairobi@gmail.com"
+						class="hover:text-ng-red transition-colors duration-300"
+						>angularnairobi&#64;gmail.com</a
+					>
+					<span class="text-ng-grey">Angular Kenya</span>
+				</div>
+			</div>
 		</div>
-		<div class="logo order-1 md:order-2">
-			<a
-				[routerLink]="['/']"
-				class="hover:cursor-pointer m-3 mx-auto order-2 md:order-1"
-			>
-				<img
-					src="./Images/logos/ngKenya/ng_kenya_red.png"
-					alt="NG Kenya Logo"
-					class="w-3/6 md:w-2/6 mx-auto"
-					width="782"
-					height="155"
-					priority
-				/>
-			</a>
-		</div>
-		<div class="link flex flex-col justify-between order-3">
-			<a
-				[routerLink]="['/']"
-				class="hover:cursor-pointer m-2 mx-auto order-2 md:order-1"
-			>
-				Home
-			</a>
-			<a
-				[routerLink]="['/contact-us']"
-				class="hover:cursor-pointer m-2 mx-auto order-2 md:order-1"
-			>
-				Contact Us
-			</a>
-		</div>
-	</div>
-	<div class="flex flex-col md:flex-row justify-center md:justify-between">
-		<p
-			class="text-center text-ng-white text-xs md:text-sm mt-2 order-2 md:order-1"
-		>
-			&copy;2023 -{{ provideFullYear }} Angular Kenya. All rights reserved.
-		</p>
+
 		<div
-			class="flex flex-row justify-center md:justify-start space-x-1 md:space-x-4 order-1 md:order-2"
+			class="mt-12 pt-6 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-y-3"
 		>
-			<a
-				href="https://www.linkedin.com/company/angular-kenya"
-				target="_blank"
-				class="hover:cursor-pointer"
-			>
-				<lucide-icon
-					class="text-white w-4 md:w-8 h-4 md:h-8"
-					name="linkedin"
-				></lucide-icon>
-			</a>
-			<a
-				href="https://x.com/angular_kenya"
-				target="_blank"
-				class="hover:cursor-pointer"
-			>
-				<lucide-icon
-					class="text-white w-4 md:w-8 h-4 md:h-8"
-					name="x-icon"
-				></lucide-icon>
-			</a>
+			<p class="text-xs md:text-sm text-ng-grey text-center md:text-left">
+				&copy;2023 -{{ provideFullYear }} Angular Kenya. All rights reserved.
+			</p>
 		</div>
 	</div>
 </footer>

@@ -3,9 +3,9 @@ import { ISpeaker, ITalk, ROOM_NAME } from "../models/speaker.model";
 
 export const NgKenyaPartners: IPartner[] = [
 	{
-		official_website: "https://google.com/",
-		logo: "./Images/logos/sponsors/google.png",
-		alt: "Google logo",
+		official_website: "https://developers.google.com/",
+		logo: "./Images/logos/sponsors/google_for_devs_logo.svg",
+		alt: "Google for Developers",
 	},
 	{
 		official_website: "https://angular.dev/",
