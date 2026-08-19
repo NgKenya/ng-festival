@@ -64,9 +64,16 @@
 
         <button
           class="group inline-flex items-center gap-x-2 py-2 px-3 border-2 border-ng-red font-medium text-sm text-ng-red rounded-full focus:outline-none md:mr-2"
-          (click)="utilService.openNewPage(deck); showMenu = false">
-          Sponsor Us
+          (click)="utilService.openNewPage(shopUrl); showMenu = false">
+          Shop
         </button>
+        @if (false) {
+          <button
+            class="group inline-flex items-center gap-x-2 py-2 px-3 border-2 border-ng-red font-medium text-sm text-ng-red rounded-full focus:outline-none md:mr-2"
+            (click)="utilService.openNewPage(deck); showMenu = false">
+            Sponsor Us
+          </button>
+        }
         <button
           class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
           (click)="onGetTicketsClicked(); showMenu = false">

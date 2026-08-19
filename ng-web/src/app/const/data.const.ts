@@ -41,6 +41,7 @@ export const sponsorhsip_Deck =
 	"https://docs.google.com/presentation/d/1UPa73RxOo3aJppY-QjkWCtMV6b14TvHn/edit?usp=sharing&ouid=104844680073323721667&rtpof=true&sd=true";
 
 export const ngKenya2025Feedback = "https://forms.gle/uxb3iVRkfBYvS6pd7";
+export const ngKenyaShopUrl = "https://angular-kenya.vabu.app/shop";
 export const eventStats: {
 	icon: string;
 	count: number | string;

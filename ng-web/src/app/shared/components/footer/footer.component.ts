@@ -1,7 +1,7 @@
 import { Component } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { LucideAngularModule } from "lucide-angular";
-import { NgKenyaPartners } from "src/app/const/data.const";
+import { NgKenyaPartners, ngKenyaShopUrl } from "src/app/const/data.const";
 
 @Component({
 	selector: "ng-ke-footer",
@@ -12,6 +12,7 @@ import { NgKenyaPartners } from "src/app/const/data.const";
 })
 export class FooterComponent {
 	partners = NgKenyaPartners;
+	shopUrl = ngKenyaShopUrl;
 
 	get provideFullYear(): number {
 		const date: Date = new Date();

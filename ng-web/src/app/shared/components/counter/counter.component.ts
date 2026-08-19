@@ -3,6 +3,7 @@ import { Subscription } from "rxjs";
 import {
   ngKenya2026CallForSpeakers,
 	ngKenya2025Photos,
+	ngKenyaShopUrl,
 	ticketUrl,
 } from "src/app/const/data.const";
 import {
@@ -44,10 +45,15 @@ export class CounterComponent implements OnInit {
       icon: 'external-link',
       action: () => this.utilService.getTickets(),
     },
+    // {
+    //   label: 'NG Kenya 2025 Photos',
+    //   icon: 'external-link',
+    //   action: () => this.utilService.openNewPage(ngKenya2025Photos),
+    // },
     {
-      label: 'NG Kenya 2025 Photos',
+      label: 'Shop Merch',
       icon: 'external-link',
-      action: () => this.utilService.openNewPage(ngKenya2025Photos),
+      action: () => this.utilService.openNewPage(ngKenyaShopUrl),
     },
   ])
 

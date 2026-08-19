@@ -3,6 +3,7 @@ import {Router, RouterModule } from "@angular/router";
 import {
 	sponsorhsip_Deck,
 	ngKenya2025Feedback,
+	ngKenyaShopUrl,
 } from "src/app/const/data.const";
 import { UtilService } from "../../services/util/util.service";
 import { LucideAngularModule } from "lucide-angular";
@@ -18,6 +19,7 @@ export class NavbarComponent {
 	utilService = inject(UtilService);
 	deck = sponsorhsip_Deck;
 	feedback = ngKenya2025Feedback;
+	shopUrl = ngKenyaShopUrl;
 
 	showMenu = false;
 	isVisible: boolean = false;
