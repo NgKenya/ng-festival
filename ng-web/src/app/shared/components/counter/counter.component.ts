@@ -25,7 +25,7 @@ interface BarcodeBar {
 	imports: [LucideAngularModule],
 })
 export class CounterComponent implements OnInit {
-	officialDate: Date = new Date("August 22 2026");
+	officialDate: Date = new Date("August 21 2026");
 	photoLink: string = ngKenya2025Photos;
 	ticketLink: string = ticketUrl;
 	daysLeftDisplay: IDate = {
