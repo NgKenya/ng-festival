@@ -4,13 +4,20 @@
 			? 'bg-neutral-900/70 border-neutral-800'
 			: 'bg-neutral-900/40 border-neutral-800 hover:border-ng-pink hover:shadow-2xl hover:shadow-ng-pink/10'
 	"
-	class="group relative flex flex-col md:flex-row gap-6 md:gap-8 border rounded-3xl p-6 md:p-7 transition-all duration-300 overflow-hidden"
+	class="group relative flex flex-col md:flex-row gap-6 md:gap-8 border rounded-3xl p-6 md:p-7 transition-all duration-300"
 >
-	<!-- Decorative gradient glow -->
+	<!-- Decorative gradient glow and bottom accent bar (clipped to card bounds) -->
 	<div
-		class="pointer-events-none absolute -top-16 -right-16 size-40 rounded-full bg-ng-pink/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+		class="pointer-events-none absolute inset-0 rounded-3xl overflow-hidden"
 		aria-hidden="true"
-	></div>
+	>
+		<div
+			class="absolute -top-16 -right-16 size-40 rounded-full bg-ng-pink/10 blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+		></div>
+		<div
+			class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-ng-pink to-ng-red group-hover:w-full transition-all duration-500 rounded-b-3xl"
+		></div>
+	</div>
 
 	<!-- Time / room -->
 	<div
@@ -107,11 +114,42 @@
 			}
 		</div>
 		}
+
+		@if (!session.done) {
+		<div class="relative inline-block pt-1">
+			<button
+				type="button"
+				(click)="toggleAddToCalendar()"
+				class="inline-flex items-center gap-x-2 py-2 px-3.5 rounded-full border border-neutral-800 text-sm font-medium text-ng-white hover:bg-ng-pink hover:border-ng-pink hover:text-white transition-colors duration-300"
+			>
+				<lucide-icon name="calendar-plus" class="size-4"></lucide-icon>
+				Add to Calendar
+			</button>
+
+			@if (isAddToCalendarOpen()) {
+			<div
+				class="absolute z-20 mt-2 w-56 rounded-2xl border border-neutral-800 bg-neutral-900 shadow-xl overflow-hidden"
+			>
+				<button
+					type="button"
+					(click)="addToGoogleCalendar()"
+					class="flex w-full items-center gap-x-2 px-4 py-2.5 text-sm text-ng-white hover:bg-ng-pink hover:text-white transition-colors duration-300"
+				>
+					<lucide-icon name="calendar-days" class="size-4"></lucide-icon>
+					Google Calendar
+				</button>
+				<button
+					type="button"
+					(click)="downloadIcs()"
+					class="flex w-full items-center gap-x-2 px-4 py-2.5 text-sm text-ng-white hover:bg-ng-pink hover:text-white transition-colors duration-300"
+				>
+					<lucide-icon name="download" class="size-4"></lucide-icon>
+					Apple / Outlook (.ics)
+				</button>
+			</div>
+			}
+		</div>
+		}
 	</div>
 
-	<!-- Bottom accent bar -->
-	<div
-		class="absolute bottom-0 left-0 h-1 w-0 bg-gradient-to-r from-ng-pink to-ng-red group-hover:w-full transition-all duration-500 rounded-b-3xl"
-		aria-hidden="true"
-	></div>
 </div>

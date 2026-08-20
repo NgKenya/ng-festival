@@ -30,6 +30,7 @@ export const NgKenyaPartners: IPartner[] = [
 ];
 
 export const ticketUrl = "https://vabu.app/ng-kenya-conf-2026";
+export const venueLocation = "iHUB, 913, Jahazi Ground floor James Gichuru Road, Nairobi, Kenya";
 export const ngKenya2024Photos = "https://photos.app.goo.gl/UHZCwSEV2JkMzbYw7";
 export const ngKenya2024Feedback = "https://forms.gle/xZ9UbyZpfpm1ESwa9";
 
