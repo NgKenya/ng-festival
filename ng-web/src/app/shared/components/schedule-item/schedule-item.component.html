@@ -45,7 +45,14 @@
 				{{ session.title }}
 			</h3>
 
-			@if (session.endsAt && session.status !== true) {
+			@if (session.done) {
+			<span
+				class="shrink-0 inline-flex items-center gap-x-1.5 text-xs font-semibold text-green-500 rounded-full border border-green-500/30 bg-green-500/10 px-2.5 py-1"
+			>
+				<lucide-icon name="check-check" class="size-3.5"></lucide-icon>
+				Completed
+			</span>
+			} @else if (session.endsAt && session.status !== true) {
 			<span
 				class="shrink-0 inline-flex items-center gap-x-1.5 text-xs font-semibold text-ng-grey rounded-full border border-neutral-800 bg-neutral-900/60 px-2.5 py-1"
 			>
@@ -60,7 +67,7 @@
 				class="shrink-0 inline-flex items-center gap-x-1.5 text-xs font-semibold text-green-500 rounded-full border border-green-500/30 bg-green-500/10 px-2.5 py-1"
 			>
 				<lucide-icon name="check-check" class="size-3.5"></lucide-icon>
-				Done
+				Completed
 			</span>
 			}
 		</div>

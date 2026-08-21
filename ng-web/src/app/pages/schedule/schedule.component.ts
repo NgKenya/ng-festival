@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, inject, OnInit, signal } from "@angular/core";
+import { Component, DestroyRef, inject, OnDestroy, OnInit, signal } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { LucideAngularModule } from "lucide-angular";
 import { map } from "rxjs";
@@ -19,7 +19,7 @@ import { UtilService } from "src/app/shared/services/util/util.service";
 	styleUrls: ["./schedule.component.scss"],
 	standalone: true,
 })
-export class ScheduleComponent implements OnInit {
+export class ScheduleComponent implements OnInit, OnDestroy {
 	talkList: ITimeslot[] = [];
 	activeTime = new Date();
 	schedhuleService = inject(SessionizeService);
@@ -28,6 +28,7 @@ export class ScheduleComponent implements OnInit {
 	isLoading = true;
 	hasError = false;
 	private readonly DESTROY_REF = inject(DestroyRef);
+	private refreshIntervalId?: ReturnType<typeof setInterval>;
 
 	readonly days: { label: string; date: string }[] = [
 		{ label: "Day One", date: "August 21,2026" },
@@ -42,11 +43,31 @@ export class ScheduleComponent implements OnInit {
 	ngOnInit(): void {
 		this.getSession(this.eventDate()!);
 
-		// this.reshuffleTalks();
-		// setInterval(() => {
-		// 	this.activeTime = new Date();
-		// 	// this.reshuffleTalks();
-		// }, 900000);
+		// Periodically refresh the current time so completed sessions are
+		// clearly marked as "Completed" once their scheduled duration has ended.
+		this.refreshIntervalId = setInterval(() => {
+			this.activeTime = new Date();
+			this.talkList = this.updateSessionsDoneState(this.talkList);
+		}, 60000);
+	}
+
+	ngOnDestroy(): void {
+		if (this.refreshIntervalId) {
+			clearInterval(this.refreshIntervalId);
+		}
+	}
+
+	private updateSessionsDoneState(timeSlots: ITimeslot[]): ITimeslot[] {
+		return timeSlots.map((slot) => ({
+			...slot,
+			rooms: slot.rooms.map((room) => ({
+				...room,
+				session: {
+					...room.session,
+					done: new Date(room.session.endsAt) < this.activeTime,
+				},
+			})),
+		}));
 	}
 
 	getSession(date: string) {
