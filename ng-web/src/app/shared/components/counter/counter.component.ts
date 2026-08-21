@@ -1,15 +1,15 @@
 import {Component, OnInit, inject, signal} from "@angular/core";
-import { Subscription } from "rxjs";
+// import { Subscription } from "rxjs";
 import {
   ngKenya2026CallForSpeakers,
 	ngKenya2025Photos,
 	ngKenyaShopUrl,
 	ticketUrl,
 } from "src/app/const/data.const";
-import {
-	IDate,
-	CountdownService,
-} from "../../services/countdown/countdown.service";
+// import {
+// 	IDate,
+// 	CountdownService,
+// } from "../../services/countdown/countdown.service";
 import { UtilService } from "../../services/util/util.service";
 import { LucideAngularModule } from "lucide-angular";
 
@@ -28,16 +28,16 @@ export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("August 21 2026");
 	photoLink: string = ngKenya2025Photos;
 	ticketLink: string = ticketUrl;
-	daysLeftDisplay: IDate = {
-		month: 0,
-		day: 0,
-		hour: 0,
-		minute: 0,
-		second: 0,
-	};
+	// daysLeftDisplay: IDate = {
+	// 	month: 0,
+	// 	day: 0,
+	// 	hour: 0,
+	// 	minute: 0,
+	// 	second: 0,
+	// };
 	utilService = inject(UtilService);
-	countdownService = inject(CountdownService);
-	private countdownSubscription?: Subscription;
+	// countdownService = inject(CountdownService);
+	// private countdownSubscription?: Subscription;
 
   ctaButtons = signal([
     {
@@ -60,11 +60,11 @@ export class CounterComponent implements OnInit {
 	barcodeData: BarcodeBar[] = [];
 	stubBarcodeLines: number[] = [];
 	ngOnInit(): void {
-		this.countdownSubscription = this.countdownService
-			.startCountdown(this.officialDate)
-			.subscribe((remaining: IDate) => {
-				this.daysLeftDisplay = remaining;
-			});
+		// this.countdownSubscription = this.countdownService
+		// 	.startCountdown(this.officialDate)
+		// 	.subscribe((remaining: IDate) => {
+		// 		this.daysLeftDisplay = remaining;
+		// 	});
 
 		this.stubBarcodeLines = Array.from({ length: 20 }, (_, i) => i);
 	}
@@ -81,9 +81,9 @@ export class CounterComponent implements OnInit {
     this.utilService.openNewPage(ngKenya2026CallForSpeakers);
   }
 
-	ngOnDestroy(): void {
-		this.countdownSubscription?.unsubscribe();
-	}
+	// ngOnDestroy(): void {
+	// 	this.countdownSubscription?.unsubscribe();
+	// }
 
 	private generateBarcode(): void {
 		this.barcodeData = Array.from({ length: 25 }, () => ({
