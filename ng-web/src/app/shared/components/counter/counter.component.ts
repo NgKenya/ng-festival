@@ -2,7 +2,7 @@ import {Component, OnInit, inject, signal} from "@angular/core";
 // import { Subscription } from "rxjs";
 import {
   ngKenya2026CallForSpeakers,
-	ngKenya2025Photos,
+	ngKenya2026Photos,
 	ngKenyaShopUrl,
 	ticketUrl,
 } from "src/app/const/data.const";
@@ -26,7 +26,7 @@ interface BarcodeBar {
 })
 export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("August 21 2026");
-	photoLink: string = ngKenya2025Photos;
+	photoLink: string = ngKenya2026Photos;
 	ticketLink: string = ticketUrl;
 	// daysLeftDisplay: IDate = {
 	// 	month: 0,
@@ -45,11 +45,11 @@ export class CounterComponent implements OnInit {
       icon: 'external-link',
       action: () => this.utilService.getTickets(),
     },
-    // {
-    //   label: 'NG Kenya 2025 Photos',
-    //   icon: 'external-link',
-    //   action: () => this.utilService.openNewPage(ngKenya2025Photos),
-    // },
+    {
+      label: 'NG Kenya 2026 Photos',
+      icon: 'external-link',
+      action: () => this.utilService.openNewPage(ngKenya2026Photos),
+    },
     {
       label: 'Shop Merch',
       icon: 'external-link',
@@ -74,7 +74,7 @@ export class CounterComponent implements OnInit {
   }
 
   onPastPhotosClicked() {
-    this.utilService.openNewPage(ngKenya2025Photos)
+    this.utilService.openNewPage(ngKenya2026Photos)
   }
 
   onSubmitTalkClicked() {
