@@ -35,7 +35,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 		{ label: "Day Two", date: "August 22,2026" },
 	];
 
-	eventDate = signal<string | undefined>(this.days[0].date);
+  // Default tab for the day (day one or day two)
+	eventDate = signal<string | undefined>(this.days[1].date);
 
 	/** Skeleton placeholders shown while the schedule is loading. */
 	readonly skeletons = Array.from({ length: 4 });
