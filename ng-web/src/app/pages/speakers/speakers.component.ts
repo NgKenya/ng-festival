@@ -6,6 +6,7 @@ import { SessionizeService } from "src/app/shared/services/sessionize/sessionize
 import { UtilService } from "src/app/shared/services/util/util.service";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { ISpeaker } from "src/app/models/speaker.model";
+import { ngKenya2026Photos } from "src/app/const/data.const";
 
 @Component({
 	selector: "app-speakers",
@@ -51,7 +52,7 @@ export class SpeakersComponent implements OnInit {
 			});
 	}
 
-	getTickets() {
-		this.utilService.getTickets();
+	viewPastPhotos() {
+		this.utilService.openNewPage(ngKenya2026Photos);
 	}
 }

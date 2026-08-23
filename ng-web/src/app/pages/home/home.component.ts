@@ -1,7 +1,7 @@
 import { Component, inject } from "@angular/core";
 import { CounterComponent } from "../../shared/components/counter/counter.component";
 import { LucideAngularModule } from "lucide-angular";
-import { eventStats, ngKenya2026Photos } from "src/app/const/data.const";
+import { eventStats, ngKenya2026Photos, ngKenyaShopUrl } from "src/app/const/data.const";
 import { UtilService } from "src/app/shared/services/util/util.service";
 
 @Component({
@@ -80,5 +80,9 @@ export class HomeComponent {
 
 	viewPastPhotos() {
 		this.utilService.openNewPage(ngKenya2026Photos);
+	}
+
+	shopMerch() {
+		this.utilService.openNewPage(ngKenyaShopUrl);
 	}
 }

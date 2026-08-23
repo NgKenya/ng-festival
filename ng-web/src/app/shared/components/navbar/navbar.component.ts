@@ -4,6 +4,7 @@ import {
 	sponsorhsip_Deck,
 	ngKenya2025Feedback,
 	ngKenyaShopUrl,
+	ngKenya2026Photos,
 } from "src/app/const/data.const";
 import { UtilService } from "../../services/util/util.service";
 import { LucideAngularModule } from "lucide-angular";
@@ -20,6 +21,7 @@ export class NavbarComponent {
 	deck = sponsorhsip_Deck;
 	feedback = ngKenya2025Feedback;
 	shopUrl = ngKenyaShopUrl;
+	photosUrl = ngKenya2026Photos;
 
 	showMenu = false;
 	isVisible: boolean = false;
@@ -66,7 +68,11 @@ export class NavbarComponent {
 		this.router.navigate(["/contact-us"]);
 	}
 
-	onGetTicketsClicked() {
-		this.utilService.getTickets();
+	onViewPhotosClicked() {
+		this.utilService.openNewPage(this.photosUrl);
 	}
+
+  onGetTicketsClicked() {
+    this.utilService.getTickets();
+  }
 }

@@ -1,7 +1,6 @@
 import {Component, OnInit, inject, signal} from "@angular/core";
 // import { Subscription } from "rxjs";
 import {
-  ngKenya2026CallForSpeakers,
 	ngKenya2026Photos,
 	ngKenyaShopUrl,
 	ticketUrl,
@@ -41,11 +40,6 @@ export class CounterComponent implements OnInit {
 
   ctaButtons = signal([
     {
-      label: 'Get Tickets',
-      icon: 'external-link',
-      action: () => this.utilService.getTickets(),
-    },
-    {
       label: 'NG Kenya 2026 Photos',
       icon: 'external-link',
       action: () => this.utilService.openNewPage(ngKenya2026Photos),
@@ -68,18 +62,6 @@ export class CounterComponent implements OnInit {
 
 		this.stubBarcodeLines = Array.from({ length: 20 }, (_, i) => i);
 	}
-
-  onGetTicketsClicked() {
-    this.utilService.getTickets();
-  }
-
-  onPastPhotosClicked() {
-    this.utilService.openNewPage(ngKenya2026Photos)
-  }
-
-  onSubmitTalkClicked() {
-    this.utilService.openNewPage(ngKenya2026CallForSpeakers);
-  }
 
 	// ngOnDestroy(): void {
 	// 	this.countdownSubscription?.unsubscribe();

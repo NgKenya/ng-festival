@@ -76,9 +76,14 @@
         }
         <button
           class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
+          (click)="onViewPhotosClicked(); showMenu = false">
+          2026 Photos
+        </button>
+        <!-- <button
+          class="group inline-flex items-center gap-x-2 py-2 px-3 bg-ng-red font-medium text-sm text-ng-white rounded-full focus:outline-none"
           (click)="onGetTicketsClicked(); showMenu = false">
           Grab Tickets
-        </button>
+        </button> -->
 			</div>
 		</div>
 		<!-- End Collapse -->

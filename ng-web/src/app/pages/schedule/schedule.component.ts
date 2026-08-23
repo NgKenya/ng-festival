@@ -11,6 +11,7 @@ import {
 import { SchedhuleItemComponent } from "src/app/shared/components/schedule-item/schedule-item.component";
 import { SessionizeService } from "src/app/shared/services/sessionize/sessionize.service";
 import { UtilService } from "src/app/shared/services/util/util.service";
+import { ngKenya2026Photos } from "src/app/const/data.const";
 
 @Component({
 	selector: "app-schedule",
@@ -139,8 +140,8 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 			});
 	}
 
-	getTickets() {
-		this.utilService.getTickets();
+	viewPastPhotos() {
+		this.utilService.openNewPage(ngKenya2026Photos);
 	}
 
 	getSpeakerById(profileId: string) {
