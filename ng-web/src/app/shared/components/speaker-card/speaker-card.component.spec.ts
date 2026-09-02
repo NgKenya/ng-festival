@@ -59,6 +59,23 @@ describe("SpeakerCardComponent", () => {
 		expect(text).toContain("Top speaker");
 	});
 
+	it("should render every link even when two share a URL", async () => {
+		const url = "https://linkedin.com/in/ada";
+		fixture.componentRef.setInput("speaker", {
+			...speaker,
+			links: [
+				{ title: "LinkedIn", url, linkType: "LinkedIn" },
+				{ title: "Company_Website", url, linkType: "Company_Website" },
+			],
+		});
+		await renderCardBody();
+
+		const links = (fixture.nativeElement as HTMLElement).querySelectorAll(
+			`a[href="${url}"]`,
+		);
+		expect(links).toHaveLength(2);
+	});
+
 	it("should map link types to icon names", () => {
 		expect(
 			component.getLinkIcon({

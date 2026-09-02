@@ -1,4 +1,10 @@
-import {Component, OnInit, inject, signal, ChangeDetectionStrategy} from "@angular/core";
+import {
+	ChangeDetectionStrategy,
+	Component,
+	OnInit,
+	inject,
+	signal,
+} from "@angular/core";
 // import { Subscription } from "rxjs";
 import {
 	ngKenya2026Photos,
@@ -20,7 +26,6 @@ interface BarcodeBar {
 	selector: "app-counter",
 	templateUrl: "./counter.component.html",
 	styleUrl: "./counter.component.scss",
-	standalone: true,
 	changeDetection: ChangeDetectionStrategy.Eager,
 	imports: [IconComponent],
 })

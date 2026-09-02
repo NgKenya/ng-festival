@@ -8,7 +8,6 @@ import { IconComponent } from "../../icons/icon.component";
 	styleUrls: ["./speaker-card.component.scss"],
 	imports: [IconComponent],
 	changeDetection: ChangeDetectionStrategy.Eager,
-	standalone: true,
 })
 export class SpeakerCardComponent {
 	readonly speaker = input.required<ISpeaker>();

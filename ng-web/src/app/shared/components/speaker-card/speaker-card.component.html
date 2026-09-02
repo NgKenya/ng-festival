@@ -70,7 +70,9 @@
 		<!-- Social links -->
 		@if (person.links.length) {
 		<div class="mt-auto flex items-center gap-x-3 pt-5">
-			@for (link of person.links; track link.url) {
+			<!-- Sessionize returns the same URL under several link types, so the
+			     URL is not a unique key. -->
+			@for (link of person.links; track $index) {
 			<a
 				[href]="link.url"
 				target="_blank"

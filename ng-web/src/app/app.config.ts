@@ -1,4 +1,4 @@
-import { ApplicationConfig } from "@angular/core";
+import { ApplicationConfig, provideZoneChangeDetection } from "@angular/core";
 import { provideRouter, withViewTransitions } from "@angular/router";
 import {
 	AlignLeft,
@@ -33,6 +33,9 @@ import { provideIcons } from "./shared/icons/icon-registry";
 
 export const AppConfig: ApplicationConfig = {
 	providers: [
+		// Zoneless is the v22 default, but the pages still mutate plain fields
+		// from timers and HTTP callbacks, which only zone.js notices.
+		provideZoneChangeDetection(),
 		provideRouter(routes, withViewTransitions()),
 		provideIcons({
 			"align-left": AlignLeft,

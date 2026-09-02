@@ -14,7 +14,6 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 	styleUrls: ["./speakers.component.scss"],
 	imports: [SpeakerCardComponent, IconComponent],
 	changeDetection: ChangeDetectionStrategy.Eager,
-	standalone: true,
 })
 export class SpeakersComponent implements OnInit {
 	speakers: ISpeaker[] = [];

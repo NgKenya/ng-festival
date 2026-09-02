@@ -17,7 +17,6 @@ import { IconComponent } from "../../icons/icon.component";
 	templateUrl: "./schedule-item.component.html",
 	styleUrl: "./schedule-item.component.scss",
 	changeDetection: ChangeDetectionStrategy.Eager,
-	standalone: true,
 })
 export class SchedhuleItemComponent {
 	readonly session = input.required<ISession>();

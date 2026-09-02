@@ -1,6 +1,6 @@
 
-import {Component, ChangeDetectionStrategy} from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { RouterOutlet } from "@angular/router";
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { FooterComponent } from "./shared/components/footer/footer.component";
 
@@ -8,9 +8,8 @@ import { FooterComponent } from "./shared/components/footer/footer.component";
 	selector: "app-root",
 	templateUrl: "./app.component.html",
 	styleUrls: ["./app.component.scss"],
-	imports: [RouterModule, NavbarComponent, FooterComponent],
+	imports: [RouterOutlet, NavbarComponent, FooterComponent],
 	changeDetection: ChangeDetectionStrategy.Eager,
-	standalone: true,
 })
 export class AppComponent {
 	title = "ng-web";

@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 import { NgKenyaPartners, ngKenyaShopUrl } from "src/app/const/data.const";
 import { IconComponent } from "../../icons/icon.component";
 
@@ -7,9 +7,8 @@ import { IconComponent } from "../../icons/icon.component";
 	selector: "ng-ke-footer",
 	templateUrl: "./footer.component.html",
 	styleUrls: ["./footer.component.scss"],
-	imports: [RouterModule, IconComponent],
+	imports: [RouterLink, IconComponent],
 	changeDetection: ChangeDetectionStrategy.Eager,
-	standalone: true,
 })
 export class FooterComponent {
 	partners = NgKenyaPartners;

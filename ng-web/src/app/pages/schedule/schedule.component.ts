@@ -19,7 +19,6 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 	imports: [SchedhuleItemComponent, IconComponent, NgClass],
 	styleUrls: ["./schedule.component.scss"],
 	changeDetection: ChangeDetectionStrategy.Eager,
-	standalone: true,
 })
 export class ScheduleComponent implements OnInit, OnDestroy {
 	talkList: ITimeslot[] = [];
