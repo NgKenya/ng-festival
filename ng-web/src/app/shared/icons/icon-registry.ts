@@ -4,7 +4,9 @@ import type { IconNode } from "lucide";
 /** Icon shapes keyed by the kebab-case name templates refer to. */
 export type IconRegistry = Readonly<Record<string, IconNode>>;
 
-export const ICON_REGISTRY = new InjectionToken<IconRegistry>("ICON_REGISTRY");
+export const ICON_REGISTRY = new InjectionToken<IconRegistry>("ICON_REGISTRY", {
+	factory: () => ({}),
+});
 
 /**
  * Registers the icons the app is allowed to render. Only the icons listed here

@@ -7,6 +7,7 @@ import {
 	effect,
 	inject,
 	input,
+	isDevMode,
 } from "@angular/core";
 import { ICON_REGISTRY } from "./icon-registry";
 
@@ -46,7 +47,16 @@ export class IconComponent {
 
 	protected readonly iconClass = computed(() => `lucide-${this.ngKeIcon()}`);
 
-	private readonly shape = computed(() => this.registry[this.ngKeIcon()] ?? []);
+	private readonly shape = computed(() => {
+		const name = this.ngKeIcon();
+		const shape = this.registry[name];
+
+		if (!shape && isDevMode()) {
+			console.warn(`Icon "${name}" is not registered with provideIcons().`);
+		}
+
+		return shape ?? [];
+	});
 
 	constructor() {
 		effect(() => {
