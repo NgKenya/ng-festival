@@ -109,6 +109,24 @@ describe("ScheduleComponent", () => {
 		).toContain("Sessions coming soon");
 	});
 
+	it("should switch days when a day tab is clicked", () => {
+		flushSchedule();
+		flushSpeakerProfiles();
+		fixture.detectChanges();
+
+		const tabs = (fixture.nativeElement as HTMLElement).querySelectorAll<
+			HTMLButtonElement
+		>("[role=tab]");
+		tabs[1].click();
+		flushSchedule([]);
+		flushSpeakerProfiles();
+		fixture.detectChanges();
+
+		expect(component.eventDate()).toBe(component.days[1].date);
+		expect(tabs[0].getAttribute("aria-selected")).toBe("false");
+		expect(tabs[1].getAttribute("aria-selected")).toBe("true");
+	});
+
 	it("should flag an error when the schedule request fails", () => {
 		httpTesting
 			.expectOne((request) => request.url.endsWith("/GridSmart"))
