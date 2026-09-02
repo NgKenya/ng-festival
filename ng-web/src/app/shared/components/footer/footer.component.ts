@@ -1,14 +1,14 @@
-import { Component } from "@angular/core";
-import { RouterModule } from "@angular/router";
-import { LucideAngularModule } from "lucide-angular";
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 import { NgKenyaPartners, ngKenyaShopUrl } from "src/app/const/data.const";
+import { IconComponent } from "../../icons/icon.component";
 
 @Component({
 	selector: "ng-ke-footer",
 	templateUrl: "./footer.component.html",
 	styleUrls: ["./footer.component.scss"],
-	imports: [RouterModule, LucideAngularModule],
-	standalone: true,
+	imports: [RouterLink, IconComponent],
+	changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class FooterComponent {
 	partners = NgKenyaPartners;

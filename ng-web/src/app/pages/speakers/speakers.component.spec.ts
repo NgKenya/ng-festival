@@ -1,23 +1,58 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { provideHttpClient } from "@angular/common/http";
+import {
+	HttpTestingController,
+	provideHttpClientTesting,
+} from "@angular/common/http/testing";
+import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { SpeakersComponent } from "./speakers.component";
 
-import { SpeakersComponent } from './speakers.component';
+describe("SpeakersComponent", () => {
+	let component: SpeakersComponent;
+	let fixture: ComponentFixture<SpeakersComponent>;
+	let httpTesting: HttpTestingController;
 
-describe('SpeakersComponent', () => {
-  let component: SpeakersComponent;
-  let fixture: ComponentFixture<SpeakersComponent>;
+	beforeEach(async () => {
+		await TestBed.configureTestingModule({
+			imports: [SpeakersComponent],
+			providers: [provideHttpClient(), provideHttpClientTesting()],
+		}).compileComponents();
 
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      declarations: [ SpeakersComponent ]
-    })
-    .compileComponents();
+		fixture = TestBed.createComponent(SpeakersComponent);
+		component = fixture.componentInstance;
+		httpTesting = TestBed.inject(HttpTestingController);
+		fixture.detectChanges();
+	});
 
-    fixture = TestBed.createComponent(SpeakersComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
+	afterEach(() => {
+		httpTesting.verify();
+	});
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+	it("should create", () => {
+		expect(component).toBeTruthy();
+		httpTesting
+			.expectOne((request) => request.url.endsWith("/Speakers"))
+			.flush([]);
+	});
+
+	it("should show the newest speakers first once the request resolves", () => {
+		httpTesting
+			.expectOne((request) => request.url.endsWith("/Speakers"))
+			.flush([{ fullName: "First" }, { fullName: "Second" }]);
+
+		expect(component.speakers.map((speaker) => speaker.fullName)).toEqual([
+			"Second",
+			"First",
+		]);
+		expect(component.isLoading).toBe(false);
+		expect(component.hasError).toBe(false);
+	});
+
+	it("should flag an error when the request fails", () => {
+		httpTesting
+			.expectOne((request) => request.url.endsWith("/Speakers"))
+			.error(new ProgressEvent("network error"));
+
+		expect(component.hasError).toBe(true);
+		expect(component.isLoading).toBe(false);
+	});
 });

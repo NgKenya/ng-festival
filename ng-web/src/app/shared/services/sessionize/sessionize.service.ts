@@ -1,23 +1,15 @@
-import { HttpClient, HttpContext } from "@angular/common/http";
-import { inject, Injectable } from "@angular/core";
-import { map, Observable } from "rxjs";
-import {
-	ISessionizeGrid,
-	ISpeaker,
-	ISpeakerProfile,
-} from "src/app/models/speaker.model";
-import { environment } from "src/environments/environment.development";
+import { HttpClient } from "@angular/common/http";
+import { inject, Service } from "@angular/core";
+import { Observable } from "rxjs";
+import { ISessionizeGrid, ISpeaker } from "src/app/models/speaker.model";
+import { environment } from "src/environments/environment";
 
-@Injectable({
-	providedIn: "root",
-})
+@Service()
 export class SessionizeService {
 	private readonly http = inject(HttpClient);
 
-	constructor() {}
-
-	getAllSpeakers(): Observable<any> {
-		return this.http.get(`${environment.base_url}/Speakers`);
+	getAllSpeakers(): Observable<ISpeaker[]> {
+		return this.http.get<ISpeaker[]>(`${environment.base_url}/Speakers`);
 	}
 
 	getAllSpeakersProfile(): Observable<ISpeaker[]> {

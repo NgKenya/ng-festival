@@ -164,10 +164,10 @@
             class="cursor-pointer px-8 py-2 bg-ng-red text-white rounded-full flex items-center text-center md:text-left h-fit w-fit hover:bg-ng-dark-blue"
           >
             {{ctaButton.label}}
-            <lucide-icon
-              [name]=ctaButton.icon
+            <svg
+              [ngKeIcon]="ctaButton.icon"
               class="w-4 h-4 mx-2"
-            ></lucide-icon>
+            ></svg>
           </button>
         }
       </div>

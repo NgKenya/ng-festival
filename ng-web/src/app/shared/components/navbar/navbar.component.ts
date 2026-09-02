@@ -1,5 +1,5 @@
-import { Component, inject } from "@angular/core";
-import {Router, RouterModule } from "@angular/router";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
+import { Router, RouterLink, RouterLinkActive } from "@angular/router";
 import {
 	sponsorhsip_Deck,
 	ngKenya2025Feedback,
@@ -7,14 +7,14 @@ import {
 	ngKenya2026Photos,
 } from "src/app/const/data.const";
 import { UtilService } from "../../services/util/util.service";
-import { LucideAngularModule } from "lucide-angular";
+import { IconComponent } from "../../icons/icon.component";
 
 @Component({
   selector: "ng-ke-navbar",
-  imports: [LucideAngularModule, RouterModule],
+  imports: [IconComponent, RouterLink, RouterLinkActive],
   templateUrl: "./navbar.component.html",
   styleUrl: "./navbar.component.scss",
-  standalone: true
+  changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class NavbarComponent {
 	utilService = inject(UtilService);

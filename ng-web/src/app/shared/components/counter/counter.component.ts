@@ -1,4 +1,10 @@
-import {Component, OnInit, inject, signal} from "@angular/core";
+import {
+	ChangeDetectionStrategy,
+	Component,
+	OnInit,
+	inject,
+	signal,
+} from "@angular/core";
 // import { Subscription } from "rxjs";
 import {
 	ngKenya2026Photos,
@@ -10,7 +16,7 @@ import {
 // 	CountdownService,
 // } from "../../services/countdown/countdown.service";
 import { UtilService } from "../../services/util/util.service";
-import { LucideAngularModule } from "lucide-angular";
+import { IconComponent } from "../../icons/icon.component";
 
 interface BarcodeBar {
 	width: string;
@@ -20,8 +26,8 @@ interface BarcodeBar {
 	selector: "app-counter",
 	templateUrl: "./counter.component.html",
 	styleUrl: "./counter.component.scss",
-	standalone: true,
-	imports: [LucideAngularModule],
+	changeDetection: ChangeDetectionStrategy.Eager,
+	imports: [IconComponent],
 })
 export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("August 21 2026");

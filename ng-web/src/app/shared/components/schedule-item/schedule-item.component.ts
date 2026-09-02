@@ -1,27 +1,27 @@
+import { DatePipe, NgClass } from "@angular/common";
 import {
-	CommonModule,
-	DatePipe,
-	JsonPipe,
-	NgClass,
-	NgOptimizedImage,
-} from "@angular/common";
-import { Component, inject, Input, signal } from "@angular/core";
-import { LucideAngularComponent, LucideAngularModule } from "lucide-angular";
-import { ISession, ITalk, ITimeslot } from "src/app/models/speaker.model";
+	ChangeDetectionStrategy,
+	Component,
+	inject,
+	input,
+	signal,
+} from "@angular/core";
+import { ISession } from "src/app/models/speaker.model";
 import { UtilService } from "../../services/util/util.service";
 import { venueLocation } from "src/app/const/data.const";
+import { IconComponent } from "../../icons/icon.component";
 
 @Component({
 	selector: "ng-ke-schedule-item",
-	imports: [LucideAngularModule, DatePipe, NgClass],
+	imports: [IconComponent, DatePipe, NgClass],
 	templateUrl: "./schedule-item.component.html",
 	styleUrl: "./schedule-item.component.scss",
-	standalone: true,
+	changeDetection: ChangeDetectionStrategy.Eager,
 })
 export class SchedhuleItemComponent {
-	@Input() session!: ISession;
+	readonly session = input.required<ISession>();
 
-	@Input() room!: string;
+	readonly room = input.required<string>();
 	utilService = inject(UtilService);
 
 	isAddToCalendarOpen = signal(false);
@@ -31,34 +31,37 @@ export class SchedhuleItemComponent {
 	}
 
 	private getDescriptionWithRoom(): string {
+		const session = this.session();
 		const description =
-			typeof this.session.description === "string" ? this.session.description : "";
-		const speakerNames = this.session.speakers?.length
-			? this.session.speakers.map((speaker) => speaker.name).join(", ")
+			typeof session.description === "string" ? session.description : "";
+		const speakerNames = session.speakers?.length
+			? session.speakers.map((speaker) => speaker.name).join(", ")
 			: "";
 		const speakerLine = speakerNames ? `Speaker: ${speakerNames}\n` : "";
-		return `${speakerLine}Room: ${this.room}${description ? "\n\n" + description : ""}`;
+		return `${speakerLine}Room: ${this.room()}${description ? "\n\n" + description : ""}`;
 	}
 
 	addToGoogleCalendar(): void {
+		const session = this.session();
 		const link = this.utilService.getGoogleCalendarLink(
-			this.session.title,
+			session.title,
 			this.getDescriptionWithRoom(),
 			venueLocation,
-			this.session.startsAt,
-			this.session.endsAt,
+			session.startsAt,
+			session.endsAt,
 		);
 		this.utilService.openNewPage(link);
 		this.isAddToCalendarOpen.set(false);
 	}
 
 	downloadIcs(): void {
+		const session = this.session();
 		this.utilService.downloadIcsFile(
-			this.session.title,
+			session.title,
 			this.getDescriptionWithRoom(),
 			venueLocation,
-			this.session.startsAt,
-			this.session.endsAt,
+			session.startsAt,
+			session.endsAt,
 		);
 		this.isAddToCalendarOpen.set(false);
 	}
