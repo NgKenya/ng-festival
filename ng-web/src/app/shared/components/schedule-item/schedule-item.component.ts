@@ -1,10 +1,4 @@
-import {
-	CommonModule,
-	DatePipe,
-	JsonPipe,
-	NgClass,
-	NgOptimizedImage,
-} from "@angular/common";
+import { CommonModule, DatePipe, JsonPipe, NgClass, NgOptimizedImage } from "@angular/common";
 import { Component, inject, Input, signal } from "@angular/core";
 import { LucideAngularComponent, LucideAngularModule } from "lucide-angular";
 import { ISession, ITalk, ITimeslot } from "src/app/models/speaker.model";
