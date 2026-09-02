@@ -113,10 +113,9 @@
 		<div class="ng-ke-fade-in grid grid-cols-1 gap-7 max-w-4xl mx-auto">
 			@for (talk of talkList; track talk) { @for (room of talk.rooms; track
 			$index) {
-			<ng-ke-schedule-item
-				[session]="room.session"
+			<ng-ke-schedule-item [session]="room.session"
 				[room]="room.name"
-			></ng-ke-schedule-item>
+			 />
 			} }
 		</div>
 		}

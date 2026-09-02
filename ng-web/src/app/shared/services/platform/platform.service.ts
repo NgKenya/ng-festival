@@ -1,16 +1,11 @@
 import { isPlatformBrowser, isPlatformServer } from '@angular/common';
-import { Inject, Injectable, PLATFORM_ID } from '@angular/core';
+import { PLATFORM_ID, inject, Service } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Service()
 export class PlatformService {
-  constructor(
-    @Inject(PLATFORM_ID)
-    private platformId: Object
-  ) {}
+	private platformId = inject(PLATFORM_ID);
 
-  isOnAngular(): boolean {
+	isOnAngular(): boolean {
     return isPlatformBrowser(this.platformId);
   }
 

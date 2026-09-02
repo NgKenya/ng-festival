@@ -1,4 +1,4 @@
-import { CommonModule } from "@angular/common";
+import { NgClass } from "@angular/common";
 import { Component, DestroyRef, inject, OnDestroy, OnInit, signal, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { map } from "rxjs";
@@ -16,7 +16,7 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 @Component({
 	selector: "app-schedule",
 	templateUrl: "./schedule.component.html",
-	imports: [SchedhuleItemComponent, IconComponent, CommonModule],
+	imports: [SchedhuleItemComponent, IconComponent, NgClass],
 	styleUrls: ["./schedule.component.scss"],
 	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,

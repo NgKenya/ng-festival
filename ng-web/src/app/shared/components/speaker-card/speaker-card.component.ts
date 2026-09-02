@@ -1,4 +1,4 @@
-import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
+import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 import { ISpeaker, ISpeakerLink } from "src/app/models/speaker.model";
 import { IconComponent } from "../../icons/icon.component";
 
@@ -11,7 +11,7 @@ import { IconComponent } from "../../icons/icon.component";
 	standalone: true,
 })
 export class SpeakerCardComponent {
-	@Input() speaker!: ISpeaker;
+	readonly speaker = input.required<ISpeaker>();
 
 	/** Maps a Sessionize link type to a matching Lucide icon name. */
 	getLinkIcon(link: ISpeakerLink): string {

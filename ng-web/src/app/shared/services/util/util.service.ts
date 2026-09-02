@@ -1,13 +1,10 @@
-import { inject, Injectable } from "@angular/core";
+import { inject, Service } from "@angular/core";
 import { Router } from "@angular/router";
 import { ticketUrl } from "src/app/const/data.const";
 
-@Injectable({
-	providedIn: "root",
-})
+@Service()
 export class UtilService {
 	route = inject(Router);
-	constructor() {}
 
 	openNewPage(link: string) {
 		window.open(link, "_blank");
