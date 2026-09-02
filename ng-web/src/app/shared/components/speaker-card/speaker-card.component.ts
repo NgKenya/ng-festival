@@ -1,12 +1,12 @@
 import { Component, Input } from "@angular/core";
-import { LucideAngularModule } from "lucide-angular";
 import { ISpeaker, ISpeakerLink } from "src/app/models/speaker.model";
+import { IconComponent } from "../../icons/icon.component";
 
 @Component({
 	selector: "ng-ke-speaker-card",
 	templateUrl: "./speaker-card.component.html",
 	styleUrls: ["./speaker-card.component.scss"],
-	imports: [LucideAngularModule],
+	imports: [IconComponent],
 	standalone: true,
 })
 export class SpeakerCardComponent {
@@ -17,7 +17,7 @@ export class SpeakerCardComponent {
 		const type = (link.linkType || link.title || "").toLowerCase();
 
 		if (type.includes("linkedin")) return "linkedin";
-		if (type.includes("twitter") || type.includes("x")) return "twitter";
+		if (type.includes("twitter") || type.includes("x")) return "x-twitter";
 		return "globe";
 	}
 }

@@ -7,11 +7,11 @@ import {
 	ngKenya2026Photos,
 } from "src/app/const/data.const";
 import { UtilService } from "../../services/util/util.service";
-import { LucideAngularModule } from "lucide-angular";
+import { IconComponent } from "../../icons/icon.component";
 
 @Component({
   selector: "ng-ke-navbar",
-  imports: [LucideAngularModule, RouterModule],
+  imports: [IconComponent, RouterModule],
   templateUrl: "./navbar.component.html",
   styleUrl: "./navbar.component.scss",
   standalone: true

@@ -1,12 +1,12 @@
 import { Component, inject } from "@angular/core";
 import { CounterComponent } from "../../shared/components/counter/counter.component";
-import { LucideAngularModule } from "lucide-angular";
 import { eventStats, ngKenya2026Photos, ngKenyaShopUrl } from "src/app/const/data.const";
+import { IconComponent } from "src/app/shared/icons/icon.component";
 import { UtilService } from "src/app/shared/services/util/util.service";
 
 @Component({
 	selector: "ng-ke-home",
-	imports: [CounterComponent, LucideAngularModule],
+	imports: [CounterComponent, IconComponent],
 	standalone: true,
 	templateUrl: "./home.component.html",
 	styleUrl: "./home.component.scss",

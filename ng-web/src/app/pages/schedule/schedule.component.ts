@@ -1,7 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component, DestroyRef, inject, OnDestroy, OnInit, signal } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { LucideAngularModule } from "lucide-angular";
 import { map } from "rxjs";
 import {
 	ISession,
@@ -9,6 +8,7 @@ import {
 	ITimeslot,
 } from "src/app/models/speaker.model";
 import { SchedhuleItemComponent } from "src/app/shared/components/schedule-item/schedule-item.component";
+import { IconComponent } from "src/app/shared/icons/icon.component";
 import { SessionizeService } from "src/app/shared/services/sessionize/sessionize.service";
 import { UtilService } from "src/app/shared/services/util/util.service";
 import { ngKenya2026Photos } from "src/app/const/data.const";
@@ -16,7 +16,7 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 @Component({
 	selector: "app-schedule",
 	templateUrl: "./schedule.component.html",
-	imports: [SchedhuleItemComponent, LucideAngularModule, CommonModule],
+	imports: [SchedhuleItemComponent, IconComponent, CommonModule],
 	styleUrls: ["./schedule.component.scss"],
 	standalone: true,
 })

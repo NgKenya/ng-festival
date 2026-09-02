@@ -1,6 +1,6 @@
 import { Component, DestroyRef, inject, OnInit } from "@angular/core";
 
-import { LucideAngularModule } from "lucide-angular";
+import { IconComponent } from "src/app/shared/icons/icon.component";
 import { SpeakerCardComponent } from "src/app/shared/components/speaker-card/speaker-card.component";
 import { SessionizeService } from "src/app/shared/services/sessionize/sessionize.service";
 import { UtilService } from "src/app/shared/services/util/util.service";
@@ -12,7 +12,7 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 	selector: "app-speakers",
 	templateUrl: "./speakers.component.html",
 	styleUrls: ["./speakers.component.scss"],
-	imports: [SpeakerCardComponent, LucideAngularModule],
+	imports: [SpeakerCardComponent, IconComponent],
 	standalone: true,
 })
 export class SpeakersComponent implements OnInit {

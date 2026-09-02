@@ -12,12 +12,6 @@
   "engines": {
     "node": "^22.22.3 || ^24.15.0 || >=26.0.0"
   },
-  "overrides": {
-    "lucide-angular": {
-      "@angular/core": "$@angular/core",
-      "@angular/common": "$@angular/common"
-    }
-  },
   "dependencies": {
     "@angular-devkit/build-angular": "^21.2.22",
     "@angular/animations": "^21.2.22",
@@ -29,7 +23,7 @@
     "@angular/platform-browser-dynamic": "^21.2.22",
     "@angular/router": "^21.2.22",
     "font-awesome": "^4.7.0",
-    "lucide-angular": "^0.525.0",
+    "lucide": "^1.39.0",
     "ng-lazyload-image": "^9.1.3",
     "rxjs": "~7.8.0",
     "svg-icon": "^0.0.0",

@@ -10,7 +10,7 @@ import {
 // 	CountdownService,
 // } from "../../services/countdown/countdown.service";
 import { UtilService } from "../../services/util/util.service";
-import { LucideAngularModule } from "lucide-angular";
+import { IconComponent } from "../../icons/icon.component";
 
 interface BarcodeBar {
 	width: string;
@@ -21,7 +21,7 @@ interface BarcodeBar {
 	templateUrl: "./counter.component.html",
 	styleUrl: "./counter.component.scss",
 	standalone: true,
-	imports: [LucideAngularModule],
+	imports: [IconComponent],
 })
 export class CounterComponent implements OnInit {
 	officialDate: Date = new Date("August 21 2026");
