@@ -1,4 +1,4 @@
-import {Component, OnInit, inject, signal} from "@angular/core";
+import {Component, OnInit, inject, signal, ChangeDetectionStrategy} from "@angular/core";
 // import { Subscription } from "rxjs";
 import {
 	ngKenya2026Photos,
@@ -21,6 +21,7 @@ interface BarcodeBar {
 	templateUrl: "./counter.component.html",
 	styleUrl: "./counter.component.scss",
 	standalone: true,
+	changeDetection: ChangeDetectionStrategy.Eager,
 	imports: [IconComponent],
 })
 export class CounterComponent implements OnInit {

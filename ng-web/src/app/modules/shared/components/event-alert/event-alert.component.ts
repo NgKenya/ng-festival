@@ -1,4 +1,4 @@
-import { Component, inject, OnInit } from "@angular/core";
+import { Component, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 import {
 	CountdownService,
 	IDate,
@@ -8,6 +8,7 @@ import {
     selector: "app-event-alert",
     templateUrl: "./event-alert.component.html",
     styleUrl: "./event-alert.component.scss",
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class EventAlertComponent implements OnInit {

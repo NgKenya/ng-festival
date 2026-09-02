@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, DestroyRef, inject, OnDestroy, OnInit, signal } from "@angular/core";
+import { Component, DestroyRef, inject, OnDestroy, OnInit, signal, ChangeDetectionStrategy } from "@angular/core";
 import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
 import { map } from "rxjs";
 import {
@@ -18,6 +18,7 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 	templateUrl: "./schedule.component.html",
 	imports: [SchedhuleItemComponent, IconComponent, CommonModule],
 	styleUrls: ["./schedule.component.scss"],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,
 })
 export class ScheduleComponent implements OnInit, OnDestroy {

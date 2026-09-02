@@ -1,5 +1,5 @@
 import { DatePipe, NgClass } from "@angular/common";
-import { Component, inject, Input, signal } from "@angular/core";
+import { Component, inject, Input, signal, ChangeDetectionStrategy } from "@angular/core";
 import { ISession } from "src/app/models/speaker.model";
 import { UtilService } from "../../services/util/util.service";
 import { venueLocation } from "src/app/const/data.const";
@@ -10,6 +10,7 @@ import { IconComponent } from "../../icons/icon.component";
 	imports: [IconComponent, DatePipe, NgClass],
 	templateUrl: "./schedule-item.component.html",
 	styleUrl: "./schedule-item.component.scss",
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,
 })
 export class SchedhuleItemComponent {

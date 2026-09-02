@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, Input, ChangeDetectionStrategy } from "@angular/core";
 import { ISpeaker, ISpeakerLink } from "src/app/models/speaker.model";
 import { IconComponent } from "../../icons/icon.component";
 
@@ -7,6 +7,7 @@ import { IconComponent } from "../../icons/icon.component";
 	templateUrl: "./speaker-card.component.html",
 	styleUrls: ["./speaker-card.component.scss"],
 	imports: [IconComponent],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,
 })
 export class SpeakerCardComponent {

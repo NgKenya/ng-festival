@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component, inject, ChangeDetectionStrategy } from "@angular/core";
 import { CounterComponent } from "../../shared/components/counter/counter.component";
 import { eventStats, ngKenya2026Photos, ngKenyaShopUrl } from "src/app/const/data.const";
 import { IconComponent } from "src/app/shared/icons/icon.component";
@@ -9,6 +9,7 @@ import { UtilService } from "src/app/shared/services/util/util.service";
 	imports: [CounterComponent, IconComponent],
 	standalone: true,
 	templateUrl: "./home.component.html",
+	changeDetection: ChangeDetectionStrategy.Eager,
 	styleUrl: "./home.component.scss",
 })
 export class HomeComponent {

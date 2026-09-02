@@ -1,4 +1,4 @@
-import { Component, DestroyRef, inject, OnInit } from "@angular/core";
+import { Component, DestroyRef, inject, OnInit, ChangeDetectionStrategy } from "@angular/core";
 
 import { IconComponent } from "src/app/shared/icons/icon.component";
 import { SpeakerCardComponent } from "src/app/shared/components/speaker-card/speaker-card.component";
@@ -13,6 +13,7 @@ import { ngKenya2026Photos } from "src/app/const/data.const";
 	templateUrl: "./speakers.component.html",
 	styleUrls: ["./speakers.component.scss"],
 	imports: [SpeakerCardComponent, IconComponent],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,
 })
 export class SpeakersComponent implements OnInit {

@@ -1,5 +1,5 @@
 
-import {Component} from "@angular/core";
+import {Component, ChangeDetectionStrategy} from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { NavbarComponent } from "./shared/components/navbar/navbar.component";
 import { FooterComponent } from "./shared/components/footer/footer.component";
@@ -9,6 +9,7 @@ import { FooterComponent } from "./shared/components/footer/footer.component";
 	templateUrl: "./app.component.html",
 	styleUrls: ["./app.component.scss"],
 	imports: [RouterModule, NavbarComponent, FooterComponent],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,
 })
 export class AppComponent {

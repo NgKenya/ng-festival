@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { NgKenyaPartners, ngKenyaShopUrl } from "src/app/const/data.const";
 import { IconComponent } from "../../icons/icon.component";
@@ -8,6 +8,7 @@ import { IconComponent } from "../../icons/icon.component";
 	templateUrl: "./footer.component.html",
 	styleUrls: ["./footer.component.scss"],
 	imports: [RouterModule, IconComponent],
+	changeDetection: ChangeDetectionStrategy.Eager,
 	standalone: true,
 })
 export class FooterComponent {
