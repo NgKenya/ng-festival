@@ -8,17 +8,15 @@ import { environment } from "src/environments/environment";
 export class SessionizeService {
 	private readonly http = inject(HttpClient);
 
-	getAllSpeakers(): Observable<ISpeaker[]> {
-		return this.http.get<ISpeaker[]>(`${environment.base_url}/Speakers`);
+	getAllSpeakers(baseUrl = environment.base_url): Observable<ISpeaker[]> {
+		return this.http.get<ISpeaker[]>(`${baseUrl}/Speakers`);
 	}
 
-	getAllSpeakersProfile(): Observable<ISpeaker[]> {
-		return this.http.get<ISpeaker[]>(`${environment.base_url}/Speakers`);
+	getAllSpeakersProfile(baseUrl = environment.base_url): Observable<ISpeaker[]> {
+		return this.http.get<ISpeaker[]>(`${baseUrl}/Speakers`);
 	}
 
-	getSchedhule(): Observable<ISessionizeGrid[]> {
-		return this.http.get<ISessionizeGrid[]>(
-			`${environment.base_url}/GridSmart`,
-		);
+	getSchedhule(baseUrl = environment.base_url): Observable<ISessionizeGrid[]> {
+		return this.http.get<ISessionizeGrid[]>(`${baseUrl}/GridSmart`);
 	}
 }

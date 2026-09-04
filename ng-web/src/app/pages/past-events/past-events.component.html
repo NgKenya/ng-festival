@@ -1,0 +1,62 @@
+<section class="w-full mx-auto pt-28 md:pt-32 pb-10 md:pb-14">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="max-w-3xl mx-auto text-center space-y-5">
+			<h1
+				class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
+			>
+				Past <span class="text-ng-pink">Events</span>
+			</h1>
+			<p class="text-base md:text-lg text-ng-grey leading-relaxed">
+				Relive previous editions of NG Kenya — talks, agendas, and photo albums
+				from years past.
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="w-full mx-auto pb-24">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+			@for (event of events; track event.year) {
+			<article
+				class="group relative flex flex-col p-8 rounded-3xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink/60 hover:bg-neutral-900/70 transition-all duration-300"
+			>
+				<p class="text-sm font-semibold uppercase tracking-wider text-ng-pink">
+					{{ event.year }}
+				</p>
+				<h2 class="mt-2 text-2xl font-bold text-white">
+					{{ event.theme }}
+				</h2>
+				<p class="mt-3 text-sm text-ng-grey leading-relaxed flex-1">
+					{{ event.summary }}
+				</p>
+				<p
+					class="mt-4 inline-flex items-center gap-x-2 text-sm text-ng-white/70"
+				>
+					<svg ngKeIcon="map-pin" class="size-4 text-ng-pink"></svg>
+					{{ event.venue }} · {{ event.datesLabel }}
+				</p>
+
+				<div class="mt-6 flex flex-wrap gap-3">
+					@if (hasArchive(event)) {
+					<a
+						[routerLink]="['/archive', event.year]"
+						class="py-2.5 px-5 inline-flex items-center gap-x-2 rounded-full bg-ng-pink text-white text-sm font-semibold hover:bg-ng-red transition-colors duration-300"
+					>
+						View archive
+					</a>
+					}
+					<button
+						type="button"
+						(click)="viewPhotos(event.photosUrl)"
+						class="py-2.5 px-5 inline-flex items-center gap-x-2 rounded-full border border-white/20 text-white text-sm font-semibold hover:border-ng-pink hover:text-ng-pink transition-colors duration-300"
+					>
+						<svg ngKeIcon="external-link" class="size-4"></svg>
+						Photos
+					</button>
+				</div>
+			</article>
+			}
+		</div>
+	</div>
+</section>

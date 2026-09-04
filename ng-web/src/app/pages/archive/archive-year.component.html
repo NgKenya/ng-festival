@@ -1,0 +1,104 @@
+@if (event(); as archived) {
+<section class="w-full mx-auto pt-28 md:pt-32 pb-10 md:pb-14">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div class="max-w-3xl mx-auto text-center space-y-5">
+			<p class="text-sm font-semibold uppercase tracking-wider text-ng-pink">
+				Archived event
+			</p>
+			<h1
+				class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
+			>
+				NG Kenya
+				<span class="text-ng-pink">{{ archived.year }}</span>
+			</h1>
+			<p class="text-xl md:text-2xl font-semibold text-white/90">
+				{{ archived.theme }}
+			</p>
+			<p class="text-base md:text-lg text-ng-grey leading-relaxed">
+				{{ archived.summary }}
+			</p>
+			<p
+				class="inline-flex items-center gap-x-2 text-sm text-ng-white/80 pt-1"
+			>
+				<svg ngKeIcon="map-pin" class="size-4 text-ng-pink"></svg>
+				{{ archived.venue }} · {{ archived.datesLabel }}
+			</p>
+		</div>
+	</div>
+</section>
+
+<section class="w-full mx-auto pb-24">
+	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<div
+			class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-4xl mx-auto"
+		>
+			@if (canBrowseSessions()) {
+			<a
+				[routerLink]="['/archive', archived.year, 'speakers']"
+				class="group flex flex-col items-start gap-3 p-6 rounded-3xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink hover:-translate-y-1 transition-all duration-300"
+			>
+				<svg
+					ngKeIcon="users"
+					class="size-8 text-ng-pink group-hover:scale-110 transition-transform duration-300"
+				></svg>
+				<span class="text-lg font-bold text-white">Speakers</span>
+				<span class="text-sm text-ng-grey"
+					>Meet the experts from {{ archived.year }}</span
+				>
+			</a>
+			<a
+				[routerLink]="['/archive', archived.year, 'schedule']"
+				class="group flex flex-col items-start gap-3 p-6 rounded-3xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink hover:-translate-y-1 transition-all duration-300"
+			>
+				<svg
+					ngKeIcon="calendar-days"
+					class="size-8 text-ng-pink group-hover:scale-110 transition-transform duration-300"
+				></svg>
+				<span class="text-lg font-bold text-white">Agenda</span>
+				<span class="text-sm text-ng-grey"
+					>Browse the full two-day schedule</span
+				>
+			</a>
+			}
+			<button
+				type="button"
+				(click)="viewPhotos()"
+				class="group flex flex-col items-start gap-3 p-6 rounded-3xl border border-neutral-800 bg-neutral-900/40 hover:border-ng-pink hover:-translate-y-1 transition-all duration-300 text-left"
+			>
+				<svg
+					ngKeIcon="external-link"
+					class="size-8 text-ng-pink group-hover:scale-110 transition-transform duration-300"
+				></svg>
+				<span class="text-lg font-bold text-white">Photos</span>
+				<span class="text-sm text-ng-grey"
+					>Open the {{ archived.year }} photo album</span
+				>
+			</button>
+		</div>
+
+		<div class="mt-12 text-center">
+			<a
+				routerLink="/past-events"
+				class="text-sm text-ng-grey hover:text-ng-pink transition-colors duration-300"
+			>
+				← All past events
+			</a>
+		</div>
+	</div>
+</section>
+} @else {
+<section class="w-full mx-auto pt-28 md:pt-32 pb-24">
+	<div class="container max-w-screen-sm mx-auto px-10 text-center space-y-4">
+		<h1 class="text-3xl font-bold">Event not found</h1>
+		<p class="text-ng-grey">
+			We don't have an archive for that year yet.
+		</p>
+		<a
+			routerLink="/past-events"
+			class="inline-flex py-2.5 px-5 rounded-full bg-ng-pink text-white text-sm font-semibold"
+		>
+			Browse past events
+		</a>
+	</div>
+</section>
+}

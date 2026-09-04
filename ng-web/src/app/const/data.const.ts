@@ -1,5 +1,4 @@
 import { IPartner } from "../models/data.model";
-import { ISpeaker, ITalk, ROOM_NAME } from "../models/speaker.model";
 
 export const NgKenyaPartners: IPartner[] = [
 	{
@@ -30,13 +29,13 @@ export const NgKenyaPartners: IPartner[] = [
 ];
 
 export const ticketUrl = "https://vabu.app/ng-kenya-conf-2026";
-export const venueLocation = "iHUB, 913, Jahazi Ground floor James Gichuru Road, Nairobi, Kenya";
+export const venueLocation =
+	"iHUB, 913, Jahazi Ground floor James Gichuru Road, Nairobi, Kenya";
 export const ngKenya2024Photos = "https://photos.app.goo.gl/UHZCwSEV2JkMzbYw7";
 export const ngKenya2024Feedback = "https://forms.gle/xZ9UbyZpfpm1ESwa9";
 
-//2025
 export const ngKenya2025Photos = "https://photos.app.goo.gl/rxDqdeM5tbLq6nv89";
-export const ngKenya2026Photos = "https://photos.app.goo.gl/kMCEqst21musURLR6"
+export const ngKenya2026Photos = "https://photos.app.goo.gl/kMCEqst21musURLR6";
 export const ngKenya2026CallForSpeakers =
 	"https://sessionize.com/ng-kenya-2026";
 export const sponsorhsip_Deck =
@@ -44,32 +43,10 @@ export const sponsorhsip_Deck =
 
 export const ngKenya2025Feedback = "https://forms.gle/uxb3iVRkfBYvS6pd7";
 export const ngKenyaShopUrl = "https://angular-kenya.vabu.app/shop";
-export const eventStats: {
-	icon: string;
-	count: number | string;
-	type: "%" | "+" | "";
-	label: string;
-}[] = [
-	{
-		icon: "calendar-days",
-		count: "2 Days",
-		type: "",
-		label: "August 21st & August 22nd ",
-	},
-
-	{
-		icon: "network",
-		count: 10,
-		type: "+",
-		label: "Speakers",
-	},
-	{
-		icon: "spool",
-		count: 4,
-		type: "+",
-		label: "Workshop ",
-	},
-];
+/** Interest / waitlist contact while 2027 details are TBD. */
+export const ngKenyaContactEmail = "mailto:angularnairobi@gmail.com";
+/** Primary brand mark for the live (upcoming) conference year. */
+export const ngKenyaLogo = "./Images/logos/ngKenya/NG_Kenya_27_logo.svg";
 
 export const ATeam: {
 	name: string;

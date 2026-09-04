@@ -35,7 +35,7 @@ export class UtilService {
 	}
 
 	getSchedule() {
-		this.route.navigate(["/schedule"]);
+		this.route.navigate(["/archive/2026/schedule"]);
 	}
 
 	private toIcsDate(date: string): string {
