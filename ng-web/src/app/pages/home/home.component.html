@@ -8,27 +8,20 @@
 	<div class="relative container max-w-screen-sm md:max-w-screen-xl mx-auto px-10 py-20 md:py-28">
 		<div class="max-w-3xl mx-auto text-center space-y-8">
 			<img
-				src="./Images/logos/ngKenya/ng_kenya_red.png"
-				alt="NG Kenya"
-				class="mx-auto w-40 md:w-52"
+				[src]="logo"
+				alt="NG Kenya {{ year }}"
+				class="mx-auto w-52 md:w-80"
 			/>
 
-			<p
-				class="text-sm font-semibold uppercase tracking-[0.2em] text-ng-pink"
-			>
-				Coming {{ year }}
-			</p>
-
 			<h1
-				class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight tracking-tight text-white"
+				class="text-2xl sm:text-3xl md:text-4xl font-bold leading-snug tracking-tight text-white"
 			>
-				NG Kenya
-				<span class="text-ng-pink">{{ year }}</span>
+				East Africa's Angular conference returns soon
 			</h1>
 
-			<p class="text-base md:text-xl text-ng-grey leading-relaxed max-w-2xl mx-auto">
-				East Africa's Angular conference is preparing its next chapter.
-				Dates and venue will be announced soon — stay close to the community.
+			<p class="text-base md:text-lg text-ng-grey leading-relaxed max-w-2xl mx-auto">
+				Dates and venue will be announced soon — stay close to the community
+				while we prepare the next chapter.
 			</p>
 
 			<div class="flex flex-wrap justify-center gap-4 pt-2">

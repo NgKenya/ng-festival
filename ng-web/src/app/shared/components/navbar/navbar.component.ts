@@ -7,7 +7,7 @@ import {
 import { toSignal } from "@angular/core/rxjs-interop";
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from "@angular/router";
 import { filter, map, startWith } from "rxjs";
-import { ngKenyaShopUrl } from "src/app/const/data.const";
+import { ngKenyaLogo, ngKenyaShopUrl } from "src/app/const/data.const";
 import { UtilService } from "../../services/util/util.service";
 import { IconComponent } from "../../icons/icon.component";
 
@@ -21,6 +21,7 @@ import { IconComponent } from "../../icons/icon.component";
 export class NavbarComponent {
 	utilService = inject(UtilService);
 	shopUrl = ngKenyaShopUrl;
+	logo = ngKenyaLogo;
 	router = inject(Router);
 
 	showMenu = false;

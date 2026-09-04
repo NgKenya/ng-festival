@@ -45,6 +45,8 @@ export const ngKenya2025Feedback = "https://forms.gle/uxb3iVRkfBYvS6pd7";
 export const ngKenyaShopUrl = "https://angular-kenya.vabu.app/shop";
 /** Interest / waitlist contact while 2027 details are TBD. */
 export const ngKenyaContactEmail = "mailto:angularnairobi@gmail.com";
+/** Primary brand mark for the live (upcoming) conference year. */
+export const ngKenyaLogo = "./Images/logos/ngKenya/NG_Kenya_27_logo.svg";
 
 export const ATeam: {
 	name: string;

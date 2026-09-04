@@ -4,7 +4,7 @@ import {
 	CURRENT_EVENT_YEAR,
 	PAST_EVENTS,
 } from "src/app/const/events.const";
-import { ngKenyaShopUrl } from "src/app/const/data.const";
+import { ngKenyaLogo, ngKenyaShopUrl } from "src/app/const/data.const";
 import { IconComponent } from "src/app/shared/icons/icon.component";
 import { UtilService } from "src/app/shared/services/util/util.service";
 
@@ -20,6 +20,7 @@ export class HomeComponent {
 
 	readonly year = CURRENT_EVENT_YEAR;
 	readonly latestPastYear = PAST_EVENTS[0]?.year;
+	readonly logo = ngKenyaLogo;
 
 	shopMerch() {
 		this.utilService.openNewPage(ngKenyaShopUrl);
