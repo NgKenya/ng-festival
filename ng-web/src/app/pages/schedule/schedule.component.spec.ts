@@ -4,6 +4,8 @@ import {
 	provideHttpClientTesting,
 } from "@angular/common/http/testing";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ActivatedRoute, convertToParamMap, provideRouter } from "@angular/router";
+import { of } from "rxjs";
 import { ScheduleComponent } from "./schedule.component";
 
 describe("ScheduleComponent", () => {
@@ -59,7 +61,18 @@ describe("ScheduleComponent", () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			imports: [ScheduleComponent],
-			providers: [provideHttpClient(), provideHttpClientTesting()],
+			providers: [
+				provideHttpClient(),
+				provideHttpClientTesting(),
+				provideRouter([]),
+				{
+					provide: ActivatedRoute,
+					useValue: {
+						paramMap: of(convertToParamMap({ year: "2026" })),
+						snapshot: { paramMap: convertToParamMap({ year: "2026" }) },
+					},
+				},
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(ScheduleComponent);
@@ -122,7 +135,7 @@ describe("ScheduleComponent", () => {
 		flushSpeakerProfiles();
 		fixture.detectChanges();
 
-		expect(component.eventDate()).toBe(component.days[1].date);
+		expect(component.eventDate()).toBe(component.days()[1].date);
 		expect(tabs[0].getAttribute("aria-selected")).toBe("false");
 		expect(tabs[1].getAttribute("aria-selected")).toBe("true");
 	});

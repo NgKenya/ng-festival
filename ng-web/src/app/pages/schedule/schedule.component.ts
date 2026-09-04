@@ -1,9 +1,19 @@
 import { NgClass } from "@angular/common";
-import { Component, DestroyRef, inject, OnDestroy, OnInit, signal, ChangeDetectionStrategy } from "@angular/core";
-import { takeUntilDestroyed } from "@angular/core/rxjs-interop";
-import { map } from "rxjs";
 import {
-	ISession,
+	ChangeDetectionStrategy,
+	Component,
+	computed,
+	DestroyRef,
+	inject,
+	OnDestroy,
+	OnInit,
+	signal,
+} from "@angular/core";
+import { takeUntilDestroyed, toSignal } from "@angular/core/rxjs-interop";
+import { ActivatedRoute, RouterLink } from "@angular/router";
+import { map } from "rxjs";
+import { getPastEvent } from "src/app/const/events.const";
+import {
 	ISpeakerProfile,
 	ITimeslot,
 } from "src/app/models/speaker.model";
@@ -11,12 +21,11 @@ import { SchedhuleItemComponent } from "src/app/shared/components/schedule-item/
 import { IconComponent } from "src/app/shared/icons/icon.component";
 import { SessionizeService } from "src/app/shared/services/sessionize/sessionize.service";
 import { UtilService } from "src/app/shared/services/util/util.service";
-import { ngKenya2026Photos } from "src/app/const/data.const";
 
 @Component({
 	selector: "app-schedule",
 	templateUrl: "./schedule.component.html",
-	imports: [SchedhuleItemComponent, IconComponent, NgClass],
+	imports: [SchedhuleItemComponent, IconComponent, NgClass, RouterLink],
 	styleUrls: ["./schedule.component.scss"],
 	changeDetection: ChangeDetectionStrategy.Eager,
 })
@@ -30,23 +39,31 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 	hasError = false;
 	private readonly DESTROY_REF = inject(DestroyRef);
 	private refreshIntervalId?: ReturnType<typeof setInterval>;
+	private route = inject(ActivatedRoute);
 
-	readonly days: { label: string; date: string }[] = [
-		{ label: "Day One", date: "August 21,2026" },
-		{ label: "Day Two", date: "August 22,2026" },
-	];
+	private readonly yearParam = toSignal(
+		this.route.paramMap.pipe(map((params) => Number(params.get("year")))),
+		{ initialValue: Number(this.route.snapshot.paramMap.get("year")) },
+	);
 
-  // Default tab for the day (day one or day two)
-	eventDate = signal<string | undefined>(this.days[0].date);
+	readonly event = computed(() => getPastEvent(this.yearParam()));
+
+	readonly days = computed(() => this.event()?.days ?? []);
+
+	eventDate = signal<string | undefined>(undefined);
 
 	/** Skeleton placeholders shown while the schedule is loading. */
 	readonly skeletons = Array.from({ length: 4 });
 
 	ngOnInit(): void {
-		this.getSession(this.eventDate()!);
+		const firstDay = this.days()[0]?.date;
+		if (firstDay) {
+			this.getSession(firstDay);
+		} else {
+			this.hasError = true;
+			this.isLoading = false;
+		}
 
-		// Periodically refresh the current time so completed sessions are
-		// clearly marked as "Completed" once their scheduled duration has ended.
 		this.refreshIntervalId = setInterval(() => {
 			this.activeTime = new Date();
 			this.talkList = this.updateSessionsDoneState(this.talkList);
@@ -73,13 +90,20 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 	}
 
 	getSession(date: string) {
+		const baseUrl = this.event()?.sessionizeBaseUrl;
+		if (!baseUrl) {
+			this.hasError = true;
+			this.isLoading = false;
+			return;
+		}
+
 		this.eventDate.set(date);
 		this.isLoading = true;
 		this.hasError = false;
-		let targetDate = new Date(date);
+		const targetDate = new Date(date);
 
 		this.schedhuleService
-			.getSchedhule()
+			.getSchedhule(baseUrl)
 			.pipe(takeUntilDestroyed(this.DESTROY_REF))
 			.subscribe({
 				next: (res) => {
@@ -100,21 +124,23 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 				complete: () => {
 					this.fetchSpeakers();
 				},
-				error: (err) => {
+				error: () => {
 					this.hasError = true;
 					this.isLoading = false;
 				},
 			});
 	}
 
-	/***
-	 * fetch talks *
-	 * fetch speakers>id, image
-	 */
-
 	fetchSpeakers() {
+		const baseUrl = this.event()?.sessionizeBaseUrl;
+		if (!baseUrl) {
+			this.hasError = true;
+			this.isLoading = false;
+			return;
+		}
+
 		this.schedhuleService
-			.getAllSpeakersProfile()
+			.getAllSpeakersProfile(baseUrl)
 			.pipe(
 				takeUntilDestroyed(this.DESTROY_REF),
 				map((speakers) =>
@@ -133,7 +159,7 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 					this.talkList = this.updateSpeakersWithProfile(this.talkList);
 					this.isLoading = false;
 				},
-				error: (err) => {
+				error: () => {
 					this.hasError = true;
 					this.isLoading = false;
 				},
@@ -141,35 +167,14 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 	}
 
 	viewPastPhotos() {
-		this.utilService.openNewPage(ngKenya2026Photos);
+		const photosUrl = this.event()?.photosUrl;
+		if (photosUrl) {
+			this.utilService.openNewPage(photosUrl);
+		}
 	}
 
 	getSpeakerById(profileId: string) {
 		return this.scheduleSpeakers.find((speaker) => speaker.id === profileId);
-	}
-
-	updateSessions() {
-		console.log(
-			this.talkList.map((talk) => ({
-				...talk,
-				rooms: talk.rooms.map((room) => ({
-					...room,
-					session: {
-						...room.session,
-						speakers: room.session.speakers.map((speaker: { id: string }) => {
-							const profile = this.scheduleSpeakers.find(
-								(s) => s.id === speaker.id,
-							);
-							return {
-								...speaker,
-								id: speaker.id,
-								profilePicture: this.getSpeakerById(speaker.id),
-							};
-						}),
-					},
-				})),
-			})),
-		);
 	}
 
 	updateSpeakersWithProfile(timeSlots: ITimeslot[]): ITimeslot[] {
@@ -193,22 +198,4 @@ export class ScheduleComponent implements OnInit, OnDestroy {
 			})),
 		}));
 	}
-	// reshuffleTalks() {
-	// 	const now = this.activeTime.toISOString().slice(0, 19);
-	// 	console.log(now);
-
-	// 	const newTalks = this.talkList.filter((x) => {
-	// 		let xstartTime = new Date(x.endTime);
-	// 		return xstartTime > this.activeTime;
-	// 	});
-
-	// 	const doneTalks = this.talkList.filter((x) => {
-	// 		let xstartTime = new Date(x.endTime);
-	// 		return xstartTime < this.activeTime;
-	// 	});
-
-	// 	doneTalks.forEach((talk) => (talk.isDone = true));
-
-	// 	this.talkList = [...newTalks, ...doneTalks];
-	// }
 }

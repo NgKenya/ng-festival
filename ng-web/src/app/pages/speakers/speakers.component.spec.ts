@@ -4,6 +4,8 @@ import {
 	provideHttpClientTesting,
 } from "@angular/common/http/testing";
 import { ComponentFixture, TestBed } from "@angular/core/testing";
+import { ActivatedRoute, convertToParamMap, provideRouter } from "@angular/router";
+import { of } from "rxjs";
 import { SpeakersComponent } from "./speakers.component";
 
 describe("SpeakersComponent", () => {
@@ -14,7 +16,18 @@ describe("SpeakersComponent", () => {
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
 			imports: [SpeakersComponent],
-			providers: [provideHttpClient(), provideHttpClientTesting()],
+			providers: [
+				provideHttpClient(),
+				provideHttpClientTesting(),
+				provideRouter([]),
+				{
+					provide: ActivatedRoute,
+					useValue: {
+						paramMap: of(convertToParamMap({ year: "2026" })),
+						snapshot: { paramMap: convertToParamMap({ year: "2026" }) },
+					},
+				},
+			],
 		}).compileComponents();
 
 		fixture = TestBed.createComponent(SpeakersComponent);

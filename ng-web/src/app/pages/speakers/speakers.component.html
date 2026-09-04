@@ -1,17 +1,28 @@
 <!-- Speakers hero -->
 <section class="w-full mx-auto pt-28 md:pt-32 pb-10 md:pb-14">
 	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<a
+			[routerLink]="['/archive', event()?.year]"
+			class="inline-flex items-center gap-x-2 text-sm text-ng-grey hover:text-ng-pink transition-colors duration-300 mb-8 md:mb-10"
+		>
+			← Back to {{ event()?.year }} archive
+		</a>
+
 		<div class="max-w-3xl mx-auto text-center space-y-5">
+			<p class="text-sm font-semibold uppercase tracking-wider text-ng-pink">
+				NG Kenya {{ event()?.year }} archive
+			</p>
 			<h1
 				class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
 			>
-				Experts in the <span class="text-ng-pink">NG-ine Room</span>
+				Experts in the
+				<span class="text-ng-pink">{{ event()?.theme }}</span>
 			</h1>
 
 			<p class="text-base md:text-lg text-ng-grey leading-relaxed">
-        Featuring Angular experts and global industry leaders, discover real-world insights,
-        future-focused tools, and conversations that can reshape how you build for the web.
-      </p>
+				Angular experts and industry leaders who shared real-world insights,
+				tools, and conversations from {{ event()?.year }}.
+			</p>
 		</div>
 	</div>
 </section>
@@ -105,7 +116,7 @@
 						class="py-3 px-6 inline-flex items-center gap-x-2 rounded-full bg-white text-ng-pink font-semibold hover:bg-ng-dark-blue hover:text-white transition-colors duration-300"
 					>
 						<svg ngKeIcon="external-link" class="size-5"></svg>
-						View 2026 photos
+						View {{ event()?.year }} photos
 					</button>
 				</div>
 			</div>

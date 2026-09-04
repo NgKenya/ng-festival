@@ -25,7 +25,7 @@ describe("NavbarComponent", () => {
 		const links = (fixture.nativeElement as HTMLElement).querySelectorAll(
 			"nav a[href]",
 		);
-		expect(links.length).toBeGreaterThanOrEqual(component.navLinks.length);
+		expect(links.length).toBeGreaterThanOrEqual(component.navLinks().length);
 	});
 
 	it("should toggle the mobile menu", () => {

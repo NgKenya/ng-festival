@@ -1,7 +1,17 @@
 <!-- Schedule hero -->
 <section class="w-full mx-auto pt-28 md:pt-32 pb-10 md:pb-14">
 	<div class="container max-w-screen-sm md:max-w-screen-xl mx-auto px-10">
+		<a
+			[routerLink]="['/archive', event()?.year]"
+			class="inline-flex items-center gap-x-2 text-sm text-ng-grey hover:text-ng-pink transition-colors duration-300 mb-8 md:mb-10"
+		>
+			← Back to {{ event()?.year }} archive
+		</a>
+
 		<div class="max-w-3xl mx-auto text-center space-y-5">
+			<p class="text-sm font-semibold uppercase tracking-wider text-ng-pink">
+				NG Kenya {{ event()?.year }} archive
+			</p>
 			<h1
 				class="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight"
 			>
@@ -9,15 +19,15 @@
 			</h1>
 
 			<p class="text-base md:text-lg text-ng-grey leading-relaxed">
-				Join fellow Angular developers for a full two days of
-				keynotes, deep-dive talks and hands-on workshops at NG Kenya 2026.
+				Keynotes, deep-dive talks and hands-on workshops from
+				NG Kenya {{ event()?.year }}.
 			</p>
 
 			<p
 				class="inline-flex items-center gap-x-2 text-sm text-ng-white/80 pt-1"
 			>
 				<svg ngKeIcon="map-pin" class="size-4 text-ng-pink"></svg>
-				iHub, Nairobi &bull; August 21 &amp; 22, 2026
+				{{ event()?.venue }} &bull; {{ event()?.datesLabel }}
 			</p>
 		</div>
 	</div>
@@ -33,7 +43,7 @@
 				role="tablist"
 				aria-label="Schedule days"
 			>
-				@for (day of days; track day.date) {
+				@for (day of days(); track day.date) {
 				<button
 					type="button"
 					role="tab"
@@ -130,7 +140,7 @@
 		>
 			<div class="relative z-10 max-w-2xl mx-auto space-y-5">
 				<h2 class="text-2xl md:text-4xl font-bold">
-					That's a wrap on NG Kenya 2026!
+					That's a wrap on NG Kenya {{ event()?.year }}!
 				</h2>
 				<p class="text-white/90 text-base md:text-lg">
 					Thank you for two incredible days of Angular, innovation and
@@ -143,7 +153,7 @@
 						class="py-3 px-6 inline-flex items-center gap-x-2 rounded-full bg-white text-ng-pink font-semibold hover:bg-ng-dark-blue hover:text-white transition-colors duration-300"
 					>
 						<svg ngKeIcon="external-link" class="size-5"></svg>
-						View 2026 photos
+						View {{ event()?.year }} photos
 					</button>
 				</div>
 			</div>
